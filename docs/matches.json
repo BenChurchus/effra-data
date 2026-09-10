@@ -681,10 +681,10 @@
         "clean_sheets": null
       },
       {
-        "player": "Char",
+        "player": "Nik",
         "is_captain": false,
-        "goals": 1.0,
-        "assists": 1.0,
+        "goals": null,
+        "assists": null,
         "clean_sheets": null
       },
       {
@@ -709,10 +709,10 @@
         "clean_sheets": null
       },
       {
-        "player": "Nik",
+        "player": "Char",
         "is_captain": false,
-        "goals": null,
-        "assists": null,
+        "goals": 1.0,
+        "assists": 1.0,
         "clean_sheets": null
       }
     ],
@@ -725,16 +725,16 @@
         "clean_sheets": 1.0
       },
       {
-        "player": "Harry",
-        "is_captain": false,
+        "player": "Kempy",
+        "is_captain": true,
         "goals": null,
-        "assists": null,
+        "assists": 3.0,
         "clean_sheets": null
       },
       {
-        "player": "Jan",
+        "player": "Harry",
         "is_captain": false,
-        "goals": 1.0,
+        "goals": null,
         "assists": null,
         "clean_sheets": null
       },
@@ -746,10 +746,10 @@
         "clean_sheets": null
       },
       {
-        "player": "Kempy",
-        "is_captain": true,
-        "goals": null,
-        "assists": 3.0,
+        "player": "Jan",
+        "is_captain": false,
+        "goals": 1.0,
+        "assists": null,
         "clean_sheets": null
       },
       {
@@ -799,17 +799,17 @@
         "clean_sheets": null
       },
       {
-        "player": "Harry",
-        "is_captain": false,
-        "goals": null,
-        "assists": 1.0,
-        "clean_sheets": null
-      },
-      {
         "player": "Nik",
         "is_captain": true,
         "goals": null,
         "assists": null,
+        "clean_sheets": null
+      },
+      {
+        "player": "Harry",
+        "is_captain": false,
+        "goals": null,
+        "assists": 1.0,
         "clean_sheets": null
       },
       {
@@ -836,13 +836,6 @@
         "clean_sheets": null
       },
       {
-        "player": "Jan",
-        "is_captain": true,
-        "goals": 3.0,
-        "assists": null,
-        "clean_sheets": null
-      },
-      {
         "player": "Gman",
         "is_captain": false,
         "goals": null,
@@ -861,6 +854,13 @@
         "is_captain": false,
         "goals": 2.0,
         "assists": 2.0,
+        "clean_sheets": null
+      },
+      {
+        "player": "Jan",
+        "is_captain": true,
+        "goals": 3.0,
+        "assists": null,
         "clean_sheets": null
       }
     ]
@@ -912,6 +912,13 @@
     ],
     "team2_players": [
       {
+        "player": "Will Mac",
+        "is_captain": false,
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null
+      },
+      {
         "player": "Dan",
         "is_captain": true,
         "goals": 2.0,
@@ -938,13 +945,6 @@
         "goals": 1.0,
         "assists": 1.0,
         "clean_sheets": null
-      },
-      {
-        "player": "Will Mac",
-        "is_captain": false,
-        "goals": 1.0,
-        "assists": 2.0,
-        "clean_sheets": null
       }
     ]
   },
@@ -957,6 +957,13 @@
     "team2_result": "L",
     "team2_goals": 7,
     "team1_players": [
+      {
+        "player": "Will Mac",
+        "is_captain": false,
+        "goals": 5.0,
+        "assists": 2.0,
+        "clean_sheets": null
+      },
       {
         "player": "Dave",
         "is_captain": true,
@@ -972,17 +979,17 @@
         "clean_sheets": null
       },
       {
-        "player": "Harry",
+        "player": "Ben",
         "is_captain": false,
-        "goals": 1.0,
+        "goals": null,
         "assists": 1.0,
         "clean_sheets": null
       },
       {
-        "player": "Will Mac",
+        "player": "Harry",
         "is_captain": false,
-        "goals": 5.0,
-        "assists": 2.0,
+        "goals": 1.0,
+        "assists": 1.0,
         "clean_sheets": null
       },
       {
@@ -991,21 +998,14 @@
         "goals": 3.0,
         "assists": 2.0,
         "clean_sheets": null
-      },
-      {
-        "player": "Ben",
-        "is_captain": false,
-        "goals": null,
-        "assists": 1.0,
-        "clean_sheets": null
       }
     ],
     "team2_players": [
       {
-        "player": "Kempy",
-        "is_captain": false,
-        "goals": 1.0,
-        "assists": 1.0,
+        "player": "JPH",
+        "is_captain": true,
+        "goals": 2.0,
+        "assists": null,
         "clean_sheets": null
       },
       {
@@ -1037,10 +1037,10 @@
         "clean_sheets": 1.0
       },
       {
-        "player": "JPH",
-        "is_captain": true,
-        "goals": 2.0,
-        "assists": null,
+        "player": "Kempy",
+        "is_captain": false,
+        "goals": 1.0,
+        "assists": 1.0,
         "clean_sheets": null
       }
     ]
@@ -1055,11 +1055,11 @@
     "team2_goals": 10,
     "team1_players": [
       {
-        "player": "Gman",
+        "player": "Leo",
         "is_captain": false,
         "goals": null,
-        "assists": null,
-        "clean_sheets": null
+        "assists": 1.0,
+        "clean_sheets": 1.0
       },
       {
         "player": "Jez",
@@ -1076,13 +1076,6 @@
         "clean_sheets": null
       },
       {
-        "player": "Jamal",
-        "is_captain": false,
-        "goals": null,
-        "assists": null,
-        "clean_sheets": null
-      },
-      {
         "player": "Crell",
         "is_captain": false,
         "goals": null,
@@ -1090,19 +1083,40 @@
         "clean_sheets": null
       },
       {
-        "player": "Leo",
+        "player": "Gman",
         "is_captain": false,
         "goals": null,
-        "assists": 1.0,
-        "clean_sheets": 1.0
+        "assists": null,
+        "clean_sheets": null
+      },
+      {
+        "player": "Jamal",
+        "is_captain": false,
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null
       }
     ],
     "team2_players": [
       {
-        "player": "JPH",
+        "player": "Ben",
         "is_captain": false,
-        "goals": 2.0,
+        "goals": 1.0,
         "assists": 1.0,
+        "clean_sheets": 1.0
+      },
+      {
+        "player": "Char",
+        "is_captain": false,
+        "goals": 4.0,
+        "assists": null,
+        "clean_sheets": 1.0
+      },
+      {
+        "player": "Harry",
+        "is_captain": false,
+        "goals": 1.0,
+        "assists": 2.0,
         "clean_sheets": 1.0
       },
       {
@@ -1113,13 +1127,6 @@
         "clean_sheets": 0.0
       },
       {
-        "player": "Char",
-        "is_captain": false,
-        "goals": 4.0,
-        "assists": null,
-        "clean_sheets": 1.0
-      },
-      {
         "player": "Dave",
         "is_captain": false,
         "goals": 1.0,
@@ -1127,16 +1134,9 @@
         "clean_sheets": null
       },
       {
-        "player": "Harry",
+        "player": "JPH",
         "is_captain": false,
-        "goals": 1.0,
-        "assists": 2.0,
-        "clean_sheets": 1.0
-      },
-      {
-        "player": "Ben",
-        "is_captain": false,
-        "goals": 1.0,
+        "goals": 2.0,
         "assists": 1.0,
         "clean_sheets": 1.0
       }
@@ -1152,7 +1152,7 @@
     "team2_goals": 9,
     "team1_players": [
       {
-        "player": "Thorny",
+        "player": "Char",
         "is_captain": false,
         "goals": null,
         "assists": null,
@@ -1180,17 +1180,17 @@
         "clean_sheets": null
       },
       {
+        "player": "Thorny",
+        "is_captain": false,
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null
+      },
+      {
         "player": "Ben",
         "is_captain": false,
         "goals": null,
         "assists": 3.0,
-        "clean_sheets": null
-      },
-      {
-        "player": "Char",
-        "is_captain": false,
-        "goals": null,
-        "assists": null,
         "clean_sheets": null
       }
     ],
@@ -1256,10 +1256,10 @@
     "team2_goals": 10,
     "team1_players": [
       {
-        "player": "Jez",
-        "is_captain": true,
-        "goals": 4.0,
-        "assists": 4.0,
+        "player": "Bart",
+        "is_captain": false,
+        "goals": 2.0,
+        "assists": null,
         "clean_sheets": null
       },
       {
@@ -1274,6 +1274,20 @@
         "is_captain": false,
         "goals": 2.0,
         "assists": 3.0,
+        "clean_sheets": null
+      },
+      {
+        "player": "Jez",
+        "is_captain": true,
+        "goals": 4.0,
+        "assists": 4.0,
+        "clean_sheets": null
+      },
+      {
+        "player": "Mark",
+        "is_captain": false,
+        "goals": null,
+        "assists": null,
         "clean_sheets": null
       }
     ],
@@ -1325,13 +1339,6 @@
     "team2_goals": 6,
     "team1_players": [
       {
-        "player": "Harry",
-        "is_captain": false,
-        "goals": 1.0,
-        "assists": 2.0,
-        "clean_sheets": 1.0
-      },
-      {
         "player": "Jez",
         "is_captain": false,
         "goals": 2.0,
@@ -1346,18 +1353,25 @@
         "clean_sheets": null
       },
       {
-        "player": "OG",
-        "is_captain": false,
-        "goals": null,
-        "assists": null,
-        "clean_sheets": null
-      },
-      {
         "player": "Kempy",
         "is_captain": false,
         "goals": 1.0,
         "assists": 2.0,
         "clean_sheets": null
+      },
+      {
+        "player": "Leo",
+        "is_captain": true,
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null
+      },
+      {
+        "player": "Harry",
+        "is_captain": false,
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0
       },
       {
         "player": "Gman",
@@ -1367,10 +1381,10 @@
         "clean_sheets": 1.0
       },
       {
-        "player": "Leo",
-        "is_captain": true,
-        "goals": 3.0,
-        "assists": 2.0,
+        "player": "OG",
+        "is_captain": false,
+        "goals": null,
+        "assists": null,
         "clean_sheets": null
       }
     ],
@@ -1379,6 +1393,20 @@
         "player": "OG",
         "is_captain": false,
         "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null
+      },
+      {
+        "player": "Nairn",
+        "is_captain": false,
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0
+      },
+      {
+        "player": "Will Mac",
+        "is_captain": false,
+        "goals": null,
         "assists": null,
         "clean_sheets": null
       },
@@ -1397,23 +1425,9 @@
         "clean_sheets": null
       },
       {
-        "player": "Nairn",
-        "is_captain": false,
-        "goals": 3.0,
-        "assists": 1.0,
-        "clean_sheets": 1.0
-      },
-      {
         "player": "Crell",
         "is_captain": false,
         "goals": 1.0,
-        "assists": null,
-        "clean_sheets": null
-      },
-      {
-        "player": "Will Mac",
-        "is_captain": false,
-        "goals": null,
         "assists": null,
         "clean_sheets": null
       },
@@ -1436,6 +1450,13 @@
     "team2_goals": 4,
     "team1_players": [
       {
+        "player": "Dave",
+        "is_captain": false,
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0
+      },
+      {
         "player": "Jez",
         "is_captain": false,
         "goals": 2.0,
@@ -1450,6 +1471,13 @@
         "clean_sheets": 1.0
       },
       {
+        "player": "Will Mac",
+        "is_captain": false,
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0
+      },
+      {
         "player": "Gman",
         "is_captain": true,
         "goals": 1.0,
@@ -1457,39 +1485,18 @@
         "clean_sheets": null
       },
       {
-        "player": "Dave",
-        "is_captain": false,
-        "goals": 2.0,
-        "assists": 1.0,
-        "clean_sheets": 1.0
-      },
-      {
         "player": "Bill",
         "is_captain": false,
         "goals": 1.0,
         "assists": null,
         "clean_sheets": null
-      },
-      {
-        "player": "Will Mac",
-        "is_captain": false,
-        "goals": 3.0,
-        "assists": 2.0,
-        "clean_sheets": 1.0
       }
     ],
     "team2_players": [
       {
-        "player": "Joe",
-        "is_captain": false,
-        "goals": 1.0,
-        "assists": 2.0,
-        "clean_sheets": 1.0
-      },
-      {
-        "player": "Char",
-        "is_captain": false,
-        "goals": 2.0,
+        "player": "Nik",
+        "is_captain": true,
+        "goals": null,
         "assists": null,
         "clean_sheets": null
       },
@@ -1501,15 +1508,22 @@
         "clean_sheets": null
       },
       {
-        "player": "Crell",
+        "player": "Char",
         "is_captain": false,
-        "goals": null,
+        "goals": 2.0,
         "assists": null,
         "clean_sheets": null
       },
       {
-        "player": "Nik",
-        "is_captain": true,
+        "player": "Joe",
+        "is_captain": false,
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0
+      },
+      {
+        "player": "Crell",
+        "is_captain": false,
         "goals": null,
         "assists": null,
         "clean_sheets": null
@@ -1637,7 +1651,7 @@
     "team2_goals": 4,
     "team1_players": [
       {
-        "player": "Jez",
+        "player": "Gman",
         "is_captain": false,
         "goals": 1.0,
         "assists": 1.0,
@@ -1658,7 +1672,7 @@
         "clean_sheets": null
       },
       {
-        "player": "Gman",
+        "player": "Jez",
         "is_captain": false,
         "goals": 1.0,
         "assists": 1.0,
@@ -1882,10 +1896,10 @@
     ],
     "team2_players": [
       {
-        "player": "Dave",
+        "player": "Davis",
         "is_captain": false,
-        "goals": 1.0,
-        "assists": null,
+        "goals": 2.0,
+        "assists": 2.0,
         "clean_sheets": null
       },
       {
@@ -1894,13 +1908,6 @@
         "goals": 2.0,
         "assists": 1.0,
         "clean_sheets": 1.0
-      },
-      {
-        "player": "Davis",
-        "is_captain": false,
-        "goals": 2.0,
-        "assists": 2.0,
-        "clean_sheets": null
       },
       {
         "player": "Kempy",
@@ -1913,6 +1920,13 @@
         "player": "Bill",
         "is_captain": true,
         "goals": null,
+        "assists": null,
+        "clean_sheets": null
+      },
+      {
+        "player": "Dave",
+        "is_captain": false,
+        "goals": 1.0,
         "assists": null,
         "clean_sheets": null
       },
@@ -2219,7 +2233,7 @@
   {
     "source": "effra",
     "gw": 24,
-    "venue": "Brixton ",
+    "venue": "Brixton",
     "team1_result": "W",
     "team1_goals": 7,
     "team2_result": "L",
@@ -3293,7 +3307,7 @@
         "clean_sheets": null
       },
       {
-        "player": "Jez ",
+        "player": "Jez",
         "is_captain": false,
         "goals": 1.0,
         "assists": null,

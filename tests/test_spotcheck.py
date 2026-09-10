@@ -79,6 +79,28 @@ def test_gw7_matches_source(wb, matches):
     assert team2_total == m["team2_goals"]
 
 
+def test_gw14_recovers_misplaced_names(wb, matches):
+    # Source data entry slip: "Bart" and "Mark" were typed into column A
+    # (normally only ever "Score" or the GW header) instead of column B,
+    # dropping them from Team1 entirely until the parser recovered them.
+    rows = raw_rows(wb, "GW14")
+    assert rows[4][0] == "Bart"
+    assert rows[4][1] is None
+    assert rows[5][0] == "Mark"
+    assert rows[5][1] is None
+
+    m = matches[14]
+    assert m["team1_goals"] == 9
+
+    bart = find_player(m["team1_players"], "Bart")
+    assert bart["goals"] == 2
+
+    find_player(m["team1_players"], "Mark")  # present with no stats
+
+    team1_total = sum(p["goals"] or 0 for p in m["team1_players"])
+    assert team1_total == m["team1_goals"] == 9
+
+
 def test_gw33_matches_source(wb, matches):
     rows = raw_rows(wb, "GW33")
     # Known source quirk: the tab is named GW33 but the leftover header

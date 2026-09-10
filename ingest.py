@@ -61,6 +61,12 @@ def normalize_cs(value):
     return value
 
 
+def clean_text(value):
+    # Manual data entry leaves stray leading/trailing whitespace (e.g. "Jez "
+    # vs "Jez"), which would otherwise fracture one player into two entries.
+    return value.strip() if isinstance(value, str) else value
+
+
 def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, list[dict]]:
     score_row = None
     for row in rows:
@@ -73,11 +79,11 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
     match = {
         "source": source,
         "gw": gw_number,
-        "team1_result": get(score_row, 1),
+        "team1_result": clean_text(get(score_row, 1)),
         "team1_goals": get(score_row, 3),
-        "team2_result": get(score_row, 6),
+        "team2_result": clean_text(get(score_row, 6)),
         "team2_goals": get(score_row, 8),
-        "venue": get(score_row, 11),
+        "venue": clean_text(get(score_row, 11)),
     }
 
     appearances = []
@@ -85,25 +91,31 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
         if not row or row[0] == "Score" or row is rows[0]:
             continue
         # Team 1: name=col1, captain=col2, goals=col3, assists=col4, cs=col5
-        if get(row, 1) is not None:
+        # Data-entry slip recovery: col0 should only ever hold "Score" or the
+        # GW header (both already skipped above); if col1 is blank but col0
+        # has a name, the player's name was mistyped one cell to the left.
+        team1_name = clean_text(get(row, 1))
+        if team1_name is None:
+            team1_name = clean_text(get(row, 0))
+        if team1_name is not None:
             appearances.append({
                 "source": source,
                 "gw": gw_number,
                 "team_side": 1,
-                "player": get(row, 1),
-                "is_captain": get(row, 2) == "Y",
+                "player": team1_name,
+                "is_captain": clean_text(get(row, 2)) == "Y",
                 "goals": get(row, 3),
                 "assists": get(row, 4),
                 "clean_sheets": normalize_cs(get(row, 5)),
             })
         # Team 2: name=col6, captain=col7, goals=col8, assists=col9, cs=col10
-        if get(row, 6) is not None:
+        if clean_text(get(row, 6)) is not None:
             appearances.append({
                 "source": source,
                 "gw": gw_number,
                 "team_side": 2,
-                "player": get(row, 6),
-                "is_captain": get(row, 7) == "Y",
+                "player": clean_text(get(row, 6)),
+                "is_captain": clean_text(get(row, 7)) == "Y",
                 "goals": get(row, 8),
                 "assists": get(row, 9),
                 "clean_sheets": normalize_cs(get(row, 10)),

@@ -27,6 +27,20 @@
       "goals": 2.0,
       "assists": 3.0,
       "clean_sheets": null
+    },
+    {
+      "player": "Bart",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Mark",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
     }
   ],
   "team2_players": [

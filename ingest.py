@@ -24,25 +24,36 @@ DB_PATH = ROOT / "data" / "league.duckdb"
 GW_TAB_RE = re.compile(r"^GW(\d+)$", re.IGNORECASE)
 
 
-def load_workbook_tabs(xlsx_path: Path) -> dict[str, list[tuple]]:
+def trim_trailing_none(row: tuple) -> list:
+    row = list(row)
+    while row and row[-1] is None:
+        row.pop()
+    return row
+
+
+def load_workbook_tabs(xlsx_path: Path) -> dict[str, list[list]]:
     wb = openpyxl.load_workbook(xlsx_path, data_only=True)
     tabs = {}
     for name in wb.sheetnames:
         ws = wb[name]
-        tabs[name] = [row for row in ws.iter_rows(values_only=True)]
+        tabs[name] = [trim_trailing_none(row) for row in ws.iter_rows(values_only=True)]
     return tabs
 
 
-def dump_bronze(source: str, tabs: dict[str, list[tuple]]) -> None:
+def dump_bronze(source: str, tabs: dict[str, list[list]]) -> None:
     out_dir = BRONZE / source
     out_dir.mkdir(parents=True, exist_ok=True)
     for tab_name, rows in tabs.items():
         safe_name = tab_name.replace("/", "_")
         with open(out_dir / f"{safe_name}.json", "w", encoding="utf-8") as f:
-            json.dump(rows, f, default=str, indent=None)
+            json.dump(rows, f, default=str, indent=2)
 
 
-def parse_gw_tab(gw_number: int, rows: list[tuple], source: str) -> tuple[dict, list[dict]]:
+def get(row: list, i: int, default=None):
+    return row[i] if i < len(row) else default
+
+
+def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, list[dict]]:
     score_row = None
     for row in rows:
         if row and row[0] == "Score":
@@ -54,11 +65,11 @@ def parse_gw_tab(gw_number: int, rows: list[tuple], source: str) -> tuple[dict, 
     match = {
         "source": source,
         "gw": gw_number,
-        "team1_result": score_row[1],
-        "team1_goals": score_row[3],
-        "team2_result": score_row[6],
-        "team2_goals": score_row[8],
-        "venue": score_row[11] if len(score_row) > 11 else None,
+        "team1_result": get(score_row, 1),
+        "team1_goals": get(score_row, 3),
+        "team2_result": get(score_row, 6),
+        "team2_goals": get(score_row, 8),
+        "venue": get(score_row, 11),
     }
 
     appearances = []
@@ -66,28 +77,28 @@ def parse_gw_tab(gw_number: int, rows: list[tuple], source: str) -> tuple[dict, 
         if not row or row[0] == "Score" or row is rows[0]:
             continue
         # Team 1: name=col1, captain=col2, goals=col3, assists=col4, cs=col5
-        if row[1] is not None:
+        if get(row, 1) is not None:
             appearances.append({
                 "source": source,
                 "gw": gw_number,
                 "team_side": 1,
-                "player": row[1],
-                "is_captain": row[2] == "Y",
-                "goals": row[3],
-                "assists": row[4],
-                "clean_sheets": row[5],
+                "player": get(row, 1),
+                "is_captain": get(row, 2) == "Y",
+                "goals": get(row, 3),
+                "assists": get(row, 4),
+                "clean_sheets": get(row, 5),
             })
         # Team 2: name=col6, captain=col7, goals=col8, assists=col9, cs=col10
-        if len(row) > 6 and row[6] is not None:
+        if get(row, 6) is not None:
             appearances.append({
                 "source": source,
                 "gw": gw_number,
                 "team_side": 2,
-                "player": row[6],
-                "is_captain": row[7] == "Y",
-                "goals": row[8],
-                "assists": row[9],
-                "clean_sheets": row[10] if len(row) > 10 else None,
+                "player": get(row, 6),
+                "is_captain": get(row, 7) == "Y",
+                "goals": get(row, 8),
+                "assists": get(row, 9),
+                "clean_sheets": get(row, 10),
             })
     return match, appearances
 

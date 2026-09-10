@@ -1,0 +1,83 @@
+{
+  "source": "effra",
+  "gw": 33,
+  "team1_result": "W",
+  "team1_goals": 9,
+  "team2_result": "L",
+  "team2_goals": 0,
+  "venue": "Brixton",
+  "team1_players": [
+    {
+      "player": "JPH",
+      "is_captain": true,
+      "goals": 2.0,
+      "assists": 2.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Jez",
+      "is_captain": false,
+      "goals": 5.0,
+      "assists": 2.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Will Mac",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": 2.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "Jan",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Nik",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": 1.0
+    }
+  ],
+  "team2_players": [
+    {
+      "player": "Ram",
+      "is_captain": true,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Joe",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Ben",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Char",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Joel",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
+}

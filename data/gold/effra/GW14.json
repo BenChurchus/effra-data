@@ -1,0 +1,69 @@
+{
+  "source": "effra",
+  "gw": 14,
+  "team1_result": "L",
+  "team1_goals": 9,
+  "team2_result": "W",
+  "team2_goals": 10,
+  "venue": "Brixton",
+  "team1_players": [
+    {
+      "player": "Jez",
+      "is_captain": true,
+      "goals": 4.0,
+      "assists": 4.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Bill",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": 3.0,
+      "clean_sheets": null
+    }
+  ],
+  "team2_players": [
+    {
+      "player": "Char",
+      "is_captain": true,
+      "goals": 2.0,
+      "assists": 4.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Will Mac",
+      "is_captain": false,
+      "goals": 4.0,
+      "assists": 3.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Harry",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": 2.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Dave",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Nik",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
+}

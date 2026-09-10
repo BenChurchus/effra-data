@@ -1,0 +1,90 @@
+{
+  "source": "effra",
+  "gw": 1,
+  "team1_result": "L",
+  "team1_goals": 9,
+  "team2_result": "W",
+  "team2_goals": 14,
+  "venue": "Mile End",
+  "team1_players": [
+    {
+      "player": "Char",
+      "is_captain": true,
+      "goals": 2.0,
+      "assists": 3.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "JPH",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 3.0,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "Harry",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Will Mac",
+      "is_captain": false,
+      "goals": 3.0,
+      "assists": 4.0,
+      "clean_sheets": null
+    }
+  ],
+  "team2_players": [
+    {
+      "player": "Ram",
+      "is_captain": true,
+      "goals": 4.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Joe",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Dave",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": 2.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Jez",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": 4.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "Dan",
+      "is_captain": false,
+      "goals": 5.0,
+      "assists": 2.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Kempy",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": null
+    }
+  ]
+}

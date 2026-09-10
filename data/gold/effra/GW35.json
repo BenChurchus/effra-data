@@ -1,0 +1,125 @@
+{
+  "source": "effra",
+  "gw": 35,
+  "team1_result": "W",
+  "team1_goals": 5,
+  "team2_result": "L",
+  "team2_goals": 2,
+  "venue": "Stockwell",
+  "team1_players": [
+    {
+      "player": "Will Mac",
+      "is_captain": true,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "Jez ",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "Char",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "JPH",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "Kempy",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Nik",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Dave",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "OG",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ],
+  "team2_players": [
+    {
+      "player": "Joe",
+      "is_captain": true,
+      "goals": 1.0,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "player": "Gman",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Jan",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Leo",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Ram",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Davis",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "player": "Bill",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "player": "OG",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
+}

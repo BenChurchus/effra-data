@@ -61,3 +61,25 @@ keep catching this class of issue as more of the ~150 sources are added.
 python -m venv .venv
 .venv/Scripts/pip install -r requirements.txt
 ```
+
+## Next steps
+
+- **Scale to the other ~149 sources.** Only "Effra" (this season) is wired in
+  so far. Need the list/location of the rest, then just run `ingest.py` with
+  each `(name, xlsx)` pair — the parser already handles the quirks found so
+  far, but expect new ones; extend `tests/` rather than hand-checking each
+  new source.
+- **`Analysis Tab` formulas.** Deliberately not parsed yet — it's broken in
+  the raw export (`#NAME?` errors) and the user is handing over the "heavy
+  lifting" formula logic separately to reimplement properly in DuckDB
+  instead of trusting the sheet's own calculations.
+- **Microsite polish.** Currently two independent dropdowns (player, GW) on
+  one static page. No cross-linking (e.g. click a name in a match to jump to
+  their player page), no season/source filter yet — fine while there's one
+  source, will matter once there are ~150.
+- **This machine has no `gh` CLI, no SSH key for GitHub, and no Node/npm** —
+  pushes work via Git Credential Manager (already configured, authenticates
+  silently), and there's no headless-browser tooling for visually testing
+  the microsite (verification here has relied on curl smoke tests + a
+  manual JS trace + the pytest suite). Worth knowing before assuming either
+  is available in a fresh session.

@@ -22,11 +22,53 @@ JOIN matches m ON a.source = m.source AND a.gw = m.gw
 ORDER BY a.player, a.source, a.gw
 """
 
+MATCHES_QUERY = """
+SELECT m.source, m.gw, m.venue, m.team1_result, m.team1_goals, m.team2_result, m.team2_goals,
+       a.team_side, a.player, a.is_captain, a.goals, a.assists, a.clean_sheets
+FROM matches m
+LEFT JOIN appearances a ON a.source = m.source AND a.gw = m.gw
+ORDER BY m.source, m.gw, a.team_side
+"""
+
+
+def build_matches(con) -> list[dict]:
+    rows = con.execute(MATCHES_QUERY).fetchall()
+    cols = [d[0] for d in con.description]
+
+    matches: dict[tuple, dict] = {}
+    for row in rows:
+        r = dict(zip(cols, row))
+        key = (r["source"], r["gw"])
+        m = matches.setdefault(key, {
+            "source": r["source"],
+            "gw": r["gw"],
+            "venue": r["venue"],
+            "team1_result": r["team1_result"],
+            "team1_goals": r["team1_goals"],
+            "team2_result": r["team2_result"],
+            "team2_goals": r["team2_goals"],
+            "team1_players": [],
+            "team2_players": [],
+        })
+        if r["player"] is None:
+            continue
+        entry = {
+            "player": r["player"],
+            "is_captain": r["is_captain"],
+            "goals": r["goals"],
+            "assists": r["assists"],
+            "clean_sheets": r["clean_sheets"],
+        }
+        m["team1_players" if r["team_side"] == 1 else "team2_players"].append(entry)
+
+    return sorted(matches.values(), key=lambda m: (m["source"], m["gw"]))
+
 
 def main():
     con = duckdb.connect(str(DB_PATH))
     rows = con.execute(QUERY).fetchall()
     cols = [d[0] for d in con.description]
+    matches = build_matches(con)
     con.close()
 
     players: dict[str, dict] = {}
@@ -76,8 +118,11 @@ def main():
     DOCS.mkdir(exist_ok=True)
     with open(DOCS / "players.json", "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2)
+    with open(DOCS / "matches.json", "w", encoding="utf-8") as f:
+        json.dump(matches, f, indent=2)
 
     print(f"Wrote {len(out)} players to {DOCS / 'players.json'}")
+    print(f"Wrote {len(matches)} matches to {DOCS / 'matches.json'}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,5155 @@
+[
+  {
+    "name": "Jez",
+    "appearances": 36,
+    "goals": 77,
+    "assists": 48,
+    "clean_sheets": 14,
+    "captaincies": 6,
+    "wins": 21,
+    "draws": 4,
+    "losses": 11,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 4.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 5.0,
+        "assists": 3.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 4.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton ",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 5.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 5.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 3.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Char",
+    "appearances": 37,
+    "goals": 63,
+    "assists": 27,
+    "clean_sheets": 10,
+    "captaincies": 6,
+    "wins": 13,
+    "draws": 4,
+    "losses": 20,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 4.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 4.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton ",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Will Mac",
+    "appearances": 35,
+    "goals": 62,
+    "assists": 46,
+    "clean_sheets": 9,
+    "captaincies": 6,
+    "wins": 13,
+    "draws": 3,
+    "losses": 19,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 5.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 0.0,
+        "clean_sheets": 0.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 4.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 3.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton ",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 5.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Joe",
+    "appearances": 19,
+    "goals": 36,
+    "assists": 28,
+    "clean_sheets": 8,
+    "captaincies": 3,
+    "wins": 8,
+    "draws": 3,
+    "losses": 8,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": 2.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Nairn",
+    "appearances": 17,
+    "goals": 36,
+    "assists": 18,
+    "clean_sheets": 6,
+    "captaincies": 3,
+    "wins": 4,
+    "draws": 2,
+    "losses": 11,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 4.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton ",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      }
+    ]
+  },
+  {
+    "name": "JPH",
+    "appearances": 28,
+    "goals": 33,
+    "assists": 18,
+    "clean_sheets": 7,
+    "captaincies": 3,
+    "wins": 10,
+    "draws": 5,
+    "losses": 13,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton ",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Kempy",
+    "appearances": 31,
+    "goals": 33,
+    "assists": 41,
+    "clean_sheets": 7,
+    "captaincies": 7,
+    "wins": 17,
+    "draws": 3,
+    "losses": 11,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton ",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 3.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      }
+    ]
+  },
+  {
+    "name": "Leo",
+    "appearances": 20,
+    "goals": 30,
+    "assists": 18,
+    "clean_sheets": 2,
+    "captaincies": 5,
+    "wins": 8,
+    "draws": 4,
+    "losses": 8,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 6.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Crell",
+    "appearances": 25,
+    "goals": 28,
+    "assists": 31,
+    "clean_sheets": 2,
+    "captaincies": 5,
+    "wins": 11,
+    "draws": 4,
+    "losses": 10,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton ",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      }
+    ]
+  },
+  {
+    "name": "Bill",
+    "appearances": 24,
+    "goals": 27,
+    "assists": 18,
+    "clean_sheets": 4,
+    "captaincies": 5,
+    "wins": 12,
+    "draws": 5,
+    "losses": 7,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 5.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Dan",
+    "appearances": 19,
+    "goals": 26,
+    "assists": 17,
+    "clean_sheets": 4,
+    "captaincies": 5,
+    "wins": 6,
+    "draws": 2,
+    "losses": 11,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 5.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Dave",
+    "appearances": 31,
+    "goals": 19,
+    "assists": 20,
+    "clean_sheets": 10,
+    "captaincies": 5,
+    "wins": 18,
+    "draws": 3,
+    "losses": 10,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton ",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Harry",
+    "appearances": 22,
+    "goals": 16,
+    "assists": 20,
+    "clean_sheets": 7,
+    "captaincies": 4,
+    "wins": 10,
+    "draws": 3,
+    "losses": 9,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 2.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "OG",
+    "appearances": 14,
+    "goals": 13,
+    "assists": 0,
+    "clean_sheets": 0,
+    "captaincies": 0,
+    "wins": 5,
+    "draws": 2,
+    "losses": 7,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Gman",
+    "appearances": 27,
+    "goals": 10,
+    "assists": 11,
+    "clean_sheets": 6,
+    "captaincies": 4,
+    "wins": 9,
+    "draws": 5,
+    "losses": 13,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 15,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton ",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Jan",
+    "appearances": 12,
+    "goals": 8,
+    "assists": 5,
+    "clean_sheets": 2,
+    "captaincies": 1,
+    "wins": 3,
+    "draws": 2,
+    "losses": 7,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 6,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Ram",
+    "appearances": 10,
+    "goals": 8,
+    "assists": 10,
+    "clean_sheets": 2,
+    "captaincies": 2,
+    "wins": 2,
+    "draws": 1,
+    "losses": 7,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 4.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Jacob",
+    "appearances": 4,
+    "goals": 7,
+    "assists": 3,
+    "clean_sheets": 1,
+    "captaincies": 1,
+    "wins": 3,
+    "draws": 0,
+    "losses": 1,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Davis",
+    "appearances": 7,
+    "goals": 6,
+    "assists": 5,
+    "clean_sheets": 2,
+    "captaincies": 1,
+    "wins": 4,
+    "draws": 1,
+    "losses": 2,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "LG",
+    "appearances": 6,
+    "goals": 6,
+    "assists": 1,
+    "clean_sheets": 1,
+    "captaincies": 2,
+    "wins": 4,
+    "draws": 1,
+    "losses": 1,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 3.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Jamal",
+    "appearances": 7,
+    "goals": 5,
+    "assists": 2,
+    "clean_sheets": 2,
+    "captaincies": 0,
+    "wins": 4,
+    "draws": 1,
+    "losses": 2,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Luke",
+    "appearances": 4,
+    "goals": 5,
+    "assists": 2,
+    "clean_sheets": 1,
+    "captaincies": 0,
+    "wins": 2,
+    "draws": 0,
+    "losses": 2,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Nik",
+    "appearances": 18,
+    "goals": 5,
+    "assists": 2,
+    "clean_sheets": 3,
+    "captaincies": 4,
+    "wins": 10,
+    "draws": 2,
+    "losses": 6,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2.0,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 14,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": true
+      }
+    ]
+  },
+  {
+    "name": "Ewan",
+    "appearances": 1,
+    "goals": 3,
+    "assists": 2,
+    "clean_sheets": 0,
+    "captaincies": 0,
+    "wins": 1,
+    "draws": 0,
+    "losses": 0,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3.0,
+        "assists": 2.0,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Ben",
+    "appearances": 7,
+    "goals": 2,
+    "assists": 9,
+    "clean_sheets": 1,
+    "captaincies": 0,
+    "wins": 2,
+    "draws": 0,
+    "losses": 5,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 1.0,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": 3.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Jez ",
+    "appearances": 1,
+    "goals": 1,
+    "assists": 0,
+    "clean_sheets": 1,
+    "captaincies": 0,
+    "wins": 1,
+    "draws": 0,
+    "losses": 0,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Joel",
+    "appearances": 2,
+    "goals": 1,
+    "assists": 0,
+    "clean_sheets": 0,
+    "captaincies": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 2,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton ",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Thorny",
+    "appearances": 6,
+    "goals": 1,
+    "assists": 0,
+    "clean_sheets": 5,
+    "captaincies": 0,
+    "wins": 3,
+    "draws": 0,
+    "losses": 3,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 10,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 17,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1.0,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 2.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton ",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 2.0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Akshay",
+    "appearances": 2,
+    "goals": 0,
+    "assists": 2,
+    "clean_sheets": 0,
+    "captaincies": 0,
+    "wins": 2,
+    "draws": 0,
+    "losses": 0,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton ",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 26,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": 1.0,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Jay",
+    "appearances": 2,
+    "goals": 0,
+    "assists": 0,
+    "clean_sheets": 1,
+    "captaincies": 0,
+    "wins": 1,
+    "draws": 0,
+    "losses": 1,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 7,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": 1.0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Jules",
+    "appearances": 1,
+    "goals": 0,
+    "assists": 0,
+    "clean_sheets": 0,
+    "captaincies": 0,
+    "wins": 0,
+    "draws": 0,
+    "losses": 1,
+    "games": [
+      {
+        "source": "effra",
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": null,
+        "assists": null,
+        "clean_sheets": null,
+        "is_captain": false
+      }
+    ]
+  }
+]

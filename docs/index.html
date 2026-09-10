@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Effra Stats</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fafafa; --fg: #1a1a1a; --muted: #6b6b6b;
+    --card: #ffffff; --border: #e2e2e2; --accent: #1d6f42;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121212; --fg: #eaeaea; --muted: #9a9a9a; --card: #1c1c1c; --border: #303030; --accent: #4caf7d; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  header { padding: 32px 20px 16px; max-width: 720px; margin: 0 auto; }
+  h1 { margin: 0 0 4px; font-size: 1.6rem; }
+  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
+  input#search {
+    width: 100%; padding: 12px 14px; font-size: 1rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--card); color: var(--fg);
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 0 20px 60px; }
+  .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 16px; margin-top: 10px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    cursor: pointer;
+  }
+  .row:hover { border-color: var(--accent); }
+  .name { font-weight: 600; }
+  .stats { color: var(--muted); font-size: 0.85rem; display: flex; gap: 14px; }
+  .stats b { color: var(--fg); }
+  .detail { display: none; margin-top: 8px; padding: 14px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
+  .detail.open { display: block; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 10px; }
+  th, td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; }
+  .result-W { color: var(--accent); font-weight: 600; }
+  .result-L { color: #c0392b; font-weight: 600; }
+  .result-D { color: var(--muted); font-weight: 600; }
+  .empty { color: var(--muted); padding: 20px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Effra Stats</h1>
+  <div class="sub">Search a player to see their record.</div>
+  <input id="search" type="text" placeholder="Player name..." autocomplete="off">
+</header>
+<main id="list"></main>
+
+<script>
+let players = [];
+let openName = null;
+
+fetch('players.json').then(r => r.json()).then(data => {
+  players = data;
+  render();
+});
+
+function render() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const list = document.getElementById('list');
+  const filtered = q ? players.filter(p => p.name.toLowerCase().includes(q)) : players;
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="empty">No players match.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(p => {
+    const games = p.appearances || 1;
+    const winPct = games ? Math.round((p.wins / games) * 100) : 0;
+    const isOpen = openName === p.name;
+    return `
+      <div class="row" data-name="${escapeAttr(p.name)}">
+        <div class="name">${escapeHtml(p.name)}</div>
+        <div class="stats">
+          <span><b>${p.appearances}</b> apps</span>
+          <span><b>${p.goals}</b> goals</span>
+          <span><b>${p.assists}</b> assists</span>
+          <span><b>${winPct}%</b> win</span>
+        </div>
+      </div>
+      <div class="detail ${isOpen ? 'open' : ''}">
+        ${isOpen ? renderDetail(p) : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+document.getElementById('list').addEventListener('click', (e) => {
+  const row = e.target.closest('.row');
+  if (row) toggle(row.dataset.name);
+});
+
+function renderDetail(p) {
+  const games = p.appearances || 1;
+  const gpg = (p.goals / games).toFixed(2);
+  const rows = p.games.slice().sort((a, b) => a.gw - b.gw).map(g => `
+    <tr>
+      <td>GW${g.gw}</td>
+      <td class="result-${g.result || ''}">${g.result || '-'}</td>
+      <td>${g.goals ?? '-'}</td>
+      <td>${g.assists ?? '-'}</td>
+      <td>${g.clean_sheets ?? '-'}</td>
+      <td>${g.is_captain ? 'C' : ''}</td>
+      <td>${escapeHtml(g.venue || '')}</td>
+    </tr>
+  `).join('');
+  return `
+    <div class="stats" style="margin-bottom:6px;">
+      <span>W <b>${p.wins}</b></span>
+      <span>D <b>${p.draws}</b></span>
+      <span>L <b>${p.losses}</b></span>
+      <span>Clean sheets <b>${p.clean_sheets}</b></span>
+      <span>Captaincies <b>${p.captaincies}</b></span>
+      <span>Goals/game <b>${gpg}</b></span>
+    </div>
+    <table>
+      <thead><tr><th>GW</th><th>Res</th><th>G</th><th>A</th><th>CS</th><th></th><th>Venue</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+function toggle(name) {
+  openName = openName === name ? null : name;
+  render();
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function escapeAttr(s) { return escapeHtml(s).replace(/`/g, '&#96;'); }
+
+document.getElementById('search').addEventListener('input', render);
+</script>
+</body>
+</html>

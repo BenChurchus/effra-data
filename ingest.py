@@ -53,6 +53,14 @@ def get(row: list, i: int, default=None):
     return row[i] if i < len(row) else default
 
 
+def normalize_cs(value):
+    # Source data inconsistency: some rows use "Y" (like the captain flag)
+    # instead of a count in the clean-sheets column.
+    if value == "Y":
+        return 1
+    return value
+
+
 def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, list[dict]]:
     score_row = None
     for row in rows:
@@ -86,7 +94,7 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
                 "is_captain": get(row, 2) == "Y",
                 "goals": get(row, 3),
                 "assists": get(row, 4),
-                "clean_sheets": get(row, 5),
+                "clean_sheets": normalize_cs(get(row, 5)),
             })
         # Team 2: name=col6, captain=col7, goals=col8, assists=col9, cs=col10
         if get(row, 6) is not None:
@@ -98,7 +106,7 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
                 "is_captain": get(row, 7) == "Y",
                 "goals": get(row, 8),
                 "assists": get(row, 9),
-                "clean_sheets": get(row, 10),
+                "clean_sheets": normalize_cs(get(row, 10)),
             })
     return match, appearances
 

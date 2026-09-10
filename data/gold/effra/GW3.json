@@ -12,7 +12,7 @@
       "is_captain": false,
       "goals": 5.0,
       "assists": 3.0,
-      "clean_sheets": "Y"
+      "clean_sheets": 1
     },
     {
       "player": "Char",
@@ -33,7 +33,7 @@
       "is_captain": false,
       "goals": 3.0,
       "assists": null,
-      "clean_sheets": "Y"
+      "clean_sheets": 1
     },
     {
       "player": "Nik",
@@ -77,7 +77,7 @@
       "is_captain": false,
       "goals": null,
       "assists": 1.0,
-      "clean_sheets": "Y"
+      "clean_sheets": 1
     },
     {
       "player": "JPH",

@@ -20,11 +20,14 @@
   }
   header { padding: 32px 20px 16px; max-width: 720px; margin: 0 auto; }
   h1 { margin: 0 0 4px; font-size: 1.6rem; }
-  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 20px; }
-  select#player-select {
+  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
+  select#year-select,
+  select#player-select,
+  select#gw-select {
     width: 100%; padding: 12px 14px; font-size: 1rem;
     border: 1px solid var(--border); border-radius: 8px;
     background: var(--card); color: var(--fg);
+    margin-bottom: 8px;
   }
   main { max-width: 720px; margin: 0 auto; padding: 0 20px 60px; }
   .card {
@@ -46,7 +49,11 @@
 <body>
 <header>
   <h1>Effra Stats</h1>
-  <div class="sub">Pick a player to see their record.</div>
+  <div class="sub">Pick a season, then a player or a gameweek.</div>
+  <select id="year-select" aria-label="Select a season">
+    <option value="all">All seasons</option>
+  </select>
+  <div class="sub" style="margin-top:20px;">Pick a player to see their record.</div>
   <select id="player-select">
     <option value="">Select a player...</option>
   </select>
@@ -63,40 +70,89 @@
 <script>
 let players = [];
 let matches = [];
+let selectedYear = 'all';
 
 fetch('players.json').then(r => r.json()).then(data => {
   players = data;
-  const select = document.getElementById('player-select');
-  const sorted = data.slice().sort((a, b) => a.name.localeCompare(b.name));
-  for (const p of sorted) {
-    const opt = document.createElement('option');
-    opt.value = p.name;
-    opt.textContent = p.name;
-    select.appendChild(opt);
-  }
+  rebuildYearOptions();
+  populatePlayerOptions();
+  updatePlayerDetail();
 });
 
 fetch('matches.json').then(r => r.json()).then(data => {
   matches = data;
-  const select = document.getElementById('gw-select');
-  const sorted = data.slice().sort((a, b) => a.gw - b.gw);
-  for (const m of sorted) {
-    const opt = document.createElement('option');
-    opt.value = m.gw;
-    opt.textContent = `GW${m.gw}`;
-    select.appendChild(opt);
+  populateGwOptions();
+  updateMatchDetail();
+});
+
+function rebuildYearOptions() {
+  const yearSet = new Set();
+  for (const p of players) {
+    for (const g of p.games || []) {
+      if (g.year != null) yearSet.add(String(g.year));
+    }
   }
+  const yearSelect = document.getElementById('year-select');
+  const years = Array.from(yearSet).sort((a, b) => Number(a) - Number(b));
+  const current = yearSelect.value || 'all';
+  yearSelect.innerHTML = '<option value="all">All seasons</option>' + years.map(y => `<option value="${y}">${y}</option>`).join('');
+  yearSelect.value = years.includes(current) ? current : 'all';
+  selectedYear = yearSelect.value;
+}
+
+function getVisiblePlayers() {
+  if (selectedYear === 'all') return players;
+  return players.filter(p => (p.games || []).some(g => String(g.year) === selectedYear));
+}
+
+function getVisibleMatches() {
+  if (selectedYear === 'all') return matches;
+  return matches.filter(m => String(m.year) === selectedYear);
+}
+
+function populatePlayerOptions() {
+  const select = document.getElementById('player-select');
+  const previous = select.value;
+  const visible = getVisiblePlayers().slice().sort((a, b) => a.name.localeCompare(b.name));
+  select.innerHTML = '<option value="">Select a player...</option>' + visible.map(p => `<option value="${escapeHtmlAttribute(p.name)}">${escapeHtml(p.name)}</option>`).join('');
+  select.value = visible.some(p => p.name === previous) ? previous : '';
+}
+
+function populateGwOptions() {
+  const select = document.getElementById('gw-select');
+  const previous = select.value;
+  const visible = getVisibleMatches().slice().sort((a, b) => a.gw - b.gw);
+  select.innerHTML = '<option value="">Select a gameweek...</option>' + visible.map(m => `<option value="${m.gw}">GW${m.gw}</option>`).join('');
+  select.value = visible.some(m => String(m.gw) === String(previous)) ? String(previous) : '';
+}
+
+document.getElementById('year-select').addEventListener('change', (e) => {
+  selectedYear = e.target.value;
+  populatePlayerOptions();
+  populateGwOptions();
+  updatePlayerDetail();
+  updateMatchDetail();
 });
 
-document.getElementById('player-select').addEventListener('change', (e) => {
-  const p = players.find(p => p.name === e.target.value);
+document.getElementById('player-select').addEventListener('change', () => {
+  updatePlayerDetail();
+});
+
+document.getElementById('gw-select').addEventListener('change', () => {
+  updateMatchDetail();
+});
+
+function updatePlayerDetail() {
+  const select = document.getElementById('player-select');
+  const p = players.find(p => p.name === select.value);
   document.getElementById('player-detail').innerHTML = p ? renderCard(p) : '';
-});
+}
 
-document.getElementById('gw-select').addEventListener('change', (e) => {
-  const m = matches.find(m => String(m.gw) === e.target.value);
+function updateMatchDetail() {
+  const select = document.getElementById('gw-select');
+  const m = matches.find(m => String(m.gw) === String(select.value) && (selectedYear === 'all' || String(m.year) === selectedYear));
   document.getElementById('gw-detail').innerHTML = m ? renderMatch(m) : '';
-});
+}
 
 function renderMatch(m) {
   const teamTable = (list) => `
@@ -115,7 +171,7 @@ function renderMatch(m) {
   `;
   return `
     <div class="card">
-      <div class="name">GW${m.gw} &mdash; ${escapeHtml(m.venue || '')}</div>
+      <div class="name">${m.year ? `${m.year} ` : ''}GW${m.gw} &mdash; ${escapeHtml(m.venue || '')}</div>
       <div class="stats">
         <span class="result-${m.team1_result || ''}">Team 1: ${m.team1_result || '-'} (${m.team1_goals ?? '-'})</span>
         <span class="result-${m.team2_result || ''}">Team 2: ${m.team2_result || '-'} (${m.team2_goals ?? '-'})</span>
@@ -129,10 +185,18 @@ function renderMatch(m) {
 }
 
 function renderCard(p) {
-  const games = p.appearances || 1;
-  const gpg = (p.goals / games).toFixed(2);
-  const winPct = games ? Math.round((p.wins / games) * 100) : 0;
-  const rows = p.games.slice().sort((a, b) => a.gw - b.gw).map(g => `
+  const games = selectedYear === 'all' ? (p.games || []) : (p.games || []).filter(g => String(g.year) === selectedYear);
+  const appearances = games.length || 0;
+  const goals = games.reduce((sum, g) => sum + (g.goals || 0), 0);
+  const assists = games.reduce((sum, g) => sum + (g.assists || 0), 0);
+  const cleanSheets = games.reduce((sum, g) => sum + (g.clean_sheets || 0), 0);
+  const wins = games.filter(g => g.result === 'W').length;
+  const draws = games.filter(g => g.result === 'D').length;
+  const losses = games.filter(g => g.result === 'L').length;
+  const gpg = appearances ? (goals / appearances).toFixed(2) : '0.00';
+  const winPct = appearances ? Math.round((wins / appearances) * 100) : 0;
+  const captaincies = games.filter(g => g.is_captain).length;
+  const rows = games.slice().sort((a, b) => a.gw - b.gw).map(g => `
     <tr>
       <td>GW${g.gw}</td>
       <td class="result-${g.result || ''}">${g.result || '-'}</td>
@@ -143,18 +207,19 @@ function renderCard(p) {
       <td>${escapeHtml(g.venue || '')}</td>
     </tr>
   `).join('');
+  const seasonLabel = selectedYear === 'all' ? 'all seasons' : `season ${selectedYear}`;
   return `
     <div class="card">
-      <div class="name">${escapeHtml(p.name)}</div>
+      <div class="name">${escapeHtml(p.name)} <span style="color: var(--muted); font-size: 0.8rem; font-weight: 400;">(${seasonLabel})</span></div>
       <div class="stats">
-        <span><b>${p.appearances}</b> apps</span>
-        <span><b>${p.goals}</b> goals</span>
-        <span><b>${p.assists}</b> assists</span>
+        <span><b>${appearances}</b> apps</span>
+        <span><b>${goals}</b> goals</span>
+        <span><b>${assists}</b> assists</span>
         <span><b>${gpg}</b> goals/game</span>
         <span><b>${winPct}%</b> win rate</span>
-        <span>W <b>${p.wins}</b> D <b>${p.draws}</b> L <b>${p.losses}</b></span>
-        <span><b>${p.clean_sheets}</b> clean sheets</span>
-        <span><b>${p.captaincies}</b> captaincies</span>
+        <span>W <b>${wins}</b> D <b>${draws}</b> L <b>${losses}</b></span>
+        <span><b>${cleanSheets}</b> clean sheets</span>
+        <span><b>${captaincies}</b> captaincies</span>
       </div>
       <table>
         <thead><tr><th>GW</th><th>Res</th><th>G</th><th>A</th><th>CS</th><th></th><th>Venue</th></tr></thead>
@@ -164,8 +229,14 @@ function renderCard(p) {
   `;
 }
 
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function escapeHtml(value) {
+  if (value == null) return '';
+  const text = String(value);
+  return text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function escapeHtmlAttribute(value) {
+  return escapeHtml(value);
 }
 </script>
 </body>

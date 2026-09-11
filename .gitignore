@@ -2,3 +2,13 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Raw workbook sources kept outside the repo
+*.xlsx
+*.xlsm
+*.xls
+
+# Optional local data archive used for source workbooks
+/raw/
+/data/raw/
+/data/archive/

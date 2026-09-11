@@ -12,7 +12,7 @@ import openpyxl
 import pytest
 
 ROOT = Path(__file__).parent.parent
-XLSX = ROOT / "effra_sample.xlsx"
+XLSX = ROOT / "raw" / "effra_sample.xlsx"
 MATCHES_JSON = ROOT / "docs" / "matches.json"
 
 

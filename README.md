@@ -7,6 +7,27 @@ JSON, instead of fragile in-sheet formulas.
 **Live site**: https://benchurchus.github.io/effra-data/ — pick a player or a
 gameweek from the dropdowns to see their record / that match.
 
+## Current state
+
+The repo is now set up to process the live multi-season data set used by the site:
+
+- 2024: source workbook kept outside the repo
+- 2025: source workbook kept outside the repo
+- 2026: current season workbook kept outside the repo
+
+The pipeline keeps the raw exports separate by year and rebuilds the static site
+from the canonicalized match records. Source workbooks are intentionally kept in
+an external local archive and ignored by Git so the repo stays lean while the
+versioned data remains in bronze + DuckDB + generated docs.
+
+Recommended local storage pattern:
+
+- `C:/Users/bened/effra-data/raw/` for current workbooks
+- or a dedicated external archive folder if you want to keep raw files off the
+  project drive entirely
+
+This keeps the repo clean without losing the original source material.
+
 ## Pipeline
 
 ```
@@ -15,9 +36,10 @@ python build_site.py   # regenerate docs/players.json + docs/matches.json
 ```
 
 `<year>` is optional; when provided the raw workbook is archived under
-`data/bronze/<year>/<source_name>/`, which keeps 2025 and 2026 tabs separate.
+`data/bronze/<year>/<source_name>/`, which keeps each season's tabs separate.
 
 - **bronze** (`data/bronze/<year>/<source>/<tab>.json`) — every tab, raw, untouched
+- **silver** (`data/silver/<source>/GW<N>.json`) — per-gameweek canonicalized rows after name cleanup and aliasing
 - **base** (`data/league.duckdb`) — `matches` + `appearances` tables. DuckDB
   turned out to be a great fit here: single file, no server, reads/queries
   the data instantly, and doubles as a portable artifact in the repo.
@@ -67,22 +89,15 @@ python -m venv .venv
 
 ## Next steps
 
-- **Scale to the other ~149 sources.** Only "Effra" (this season) is wired in
-  so far. Need the list/location of the rest, then just run `ingest.py` with
-  each `(name, xlsx)` pair — the parser already handles the quirks found so
-  far, but expect new ones; extend `tests/` rather than hand-checking each
-  new source.
+- **Scale to more seasons/sources.** The parser is now verified against 2024,
+  2025 and the current 2026 source set. Add more workbooks by reusing the same
+  pattern in `ingest.py` and keeping each season in its own raw bronze folder.
 - **`Analysis Tab` formulas.** Deliberately not parsed yet — it's broken in
   the raw export (`#NAME?` errors) and the user is handing over the "heavy
   lifting" formula logic separately to reimplement properly in DuckDB
   instead of trusting the sheet's own calculations.
-- **Microsite polish.** Currently two independent dropdowns (player, GW) on
-  one static page. No cross-linking (e.g. click a name in a match to jump to
-  their player page), no season/source filter yet — fine while there's one
-  source, will matter once there are ~150.
-- **This machine has no `gh` CLI, no SSH key for GitHub, and no Node/npm** —
-  pushes work via Git Credential Manager (already configured, authenticates
-  silently), and there's no headless-browser tooling for visually testing
-  the microsite (verification here has relied on curl smoke tests + a
-  manual JS trace + the pytest suite). Worth knowing before assuming either
-  is available in a fresh session.
+- **Microsite polish.** Currently a static page with player and gameweek
+  selectors. When the dataset grows, a season/source filter and better cross-
+  linking between players and matches will be the next improvements.
+- **Verification loop.** Project checks remain simple and reliable: run
+  `python build_site.py` and `pytest tests/` after any source or parser change.

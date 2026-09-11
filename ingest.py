@@ -18,8 +18,10 @@ import openpyxl
 
 ROOT = Path(__file__).parent
 BRONZE = ROOT / "data" / "bronze"
+SILVER = ROOT / "data" / "silver"
 GOLD = ROOT / "data" / "gold"
 DB_PATH = ROOT / "data" / "league.duckdb"
+YEAR_RE = re.compile(r"^\d{4}$")
 
 GW_TAB_RE = re.compile(r"^GW(\d+)$", re.IGNORECASE)
 
@@ -40,8 +42,13 @@ def load_workbook_tabs(xlsx_path: Path) -> dict[str, list[list]]:
     return tabs
 
 
-def dump_bronze(source: str, tabs: dict[str, list[list]]) -> None:
-    out_dir = BRONZE / source
+def bronze_dir(source: str, year: int | None = None) -> Path:
+    base = BRONZE / str(year) if year is not None else BRONZE
+    return base / source
+
+
+def dump_bronze(source: str, tabs: dict[str, list[list]], year: int | None = None) -> None:
+    out_dir = bronze_dir(source, year)
     out_dir.mkdir(parents=True, exist_ok=True)
     for tab_name, rows in tabs.items():
         safe_name = tab_name.replace("/", "_")
@@ -67,6 +74,36 @@ def clean_text(value):
     return value.strip() if isinstance(value, str) else value
 
 
+PLAYER_ALIASES = {
+    "davis": "Joe",
+    "joe": "Joe",
+    "bill": "Bill",
+    "will maidment": "Bill",
+    "will maidment bill": "Bill",
+    "willmaidment": "Bill",
+    "will-maidment": "Bill",
+}
+
+
+def canonicalize_player_name(value):
+    cleaned = clean_text(value)
+    if cleaned is None:
+        return None
+    key = cleaned.lower()
+    return PLAYER_ALIASES.get(key, cleaned)
+
+
+def write_silver(source: str, gw_number: int, appearances: list[dict]) -> None:
+    gw_dir = SILVER / source
+    gw_dir.mkdir(parents=True, exist_ok=True)
+    canonical_appearances = [{
+        **a,
+        "player": canonicalize_player_name(a["player"]),
+    } for a in appearances]
+    with open(gw_dir / f"GW{gw_number}.json", "w", encoding="utf-8") as f:
+        json.dump(canonical_appearances, f, indent=2)
+
+
 def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, list[dict]]:
     score_row = None
     for row in rows:
@@ -78,6 +115,7 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
 
     match = {
         "source": source,
+        "year": None,
         "gw": gw_number,
         "team1_result": clean_text(get(score_row, 1)),
         "team1_goals": get(score_row, 3),
@@ -94,12 +132,13 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
         # Data-entry slip recovery: col0 should only ever hold "Score" or the
         # GW header (both already skipped above); if col1 is blank but col0
         # has a name, the player's name was mistyped one cell to the left.
-        team1_name = clean_text(get(row, 1))
+        team1_name = canonicalize_player_name(get(row, 1))
         if team1_name is None:
-            team1_name = clean_text(get(row, 0))
+            team1_name = canonicalize_player_name(get(row, 0))
         if team1_name is not None:
             appearances.append({
                 "source": source,
+                "year": None,
                 "gw": gw_number,
                 "team_side": 1,
                 "player": team1_name,
@@ -109,12 +148,14 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
                 "clean_sheets": normalize_cs(get(row, 5)),
             })
         # Team 2: name=col6, captain=col7, goals=col8, assists=col9, cs=col10
-        if clean_text(get(row, 6)) is not None:
+        team2_name = canonicalize_player_name(get(row, 6))
+        if team2_name is not None:
             appearances.append({
                 "source": source,
+                "year": None,
                 "gw": gw_number,
                 "team_side": 2,
-                "player": clean_text(get(row, 6)),
+                "player": team2_name,
                 "is_captain": clean_text(get(row, 7)) == "Y",
                 "goals": get(row, 8),
                 "assists": get(row, 9),
@@ -123,9 +164,10 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
     return match, appearances
 
 
-def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearances: list) -> None:
+def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearances: list,
+                  year: int | None = None) -> None:
     tabs = load_workbook_tabs(xlsx_path)
-    dump_bronze(source, tabs)
+    dump_bronze(source, tabs, year)
 
     gw_tabs = []
     for tab_name in tabs:
@@ -136,11 +178,16 @@ def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearan
 
     for gw_number, tab_name in gw_tabs:
         match, appearances = parse_gw_tab(gw_number, tabs[tab_name], source)
+        match["year"] = year
+        for appearance in appearances:
+            appearance["year"] = year
         all_matches.append(match)
         all_appearances.extend(appearances)
 
         def player_view(a: dict) -> dict:
             return {k: v for k, v in a.items() if k not in ("source", "gw", "team_side")}
+
+        write_silver(source, gw_number, appearances)
 
         gw_dir = GOLD / source
         gw_dir.mkdir(parents=True, exist_ok=True)
@@ -169,16 +216,30 @@ def build_duckdb(all_matches: list[dict], all_appearances: list[dict]) -> None:
 
 def main():
     args = sys.argv[1:]
-    if not args or len(args) % 2 != 0:
+    if not args:
         print(__doc__)
         sys.exit(1)
 
     all_matches: list[dict] = []
     all_appearances: list[dict] = []
+    i = 0
 
-    for i in range(0, len(args), 2):
-        source, path = args[i], Path(args[i + 1])
-        process_source(source, path, all_matches, all_appearances)
+    while i < len(args):
+        if i + 2 < len(args) and YEAR_RE.match(args[i]):
+            year = int(args[i])
+            source = args[i + 1]
+            path = Path(args[i + 2])
+            i += 3
+        elif i + 1 < len(args):
+            year = None
+            source = args[i]
+            path = Path(args[i + 1])
+            i += 2
+        else:
+            print(__doc__)
+            sys.exit(1)
+
+        process_source(source, path, all_matches, all_appearances, year)
 
     build_duckdb(all_matches, all_appearances)
     print(f"\nTotal: {len(all_matches)} matches, {len(all_appearances)} appearances across "

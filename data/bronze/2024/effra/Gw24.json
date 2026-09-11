@@ -1,0 +1,61 @@
+[
+  [
+    "GW24",
+    "Team1",
+    "Goals",
+    "Team 2",
+    "Goals",
+    "Venue"
+  ],
+  [
+    null,
+    "Crell",
+    4.0,
+    "Joe",
+    3.0
+  ],
+  [
+    null,
+    "Jez",
+    3.0,
+    "Corin",
+    1.0
+  ],
+  [
+    null,
+    "Harry",
+    1.0,
+    "Will Mac",
+    3.0
+  ],
+  [
+    null,
+    "Gman",
+    null,
+    "Leo",
+    2.0
+  ],
+  [
+    null,
+    "LG",
+    null,
+    "Bill",
+    1.0
+  ],
+  [
+    null,
+    "Char"
+  ],
+  [],
+  [],
+  [],
+  [],
+  [
+    "Score",
+    "L",
+    8,
+    "W",
+    10,
+    "Mile End "
+  ]
+]

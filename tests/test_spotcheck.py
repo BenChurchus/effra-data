@@ -25,7 +25,7 @@ def wb():
 def matches():
     with open(MATCHES_JSON, encoding="utf-8") as f:
         data = json.load(f)
-    return {m["gw"]: m for m in data if m["source"] == "effra"}
+    return {m["gw"]: m for m in data if m["source"] == "effra" and m.get("year") == 2026}
 
 
 def raw_rows(wb, tab_name):

@@ -1,0 +1,178 @@
+[
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "Will Mac",
+    "is_captain": true,
+    "goals": null,
+    "assists": 1.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Joe",
+    "is_captain": true,
+    "goals": 1.0,
+    "assists": 1.0,
+    "clean_sheets": 1.0
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "Jez",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": 1.0
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Gman",
+    "is_captain": false,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "Char",
+    "is_captain": false,
+    "goals": null,
+    "assists": 1.0,
+    "clean_sheets": 1.0
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Jan",
+    "is_captain": false,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "JPH",
+    "is_captain": false,
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": 1.0
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Leo",
+    "is_captain": false,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "Kempy",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Ram",
+    "is_captain": false,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "Nik",
+    "is_captain": false,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Joe",
+    "is_captain": false,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "Dave",
+    "is_captain": false,
+    "goals": null,
+    "assists": 1.0,
+    "clean_sheets": 1.0
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "Bill",
+    "is_captain": false,
+    "goals": null,
+    "assists": 1.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 1,
+    "player": "OG",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2026,
+    "gw": 35,
+    "team_side": 2,
+    "player": "OG",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  }
+]

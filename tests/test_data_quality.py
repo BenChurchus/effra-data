@@ -6,12 +6,33 @@ more sources get added.
 import json
 from pathlib import Path
 
+from build_site import as_int
+from ingest import canonicalize_player_name
+
 ROOT = Path(__file__).parent.parent
 
 
 def load(name):
     with open(ROOT / "docs" / name, encoding="utf-8") as f:
         return json.load(f)
+
+
+def test_player_aliases_are_canonicalized():
+    assert canonicalize_player_name("Joe") == "Joe"
+    assert canonicalize_player_name("Davis") == "Joe"
+    assert canonicalize_player_name("  davis ") == "Joe"
+    assert canonicalize_player_name("Will Maidment") == "Bill"
+    assert canonicalize_player_name("  will maidment  ") == "Bill"
+    assert canonicalize_player_name("OG") == "OG"
+
+
+def test_numeric_fields_are_coerced_to_ints():
+    assert as_int("3") == 3
+    assert as_int("0") == 0
+    assert as_int("2.0") == 2
+    assert as_int(None) == 0
+    assert as_int("") == 0
+    assert as_int("Gman") == 0
 
 
 def test_no_whitespace_padded_player_names():

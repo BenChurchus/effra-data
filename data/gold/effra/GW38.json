@@ -1,5 +1,6 @@
 {
   "source": "effra",
+  "year": 2026,
   "gw": 38,
   "team1_result": "L",
   "team1_goals": 3,
@@ -8,6 +9,7 @@
   "venue": "Mile End",
   "team1_players": [
     {
+      "year": 2026,
       "player": "Char",
       "is_captain": true,
       "goals": null,
@@ -15,6 +17,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Jez",
       "is_captain": false,
       "goals": 1.0,
@@ -22,6 +25,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Gman",
       "is_captain": false,
       "goals": null,
@@ -29,6 +33,7 @@
       "clean_sheets": 1.0
     },
     {
+      "year": 2026,
       "player": "Harry",
       "is_captain": false,
       "goals": 1.0,
@@ -36,6 +41,7 @@
       "clean_sheets": 1.0
     },
     {
+      "year": 2026,
       "player": "Jan",
       "is_captain": false,
       "goals": null,
@@ -43,6 +49,7 @@
       "clean_sheets": 1.0
     },
     {
+      "year": 2026,
       "player": "Luke",
       "is_captain": false,
       "goals": null,
@@ -50,6 +57,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "OG",
       "is_captain": false,
       "goals": 1.0,
@@ -59,6 +67,7 @@
   ],
   "team2_players": [
     {
+      "year": 2026,
       "player": "Leo",
       "is_captain": false,
       "goals": 3.0,
@@ -66,6 +75,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Bill",
       "is_captain": false,
       "goals": null,
@@ -73,6 +83,7 @@
       "clean_sheets": 1.0
     },
     {
+      "year": 2026,
       "player": "Kempy",
       "is_captain": false,
       "goals": null,
@@ -80,6 +91,7 @@
       "clean_sheets": 1.0
     },
     {
+      "year": 2026,
       "player": "Jamal",
       "is_captain": false,
       "goals": 2.0,
@@ -87,6 +99,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "JPH",
       "is_captain": false,
       "goals": null,
@@ -94,6 +107,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Dave",
       "is_captain": false,
       "goals": null,

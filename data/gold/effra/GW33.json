@@ -1,5 +1,6 @@
 {
   "source": "effra",
+  "year": 2026,
   "gw": 33,
   "team1_result": "W",
   "team1_goals": 9,
@@ -8,6 +9,7 @@
   "venue": "Brixton",
   "team1_players": [
     {
+      "year": 2026,
       "player": "JPH",
       "is_captain": true,
       "goals": 2.0,
@@ -15,6 +17,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Jez",
       "is_captain": false,
       "goals": 5.0,
@@ -22,6 +25,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Will Mac",
       "is_captain": false,
       "goals": 2.0,
@@ -29,6 +33,7 @@
       "clean_sheets": 1.0
     },
     {
+      "year": 2026,
       "player": "Jan",
       "is_captain": false,
       "goals": null,
@@ -36,6 +41,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Nik",
       "is_captain": false,
       "goals": null,
@@ -45,6 +51,7 @@
   ],
   "team2_players": [
     {
+      "year": 2026,
       "player": "Ram",
       "is_captain": true,
       "goals": null,
@@ -52,6 +59,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Joe",
       "is_captain": false,
       "goals": null,
@@ -59,6 +67,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Ben",
       "is_captain": false,
       "goals": null,
@@ -66,6 +75,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Char",
       "is_captain": false,
       "goals": null,
@@ -73,6 +83,7 @@
       "clean_sheets": null
     },
     {
+      "year": 2026,
       "player": "Joel",
       "is_captain": false,
       "goals": null,

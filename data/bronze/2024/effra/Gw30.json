@@ -1,0 +1,63 @@
+[
+  [
+    "GW30",
+    "Team1",
+    "Goals",
+    "Team 2",
+    "Goals",
+    "Venue"
+  ],
+  [
+    null,
+    "Kempy",
+    null,
+    "Nairn",
+    4.0
+  ],
+  [
+    null,
+    "Joe",
+    2.0,
+    "Will Mac",
+    1.0
+  ],
+  [
+    null,
+    "Gman",
+    null,
+    "Bill",
+    1.0
+  ],
+  [
+    null,
+    "Dave",
+    1.0,
+    "Char",
+    1.0
+  ],
+  [
+    null,
+    "Harry",
+    null,
+    "LG"
+  ],
+  [
+    null,
+    "Leo",
+    3.0,
+    "Jamal",
+    1.0
+  ],
+  [],
+  [],
+  [],
+  [],
+  [
+    "Score",
+    "L",
+    6,
+    "W",
+    8,
+    "Mile End"
+  ]
+]

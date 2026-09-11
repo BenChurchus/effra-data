@@ -10,11 +10,14 @@ gameweek from the dropdowns to see their record / that match.
 ## Pipeline
 
 ```
-python ingest.py <source_name> <path.xlsx> [<source_name> <path.xlsx> ...]
+python ingest.py [<year>] <source_name> <path.xlsx> [ [<year>] <source_name> <path.xlsx> ... ]
 python build_site.py   # regenerate docs/players.json + docs/matches.json
 ```
 
-- **bronze** (`data/bronze/<source>/<tab>.json`) — every tab, raw, untouched
+`<year>` is optional; when provided the raw workbook is archived under
+`data/bronze/<year>/<source_name>/`, which keeps 2025 and 2026 tabs separate.
+
+- **bronze** (`data/bronze/<year>/<source>/<tab>.json`) — every tab, raw, untouched
 - **base** (`data/league.duckdb`) — `matches` + `appearances` tables. DuckDB
   turned out to be a great fit here: single file, no server, reads/queries
   the data instantly, and doubles as a portable artifact in the repo.

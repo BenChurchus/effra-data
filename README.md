@@ -39,11 +39,11 @@ python build_site.py   # regenerate docs/players.json + docs/matches.json
 `data/bronze/<year>/<source_name>/`, which keeps each season's tabs separate.
 
 - **bronze** (`data/bronze/<year>/<source>/<tab>.json`) — every tab, raw, untouched
-- **silver** (`data/silver/<source>/GW<N>.json`) — per-gameweek canonicalized rows after name cleanup and aliasing
+- **silver** (`data/silver/<year>/<source>/GW<N>.json`) — per-gameweek canonicalized rows after name cleanup and aliasing
 - **base** (`data/league.duckdb`) — `matches` + `appearances` tables. DuckDB
   turned out to be a great fit here: single file, no server, reads/queries
   the data instantly, and doubles as a portable artifact in the repo.
-- **gold** (`data/gold/<source>/GW<N>.json`) — one clean record per gameweek
+- **gold** (`data/gold/<year>/<source>/GW<N>.json`) — one clean record per gameweek
 - **site** (`docs/`) — static player/gameweek lookup, hosted via GitHub Pages
   from `main` / `/docs`
 

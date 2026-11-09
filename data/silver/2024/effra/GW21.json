@@ -1,0 +1,68 @@
+[
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 21,
+    "team_side": 1,
+    "player": "Joe",
+    "is_captain": false,
+    "goals": "Ben",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 21,
+    "team_side": 1,
+    "player": "LG",
+    "is_captain": false,
+    "goals": "Dave",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 21,
+    "team_side": 1,
+    "player": "Jay",
+    "is_captain": false,
+    "goals": "Harry",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 21,
+    "team_side": 1,
+    "player": "Bill",
+    "is_captain": false,
+    "goals": "Will Mac",
+    "assists": 2.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 21,
+    "team_side": 1,
+    "player": "Kempy",
+    "is_captain": false,
+    "goals": "Ram",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 21,
+    "team_side": 1,
+    "player": "Char",
+    "is_captain": false,
+    "goals": "Leo",
+    "assists": 2.0,
+    "clean_sheets": null
+  }
+]

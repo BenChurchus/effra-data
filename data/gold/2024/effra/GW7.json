@@ -1,0 +1,61 @@
+{
+  "source": "effra",
+  "year": 2024,
+  "gw": 7,
+  "team1_result": "W",
+  "team1_goals": "L",
+  "team2_result": null,
+  "team2_goals": null,
+  "venue": null,
+  "team1_players": [
+    {
+      "year": 2024,
+      "player": "Will Mac",
+      "is_captain": false,
+      "goals": "Char",
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Joe",
+      "is_captain": false,
+      "goals": "Crell",
+      "assists": 3.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Jez",
+      "is_captain": false,
+      "goals": "Gman",
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Ram",
+      "is_captain": false,
+      "goals": "LG",
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": "Bill",
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Jan",
+      "is_captain": false,
+      "goals": "Jan",
+      "assists": null,
+      "clean_sheets": null
+    }
+  ],
+  "team2_players": []
+}

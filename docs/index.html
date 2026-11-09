@@ -118,12 +118,20 @@ function populatePlayerOptions() {
   select.value = visible.some(p => p.name === previous) ? previous : '';
 }
 
+// GW numbers restart each season, so a match is identified by year + GW.
+function matchKey(m) {
+  return `${m.year ?? ''}-${m.gw}`;
+}
+
 function populateGwOptions() {
   const select = document.getElementById('gw-select');
   const previous = select.value;
-  const visible = getVisibleMatches().slice().sort((a, b) => a.gw - b.gw);
-  select.innerHTML = '<option value="">Select a gameweek...</option>' + visible.map(m => `<option value="${m.gw}">GW${m.gw}</option>`).join('');
-  select.value = visible.some(m => String(m.gw) === String(previous)) ? String(previous) : '';
+  const showYear = selectedYear === 'all';
+  const visible = getVisibleMatches().slice()
+    .sort((a, b) => (Number(a.year) || 0) - (Number(b.year) || 0) || a.gw - b.gw);
+  select.innerHTML = '<option value="">Select a gameweek...</option>' + visible.map(m =>
+    `<option value="${matchKey(m)}">${showYear && m.year ? `${m.year} ` : ''}GW${m.gw}</option>`).join('');
+  select.value = visible.some(m => matchKey(m) === previous) ? previous : '';
 }
 
 document.getElementById('year-select').addEventListener('change', (e) => {
@@ -150,7 +158,7 @@ function updatePlayerDetail() {
 
 function updateMatchDetail() {
   const select = document.getElementById('gw-select');
-  const m = matches.find(m => String(m.gw) === String(select.value) && (selectedYear === 'all' || String(m.year) === selectedYear));
+  const m = getVisibleMatches().find(m => matchKey(m) === select.value);
   document.getElementById('gw-detail').innerHTML = m ? renderMatch(m) : '';
 }
 

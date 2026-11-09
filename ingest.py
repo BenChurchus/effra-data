@@ -42,9 +42,14 @@ def load_workbook_tabs(xlsx_path: Path) -> dict[str, list[list]]:
     return tabs
 
 
-def bronze_dir(source: str, year: int | None = None) -> Path:
-    base = BRONZE / str(year) if year is not None else BRONZE
+def layer_dir(layer: Path, source: str, year: int | None = None) -> Path:
+    """<layer>/<year>/<source>, so seasons never overwrite each other's GW files."""
+    base = layer / str(year) if year is not None else layer
     return base / source
+
+
+def bronze_dir(source: str, year: int | None = None) -> Path:
+    return layer_dir(BRONZE, source, year)
 
 
 def dump_bronze(source: str, tabs: dict[str, list[list]], year: int | None = None) -> None:
@@ -93,8 +98,9 @@ def canonicalize_player_name(value):
     return PLAYER_ALIASES.get(key, cleaned)
 
 
-def write_silver(source: str, gw_number: int, appearances: list[dict]) -> None:
-    gw_dir = SILVER / source
+def write_silver(source: str, gw_number: int, appearances: list[dict],
+                 year: int | None = None) -> None:
+    gw_dir = layer_dir(SILVER, source, year)
     gw_dir.mkdir(parents=True, exist_ok=True)
     canonical_appearances = [{
         **a,
@@ -187,9 +193,9 @@ def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearan
         def player_view(a: dict) -> dict:
             return {k: v for k, v in a.items() if k not in ("source", "gw", "team_side")}
 
-        write_silver(source, gw_number, appearances)
+        write_silver(source, gw_number, appearances, year)
 
-        gw_dir = GOLD / source
+        gw_dir = layer_dir(GOLD, source, year)
         gw_dir.mkdir(parents=True, exist_ok=True)
         record = {
             **match,
@@ -199,8 +205,10 @@ def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearan
         with open(gw_dir / f"GW{gw_number}.json", "w", encoding="utf-8") as f:
             json.dump(record, f, indent=2)
 
-    source_appearances = sum(1 for a in all_appearances if a["source"] == source)
-    print(f"{source}: parsed {len(gw_tabs)} gameweeks, {source_appearances} appearances")
+    source_appearances = sum(1 for a in all_appearances
+                             if a["source"] == source and a["year"] == year)
+    label = f"{year} {source}" if year is not None else source
+    print(f"{label}: parsed {len(gw_tabs)} gameweeks, {source_appearances} appearances")
 
 
 def build_duckdb(all_matches: list[dict], all_appearances: list[dict]) -> None:

@@ -1,0 +1,68 @@
+[
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 41,
+    "team_side": 1,
+    "player": "Jez",
+    "is_captain": false,
+    "goals": "Nairn",
+    "assists": 5.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 41,
+    "team_side": 1,
+    "player": "Harry",
+    "is_captain": false,
+    "goals": "Crell",
+    "assists": 2.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 41,
+    "team_side": 1,
+    "player": "Sean",
+    "is_captain": false,
+    "goals": "Gman",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 41,
+    "team_side": 1,
+    "player": "Dave",
+    "is_captain": false,
+    "goals": "Corin",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 41,
+    "team_side": 1,
+    "player": "Dan",
+    "is_captain": false,
+    "goals": "Jamal",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 41,
+    "team_side": 1,
+    "player": "Will Mac",
+    "is_captain": false,
+    "goals": "Luke",
+    "assists": 1.0,
+    "clean_sheets": null
+  }
+]

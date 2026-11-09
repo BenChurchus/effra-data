@@ -1,0 +1,79 @@
+[
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Kempy",
+    "is_captain": false,
+    "goals": "Jez",
+    "assists": 3.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Leo",
+    "is_captain": false,
+    "goals": "Will White",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Joe",
+    "is_captain": false,
+    "goals": "Bill",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Jay",
+    "is_captain": false,
+    "goals": "Char",
+    "assists": 2.0,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Ram",
+    "is_captain": false,
+    "goals": "LG",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Dave",
+    "is_captain": false,
+    "goals": "Gman",
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 3,
+    "team_side": 1,
+    "player": "Will Mac",
+    "is_captain": false,
+    "goals": "Harry",
+    "assists": null,
+    "clean_sheets": null
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "source": "effra",
+  "year": 2025,
+  "gw": 42,
+  "team1_result": "W",
+  "team1_goals": "L",
+  "team2_result": null,
+  "team2_goals": null,
+  "venue": null,
+  "team1_players": [
+    {
+      "year": 2025,
+      "player": "Joe",
+      "is_captain": false,
+      "goals": "Will Mac",
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Jez",
+      "is_captain": false,
+      "goals": "Nairn",
+      "assists": 4.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Dan",
+      "is_captain": false,
+      "goals": "Kempy",
+      "assists": 3.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Char",
+      "is_captain": false,
+      "goals": "Gman",
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Joel",
+      "is_captain": false,
+      "goals": "Sean",
+      "assists": 1.0,
+      "clean_sheets": null
+    }
+  ],
+  "team2_players": []
+}

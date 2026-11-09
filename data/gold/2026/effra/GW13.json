@@ -7,6 +7,7 @@
   "team2_result": "W",
   "team2_goals": 9,
   "venue": "Mile End",
+  "tracked": "goals,assists,clean_sheets,captain",
   "team1_players": [
     {
       "year": 2026,

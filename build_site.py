@@ -42,7 +42,7 @@ ORDER BY a.player, a.source, a.gw
 """
 
 MATCHES_QUERY = """
-SELECT m.source, m.year, m.gw, m.venue, m.team1_result, m.team1_goals, m.team2_result, m.team2_goals,
+SELECT m.source, m.year, m.gw, m.venue, m.tracked, m.team1_result, m.team1_goals, m.team2_result, m.team2_goals,
        a.team_side, a.player, a.is_captain, a.goals, a.assists, a.clean_sheets
 FROM matches m
 LEFT JOIN appearances a ON a.source = m.source AND a.year = m.year AND a.gw = m.gw
@@ -63,6 +63,8 @@ def build_matches(con) -> list[dict]:
             "year": r["year"],
             "gw": r["gw"],
             "venue": r["venue"],
+            # which per-player stats this scorecard recorded (2024/25: goals only)
+            "tracked": [t for t in (r["tracked"] or "").split(",") if t],
             "team1_result": r["team1_result"],
             "team1_goals": as_int(r["team1_goals"]),
             "team2_result": r["team2_result"],
@@ -81,7 +83,7 @@ def build_matches(con) -> list[dict]:
         }
         m["team1_players" if r["team_side"] == 1 else "team2_players"].append(entry)
 
-    return sorted(matches.values(), key=lambda m: (m["source"], m["gw"]))
+    return sorted(matches.values(), key=lambda m: (m["source"], m["year"] or 0, m["gw"]))
 
 
 def main():

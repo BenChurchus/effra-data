@@ -3,16 +3,17 @@
   "year": 2025,
   "gw": 2,
   "team1_result": "D",
-  "team1_goals": "D",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
+  "team1_goals": 9,
+  "team2_result": "D",
+  "team2_goals": 9,
+  "venue": "Mile End",
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2025,
       "player": "Jez",
       "is_captain": false,
-      "goals": "Harry",
+      "goals": 5.0,
       "assists": null,
       "clean_sheets": null
     },
@@ -20,23 +21,23 @@
       "year": 2025,
       "player": "Will Mac",
       "is_captain": false,
-      "goals": "Joe",
-      "assists": 4.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Bill",
       "is_captain": false,
-      "goals": "Nairn",
-      "assists": 5.0,
+      "goals": null,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Leo",
       "is_captain": false,
-      "goals": "Gman",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     },
@@ -44,7 +45,7 @@
       "year": 2025,
       "player": "Crell",
       "is_captain": false,
-      "goals": "Jules",
+      "goals": 1.0,
       "assists": null,
       "clean_sheets": null
     },
@@ -52,7 +53,7 @@
       "year": 2025,
       "player": "Dave",
       "is_captain": false,
-      "goals": "Char",
+      "goals": 1.0,
       "assists": null,
       "clean_sheets": null
     },
@@ -60,10 +61,59 @@
       "year": 2025,
       "player": "OG",
       "is_captain": false,
-      "goals": null,
+      "goals": 1.0,
       "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2025,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Joe",
+      "is_captain": false,
+      "goals": 4.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 5.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Gman",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Jules",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Char",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

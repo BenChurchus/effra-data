@@ -40,6 +40,10 @@
   const winRate = (rec) => (decided(rec) ? rec.W / decided(rec) : null);
   const minus = (a, b) => ({ n: a.n - b.n, W: a.W - b.W, D: a.D - b.D, L: a.L - b.L });
 
+  // Which per-player stats a match's scorecard recorded. Older data without
+  // the field is assumed to have everything (the 2026 layout).
+  const ALL_TRACKED = ['goals', 'assists', 'clean_sheets', 'captain'];
+  const tracks = (m) => new Set(Array.isArray(m.tracked) ? m.tracked : ALL_TRACKED);
   const sideResult = (m, side) => (side === 1 ? m.team1_result : m.team2_result);
   const roster = (m, side) => ((side === 1 ? m.team1_players : m.team2_players) || []).filter(p => isPlayerName(p.player));
   const ownGoals = (m, side) => ((side === 1 ? m.team1_players : m.team2_players) || [])
@@ -86,6 +90,7 @@
           if (!map.has(p.player)) map.set(p.player, { name: p.player, games: [] });
           map.get(p.player).games.push({
             key: matchKey(m), year: m.year, gw: m.gw, venue: m.venue, side, result,
+            tracked: tracks(m),
             goals: p.goals || 0, assists: p.assists || 0, cs: p.clean_sheets || 0,
             captain: !!p.is_captain,
             teamGoals: side === 1 ? m.team1_goals : m.team2_goals,
@@ -99,20 +104,26 @@
     const out = [];
     for (const p of map.values()) {
       const rec = record(), cap = record();
-      let goals = 0, assists = 0, cs = 0;
+      let goals = 0, assists = 0, cs = 0, goalsInATracked = 0;
       for (const g of p.games) {
         addResult(rec, g.result);
         if (g.captain) addResult(cap, g.result);
         goals += g.goals; assists += g.assists; cs += g.cs;
+        if (g.tracked.has('assists')) goalsInATracked += g.goals;
       }
       const apps = p.games.length;
+      // Per-game rates only over games whose scorecard recorded that stat
+      // (2024/25 sheets recorded goals only), so old seasons don't count as zeros.
+      const appsA = p.games.filter(g => g.tracked.has('assists')).length;
+      const appsCS = p.games.filter(g => g.tracked.has('clean_sheets')).length;
+      const csGames = p.games.filter(g => g.cs > 0).length;
+      const per = (n, d) => (d ? n / d : null);
       out.push({
-        name: p.name, games: p.games, apps, rec, cap,
+        name: p.name, games: p.games, apps, appsA, appsCS, rec, cap,
         goals, assists, cs, ga: goals + assists,
-        gpg: goals / apps, apg: assists / apps, gapg: (goals + assists) / apps, cspg: cs / apps,
-        // share of appearances with a clean sheet credited (a game counts once)
-        csGames: p.games.filter(g => g.cs > 0).length,
-        csPct: p.games.filter(g => g.cs > 0).length / apps,
+        gpg: goals / apps, apg: per(assists, appsA), gapg: per(goalsInATracked + assists, appsA), cspg: per(cs, appsCS),
+        // share of tracked appearances with a clean sheet credited (a game counts once)
+        csGames, csPct: per(csGames, appsCS),
         winPct: winRate(rec), capWinPct: winRate(cap),
         streaks: {
           win: longestStreak(p.games, g => g.result === 'W'),
@@ -278,6 +289,9 @@
     addImpact(players, pairs);
     const t = { ...defaultThresholds(matches.length), ...opts };
     const q = players.filter(p => p.apps >= t.minApps);
+    // assist / clean-sheet awards need enough games where those were recorded
+    const qA = players.filter(p => p.appsA >= t.minApps);
+    const qCS = players.filter(p => p.appsCS >= t.minApps);
     const qCap = players.filter(p => decided(p.cap) >= t.minCaps);
     const qPair = pairs.filter(p => decided(p.with) >= t.minPairGames);
     const qVs = pairs.filter(p => p.vs.aW + p.vs.bW >= t.minVsGames);
@@ -303,10 +317,11 @@
       (p, v) => `${fmt.pg(v)} goals/game`, { detail: p => `${p.goals} goals in ${p.apps} apps` });
     const wooden = playerAward('wooden-boot', 'Wooden Boot', 'Fewest goals per game', p => p.gpg,
       (p, v) => `${fmt.pg(v)} goals/game`, { asc: true, detail: p => `${p.goals} goals in ${p.apps} apps` });
+    const aRule = `min ${t.minApps} apps with assists recorded`;
     const assist = playerAward('assist-king', 'Assist King', 'Most assists per game', p => p.apg,
-      (p, v) => `${fmt.pg(v)} assists/game`, { detail: p => `${p.assists} assists in ${p.apps} apps` });
+      (p, v) => `${fmt.pg(v)} assists/game`, { pool: qA, rule: aRule, detail: p => `${p.assists} assists in ${p.appsA} apps` });
     const ga = playerAward('g-plus-a', 'G+A', 'Most goals + assists per game (only awarded if different from both Golden Boot and Assist King)',
-      p => p.gapg, (p, v) => `${fmt.pg(v)} G+A/game`, { detail: p => `${p.goals}G + ${p.assists}A in ${p.apps} apps` });
+      p => p.gapg, (p, v) => `${fmt.pg(v)} G+A/game`, { pool: qA, rule: aRule, detail: p => `${Math.round(p.gapg * p.appsA)} G+A in ${p.appsA} apps` });
     const clash = ga.winners.filter(n => golden.winners.includes(n) || assist.winners.includes(n));
     if (clash.length) {
       ga.note = `Not awarded: ${clash.join(', ')} already won ${golden.winners.some(n => clash.includes(n)) ? 'Golden Boot' : 'Assist King'}.`;
@@ -316,9 +331,9 @@
 
     awards.push(
       playerAward('cleanest-sheets', 'Cleanest Sheets', 'Most clean sheets per game', p => p.cspg,
-        (p, v) => `${fmt.pg(v)} CS/game · ${fmt.pct(p.csPct)} of games`, { detail: p => `${p.cs} clean sheets in ${p.apps} apps` }),
+        (p, v) => `${fmt.pg(v)} CS/game · ${fmt.pct(p.csPct)} of games`, { pool: qCS, rule: `min ${t.minApps} apps with clean sheets recorded`, detail: p => `${p.cs} clean sheets in ${p.appsCS} apps` }),
       playerAward('soiled-sheets', 'Soiled Sheets', 'Fewest clean sheets per game', p => p.cspg,
-        (p, v) => `${fmt.pg(v)} CS/game · ${fmt.pct(p.csPct)} of games`, { asc: true, detail: p => `${p.cs} clean sheets in ${p.apps} apps` }),
+        (p, v) => `${fmt.pg(v)} CS/game · ${fmt.pct(p.csPct)} of games`, { asc: true, pool: qCS, rule: `min ${t.minApps} apps with clean sheets recorded`, detail: p => `${p.cs} clean sheets in ${p.appsCS} apps` }),
       playerAward('armband-anchor', 'Armband Anchor', 'Highest win rate as captain', p => p.capWinPct,
         (p, v) => `${fmt.pct(v)} as captain`, { pool: qCap, rule: `min ${t.minCaps} captaincies`, detail: p => `${fmt.wdl(p.cap)} (W-D-L)` }),
       playerAward('asleep-at-the-wheel', 'Asleep at the Wheel', 'Lowest win rate as captain', p => p.capWinPct,
@@ -429,6 +444,34 @@
     return { rows: () => rows, columns };
   }
 
+  // ------------------------------------------------------ data-quality notes
+  /**
+   * Plain-English caveats for the matches in scope: which stats the
+   * scorecards didn't record, and source-sheet slips we know about.
+   * Returns [] when there's nothing to say (e.g. 2026 alone).
+   */
+  const KNOWN_SLIPS = [
+    [2024, 7, 'Jan'], [2024, 9, 'Jay'], [2024, 40, 'Joe'],
+    [2025, 5, 'LG'], [2025, 24, 'Dave & Gman'], [2025, 32, 'Bill'],
+  ];
+  function dataNotes(matches) {
+    const notes = [];
+    const old = Array.from(new Set(matches.filter(m => !tracks(m).has('assists')).map(m => m.year))).sort();
+    if (old.length) {
+      notes.push(`${old.join(' & ')} scorecards recorded teams, goals and results only: no assists, clean sheets or captains. ` +
+        'Those stats and their awards cover 2026 onward, and per-game figures use only games where they were recorded.');
+      notes.push('Older sheets were typed by hand after the fact and some entries look off, so treat 2024/25 numbers as approximate.');
+    }
+    const years = new Set(matches.map(m => m.year));
+    const slips = KNOWN_SLIPS.filter(([y]) => years.has(y));
+    if (slips.length) {
+      notes.push(`Same name on both teams in the source sheet (kept as recorded): ${slips.map(([y, g, n]) => `${y} GW${g} (${n})`).join(', ')}.`);
+    }
+    const noVenue = matches.filter(m => !m.venue).length;
+    if (noVenue > matches.length * 0.2) notes.push(`${noVenue} of ${matches.length} matches have no venue recorded.`);
+    return notes;
+  }
+
   // ------------------------------------------------------------ theme toggle
   // Cycles auto -> light -> dark. "auto" follows the OS. Stored per browser.
   const THEMES = ['auto', 'light', 'dark'];
@@ -473,7 +516,7 @@
   }
 
   root.Effra = {
-    isPlayerName, byChrono, matchKey, gwLabel, seasons, filterBySeason,
+    isPlayerName, byChrono, matchKey, gwLabel, seasons, filterBySeason, tracks, dataNotes,
     record, addResult, decided, winRate, sideResult, roster, ownGoals,
     buildPlayers, buildPairs, orientPair, pairingsFor, binomialP, addImpact,
     defaultThresholds, computeAwards, fmt,

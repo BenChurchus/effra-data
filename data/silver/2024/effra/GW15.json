@@ -6,8 +6,19 @@
     "team_side": 1,
     "player": "Jez",
     "is_captain": false,
-    "goals": "Crell",
-    "assists": 1.0,
+    "goals": 3.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Crell",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -17,8 +28,19 @@
     "team_side": 1,
     "player": "Joe",
     "is_captain": false,
-    "goals": "Char",
-    "assists": 2.0,
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Char",
+    "is_captain": false,
+    "goals": 2.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -28,8 +50,19 @@
     "team_side": 1,
     "player": "Joel",
     "is_captain": false,
-    "goals": "Will Mac",
-    "assists": 4.0,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Will Mac",
+    "is_captain": false,
+    "goals": 4.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -39,8 +72,19 @@
     "team_side": 1,
     "player": "Jay",
     "is_captain": false,
-    "goals": "Corin",
-    "assists": 2.0,
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Corin",
+    "is_captain": false,
+    "goals": 2.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -50,7 +94,18 @@
     "team_side": 1,
     "player": "Nairn",
     "is_captain": false,
-    "goals": "Luke",
+    "goals": 4.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Luke",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -61,7 +116,18 @@
     "team_side": 1,
     "player": "LG",
     "is_captain": false,
-    "goals": "Leo",
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Leo",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -72,8 +138,19 @@
     "team_side": 1,
     "player": "Steve",
     "is_captain": false,
-    "goals": "Ben",
-    "assists": 1.0,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 15,
+    "team_side": 2,
+    "player": "Ben",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   }
 ]

@@ -3,59 +3,117 @@
   "year": 2025,
   "gw": 30,
   "team1_result": "W",
-  "team1_goals": "L",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
+  "team1_goals": 14,
+  "team2_result": "L",
+  "team2_goals": 10,
+  "venue": "Mile End",
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2025,
       "player": "Nairn",
       "is_captain": false,
-      "goals": "OG",
-      "assists": 3.0,
+      "goals": 8.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Char",
       "is_captain": false,
-      "goals": "Jez",
-      "assists": 2.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Corin",
       "is_captain": false,
-      "goals": "Crell",
-      "assists": 2.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Joe",
       "is_captain": false,
-      "goals": "Harry",
-      "assists": 2.0,
+      "goals": 2.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "OG",
       "is_captain": false,
-      "goals": "Jamal",
-      "assists": 1.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Leo",
       "is_captain": false,
-      "goals": "Ram",
+      "goals": 1.0,
       "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2025,
+      "player": "OG",
+      "is_captain": false,
+      "goals": 3.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Jez",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Crell",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Jamal",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Ram",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Luke",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

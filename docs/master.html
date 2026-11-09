@@ -38,6 +38,7 @@
 
 <main class="wrap wide">
   <div id="status" class="empty-state" role="status">Loading…</div>
+  <div id="data-notice"></div>
 
   <section aria-labelledby="h-awards">
     <div class="section-head">
@@ -114,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     for (const k of KEYS) { $(`t-${k}`).value = t[k]; $(`t-${k}`).placeholder = defaults[k]; }
     const res = E.computeAwards(matches, t);
     $('awards-sub').textContent = `${state.year === 'all' ? 'All seasons' : state.year} · ${matches.length} matches · ${res.players.length} players`;
+    const notes = E.dataNotes(matches);
+    $('data-notice').innerHTML = notes.length ? `<details class="notice" open><summary>Data quality caveats for this selection</summary><ul>${notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul></details>` : '';
     renderAwards(res);
     renderPlayers(res);
     renderPairs(res);
@@ -160,11 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'g', label: 'G', num: true, value: p => p.goals },
       { key: 'gpg', label: 'G/gm', num: true, value: p => p.gpg, html: p => fmt.pg(p.gpg), csv: p => p.gpg.toFixed(3) },
       { key: 'a', label: 'A', num: true, value: p => p.assists },
-      { key: 'apg', label: 'A/gm', num: true, value: p => p.apg, html: p => fmt.pg(p.apg), csv: p => p.apg.toFixed(3) },
+      { key: 'apg', label: 'A/gm', num: true, value: p => p.apg, html: p => fmt.pg(p.apg), csv: p => (p.apg == null ? '' : p.apg.toFixed(3)) },
       { key: 'ga', label: 'G+A', num: true, value: p => p.ga },
-      { key: 'gapg', label: 'G+A/gm', num: true, value: p => p.gapg, html: p => fmt.pg(p.gapg), csv: p => p.gapg.toFixed(3) },
+      { key: 'gapg', label: 'G+A/gm', num: true, value: p => p.gapg, html: p => fmt.pg(p.gapg), csv: p => (p.gapg == null ? '' : p.gapg.toFixed(3)) },
       { key: 'cs', label: 'CS', num: true, value: p => p.cs },
-      { key: 'cspg', label: 'CS/gm', num: true, value: p => p.cspg, html: p => fmt.pg(p.cspg), csv: p => p.cspg.toFixed(3) },
+      { key: 'cspg', label: 'CS/gm', num: true, value: p => p.cspg, html: p => fmt.pg(p.cspg), csv: p => (p.cspg == null ? '' : p.cspg.toFixed(3)) },
       { key: 'csp', label: 'CS %', num: true, title: 'Share of games with a clean sheet', value: p => p.csPct, html: p => fmt.pct(p.csPct), csv: p => pct(p.csPct) },
       { key: 'caps', label: 'Caps', num: true, value: p => p.cap.n },
       { key: 'capwdl', label: 'Capt record', value: p => p.cap.W - p.cap.L, html: p => (p.cap.n ? fmt.wdlHtml(p.cap) : '–'), csv: p => fmt.wdl(p.cap) },

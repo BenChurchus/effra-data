@@ -6,8 +6,19 @@
     "team_side": 1,
     "player": "Gman",
     "is_captain": false,
-    "goals": "Nairn",
-    "assists": 0.0,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 18,
+    "team_side": 2,
+    "player": "Nairn",
+    "is_captain": false,
+    "goals": 0.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -17,8 +28,19 @@
     "team_side": 1,
     "player": "Joe",
     "is_captain": false,
-    "goals": "Bill",
-    "assists": 1.0,
+    "goals": 3.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 18,
+    "team_side": 2,
+    "player": "Bill",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -28,8 +50,19 @@
     "team_side": 1,
     "player": "Crell",
     "is_captain": false,
-    "goals": "Sean",
-    "assists": 2.0,
+    "goals": 4.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 18,
+    "team_side": 2,
+    "player": "Sean",
+    "is_captain": false,
+    "goals": 2.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -39,8 +72,19 @@
     "team_side": 1,
     "player": "Dave",
     "is_captain": false,
-    "goals": "Dan",
-    "assists": 6.0,
+    "goals": 0.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 18,
+    "team_side": 2,
+    "player": "Dan",
+    "is_captain": false,
+    "goals": 6.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -50,8 +94,19 @@
     "team_side": 1,
     "player": "OG",
     "is_captain": false,
-    "goals": "Jay",
-    "assists": 0.0,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 18,
+    "team_side": 2,
+    "player": "Jay",
+    "is_captain": false,
+    "goals": 0.0,
+    "assists": null,
     "clean_sheets": null
   }
 ]

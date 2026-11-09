@@ -128,6 +128,45 @@ def write_silver(source: str, gw_number: int, appearances: list[dict],
         json.dump(canonical_appearances, f, indent=2)
 
 
+# 2026 layout, used if a tab's header row can't be read.
+DEFAULT_LAYOUT = {
+    1: {"name": 1, "captain": 2, "goals": 3, "assists": 4, "clean_sheets": 5},
+    2: {"name": 6, "captain": 7, "goals": 8, "assists": 9, "clean_sheets": 10},
+    "venue": 11,
+}
+HEADER_FIELDS = {"(c)": "captain", "c": "captain", "goals": "goals",
+                 "assists": "assists", "cs": "clean_sheets", "clean sheets": "clean_sheets"}
+TEAM_HEADER_RE = re.compile(r"^team\s*([12])$", re.IGNORECASE)
+
+
+def column_layout(header: list) -> dict:
+    """Map each team's columns from the tab's header row.
+
+    Seasons use different scorecards: 2024/25 are `Team1 | Goals | Team 2 |
+    Goals | Venue`; 2026 adds (C)/Assists/CS per team and puts the venue in
+    column L. Reading the header (instead of fixed positions) keeps every
+    season parsing correctly and tells us which stats were tracked.
+    """
+    labels = [str(v).strip().lower() if v is not None else "" for v in header]
+    starts = [(i, int(m.group(1))) for i, l in enumerate(labels) if (m := TEAM_HEADER_RE.match(l))]
+    if len(starts) != 2:
+        return DEFAULT_LAYOUT
+    layout: dict = {"venue": None}
+    for k, (i, team) in enumerate(starts):
+        stop = starts[k + 1][0] if k + 1 < len(starts) else len(labels)
+        cols = {"name": i}
+        for j in range(i + 1, stop):
+            field = HEADER_FIELDS.get(labels[j])
+            if field and field not in cols:
+                cols[field] = j
+            elif labels[j] == "venue":
+                layout["venue"] = j
+        layout[team] = cols
+    if layout["venue"] is None:
+        layout["venue"] = DEFAULT_LAYOUT["venue"]
+    return layout
+
+
 def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, list[dict]]:
     score_row = None
     for row in rows:
@@ -137,53 +176,58 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
     if score_row is None:
         raise ValueError(f"{source} GW{gw_number}: no Score row found")
 
+    layout = column_layout(rows[0] if rows else [])
+    t1, t2, vcol = layout[1], layout[2], layout["venue"]
+    tracked = [f for f in ("goals", "assists", "clean_sheets", "captain") if f in t1 and f in t2]
+
+    # Venue normally sits on the Score row; occasionally it's typed on its own
+    # row just above (team-name cells blank), so fall back to that.
+    venue = normalize_venue(get(score_row, vcol))
+    if venue is None:
+        for row in rows[1:]:
+            if row is score_row or not row:
+                continue
+            if get(row, t1["name"]) is None and get(row, t2["name"]) is None:
+                venue = normalize_venue(get(row, vcol)) or venue
+
     match = {
         "source": source,
         "year": None,
         "gw": gw_number,
-        "team1_result": clean_text(get(score_row, 1)),
-        "team1_goals": get(score_row, 3),
-        "team2_result": clean_text(get(score_row, 6)),
-        "team2_goals": get(score_row, 8),
-        "venue": normalize_venue(get(score_row, 11)),
+        "team1_result": clean_text(get(score_row, t1["name"])),
+        "team1_goals": get(score_row, t1.get("goals", -1)) if "goals" in t1 else None,
+        "team2_result": clean_text(get(score_row, t2["name"])),
+        "team2_goals": get(score_row, t2.get("goals", -1)) if "goals" in t2 else None,
+        "venue": venue,
+        "tracked": ",".join(tracked),
     }
+
+    def field(row, cols, name):
+        return get(row, cols[name]) if name in cols else None
 
     appearances = []
     for row in rows:
         if not row or row[0] == "Score" or row is rows[0]:
             continue
-        # Team 1: name=col1, captain=col2, goals=col3, assists=col4, cs=col5
-        # Data-entry slip recovery: col0 should only ever hold "Score" or the
-        # GW header (both already skipped above); if col1 is blank but col0
-        # has a name, the player's name was mistyped one cell to the left.
-        team1_name = canonicalize_player_name(get(row, 1))
-        if team1_name is None:
-            team1_name = canonicalize_player_name(get(row, 0))
-        if team1_name is not None:
+        for side, cols in ((1, t1), (2, t2)):
+            name = canonicalize_player_name(get(row, cols["name"]))
+            # Data-entry slip recovery (team 1 only): col0 should only ever
+            # hold "Score" or the GW header; if the name cell is blank but
+            # col0 has a name, it was typed one cell to the left.
+            if name is None and side == 1 and cols["name"] == 1:
+                name = canonicalize_player_name(get(row, 0))
+            if name is None:
+                continue
             appearances.append({
                 "source": source,
                 "year": None,
                 "gw": gw_number,
-                "team_side": 1,
-                "player": team1_name,
-                "is_captain": clean_text(get(row, 2)) == "Y",
-                "goals": get(row, 3),
-                "assists": get(row, 4),
-                "clean_sheets": normalize_cs(get(row, 5)),
-            })
-        # Team 2: name=col6, captain=col7, goals=col8, assists=col9, cs=col10
-        team2_name = canonicalize_player_name(get(row, 6))
-        if team2_name is not None:
-            appearances.append({
-                "source": source,
-                "year": None,
-                "gw": gw_number,
-                "team_side": 2,
-                "player": team2_name,
-                "is_captain": clean_text(get(row, 7)) == "Y",
-                "goals": get(row, 8),
-                "assists": get(row, 9),
-                "clean_sheets": normalize_cs(get(row, 10)),
+                "team_side": side,
+                "player": name,
+                "is_captain": clean_text(field(row, cols, "captain")) == "Y",
+                "goals": field(row, cols, "goals"),
+                "assists": field(row, cols, "assists"),
+                "clean_sheets": normalize_cs(field(row, cols, "clean_sheets")),
             })
     return match, appearances
 

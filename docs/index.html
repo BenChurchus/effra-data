@@ -46,6 +46,7 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
 
 <main id="main" class="wrap">
   <div id="status" class="empty-state" role="status">Loading stats…</div>
+  <div id="data-notice"></div>
 
   <section id="panel-table" role="tabpanel" aria-labelledby="tab-table" hidden>
     <article class="card">
@@ -304,8 +305,8 @@ document.addEventListener('DOMContentLoaded', () => {
           ${kpi('Appearances', p.apps, fmt.wdlHtml(p.rec))}
           ${kpi('Win rate', fmt.pct(p.winPct), `impact <span class="${(p.impact ?? 0) >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`, toneFor(p.winPct))}
           ${kpi('Goals', p.goals, `${fmt.pg(p.gpg)} per game`, 'gold')}
-          ${kpi('Assists', p.assists, `${fmt.pg(p.apg)} per game`)}
-          ${kpi('Clean sheets', p.cs, `${fmt.pct(p.csPct)} of games · ${fmt.pg(p.cspg)}/game`)}
+          ${kpi('Assists', p.appsA ? p.assists : '–', p.appsA ? `${fmt.pg(p.apg)} per game${p.appsA < p.apps ? ` <span class="muted">(${p.appsA} tracked)</span>` : ''}` : 'not recorded this season')}
+          ${kpi('Clean sheets', p.appsCS ? p.cs : '–', p.appsCS ? `${fmt.pct(p.csPct)} of games · ${fmt.pg(p.cspg)}/game` : 'not recorded this season')}
           ${kpi('Captain', p.cap.n ? fmt.pct(p.capWinPct) : '–', p.cap.n ? `${p.cap.n} caps · ${fmt.wdlHtml(p.cap)}` : 'never captained', p.cap.n ? toneFor(p.capWinPct) : '')}
         </div>
         <div class="chips">
@@ -465,14 +466,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const m = visibleMatches().find(x => E.matchKey(x) === state.gw);
     if (!m) { view.innerHTML = `<div class="card empty-state"><img src="assets/crest-grey.png" alt="">No matches in this season yet.</div>`; return; }
     const cell = (v) => (v ? v : '<span class="muted">·</span>');
+    const tr = E.tracks(m);
+    const hasA = tr.has('assists'), hasCS = tr.has('clean_sheets');
     const team = (side) => {
       const list = E.roster(m, side);
       const og = E.ownGoals(m, side);
       const result = E.sideResult(m, side);
       return `<div>
         <div class="team-head"><span>Team ${side}</span><span class="r-${result || ''}">${({ W: 'Won', D: 'Drew', L: 'Lost' })[result] || ''}</span></div>
-        <div class="table-wrap"><table class="data"><thead><tr><th>Player</th><th class="num">G</th><th class="num">A</th><th class="num">CS</th></tr></thead><tbody>${
-          list.map(p => `<tr class="clickable" data-player="${esc(p.player)}" tabindex="0"><td>${esc(p.player)}${p.is_captain ? '<span class="cap" title="Captain">C</span>' : ''}</td><td class="num">${cell(p.goals)}</td><td class="num">${cell(p.assists)}</td><td class="num">${cell(p.clean_sheets)}</td></tr>`).join('')
+        <div class="table-wrap"><table class="data"><thead><tr><th>Player</th><th class="num">G</th>${hasA ? '<th class="num">A</th>' : ''}${hasCS ? '<th class="num">CS</th>' : ''}</tr></thead><tbody>${
+          list.map(p => `<tr class="clickable" data-player="${esc(p.player)}" tabindex="0"><td>${esc(p.player)}${p.is_captain ? '<span class="cap" title="Captain">C</span>' : ''}</td><td class="num">${cell(p.goals)}</td>${hasA ? `<td class="num">${cell(p.assists)}</td>` : ''}${hasCS ? `<td class="num">${cell(p.clean_sheets)}</td>` : ''}</tr>`).join('')
         }</tbody></table></div>
         ${og ? `<div class="og">+ ${og} own goal${og === 1 ? '' : 's'}</div>` : ''}
       </div>`;
@@ -486,14 +489,25 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="team-name r-${m.team2_result || ''}">Team 2</span>
         </div>
         <div class="teams">${team(1)}${team(2)}</div>
-        <div class="sub" style="margin-top:10px">Tap a player to open their record.</div>
+        <div class="sub" style="margin-top:10px">Tap a player to open their record.${hasA ? '' : ' This scorecard recorded goals only.'}</div>
       </article>`;
   }
 
   // -------------------------------------------------------------- render
+  function renderNotice() {
+    const notes = E.dataNotes(scope().matches);
+    const was = $('data-notice').querySelector('details')?.open;
+    $('data-notice').innerHTML = notes.length ? `
+      <details class="notice" ${was ? 'open' : ''}>
+        <summary>Data quality: ${allSeasons() ? '2024 & 2025 figures are' : `${state.year} figures are`} approximate</summary>
+        <ul>${notes.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
+      </details>` : '';
+  }
+
   function render() {
     renderSeasons();
     renderTabs();
+    renderNotice();
     if (state.tab === 'players') { renderPlayerPickers(); renderPlayer(); }
     else if (state.tab === 'table') renderLeaderboard();
     else { renderMatchPicker(); renderMatch(); }

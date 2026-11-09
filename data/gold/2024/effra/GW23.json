@@ -3,51 +3,93 @@
   "year": 2024,
   "gw": 23,
   "team1_result": "L",
-  "team1_goals": "W",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
+  "team1_goals": 7,
+  "team2_result": "W",
+  "team2_goals": 10,
+  "venue": "Stockwell",
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2024,
       "player": "Jez",
       "is_captain": false,
-      "goals": "Nairn",
-      "assists": 5.0,
+      "goals": 2.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2024,
       "player": "Will Mac",
       "is_captain": false,
-      "goals": "Ram",
-      "assists": 2.0,
+      "goals": 3.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2024,
       "player": "Char",
       "is_captain": false,
-      "goals": "LG",
-      "assists": 1.0,
+      "goals": 2.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2024,
       "player": "Jamal",
       "is_captain": false,
-      "goals": "Gman",
-      "assists": 2.0,
+      "goals": null,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2024,
       "player": "Jay",
       "is_captain": false,
-      "goals": "Harry",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2024,
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 5.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Ram",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "LG",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Gman",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

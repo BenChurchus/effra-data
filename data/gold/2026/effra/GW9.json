@@ -7,6 +7,7 @@
   "team2_result": "D",
   "team2_goals": 6,
   "venue": "Brixton",
+  "tracked": "goals,assists,clean_sheets,captain",
   "team1_players": [
     {
       "year": 2026,

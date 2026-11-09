@@ -6,8 +6,19 @@
     "team_side": 1,
     "player": "Jez",
     "is_captain": false,
-    "goals": "Nairn",
-    "assists": 1.0,
+    "goals": 3.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 32,
+    "team_side": 2,
+    "player": "Nairn",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -17,8 +28,19 @@
     "team_side": 1,
     "player": "Crell",
     "is_captain": false,
-    "goals": "Will Mac",
-    "assists": 1.0,
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 32,
+    "team_side": 2,
+    "player": "Will Mac",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -28,8 +50,19 @@
     "team_side": 1,
     "player": "Joe",
     "is_captain": false,
-    "goals": "Leo",
-    "assists": 1.0,
+    "goals": 3.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 32,
+    "team_side": 2,
+    "player": "Leo",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -39,7 +72,18 @@
     "team_side": 1,
     "player": "Gman",
     "is_captain": false,
-    "goals": "Bill",
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 32,
+    "team_side": 2,
+    "player": "Bill",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -50,7 +94,18 @@
     "team_side": 1,
     "player": "Bill",
     "is_captain": false,
-    "goals": "Harry",
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 32,
+    "team_side": 2,
+    "player": "Harry",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -61,7 +116,18 @@
     "team_side": 1,
     "player": "Sinan",
     "is_captain": false,
-    "goals": "Kempy",
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 32,
+    "team_side": 2,
+    "player": "Kempy",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   }

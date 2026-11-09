@@ -339,4 +339,16 @@ details.explainer dd { margin: 0; }
 .controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: end; }
 .controls .field { width: 130px; }
 .controls .field.grow { flex: 1; min-width: 180px; width: auto; }
+/* data-quality disclaimer: gold = "heads up", with an icon + words, never colour alone */
+.notice {
+  margin-top: 14px; padding: 10px 14px; border-radius: 12px; font-size: 0.84rem; line-height: 1.5;
+  background: var(--gold-wash); border: 1px solid color-mix(in srgb, var(--gold-bright) 45%, transparent); color: var(--ink-2);
+}
+.notice summary { cursor: pointer; font-weight: 650; color: var(--ink); list-style: none; display: flex; gap: 8px; align-items: baseline; }
+.notice summary::-webkit-details-marker { display: none; }
+.notice summary::before { content: "⚠"; color: var(--gold); }
+.notice summary::after { content: "Details"; margin-left: auto; font-weight: 600; font-size: 0.78rem; color: var(--brand); }
+.notice[open] summary::after { content: "Hide"; }
+.notice ul { margin: 8px 0 2px; padding-left: 18px; }
+.notice li { margin: 3px 0; }
 footer.site { color: var(--muted); font-size: 0.78rem; text-align: center; padding: 24px 16px 40px; }

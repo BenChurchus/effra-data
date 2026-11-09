@@ -3,16 +3,17 @@
   "year": 2025,
   "gw": 17,
   "team1_result": "D",
-  "team1_goals": "D",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
+  "team1_goals": 3,
+  "team2_result": "D",
+  "team2_goals": 3,
+  "venue": "Stockwell",
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2025,
       "player": "Joe",
       "is_captain": false,
-      "goals": "Harry",
+      "goals": 2.0,
       "assists": null,
       "clean_sheets": null
     },
@@ -20,15 +21,15 @@
       "year": 2025,
       "player": "Bill",
       "is_captain": false,
-      "goals": "Dan",
-      "assists": 1.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Jamal",
       "is_captain": false,
-      "goals": "Crell",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     },
@@ -36,10 +37,51 @@
       "year": 2025,
       "player": "Gman",
       "is_captain": false,
-      "goals": "Leo",
-      "assists": 1.0,
+      "goals": null,
+      "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2025,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Dan",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Crell",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Leo",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "OG",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

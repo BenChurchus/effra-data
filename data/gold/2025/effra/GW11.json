@@ -3,40 +3,41 @@
   "year": 2025,
   "gw": 11,
   "team1_result": "W",
-  "team1_goals": "L",
-  "team2_result": null,
-  "team2_goals": null,
+  "team1_goals": 10,
+  "team2_result": "L",
+  "team2_goals": 4,
   "venue": null,
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2025,
       "player": "Joe",
       "is_captain": false,
-      "goals": "Nairn",
-      "assists": 1.0,
+      "goals": 8.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Will Mac",
       "is_captain": false,
-      "goals": "Bill",
-      "assists": 1.0,
+      "goals": null,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Kempy",
       "is_captain": false,
-      "goals": "Char",
-      "assists": 2.0,
+      "goals": 2.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Dave",
       "is_captain": false,
-      "goals": "LG",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     },
@@ -44,10 +45,51 @@
       "year": 2025,
       "player": "Gman",
       "is_captain": false,
-      "goals": "Leo",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2025,
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Bill",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Char",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "LG",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Leo",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

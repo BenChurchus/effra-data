@@ -73,8 +73,17 @@ def test_match_goals_sum_matches_scoreline():
     assert not mismatches, f"per-player goals don't sum to scoreline: {mismatches}"
 
 
-# (year, gw, (names...)) for accepted duplicates; empty means none allowed.
-KNOWN_DUPLICATES: set[tuple] = set()
+# (year, gw, (names...)) for accepted duplicates. These are slips in the
+# 2024/25 source sheets: the same name typed on both teams. Can't be resolved
+# from the data, so they're kept as recorded and flagged on the site.
+KNOWN_DUPLICATES: set[tuple] = {
+    (2024, 7, ("Jan",)),
+    (2024, 9, ("Jay",)),
+    (2024, 40, ("Joe",)),
+    (2025, 5, ("LG",)),
+    (2025, 24, ("Dave", "Gman")),
+    (2025, 32, ("Bill",)),
+}
 
 
 def test_no_player_listed_twice_in_a_match():
@@ -100,3 +109,19 @@ def test_venues_are_normalized():
     venues = {m["venue"] for m in load("matches.json") if m["venue"]}
     assert venues == {v.title() for v in venues}, venues
     assert "Venue" not in venues
+
+
+def test_goals_only_layout_parses_both_teams():
+    # 2024/25 scorecards are `Team1 | Goals | Team 2 | Goals | Venue`. A
+    # fixed-column parser once dropped Team 2 and read its goals as assists.
+    m = next(x for x in load("matches.json") if x["year"] == 2024 and x["gw"] == 10)
+    assert (m["team1_result"], m["team1_goals"], m["team2_result"], m["team2_goals"]) == ("W", 8, "L", 6)
+    assert m["tracked"] == ["goals"]
+    t2 = {p["player"]: p["goals"] for p in m["team2_players"]}
+    assert t2 == {"Joe": None, "LG": None, "Char": 2, "Leo": 2, "Will Mac": 2}
+    assert all(p["assists"] is None for p in m["team1_players"] + m["team2_players"])
+
+
+def test_every_match_has_a_result():
+    missing = [(m["year"], m["gw"]) for m in load("matches.json") if not m["team1_result"] or not m["team2_result"]]
+    assert not missing, missing

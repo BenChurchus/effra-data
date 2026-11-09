@@ -3,16 +3,17 @@
   "year": 2024,
   "gw": 9,
   "team1_result": "W",
-  "team1_goals": "L",
-  "team2_result": null,
-  "team2_goals": null,
+  "team1_goals": 5,
+  "team2_result": "L",
+  "team2_goals": 2,
   "venue": null,
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2024,
       "player": "Bill",
       "is_captain": false,
-      "goals": "Leo",
+      "goals": 2.0,
       "assists": null,
       "clean_sheets": null
     },
@@ -20,7 +21,7 @@
       "year": 2024,
       "player": "Kempy",
       "is_captain": false,
-      "goals": "Joe",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     },
@@ -28,15 +29,15 @@
       "year": 2024,
       "player": "Ram",
       "is_captain": false,
-      "goals": "Dave",
-      "assists": 1.0,
+      "goals": 2.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2024,
       "player": "Will Mac",
       "is_captain": false,
-      "goals": "LG",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     },
@@ -44,18 +45,67 @@
       "year": 2024,
       "player": "Char",
       "is_captain": false,
-      "goals": "Jamal",
-      "assists": 1.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2024,
       "player": "Jay",
       "is_captain": false,
-      "goals": "Jay",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2024,
+      "player": "Leo",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Joe",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Dave",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "LG",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Jamal",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2024,
+      "player": "Jay",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

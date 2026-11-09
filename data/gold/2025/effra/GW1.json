@@ -3,48 +3,49 @@
   "year": 2025,
   "gw": 1,
   "team1_result": "W",
-  "team1_goals": "L",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
+  "team1_goals": 7,
+  "team2_result": "L",
+  "team2_goals": 6,
+  "venue": "Stockwell",
+  "tracked": "goals",
   "team1_players": [
     {
       "year": 2025,
       "player": "Jez",
       "is_captain": false,
-      "goals": "Nairn",
-      "assists": 1.0,
+      "goals": null,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Joe",
       "is_captain": false,
-      "goals": "Harry",
-      "assists": 1.0,
+      "goals": 3.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Bill",
       "is_captain": false,
-      "goals": "Char",
-      "assists": 2.0,
+      "goals": 1.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Luke",
       "is_captain": false,
-      "goals": "Dave",
-      "assists": 2.0,
+      "goals": 3.0,
+      "assists": null,
       "clean_sheets": null
     },
     {
       "year": 2025,
       "player": "Gman",
       "is_captain": false,
-      "goals": "Will Mac",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     },
@@ -52,10 +53,59 @@
       "year": 2025,
       "player": "Karun",
       "is_captain": false,
-      "goals": "Kempy",
+      "goals": null,
       "assists": null,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2025,
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Char",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Dave",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Will Mac",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2025,
+      "player": "Kempy",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

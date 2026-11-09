@@ -6,7 +6,18 @@
     "team_side": 1,
     "player": "Jez",
     "is_captain": false,
-    "goals": "Harry",
+    "goals": 5.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 2,
+    "team_side": 2,
+    "player": "Harry",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -17,8 +28,19 @@
     "team_side": 1,
     "player": "Will Mac",
     "is_captain": false,
-    "goals": "Joe",
-    "assists": 4.0,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 2,
+    "team_side": 2,
+    "player": "Joe",
+    "is_captain": false,
+    "goals": 4.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -28,8 +50,19 @@
     "team_side": 1,
     "player": "Bill",
     "is_captain": false,
-    "goals": "Nairn",
-    "assists": 5.0,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 2,
+    "team_side": 2,
+    "player": "Nairn",
+    "is_captain": false,
+    "goals": 5.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -39,7 +72,18 @@
     "team_side": 1,
     "player": "Leo",
     "is_captain": false,
-    "goals": "Gman",
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 2,
+    "team_side": 2,
+    "player": "Gman",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -50,7 +94,18 @@
     "team_side": 1,
     "player": "Crell",
     "is_captain": false,
-    "goals": "Jules",
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 2,
+    "team_side": 2,
+    "player": "Jules",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -61,7 +116,18 @@
     "team_side": 1,
     "player": "Dave",
     "is_captain": false,
-    "goals": "Char",
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 2,
+    "team_side": 2,
+    "player": "Char",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -72,7 +138,7 @@
     "team_side": 1,
     "player": "OG",
     "is_captain": false,
-    "goals": null,
+    "goals": 1.0,
     "assists": null,
     "clean_sheets": null
   }

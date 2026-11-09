@@ -6,8 +6,19 @@
     "team_side": 1,
     "player": "Jez",
     "is_captain": false,
-    "goals": "Bill",
-    "assists": 1.0,
+    "goals": 5.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Bill",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -17,8 +28,19 @@
     "team_side": 1,
     "player": "Kempy",
     "is_captain": false,
-    "goals": "Nairn",
-    "assists": 2.0,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Nairn",
+    "is_captain": false,
+    "goals": 2.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -28,8 +50,19 @@
     "team_side": 1,
     "player": "Char",
     "is_captain": false,
-    "goals": "Connor",
-    "assists": 1.0,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Connor",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -39,8 +72,19 @@
     "team_side": 1,
     "player": "Crell",
     "is_captain": false,
-    "goals": "Dave",
-    "assists": 1.0,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Dave",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -50,7 +94,18 @@
     "team_side": 1,
     "player": "Joe",
     "is_captain": false,
-    "goals": "Leo",
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Leo",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -61,7 +116,18 @@
     "team_side": 1,
     "player": "Jamal",
     "is_captain": false,
-    "goals": "Will Mac",
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Will Mac",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -72,7 +138,18 @@
     "team_side": 1,
     "player": "LG",
     "is_captain": false,
-    "goals": "Karun",
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2025,
+    "gw": 3,
+    "team_side": 2,
+    "player": "Karun",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -83,7 +160,7 @@
     "team_side": 1,
     "player": "OG",
     "is_captain": false,
-    "goals": null,
+    "goals": 1.0,
     "assists": null,
     "clean_sheets": null
   }

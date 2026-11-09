@@ -6,7 +6,18 @@
     "team_side": 1,
     "player": "Jez",
     "is_captain": false,
-    "goals": "Char",
+    "goals": 6.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 49,
+    "team_side": 2,
+    "player": "Char",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -17,8 +28,19 @@
     "team_side": 1,
     "player": "Crell",
     "is_captain": false,
-    "goals": "Will Mac",
-    "assists": 1.0,
+    "goals": 1.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 49,
+    "team_side": 2,
+    "player": "Will Mac",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -28,8 +50,19 @@
     "team_side": 1,
     "player": "Leo",
     "is_captain": false,
-    "goals": "Jay",
-    "assists": 1.0,
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 49,
+    "team_side": 2,
+    "player": "Jay",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -39,7 +72,18 @@
     "team_side": 1,
     "player": "Gman",
     "is_captain": false,
-    "goals": "Dave",
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 49,
+    "team_side": 2,
+    "player": "Dave",
+    "is_captain": false,
+    "goals": null,
     "assists": null,
     "clean_sheets": null
   },
@@ -50,8 +94,19 @@
     "team_side": 1,
     "player": "LG",
     "is_captain": false,
-    "goals": "Nairn",
-    "assists": 3.0,
+    "goals": 2.0,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 49,
+    "team_side": 2,
+    "player": "Nairn",
+    "is_captain": false,
+    "goals": 3.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -61,8 +116,19 @@
     "team_side": 1,
     "player": "Joel",
     "is_captain": false,
-    "goals": "Joe",
-    "assists": 1.0,
+    "goals": null,
+    "assists": null,
+    "clean_sheets": null
+  },
+  {
+    "source": "effra",
+    "year": 2024,
+    "gw": 49,
+    "team_side": 2,
+    "player": "Joe",
+    "is_captain": false,
+    "goals": 1.0,
+    "assists": null,
     "clean_sheets": null
   },
   {
@@ -72,7 +138,7 @@
     "team_side": 1,
     "player": "OG",
     "is_captain": false,
-    "goals": null,
+    "goals": 1.0,
     "assists": null,
     "clean_sheets": null
   }

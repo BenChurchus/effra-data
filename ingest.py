@@ -79,11 +79,15 @@ def clean_text(value):
     return value.strip() if isinstance(value, str) else value
 
 
-# Only alias names that are provably the same person. "Davis" used to map to
-# "Joe", but in 2026 both appear in the same match (GW20/29/30/35/37), so
-# they're distinct players -- see test_no_player_listed_twice_in_a_match.
+# "Davis" is Joe (confirmed by the league organiser, Nov 2026). Note the 2026
+# sheet lists both names in the same match a few times, so after merging Joe
+# appears twice there -- see KNOWN_DUPLICATES in tests/test_data_quality.py.
 PLAYER_ALIASES = {
+    "davis": "Joe",
     "joe": "Joe",
+    "george": "Gman",
+    "g man": "Gman",
+    "g-man": "Gman",
     "bill": "Bill",
     "will maidment": "Bill",
     "will maidment bill": "Bill",

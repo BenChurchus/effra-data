@@ -1,0 +1,77 @@
+# Build, test and deploy the site. Nothing is published unless the tests pass.
+#
+#  - push to main          -> test the committed data, then deploy
+#  - schedule (Wed & Fri)  -> pull the live Google Sheet, rebuild, test,
+#                             commit any new data, then deploy
+#  - manual "Run workflow" -> same as schedule (Actions tab > Site > Run workflow)
+#
+# Requires: Settings > Pages > Build and deployment > Source = "GitHub Actions".
+name: Site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Games are Tuesday and Thursday evenings; refresh the morning after
+    # (07:00 UTC = 7am GMT / 8am BST).
+    - cron: "0 7 * * 3,5"
+  workflow_dispatch:
+
+permissions:
+  contents: write   # commit refreshed data
+  pages: write      # deploy
+  id-token: write   # deploy
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Pull the live season from Google Sheets and rebuild
+        if: github.event_name != 'push'
+        run: python refresh.py
+
+      - name: Run tests (blocks the deploy on failure)
+        run: pytest tests/ -q
+
+      - name: Commit refreshed data
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "effra-refresh[bot]"
+          git config user.email "effra-refresh[bot]@users.noreply.github.com"
+          git add data docs
+          if git diff --cached --quiet; then
+            echo "No new data."
+          else
+            git commit -m "Auto-refresh data from Google Sheet"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

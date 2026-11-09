@@ -44,18 +44,48 @@ python build_site.py   # regenerate docs/players.json + docs/matches.json
   turned out to be a great fit here: single file, no server, reads/queries
   the data instantly, and doubles as a portable artifact in the repo.
 - **gold** (`data/gold/<year>/<source>/GW<N>.json`) — one clean record per gameweek
-- **site** (`docs/`) — static site, hosted via GitHub Pages from `main` / `/docs`:
-  - `index.html` — Leaderboard / Players / Matches tabs, season filter, radar +
-    cumulative charts, pairings, "pair with" head-to-head, theme toggle,
-    shareable deep links (`#tab=players&y=2026&p=Jez&with=Ram`)
-  - `master.html` — **unlisted** master sheet: all 16 awards (with runners-up and
-    adjustable thresholds), a wide per-player sheet and a per-pair sheet, CSV
-    export. `noindex` and not linked anywhere, but *not private* — anyone with
-    the URL or access to this public repo can open it.
-  - `effra.js` — the one stats engine both pages use (all awards/streaks/pairs
-    are computed in the browser from `matches.json`); `charts.js` — SVG charts;
-    `effra.css` — crest-blue/pint-gold theme with a navy dark mode
+- **site** (`docs/`) — static site on GitHub Pages, built and deployed by
+  `.github/workflows/site.yml` (tests must pass before anything is published):
+  - `index.html` — Leaderboard (Players / Pairings / Nemesis / Venues) /
+    Players / Matches tabs, season filter, radar + cumulative charts, venue
+    split, "pair with" head-to-head, **Season Wrapped** story reveal per
+    player, theme toggle, deep links (`#tab=players&y=2026&p=Jez&with=Ram`,
+    add `&w=1` to open Wrapped)
+  - `master.html` — the **gaffer's room** (awards + master sheet), published
+    **encrypted** (see below). Its source is `site-src/master.html`.
+  - `effra.js` — the one stats engine every page uses (awards/streaks/pairs/
+    venues are computed in the browser from `matches.json`); `charts.js` — SVG
+    charts; `wrapped.js` — Season Wrapped; `effra.css` — crest-blue/pint-gold
+    theme with a navy dark mode
   - `assets/` — crest PNGs and icons generated from `branding/` originals
+  - Asset links carry `?v=<content hash>` (stamped by `build_site.py`) so a
+    cached old script can never run against a new page.
+
+## Automatic refresh
+
+`site.yml` runs `refresh.py` every **Wednesday and Friday at 07:00 UTC** (the
+morning after Tuesday/Thursday games) and on demand (Actions → Site → Run
+workflow). It downloads the current season's Google Sheet as .xlsx (the sheet
+must stay shared *Anyone with the link: Viewer*), rebuilds finished seasons
+from their bronze archive in the repo, runs the tests, commits new data and
+deploys. A bad download (error page, no GW tabs) or a failing test stops it
+before anything is published. Locally: `python refresh.py`.
+
+New season: add its sheet id to `CURRENT` in `refresh.py` and move the old
+year into `ARCHIVED`.
+
+## Gaffer's room (password)
+
+`build_site.py` encrypts `site-src/master.html` into `docs/master.html`
+(AES-256-GCM, key from the password via PBKDF2-SHA256, 310k rounds); the
+browser decrypts it with WebCrypto. The password lives only in a local,
+git-ignored `.gaffer-password` file (or `EFFRA_GAFFER_PASSWORD`). To change
+it, edit that file and run `python build_site.py`. The scheduled refresh has no
+password and leaves the encrypted page alone — so after changing shared code
+(`effra.js`, `effra.css`, `site-src/master.html`) rebuild locally; a test fails
+if the encrypted page is stale. Caveat: this hides the awards *page*; the
+match data and stats engine are public, so a determined person could still
+recompute standings.
 
 Each source file is expected to have tabs `GW1`...`GWN` (match scorecards) plus
 a `Template` tab and derived summary tabs (`Analysis Tab`, `Captaincy`, `Apps`,

@@ -132,9 +132,43 @@ def test_pages_load_versioned_assets():
     # the file on disk, or a cached old script can break a new page.
     import re
     from build_site import ASSETS, DOCS, asset_version
-    for page in ("index.html", "master.html"):
-        html = (DOCS / page).read_text(encoding="utf-8")
+    import gaffer_gate
+    for path in (DOCS / "index.html", gaffer_gate.SOURCE):
+        page = path.name
+        html = path.read_text(encoding="utf-8")
         for name in ASSETS:
             refs = re.findall(rf'"{re.escape(name)}(\?v=[0-9a-f]+)?"', html)
             for ref in refs:
                 assert ref == f"?v={asset_version(name)}", f"{page} loads stale/unversioned {name}{ref}"
+
+
+def test_gaffer_room_is_encrypted():
+    # The published page must not contain the master sheet in readable form.
+    import gaffer_gate
+    html = gaffer_gate.OUTPUT.read_text(encoding="utf-8")
+    for leak in ("computeAwards", "Master sheet", "players-table", "Data Darling"):
+        assert leak not in html, f"docs/master.html leaks {leak!r}"
+    payload = gaffer_gate.read_payload(html)
+    assert payload["iter"] >= 300_000
+
+
+def test_gaffer_room_unlocks_with_password():
+    import pytest
+    import gaffer_gate
+    password = gaffer_gate.read_password()
+    if not password:
+        pytest.skip("no gaffer password on this machine")
+    payload = gaffer_gate.read_payload(gaffer_gate.OUTPUT.read_text(encoding="utf-8"))
+    assert gaffer_gate.decrypt(payload, password) == gaffer_gate.SOURCE.read_text(encoding="utf-8")
+    with pytest.raises(Exception):
+        gaffer_gate.decrypt(payload, password + "x")
+
+
+def test_gaffer_room_encryption_is_current():
+    # The GitHub refresh can't re-encrypt (no password), so if shared code
+    # changes, the encrypted page must have been rebuilt locally first.
+    import re
+    import gaffer_gate
+    published = re.search(gaffer_gate.ASSET_META_RE, gaffer_gate.OUTPUT.read_text(encoding="utf-8")).group(1)
+    expected = gaffer_gate.asset_refs(gaffer_gate.SOURCE.read_text(encoding="utf-8"))
+    assert published == expected, "docs/master.html is encrypted from an older master sheet: run build_site.py with the gaffer password"

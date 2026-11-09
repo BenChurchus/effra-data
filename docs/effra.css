@@ -357,3 +357,65 @@ details.explainer dd { margin: 0; }
 .notice ul { margin: 8px 0 2px; padding-left: 18px; }
 .notice li { margin: 3px 0; }
 footer.site { color: var(--muted); font-size: 0.78rem; text-align: center; padding: 24px 16px 40px; }
+
+/* ------------------------------------------------------------- wrapped */
+.w-overlay {
+  position: fixed; inset: 0; z-index: 100; background: rgba(5, 12, 24, 0.82);
+  display: grid; place-items: center; padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  backdrop-filter: blur(6px);
+}
+.w-frame {
+  position: relative; width: min(440px, 100%); height: min(780px, 100%); border-radius: 22px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); background: #0f2747; color: #fff;
+}
+.w-stage { position: absolute; inset: 0; }
+.w-slide {
+  position: absolute; inset: 0; padding: 72px 28px 40px; display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  opacity: 0; transform: translateX(24px) scale(0.98); transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: none;
+}
+.w-slide.active { opacity: 1; transform: none; pointer-events: auto; }
+.w-brand { background: radial-gradient(120% 80% at 80% 0%, #4f8ad6 0%, #2c64a8 45%, #163a6b 100%); }
+.w-navy { background: radial-gradient(120% 80% at 10% 0%, #1c4479 0%, #0f2747 55%, #081627 100%); }
+.w-gold { background: radial-gradient(120% 90% at 20% 0%, #f4d774 0%, #e0b93a 45%, #b88a12 100%); color: #10223d; }
+.w-win { background: radial-gradient(120% 90% at 80% 0%, #3ba86a 0%, #1f7a4a 50%, #0f3f2a 100%); }
+.w-loss { background: radial-gradient(120% 90% at 80% 0%, #d75b4f 0%, #a8332a 50%, #5a1712 100%); }
+.w-summary { background: linear-gradient(160deg, #163a6b 0%, #0f2747 60%, #081627 100%); }
+.w-summary::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: #e0b93a; }
+.w-crest { width: 96px; height: 96px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px rgba(255,255,255,0.8); }
+.w-kicker { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.85; }
+.w-big { font-size: clamp(2.6rem, 13vw, 4.2rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.w-unit { font-size: 0.38em; font-weight: 700; letter-spacing: 0; opacity: 0.9; }
+.w-sub { font-size: 1.1rem; line-height: 1.45; }
+.w-extra { font-size: 0.98rem; line-height: 1.5; opacity: 0.92; }
+.w-note { font-size: 0.82rem; opacity: 0.8; }
+.w-slide .wdl > span { background: rgba(255, 255, 255, 0.18); color: inherit; }
+.w-gold .wdl > span { background: rgba(16, 34, 61, 0.12); }
+.w-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+.w-grid > div { background: rgba(255, 255, 255, 0.10); border-radius: 12px; padding: 10px 12px; }
+.w-k { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.75; font-weight: 700; }
+.w-v { font-size: 1.35rem; font-weight: 800; overflow-wrap: anywhere; }
+.w-actions { display: flex; gap: 10px; margin-top: 10px; position: relative; z-index: 3; }
+.w-btn { font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 18px; background: #e0b93a; color: #10223d; cursor: pointer; }
+.w-btn.ghost { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.w-bar { position: absolute; top: 14px; left: 14px; right: 56px; display: flex; gap: 4px; z-index: 3; }
+.w-bar > span { flex: 1; height: 3px; border-radius: 2px; background: rgba(255, 255, 255, 0.3); }
+.w-bar > span.done { background: #fff; }
+.w-gold ~ .w-bar > span.done { background: #10223d; }
+.w-close {
+  position: absolute; top: 6px; right: 8px; z-index: 4; width: 40px; height: 40px; border-radius: 50%;
+  border: 0; background: rgba(0, 0, 0, 0.25); color: #fff; font-size: 1rem; cursor: pointer;
+}
+.w-nav { position: absolute; top: 40px; bottom: 0; z-index: 2; background: transparent; border: 0; cursor: pointer; }
+.w-nav.prev { left: 0; width: 32%; }
+.w-nav.next { right: 0; width: 68%; }
+.w-nav:focus-visible { outline: 3px solid #e0b93a; outline-offset: -6px; }
+.w-hint { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-size: 0.72rem; opacity: 0.6; letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none; }
+.wrapped-btn {
+  display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer; font: inherit; font-weight: 700; font-size: 0.85rem;
+  padding: 8px 14px; border-radius: 999px; color: #10223d;
+  background: linear-gradient(90deg, #e0b93a, #f4d774); box-shadow: 0 2px 10px rgba(224, 185, 58, 0.35);
+}
+.wrapped-btn:hover { filter: brightness(1.05); }
+@media (prefers-reduced-motion: reduce) {
+  .w-slide { transition: none; transform: none; }
+}

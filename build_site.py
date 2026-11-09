@@ -10,6 +10,8 @@ from pathlib import Path
 
 import duckdb
 
+import gaffer_gate
+
 ROOT = Path(__file__).parent
 DB_PATH = ROOT / "data" / "league.duckdb"
 DOCS = ROOT / "docs"
@@ -92,8 +94,7 @@ def build_matches(con) -> list[dict]:
 # for 10 minutes, so after a deploy a new page could run against an old cached
 # script and break. Each reference gets ?v=<content hash>, which changes
 # whenever the file does, so browsers always fetch the matching version.
-PAGES = ("index.html", "master.html")
-ASSETS = ("effra.css", "effra.js", "charts.js")
+ASSETS = ("effra.css", "effra.js", "charts.js", "wrapped.js")
 ASSET_REF_RE = re.compile(r'(?P<attr>href|src)="(?P<name>' + "|".join(re.escape(a) for a in ASSETS) + r')(?:\?v=[0-9a-f]+)?"')
 
 
@@ -101,17 +102,24 @@ def asset_version(name: str) -> str:
     return hashlib.sha256((DOCS / name).read_bytes()).hexdigest()[:10]
 
 
+def stamp(html: str, versions: dict) -> str:
+    return ASSET_REF_RE.sub(lambda m: f'{m["attr"]}="{m["name"]}?v={versions[m["name"]]}"', html)
+
+
 def stamp_asset_versions() -> None:
     versions = {a: asset_version(a) for a in ASSETS if (DOCS / a).exists()}
-    for page in PAGES:
-        path = DOCS / page
+    # public pages are stamped in place; the gaffer room is stamped from its
+    # source, then encrypted into docs/master.html (see gaffer_gate.py)
+    for path in (DOCS / "index.html", gaffer_gate.SOURCE):
         if not path.exists():
             continue
         html = path.read_text(encoding="utf-8")
-        stamped = ASSET_REF_RE.sub(lambda m: f'{m["attr"]}="{m["name"]}?v={versions[m["name"]]}"', html)
+        stamped = stamp(html, versions)
         if stamped != html:
             path.write_text(stamped, encoding="utf-8")
     print(f"Stamped asset versions: {versions}")
+    if gaffer_gate.SOURCE.exists():
+        gaffer_gate.build(gaffer_gate.SOURCE.read_text(encoding="utf-8"), f"effra.css?v={versions['effra.css']}")
 
 
 def main():

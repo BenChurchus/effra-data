@@ -2,3 +2,4 @@ duckdb
 openpyxl
 pandas
 pytest
+cryptography

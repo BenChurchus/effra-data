@@ -444,6 +444,48 @@
     return { rows: () => rows, columns };
   }
 
+  // ----------------------------------------------------------------- venues
+
+  /** One player's record per venue (games with no venue are counted separately). */
+  function venueSplit(games) {
+    const map = new Map();
+    let unknown = 0;
+    for (const g of games) {
+      if (!g.venue) { unknown += 1; continue; }
+      if (!map.has(g.venue)) map.set(g.venue, { venue: g.venue, rec: record(), goals: 0 });
+      const v = map.get(g.venue);
+      addResult(v.rec, g.result);
+      v.goals += g.goals;
+    }
+    const rows = Array.from(map.values()).map(v => ({ ...v, winPct: winRate(v.rec), gpg: v.goals / v.rec.n }));
+    return { rows: rows.sort((a, b) => b.rec.n - a.rec.n), unknown };
+  }
+
+  /** Squad-level view of each venue: goals per match, top scorer, best record there. */
+  function venueTable(matches, players, minGames = 3) {
+    const map = new Map();
+    for (const m of matches) {
+      if (!m.venue) continue;
+      if (!map.has(m.venue)) map.set(m.venue, { venue: m.venue, n: 0, goals: 0, draws: 0 });
+      const v = map.get(m.venue);
+      v.n += 1;
+      v.goals += (m.team1_goals || 0) + (m.team2_goals || 0);
+      if (m.team1_result === 'D') v.draws += 1;
+    }
+    for (const v of map.values()) {
+      const per = players.map(p => {
+        const gs = p.games.filter(g => g.venue === v.venue);
+        const rec = record();
+        gs.forEach(g => addResult(rec, g.result));
+        return { name: p.name, n: gs.length, goals: gs.reduce((s, g) => s + g.goals, 0), rec, winPct: winRate(rec) };
+      }).filter(x => x.n);
+      const scorer = per.slice().sort((a, b) => b.goals - a.goals || a.n - b.n)[0];
+      const best = per.filter(x => decided(x.rec) >= minGames).sort((a, b) => b.winPct - a.winPct || b.n - a.n)[0];
+      Object.assign(v, { gpm: v.goals / v.n, drawPct: v.draws / v.n, scorer, best, regulars: per.length });
+    }
+    return { rows: Array.from(map.values()).sort((a, b) => b.n - a.n), unknown: matches.filter(m => !m.venue).length };
+  }
+
   // ------------------------------------------------------ data-quality notes
   /**
    * Plain-English caveats for the matches in scope: which stats the
@@ -516,7 +558,7 @@
   }
 
   root.Effra = {
-    isPlayerName, byChrono, matchKey, gwLabel, seasons, filterBySeason, tracks, dataNotes,
+    isPlayerName, byChrono, matchKey, gwLabel, seasons, filterBySeason, tracks, dataNotes, venueSplit, venueTable,
     record, addResult, decided, winRate, sideResult, roster, ownGoals,
     buildPlayers, buildPairs, orientPair, pairingsFor, binomialP, addImpact,
     defaultThresholds, computeAwards, fmt,

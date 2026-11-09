@@ -6,7 +6,11 @@ Each source is one Google Sheets export (.xlsx) containing tabs:
   don't trust and recompute instead (Captaincy, Analysis Tab, Apps, Awards).
 
 Usage:
-    python ingest.py <source_name> <path_to_xlsx> [<source_name> <path_to_xlsx> ...]
+    python ingest.py [<year>] <source_name> <path> [[<year>] <source_name> <path> ...]
+
+<path> is either a workbook (.xlsx) or an archived bronze folder
+(data/bronze/<year>/<source>/), so finished seasons can be rebuilt from the
+repo without their original Google Sheet (see refresh.py).
 """
 import json
 import re
@@ -232,10 +236,20 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
     return match, appearances
 
 
+def load_bronze_tabs(folder: Path) -> dict[str, list[list]]:
+    """Read an archived season (one JSON file per tab) instead of a workbook."""
+    return {f.stem: json.loads(f.read_text(encoding="utf-8")) for f in sorted(folder.glob("*.json"))}
+
+
 def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearances: list,
                   year: int | None = None) -> None:
-    tabs = load_workbook_tabs(xlsx_path)
-    dump_bronze(source, tabs, year)
+    if xlsx_path.is_dir():
+        tabs = load_bronze_tabs(xlsx_path)
+        if xlsx_path.resolve() != bronze_dir(source, year).resolve():
+            dump_bronze(source, tabs, year)
+    else:
+        tabs = load_workbook_tabs(xlsx_path)
+        dump_bronze(source, tabs, year)
 
     gw_tabs = []
     for tab_name in tabs:

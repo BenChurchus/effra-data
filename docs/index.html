@@ -17,9 +17,10 @@
 <script>/* apply saved theme before first paint (no flash) */
 try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
-<link rel="stylesheet" href="effra.css?v=9fc883e3f0">
-<script src="effra.js?v=4c9c6f57a7" defer></script>
+<link rel="stylesheet" href="effra.css?v=11829de665">
+<script src="effra.js?v=c9c53ca850" defer></script>
 <script src="charts.js?v=ea5153b785" defer></script>
+<script src="wrapped.js?v=4d89436668" defer></script>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -58,6 +59,7 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
           <button type="button" data-board="players">Players</button>
           <button type="button" data-board="pairs">Pairings</button>
           <button type="button" data-board="rivals">Nemesis</button>
+          <button type="button" data-board="venues">Venues</button>
         </div>
       </div>
       <label class="sub" style="display:block;margin-top:8px"><input type="checkbox" id="table-qualified" checked> <span id="table-qual-label">Regulars only</span></label>
@@ -108,15 +110,15 @@ window.addEventListener('error', (e) => { if (e.target && (e.target.tagName === 
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
-  const NEEDS = ['mountThemeToggle', 'dataNotes', 'tracks', 'computeAwards', 'sortableTable', 'pairingsFor'];
+  const NEEDS = ['mountThemeToggle', 'dataNotes', 'tracks', 'computeAwards', 'sortableTable', 'pairingsFor', 'venueSplit', 'venueTable'];
   if (!window.Effra || !window.EffraCharts || NEEDS.some(k => typeof window.Effra[k] !== 'function')) { effraLoadFailed(); return; }
   const E = window.Effra, C = window.EffraCharts, esc = E.escapeHtml, fmt = E.fmt;
   const $ = (id) => document.getElementById(id);
 
   let allMatches = [];
   const TABS = ['table', 'players', 'matches'];
-  const BOARDS = ['players', 'pairs', 'rivals'];
-  const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', board: 'players' };
+  const BOARDS = ['players', 'pairs', 'rivals', 'venues'];
+  const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', board: 'players', wrapped: false };
   E.mountThemeToggle($('theme-toggle'));
   const cache = new Map();
 
@@ -145,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.pair = h.get('with') || '';
     state.gw = h.get('gw') || '';
     state.board = BOARDS.includes(h.get('b')) ? h.get('b') : 'players';
+    state.wrapped = h.get('w') === '1';
   }
   function writeHash() {
     const h = new URLSearchParams();
@@ -154,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.tab === 'players' && state.player && state.pair) h.set('with', state.pair);
     if (state.tab === 'matches' && state.gw) h.set('gw', state.gw);
     if (state.tab === 'table' && state.board !== 'players') h.set('b', state.board);
+    if (state.tab === 'players' && state.player && state.wrapped) h.set('w', '1');
     history.replaceState(null, '', `#${h.toString()}`);
   }
 
@@ -195,9 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ----------------------------------------------------------- leaderboard
   function renderLeaderboard() {
     for (const b of $('board-seg').querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.board === state.board));
-    $('table-title').textContent = `${({ players: 'Leaderboard', pairs: 'Pairings', rivals: 'Nemesis' })[state.board]} · ${seasonText()}`;
+    $('table-title').textContent = `${({ players: 'Leaderboard', pairs: 'Pairings', rivals: 'Nemesis', venues: 'Venues' })[state.board]} · ${seasonText()}`;
     if (state.board === 'pairs') return renderPairBoard();
     if (state.board === 'rivals') return renderRivalBoard();
+    if (state.board === 'venues') return renderVenueBoard();
     const s = scope();
     const qOnly = $('table-qualified').checked;
     $('table-qual-label').textContent = `Regulars only (${s.t.minApps}+ apps)`;
@@ -238,6 +243,23 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'goals', label: 'Goals', num: true, title: 'Goals between them when together', value: p => p.withGoals },
       { key: 'gpg', label: 'Goals/gm', num: true, value: p => p.withGpg, html: p => fmt.pg(p.withGpg) },
     ], rows, { sortKey: 'win', rowAttrs: p => `class="clickable" data-player="${esc(p.a)}" data-with="${esc(p.b)}" tabindex="0"` });
+  }
+
+  function renderVenueBoard() {
+    const s = scope();
+    $('table-qual-label').textContent = 'Best record needs 3+ decided games at that venue';
+    $('board-help').textContent = 'Every ground we play at · click a column to re-order.';
+    const vt = E.venueTable(s.matches, s.players, 3);
+    if (!vt.rows.length) { $('leaderboard').innerHTML = '<div class="sub">No venues recorded for this season.</div>'; return; }
+    E.sortableTable($('leaderboard'), [
+      { key: 'v', label: 'Venue', sticky: true, value: r => r.venue, html: r => `<b>${esc(r.venue)}</b>` },
+      { key: 'n', label: 'Matches', num: true, value: r => r.n },
+      { key: 'gpm', label: 'Goals/match', num: true, title: 'Both teams combined', value: r => r.gpm, html: r => r.gpm.toFixed(1) },
+      { key: 'd', label: 'Draws', num: true, value: r => r.drawPct, html: r => fmt.pct(r.drawPct) },
+      { key: 'top', label: 'Top scorer', value: r => r.scorer?.goals ?? 0, html: r => (r.scorer && r.scorer.goals ? `${esc(r.scorer.name)} <span class="muted">${r.scorer.goals}</span>` : '–') },
+      { key: 'best', label: 'Best record', value: r => r.best?.winPct ?? null, html: r => (r.best ? `${esc(r.best.name)} ${fmt.wdlHtml(r.best.rec)}` : '–') },
+    ], vt.rows, { sortKey: 'n' });
+    if (vt.unknown) $('leaderboard').insertAdjacentHTML('beforeend', `<div class="sub" style="font-size:0.75rem;margin-top:6px">${vt.unknown} of ${s.matches.length} matches have no venue recorded.</div>`);
   }
 
   // How unlikely is a head-to-head record to be luck (two-sided binomial p)?
@@ -312,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
     view.innerHTML = `
       <article class="card" aria-labelledby="pname">
         <div class="card-head">
-          <h2 id="pname">${esc(p.name)}</h2>
+          <h2 id="pname">${esc(p.name)} <button type="button" class="wrapped-btn" id="open-wrapped" aria-label="Play ${esc(p.name)}’s ${allSeasons() ? 'all-time' : state.year} Wrapped">▶ ${allSeasons() ? 'All-time' : state.year} Wrapped</button></h2>
           <span class="sub">${seasonText()} · last ${Math.min(6, p.games.length)} ${formStrip(p.games)}</span>
         </div>
         <div class="kpis six">
@@ -366,6 +388,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <h3>Pairings <span class="sub">· with and against everyone · tap a row to compare</span></h3>
         <div class="table-wrap tall" id="pairings"></div>
+
+        <h3>By venue <span class="sub">· where ${esc(p.name)} plays best</span></h3>
+        <div class="table-wrap" id="venues"></div>
 
         <h3>Games</h3>
         <div class="table-wrap tall" id="games"></div>
@@ -431,7 +456,34 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'v', label: 'Venue', value: r => r.venue || '', html: r => esc(r.venue || '') },
     ], p.games, { sortKey: 'when' });
 
+    const vs = E.venueSplit(p.games);
+    if (vs.rows.length) {
+      E.sortableTable($('venues'), [
+        { key: 'v', label: 'Venue', value: r => r.venue, html: r => `<b>${esc(r.venue)}</b>` },
+        { key: 'n', label: 'Games', num: true, value: r => r.rec.n },
+        { key: 'rec', label: 'Record', value: r => r.rec.W - r.rec.L, html: r => fmt.wdlHtml(r.rec) },
+        { key: 'win', label: 'Win %', num: true, value: r => r.winPct, html: r => fmt.meterHtml(r.winPct) },
+        { key: 'gpg', label: 'Goals/gm', num: true, value: r => r.gpg, html: r => fmt.pg(r.gpg) },
+      ], vs.rows, { sortKey: 'n' });
+      if (vs.unknown) $('venues').insertAdjacentHTML('beforeend', `<div class="sub" style="font-size:0.75rem;margin-top:4px">${vs.unknown} game${vs.unknown === 1 ? '' : 's'} with no venue recorded aren’t included.</div>`);
+    } else {
+      $('venues').innerHTML = '<div class="sub">No venues recorded for these games.</div>';
+    }
+
+    $('open-wrapped').addEventListener('click', (e) => openWrapped(p.name, e.currentTarget));
+    if (state.wrapped) openWrapped(p.name, $('open-wrapped'));
+
     renderPairCard(p, other, prs);
+  }
+
+  function openWrapped(name, opener) {
+    const s = scope();
+    if (!window.EffraWrapped) return;
+    state.wrapped = true; writeHash();
+    window.EffraWrapped.open(name, {
+      matches: s.matches, players: s.players, pairs: s.pairs, t: s.t,
+      year: state.year, latestYear: String(E.seasons(allMatches).slice(-1)[0] ?? ''),
+    }, { opener, onClose: () => { state.wrapped = false; writeHash(); } });
   }
 
   function renderPairCard(p, other, prs) {

@@ -12,3 +12,6 @@ __pycache__/
 /raw/
 /data/raw/
 /data/archive/
+
+# Gaffer room password (never commit). build_site.py reads it to encrypt docs/master.html
+.gaffer-password

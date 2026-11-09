@@ -18,6 +18,9 @@ MATCHES_JSON = ROOT / "docs" / "matches.json"
 
 @pytest.fixture(scope="module")
 def wb():
+    # raw/ is git-ignored; on GitHub it exists only after refresh.py downloads it
+    if not XLSX.exists():
+        pytest.skip(f"{XLSX} not present (run refresh.py to download it)")
     return openpyxl.load_workbook(XLSX, data_only=True)
 
 

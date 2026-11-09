@@ -1,12 +1,118 @@
 {
   "source": "effra",
-  "year": 2025,
+  "year": 2026,
   "gw": 49,
-  "team1_result": "D",
-  "team1_goals": "D",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
-  "team1_players": [],
-  "team2_players": []
+  "team1_result": "W",
+  "team1_goals": 4,
+  "team2_result": "L",
+  "team2_goals": 2,
+  "venue": "Brixton",
+  "team1_players": [
+    {
+      "year": 2026,
+      "player": "Jez",
+      "is_captain": true,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Conrad",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "JPH",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Nairn",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Nik",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Will Mac",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    }
+  ],
+  "team2_players": [
+    {
+      "year": 2026,
+      "player": "Crell",
+      "is_captain": true,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Joe",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Leo",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Ram",
+      "is_captain": false,
+      "goals": null,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "Char",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Bill",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    }
+  ]
 }

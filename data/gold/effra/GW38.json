@@ -87,7 +87,7 @@
       "player": "Kempy",
       "is_captain": false,
       "goals": null,
-      "assists": 3.0,
+      "assists": 2.0,
       "clean_sheets": 1.0
     },
     {
@@ -109,7 +109,7 @@
     {
       "year": 2026,
       "player": "Dave",
-      "is_captain": false,
+      "is_captain": true,
       "goals": null,
       "assists": null,
       "clean_sheets": 1.0

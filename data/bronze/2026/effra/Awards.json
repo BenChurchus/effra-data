@@ -14,20 +14,6 @@
   ],
   [
     null,
-    "Top Scorer",
-    "Stats",
-    "Most overall goals",
-    "Medal",
-    null,
-    null,
-    "Jez",
-    null,
-    null,
-    "Gaffer's Bain",
-    "most drops"
-  ],
-  [
-    null,
     "Golden Boot",
     "Stats",
     "Most goals per game",
@@ -37,48 +23,91 @@
     "Nairn",
     null,
     null,
-    "Gaffer's Pet",
-    "Fastest drafter"
+    "Gaffer's Bain",
+    "most drops"
   ],
   [
     null,
     "Wooden Boot",
     "Stats",
     "Least goals per game",
-    "Wood chip",
+    "Wood chip/donkey",
     null,
     "George",
-    "Gman"
+    "Gman",
+    null,
+    null,
+    "Gaffer's Pet",
+    "Fastest drafter"
   ],
   [
     null,
     "Assist King",
     "Stats",
-    "Most assists per game"
+    "Most assists per game",
+    "Medal",
+    null,
+    null,
+    null,
+    null,
+    null,
+    "Clutch",
+    "Wins close games"
   ],
   [
     null,
     "G+A",
     "Stats",
-    "Most goals and assists combined per game"
+    "Most goals and assists combined per game (only awarded if different from both assist king and golden boot)",
+    "Medal",
+    null,
+    null,
+    null,
+    null,
+    null,
+    "Choke",
+    "Loses close games"
   ],
   [
     null,
-    "XgA/90",
+    "Cleanest Sheets",
     "Stats",
-    "Most clean sheets/game"
+    "Most clean sheets/game",
+    "Medal",
+    null,
+    null,
+    null,
+    null,
+    null,
+    "100 appearances"
   ],
   [
     null,
-    "Captain Fantastic",
+    "Soiled Sheets",
     "Stats",
-    "Highest Win Rate as captain"
+    "Least clean sheets/game",
+    "Wooden spoon",
+    null,
+    null,
+    null,
+    null,
+    null,
+    "Drawmaster general",
+    "Highest draw %"
   ],
   [
     null,
-    "Captain Shit",
+    "Armband Anchor",
     "Stats",
-    "Lowest Win rate as captain"
+    "Highest Win Rate as captain",
+    "Special armband"
+  ],
+  [
+    null,
+    "Asleep at the Wheel",
+    "Stats",
+    "Lowest Win rate as captain",
+    "Special armband"
   ],
   [
     null,
@@ -122,6 +151,13 @@
   ],
   [
     null,
+    "Jamie Vardy Award",
+    "Stats",
+    "Longest scoring streak",
+    "Medal"
+  ],
+  [
+    null,
     "Skid Mark",
     "Stats",
     "Longest Losing Streak",
@@ -152,9 +188,19 @@
   ],
   [
     null,
+    "Top Scorer",
+    "Stats",
+    "Most overall goals",
+    "Medal",
+    null,
+    null,
+    "Jez"
+  ],
+  [
+    null,
     "Got that Dawg in him",
-    null,
-    null,
+    "Stats",
+    "Scores lots in losses compared to wins",
     null,
     null,
     "Char",
@@ -163,13 +209,15 @@
   [
     null,
     "Flat Track Bully",
-    null,
-    null,
+    "Stats",
+    "Scores lots in wins compared to losses",
     null,
     null,
     "Leo",
     "N/A"
   ],
+  [],
+  [],
   [],
   [
     null,
@@ -183,53 +231,13 @@
   ],
   [
     null,
-    "Biggest Diva",
+    "Joe Davies Award",
     "Vote",
-    "Self-explanatory",
-    "Medal",
+    "Non-Joe player of the year",
+    "Trophy",
     null,
-    null,
-    "Crell"
-  ],
-  [
-    null,
-    "Fastest Pint (live)",
-    "Vote",
-    "Self-explanatory",
-    "Medal",
-    null,
-    "Joel",
-    "Joel"
-  ],
-  [
-    null,
-    "Most improved",
-    "Vote",
-    "Self-explanatory",
-    "Medal",
-    null,
-    "Leo",
-    "Gman"
-  ],
-  [
-    null,
-    "Baller (Creative Spark)",
-    "Vote",
-    "Makes things happen \u2728\ufe0f ",
-    "Medal",
-    null,
-    "Kempy",
-    "Kempy"
-  ],
-  [
-    null,
-    "Assist King",
-    "Vote",
-    null,
-    "Medal",
-    null,
-    null,
-    "Will Mac"
+    "Bill",
+    "Nairn"
   ],
   [
     null,
@@ -243,13 +251,33 @@
   ],
   [
     null,
-    "Wooden Glove",
+    "Brick Wall",
     "Vote",
-    "Worst Keeper",
-    "Wood Chip",
+    "Best defender",
+    "Medal",
     null,
-    "Nairn",
-    "Nairn"
+    "Harry",
+    "Harry"
+  ],
+  [
+    null,
+    "Baller (Creative Spark)",
+    "Vote",
+    "Makes things happen \u2728\ufe0f ",
+    "Medal",
+    null,
+    "Kempy",
+    "Kempy"
+  ],
+  [
+    null,
+    "Most improved",
+    "Vote",
+    "Self-explanatory",
+    "Medal",
+    null,
+    "Leo",
+    "Gman"
   ],
   [
     null,
@@ -263,13 +291,13 @@
   ],
   [
     null,
-    "Brick Wall",
+    "Wooden Glove",
     "Vote",
-    "Best defender",
-    "Medal",
+    "Worst Keeper",
+    "Rubber Gloves",
     null,
-    "Harry",
-    "Harry"
+    "Nairn",
+    "Nairn"
   ],
   [
     null,
@@ -283,13 +311,10 @@
   ],
   [
     null,
-    "Joe Davies Award",
+    "Ankle Biter",
     "Vote",
-    "Non-Joe player of the year",
-    "Medal",
-    null,
-    "Bill",
-    "Nairn"
+    "Niggliest cunt",
+    "Medal"
   ],
   [
     null,
@@ -300,16 +325,6 @@
     null,
     "Crell",
     "Char"
-  ],
-  [
-    null,
-    "Unsung Hero",
-    "Vote",
-    "Self-explanatory",
-    "Medal",
-    null,
-    null,
-    "Ben"
   ],
   [
     null,
@@ -331,9 +346,61 @@
     "Harry",
     "N/A"
   ],
+  [
+    null,
+    "Biggest Diva",
+    "Vote",
+    "Self-explanatory",
+    "Medal",
+    null,
+    null,
+    "Crell"
+  ],
+  [
+    null,
+    "Assist King",
+    "Vote",
+    null,
+    "Medal",
+    null,
+    null,
+    "Will Mac"
+  ],
+  [
+    null,
+    "Unsung Hero",
+    "Vote",
+    "Self-explanatory",
+    "Medal",
+    null,
+    null,
+    "Ben"
+  ],
+  [
+    null,
+    "Fastest Pint (live)",
+    "Vote",
+    "Self-explanatory",
+    "Medal",
+    null,
+    "Joel",
+    "Joel"
+  ],
   [],
-  [],
-  [],
+  [
+    null,
+    null,
+    null,
+    null,
+    20
+  ],
+  [
+    null,
+    null,
+    null,
+    null,
+    5
+  ],
   [],
   [],
   [],

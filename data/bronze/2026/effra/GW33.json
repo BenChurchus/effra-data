@@ -1,6 +1,6 @@
 [
   [
-    "GW12",
+    "GW33",
     "Team1",
     "(C)",
     "Goals",
@@ -20,7 +20,9 @@
     2.0,
     null,
     "Ram",
-    "Y"
+    "Y",
+    1.0,
+    1.0
   ],
   [
     null,
@@ -29,7 +31,10 @@
     5.0,
     2.0,
     null,
-    "Joe"
+    "Joe",
+    null,
+    null,
+    1.0
   ],
   [
     null,
@@ -47,7 +52,9 @@
     null,
     null,
     null,
-    "Char"
+    "Char",
+    null,
+    1.0
   ],
   [
     null,
@@ -72,7 +79,7 @@
     null,
     "L",
     null,
-    0,
+    2,
     null,
     null,
     "Brixton"

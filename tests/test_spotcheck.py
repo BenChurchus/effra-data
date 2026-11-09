@@ -103,9 +103,10 @@ def test_gw14_recovers_misplaced_names(wb, matches):
 
 def test_gw33_matches_source(wb, matches):
     rows = raw_rows(wb, "GW33")
-    # Known source quirk: the tab is named GW33 but the leftover header
-    # cell in A1 still reads "GW12" from whatever it was copied from.
-    assert rows[0][0] == "GW12"
+    # Historic source quirk: the A1 header cell read a stale "GW12" left over
+    # from copy-paste (fixed upstream Nov 2026). Either way the parser must
+    # key off the tab name, so don't depend on the label's value.
+    assert rows[0][0] in ("GW12", "GW33")
 
     score = rows[-1]
     assert score[0] == "Score"
@@ -115,7 +116,8 @@ def test_gw33_matches_source(wb, matches):
     assert m["team1_result"] == score[1] == "W"
     assert m["team1_goals"] == score[3] == 9
     assert m["team2_result"] == score[6] == "L"
-    assert m["team2_goals"] == score[8] == 0
+    # Was 0 in the Sep 2026 export; corrected upstream (Ram + Char scored).
+    assert m["team2_goals"] == score[8] == 2
     assert m["venue"] == score[11] == "Brixton"
 
     assert len(m["team1_players"]) == 5
@@ -138,6 +140,7 @@ def test_gw33_matches_source(wb, matches):
 
     ram = find_player(m["team2_players"], "Ram")
     assert ram["is_captain"] is True
+    assert ram["goals"] == 1
 
     team1_total = sum(p["goals"] or 0 for p in m["team1_players"])
     team2_total = sum(p["goals"] or 0 for p in m["team2_players"])

@@ -1,53 +1,110 @@
 {
   "source": "effra",
-  "year": 2025,
+  "year": 2026,
   "gw": 44,
-  "team1_result": "W",
-  "team1_goals": "L",
-  "team2_result": null,
-  "team2_goals": null,
-  "venue": null,
+  "team1_result": "D",
+  "team1_goals": 5,
+  "team2_result": "D",
+  "team2_goals": 5,
+  "venue": "MILE END",
   "team1_players": [
     {
-      "year": 2025,
+      "year": 2026,
       "player": "Jez",
-      "is_captain": false,
-      "goals": "Leo",
-      "assists": 1.0,
-      "clean_sheets": null
+      "is_captain": true,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": 1.0
     },
     {
-      "year": 2025,
-      "player": "Joe",
+      "year": 2026,
+      "player": "Will Mac",
       "is_captain": false,
-      "goals": "Bill",
+      "goals": 2.0,
       "assists": null,
       "clean_sheets": null
     },
     {
-      "year": 2025,
-      "player": "Char",
+      "year": 2026,
+      "player": "Gman",
       "is_captain": false,
-      "goals": "Harry",
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "Harry",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "JPH",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Crell",
+      "is_captain": false,
+      "goals": null,
       "assists": 3.0,
-      "clean_sheets": null
-    },
-    {
-      "year": 2025,
-      "player": "Nik",
-      "is_captain": false,
-      "goals": "Dave",
-      "assists": null,
-      "clean_sheets": null
-    },
-    {
-      "year": 2025,
-      "player": "Joel",
-      "is_captain": false,
-      "goals": "Will Mac",
-      "assists": 1.0,
       "clean_sheets": null
     }
   ],
-  "team2_players": []
+  "team2_players": [
+    {
+      "year": 2026,
+      "player": "Bill",
+      "is_captain": true,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "Joe",
+      "is_captain": false,
+      "goals": 2.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "Kempy",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": 1.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "Luke",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
+      "player": "Dave",
+      "is_captain": false,
+      "goals": 1.0,
+      "assists": null,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
+      "player": "Leo",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": null
+    }
+  ]
 }

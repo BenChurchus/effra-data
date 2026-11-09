@@ -100,6 +100,14 @@
     },
     {
       "year": 2026,
+      "player": "Conrad",
+      "is_captain": false,
+      "goals": null,
+      "assists": 1.0,
+      "clean_sheets": 1.0
+    },
+    {
+      "year": 2026,
       "player": "Char",
       "is_captain": false,
       "goals": 1.0,

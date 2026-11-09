@@ -17,8 +17,8 @@
     "team_side": 2,
     "player": "Ram",
     "is_captain": true,
-    "goals": null,
-    "assists": null,
+    "goals": 1.0,
+    "assists": 1.0,
     "clean_sheets": null
   },
   {
@@ -40,7 +40,7 @@
     "player": "Joe",
     "is_captain": false,
     "goals": null,
-    "assists": null,
+    "assists": 1.0,
     "clean_sheets": null
   },
   {
@@ -83,7 +83,7 @@
     "team_side": 2,
     "player": "Char",
     "is_captain": false,
-    "goals": null,
+    "goals": 1.0,
     "assists": null,
     "clean_sheets": null
   },

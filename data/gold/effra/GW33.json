@@ -5,7 +5,7 @@
   "team1_result": "W",
   "team1_goals": 9,
   "team2_result": "L",
-  "team2_goals": 0,
+  "team2_goals": 2,
   "venue": "Brixton",
   "team1_players": [
     {
@@ -54,8 +54,8 @@
       "year": 2026,
       "player": "Ram",
       "is_captain": true,
-      "goals": null,
-      "assists": null,
+      "goals": 1.0,
+      "assists": 1.0,
       "clean_sheets": null
     },
     {
@@ -63,7 +63,7 @@
       "player": "Joe",
       "is_captain": false,
       "goals": null,
-      "assists": null,
+      "assists": 1.0,
       "clean_sheets": null
     },
     {
@@ -78,7 +78,7 @@
       "year": 2026,
       "player": "Char",
       "is_captain": false,
-      "goals": null,
+      "goals": 1.0,
       "assists": null,
       "clean_sheets": null
     },

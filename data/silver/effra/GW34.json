@@ -71,7 +71,7 @@
     "gw": 34,
     "team_side": 1,
     "player": "Nik",
-    "is_captain": false,
+    "is_captain": true,
     "goals": null,
     "assists": null,
     "clean_sheets": null

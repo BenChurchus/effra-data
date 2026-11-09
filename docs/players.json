@@ -1,26 +1,15 @@
 [
   {
     "name": "Jez",
-    "appearances": 97,
-    "goals": 78,
-    "assists": 156,
-    "clean_sheets": 15,
-    "captaincies": 6,
-    "wins": 56,
-    "draws": 6,
-    "losses": 35,
+    "appearances": 106,
+    "goals": 87,
+    "assists": 168,
+    "clean_sheets": 19,
+    "captaincies": 8,
+    "wins": 61,
+    "draws": 7,
+    "losses": 38,
     "games": [
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 1,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
       {
         "source": "effra",
         "year": 2024,
@@ -29,6 +18,17 @@
         "venue": null,
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 1,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -45,10 +45,10 @@
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2025,
         "gw": 2,
-        "result": "W",
-        "venue": "Mile End",
+        "result": "D",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -56,10 +56,10 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 2,
-        "result": "D",
-        "venue": null,
+        "result": "W",
+        "venue": "Mile End",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -111,17 +111,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 5,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 5,
         "result": "W",
@@ -133,23 +122,23 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 5,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2025,
         "gw": 5,
         "result": "L",
         "venue": null,
         "goals": 0,
         "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 6,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -177,23 +166,12 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 7,
+        "year": 2024,
+        "gw": 6,
         "result": "L",
         "venue": null,
         "goals": 0,
         "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 7,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -210,12 +188,23 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 8,
+        "year": 2024,
+        "gw": 7,
         "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
+        "venue": null,
+        "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 7,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -226,6 +215,17 @@
         "result": "W",
         "venue": null,
         "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
@@ -276,17 +276,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 12,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 12,
         "result": "L",
@@ -299,12 +288,23 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 13,
+        "gw": 12,
         "result": "L",
-        "venue": "Mile End",
-        "goals": 3,
+        "venue": "Stockwell",
+        "goals": 1,
         "assists": 1,
         "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 13,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -320,13 +320,13 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 13,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3,
         "assists": 1,
-        "clean_sheets": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -353,6 +353,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 15,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 15,
         "result": "W",
@@ -370,17 +381,6 @@
         "venue": null,
         "goals": 0,
         "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 15,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -408,17 +408,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 17,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 17,
         "result": "W",
@@ -431,11 +420,11 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 18,
+        "gw": 17,
         "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 2,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -447,6 +436,17 @@
         "venue": "Mile End",
         "goals": 1,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 18,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -562,23 +562,23 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 27,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 27,
         "result": "L",
         "venue": "Mile End",
         "goals": 3,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 27,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -606,22 +606,22 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 29,
         "result": "L",
-        "venue": null,
-        "goals": 0,
+        "venue": "Mile End",
+        "goals": 1,
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2025,
         "gw": 29,
         "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
+        "venue": null,
+        "goals": 0,
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
@@ -683,22 +683,22 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2026,
         "gw": 33,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 5,
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2024,
         "gw": 33,
-        "result": "W",
-        "venue": "Brixton",
-        "goals": 5,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
@@ -711,6 +711,17 @@
         "venue": null,
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 34,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -733,17 +744,6 @@
         "venue": null,
         "goals": 0,
         "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 34,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -804,17 +804,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 37,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 37,
         "result": "W",
@@ -837,12 +826,12 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 38,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
+        "year": 2025,
+        "gw": 37,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -859,18 +848,18 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 39,
+        "year": 2026,
+        "gw": 38,
         "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2025,
         "gw": 39,
         "result": "L",
         "venue": null,
@@ -893,11 +882,11 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 40,
-        "result": "W",
+        "gw": 39,
+        "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -909,6 +898,17 @@
         "venue": null,
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 40,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -929,6 +929,17 @@
         "gw": 41,
         "result": "W",
         "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "L",
+        "venue": "Brixton",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -958,6 +969,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2025,
         "gw": 43,
         "result": "W",
@@ -977,6 +999,17 @@
         "assists": 3,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -1002,6 +1035,17 @@
       },
       {
         "source": "effra",
+        "year": 2025,
+        "gw": 45,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 45,
         "result": "W",
@@ -1013,12 +1057,12 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 45,
         "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 4,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -1042,6 +1086,17 @@
         "goals": 0,
         "assists": 6,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -1057,6 +1112,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 48,
         "result": "L",
@@ -1065,6 +1131,28 @@
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -1076,725 +1164,30 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
-      }
-    ]
-  },
-  {
-    "name": "Char",
-    "appearances": 63,
-    "goals": 63,
-    "assists": 62,
-    "clean_sheets": 10,
-    "captaincies": 6,
-    "wins": 25,
-    "draws": 5,
-    "losses": 33,
-    "games": [
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 1,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": true
       },
       {
         "source": "effra",
         "year": 2026,
-        "gw": 2,
+        "gw": 50,
         "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 3,
-        "result": "W",
-        "venue": "Brixton",
+        "venue": "MILE END",
         "goals": 4,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 3,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 4,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 2,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 5,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 6,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 7,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 8,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 8,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 9,
-        "result": "D",
-        "venue": "Brixton",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 9,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 10,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
         "assists": 1,
         "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 11,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 12,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 4,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 12,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 13,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 13,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 14,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 14,
-        "result": "W",
-        "venue": "Brixton",
-        "goals": 2,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 15,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 16,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 17,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 17,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 18,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 19,
-        "result": "W",
-        "venue": "Brixton",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 20,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 21,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 21,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 22,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 22,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 23,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 23,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 23,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 24,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 24,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 24,
-        "result": "W",
-        "venue": "Brixton",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 25,
-        "result": "D",
-        "venue": "Stockwell",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 26,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 27,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 27,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 28,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 29,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 30,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 30,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 31,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 32,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 33,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 33,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 34,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 34,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 36,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 37,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 38,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 38,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 39,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 39,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 40,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 40,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 42,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 44,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 48,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
         "is_captain": false
       }
     ]
   },
   {
     "name": "Will Mac",
-    "appearances": 64,
-    "goals": 62,
-    "assists": 81,
-    "clean_sheets": 9,
-    "captaincies": 6,
-    "wins": 29,
-    "draws": 4,
-    "losses": 31,
+    "appearances": 74,
+    "goals": 73,
+    "assists": 83,
+    "clean_sheets": 10,
+    "captaincies": 7,
+    "wins": 31,
+    "draws": 5,
+    "losses": 38,
     "games": [
       {
         "source": "effra",
@@ -1831,10 +1224,10 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2026,
         "gw": 3,
         "result": "L",
-        "venue": null,
+        "venue": "Brixton",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -1842,10 +1235,10 @@
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2024,
         "gw": 3,
         "result": "L",
-        "venue": "Brixton",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -2205,23 +1598,23 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 24,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 24,
         "result": "L",
         "venue": null,
         "goals": 0,
         "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -2282,17 +1675,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 31,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 31,
         "result": "L",
@@ -2300,6 +1682,17 @@
         "goals": 0,
         "assists": 1,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 31,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -2337,17 +1730,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 35,
         "result": "L",
@@ -2356,6 +1738,17 @@
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -2370,17 +1763,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 37,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 37,
         "result": "W",
@@ -2389,6 +1771,17 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -2414,6 +1807,17 @@
       },
       {
         "source": "effra",
+        "year": 2025,
+        "gw": 40,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 40,
         "result": "L",
@@ -2425,11 +1829,11 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 40,
+        "year": 2026,
+        "gw": 41,
         "result": "W",
-        "venue": null,
-        "goals": 0,
+        "venue": "Brixton",
+        "goals": 2,
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
@@ -2442,6 +1846,17 @@
         "venue": null,
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -2469,6 +1884,28 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 44,
         "result": "W",
@@ -2477,6 +1914,17 @@
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -2491,6 +1939,28 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 48,
         "result": "L",
@@ -2499,19 +1969,802 @@
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Char",
+    "appearances": 67,
+    "goals": 65,
+    "assists": 64,
+    "clean_sheets": 11,
+    "captaincies": 7,
+    "wins": 26,
+    "draws": 5,
+    "losses": 36,
+    "games": [
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 2,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 3,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 3,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 4,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 4,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 7,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 8,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 8,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 9,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 12,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 4,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 13,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 13,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 14,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 14,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 16,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 17,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 20,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 21,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 21,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 22,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 22,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 23,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 23,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 24,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 24,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 24,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 27,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 28,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 30,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 30,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 33,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 34,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 36,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 38,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 39,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 40,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 42,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 44,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 48,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
       }
     ]
   },
   {
     "name": "Joe",
-    "appearances": 66,
-    "goals": 42,
-    "assists": 88,
-    "clean_sheets": 10,
-    "captaincies": 4,
-    "wins": 36,
-    "draws": 8,
-    "losses": 22,
+    "appearances": 74,
+    "goals": 58,
+    "assists": 101,
+    "clean_sheets": 14,
+    "captaincies": 5,
+    "wins": 41,
+    "draws": 9,
+    "losses": 24,
     "games": [
       {
         "source": "effra",
@@ -2559,9 +2812,9 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2025,
         "gw": 3,
-        "result": "L",
+        "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 0,
@@ -2570,9 +2823,9 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2024,
         "gw": 3,
-        "result": "W",
+        "result": "L",
         "venue": null,
         "goals": 0,
         "assists": 0,
@@ -2691,17 +2944,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 16,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 16,
         "result": "L",
@@ -2714,11 +2956,11 @@
       {
         "source": "effra",
         "year": 2025,
-        "gw": 17,
-        "result": "D",
+        "gw": 16,
+        "result": "W",
         "venue": null,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -2735,6 +2977,17 @@
       },
       {
         "source": "effra",
+        "year": 2025,
+        "gw": 17,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 17,
         "result": "L",
@@ -2757,6 +3010,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 18,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 18,
         "result": "D",
@@ -2769,28 +3033,6 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 18,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 19,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
         "gw": 19,
         "result": "W",
         "venue": null,
@@ -2802,7 +3044,7 @@
       {
         "source": "effra",
         "year": 2025,
-        "gw": 20,
+        "gw": 19,
         "result": "W",
         "venue": null,
         "goals": 0,
@@ -2834,6 +3076,17 @@
       },
       {
         "source": "effra",
+        "year": 2025,
+        "gw": 20,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 21,
         "result": "W",
@@ -2856,23 +3109,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 22,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 22,
         "result": "D",
         "venue": null,
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 22,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 4,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -2957,17 +3210,6 @@
         "source": "effra",
         "year": 2026,
         "gw": 29,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 2,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 29,
         "result": "L",
         "venue": "Mile End",
         "goals": 1,
@@ -2977,22 +3219,22 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2025,
         "gw": 29,
         "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 30,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 3,
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
@@ -3027,6 +3269,17 @@
         "venue": "Mile End",
         "goals": 1,
         "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -3048,7 +3301,7 @@
         "result": "L",
         "venue": "Brixton",
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -3062,6 +3315,17 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -3084,17 +3348,6 @@
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": true
       },
       {
         "source": "effra",
@@ -3186,13 +3439,13 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 42,
+        "year": 2026,
+        "gw": 41,
         "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 3,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -3209,7 +3462,73 @@
       {
         "source": "effra",
         "year": 2025,
+        "gw": 42,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
         "gw": 44,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 46,
         "result": "W",
         "venue": null,
         "goals": 0,
@@ -3230,11 +3549,453 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2026,
         "gw": 46,
         "result": "W",
-        "venue": null,
+        "venue": "MILE END",
+        "goals": 3,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "JPH",
+    "appearances": 37,
+    "goals": 41,
+    "assists": 27,
+    "clean_sheets": 10,
+    "captaincies": 4,
+    "wins": 17,
+    "draws": 6,
+    "losses": 14,
+    "games": [
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 1,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
         "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 3,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 9,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 2,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 12,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 19,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 20,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 23,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 24,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 25,
+        "result": "D",
+        "venue": "Stockwell",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 29,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 33,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 2,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 35,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 38,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
@@ -3243,14 +4004,14 @@
   },
   {
     "name": "Nairn",
-    "appearances": 46,
-    "goals": 36,
-    "assists": 52,
-    "clean_sheets": 6,
-    "captaincies": 3,
-    "wins": 20,
+    "appearances": 52,
+    "goals": 41,
+    "assists": 58,
+    "clean_sheets": 8,
+    "captaincies": 4,
+    "wins": 23,
     "draws": 3,
-    "losses": 23,
+    "losses": 26,
     "games": [
       {
         "source": "effra",
@@ -3331,9 +4092,9 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2024,
         "gw": 8,
-        "result": "L",
+        "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 0,
@@ -3353,23 +4114,12 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 8,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
-        "gw": 9,
+        "gw": 8,
         "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 3,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -3387,6 +4137,17 @@
       {
         "source": "effra",
         "year": 2025,
+        "gw": 9,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
         "gw": 10,
         "result": "W",
         "venue": null,
@@ -3397,7 +4158,7 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2025,
         "gw": 10,
         "result": "W",
         "venue": null,
@@ -3496,6 +4257,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 18,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 18,
         "result": "D",
@@ -3508,8 +4280,8 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 18,
-        "result": "L",
+        "gw": 19,
+        "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 2,
@@ -3525,17 +4297,6 @@
         "goals": 1,
         "assists": 0,
         "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 19,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -3749,6 +4510,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 44,
         "result": "W",
@@ -3757,48 +4529,13 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
-      }
-    ]
-  },
-  {
-    "name": "JPH",
-    "appearances": 28,
-    "goals": 33,
-    "assists": 18,
-    "clean_sheets": 7,
-    "captaincies": 3,
-    "wins": 10,
-    "draws": 5,
-    "losses": 13,
-    "games": [
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 1,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
       },
       {
         "source": "effra",
         "year": 2026,
-        "gw": 2,
+        "gw": 45,
         "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 3,
-        "result": "L",
-        "venue": "Brixton",
+        "venue": "MILE END",
         "goals": 1,
         "assists": 0,
         "clean_sheets": 0,
@@ -3807,86 +4544,9 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 4,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 9,
-        "result": "D",
-        "venue": "Brixton",
-        "goals": 2,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 11,
+        "gw": 46,
         "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 12,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 2,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 13,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 18,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 19,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 20,
-        "result": "L",
-        "venue": "Mile End",
+        "venue": "MILE END",
         "goals": 1,
         "assists": 2,
         "clean_sheets": 0,
@@ -3895,153 +4555,21 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 21,
+        "gw": 47,
         "result": "W",
-        "venue": "Stockwell",
+        "venue": "STOCKWELL",
         "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 22,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
         "assists": 1,
         "clean_sheets": 1,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 23,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 1,
         "is_captain": false
       },
       {
         "source": "effra",
         "year": 2026,
-        "gw": 24,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 25,
-        "result": "D",
-        "venue": "Stockwell",
-        "goals": 3,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 26,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 27,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 28,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 29,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 30,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 31,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 32,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 33,
+        "gw": 49,
         "result": "W",
         "venue": "Brixton",
         "goals": 2,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 2,
         "assists": 0,
         "clean_sheets": 1,
         "is_captain": false
@@ -4049,48 +4577,26 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 36,
+        "gw": 50,
         "result": "L",
-        "venue": "Mile End",
+        "venue": "MILE END",
         "goals": 0,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 38,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 39,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 1,
         "assists": 0,
         "clean_sheets": 0,
-        "is_captain": false
+        "is_captain": true
       }
     ]
   },
   {
     "name": "Kempy",
-    "appearances": 58,
-    "goals": 33,
-    "assists": 71,
-    "clean_sheets": 7,
-    "captaincies": 7,
-    "wins": 32,
-    "draws": 4,
-    "losses": 22,
+    "appearances": 64,
+    "goals": 40,
+    "assists": 73,
+    "clean_sheets": 9,
+    "captaincies": 8,
+    "wins": 34,
+    "draws": 5,
+    "losses": 25,
     "games": [
       {
         "source": "effra",
@@ -4182,17 +4688,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 7,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 7,
         "result": "W",
@@ -4200,6 +4695,17 @@
         "goals": 2,
         "assists": 1,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 7,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -4248,23 +4754,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 11,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 11,
         "result": "L",
         "venue": "Mile End",
         "goals": 1,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 11,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4347,7 +4853,7 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2024,
         "gw": 21,
         "result": "W",
         "venue": null,
@@ -4358,7 +4864,7 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2025,
         "gw": 21,
         "result": "W",
         "venue": null,
@@ -4380,12 +4886,12 @@
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2025,
         "gw": 22,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 3,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4402,12 +4908,12 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 22,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 3,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4457,23 +4963,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 26,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 26,
         "result": "W",
         "venue": "Mile End",
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 26,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4523,6 +5029,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 30,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 30,
         "result": "L",
@@ -4534,12 +5051,12 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 30,
-        "result": "L",
-        "venue": "Mile End",
+        "year": 2024,
+        "gw": 31,
+        "result": "W",
+        "venue": null,
         "goals": 0,
-        "assists": 1,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4557,7 +5074,7 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 31,
+        "gw": 32,
         "result": "W",
         "venue": null,
         "goals": 0,
@@ -4575,17 +5092,6 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 32,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
       },
       {
         "source": "effra",
@@ -4622,17 +5128,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 35,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 35,
         "result": "W",
@@ -4644,12 +5139,12 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 37,
-        "result": "W",
+        "year": 2025,
+        "gw": 35,
+        "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4666,12 +5161,12 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 38,
-        "result": "L",
+        "year": 2024,
+        "gw": 37,
+        "result": "W",
         "venue": null,
         "goals": 0,
-        "assists": 1,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4682,8 +5177,19 @@
         "result": "W",
         "venue": "Mile End",
         "goals": 0,
-        "assists": 3,
+        "assists": 2,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 38,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -4710,6 +5216,28 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2025,
         "gw": 45,
         "result": "W",
@@ -4729,19 +5257,63 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 3,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
       }
     ]
   },
   {
     "name": "Leo",
-    "appearances": 47,
-    "goals": 30,
-    "assists": 47,
-    "clean_sheets": 2,
-    "captaincies": 5,
-    "wins": 20,
-    "draws": 6,
-    "losses": 21,
+    "appearances": 55,
+    "goals": 37,
+    "assists": 53,
+    "clean_sheets": 5,
+    "captaincies": 6,
+    "wins": 23,
+    "draws": 7,
+    "losses": 25,
     "games": [
       {
         "source": "effra",
@@ -4767,23 +5339,23 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 4,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 3,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 4,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 4,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4811,17 +5383,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 6,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 6,
         "result": "L",
@@ -4830,6 +5391,17 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 6,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
       },
       {
         "source": "effra",
@@ -4866,23 +5438,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 9,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 9,
         "result": "D",
         "venue": "Brixton",
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 9,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -4954,23 +5526,23 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 22,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 22,
         "result": "W",
         "venue": "Mile End",
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 22,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5009,17 +5581,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 29,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 29,
         "result": "W",
@@ -5031,12 +5592,12 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 30,
+        "year": 2025,
+        "gw": 29,
         "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 1,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5048,6 +5609,17 @@
         "venue": null,
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 30,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5097,6 +5669,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 35,
         "result": "L",
@@ -5108,12 +5691,12 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "L",
-        "venue": "Stockwell",
+        "year": 2025,
+        "gw": 36,
+        "result": "W",
+        "venue": null,
         "goals": 0,
-        "assists": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5131,17 +5714,6 @@
       {
         "source": "effra",
         "year": 2025,
-        "gw": 36,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
         "gw": 38,
         "result": "L",
         "venue": null,
@@ -5174,17 +5746,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 39,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 39,
         "result": "D",
@@ -5193,6 +5754,17 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 39,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
       },
       {
         "source": "effra",
@@ -5218,6 +5790,39 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 45,
         "result": "W",
@@ -5234,6 +5839,17 @@
         "result": "W",
         "venue": null,
         "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 5,
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
@@ -5251,6 +5867,39 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 49,
         "result": "W",
@@ -5259,19 +5908,30 @@
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
       }
     ]
   },
   {
     "name": "Crell",
-    "appearances": 60,
-    "goals": 28,
-    "assists": 87,
-    "clean_sheets": 2,
-    "captaincies": 5,
-    "wins": 30,
-    "draws": 7,
-    "losses": 23,
+    "appearances": 67,
+    "goals": 35,
+    "assists": 94,
+    "clean_sheets": 6,
+    "captaincies": 6,
+    "wins": 33,
+    "draws": 8,
+    "losses": 26,
     "games": [
       {
         "source": "effra",
@@ -5286,23 +5946,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 2,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 2,
         "result": "D",
         "venue": null,
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 2,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5330,23 +5990,23 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 6,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 6,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 6,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5374,17 +6034,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 10,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 10,
         "result": "W",
@@ -5393,6 +6042,17 @@
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 10,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -5451,23 +6111,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 14,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 14,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 14,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5528,23 +6188,23 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 19,
-        "result": "W",
-        "venue": "Brixton",
-        "goals": 1,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 19,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 5,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 19,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5561,23 +6221,23 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 21,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 3,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 21,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 21,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 3,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5616,6 +6276,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 24,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 24,
         "result": "W",
@@ -5639,28 +6310,6 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 24,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 26,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 5,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
         "gw": 26,
         "result": "W",
         "venue": null,
@@ -5677,6 +6326,17 @@
         "venue": "Mile End",
         "goals": 2,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 26,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 5,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5770,6 +6430,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 32,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 32,
         "result": "W",
@@ -5787,17 +6458,6 @@
         "venue": null,
         "goals": 0,
         "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 32,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 4,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -5847,6 +6507,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 37,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 37,
         "result": "W",
@@ -5859,23 +6530,23 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 37,
-        "result": "W",
-        "venue": "Brixton",
-        "goals": 1,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
         "gw": 39,
         "result": "D",
         "venue": "Mile End",
         "goals": 0,
         "assists": 2,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 40,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -5902,13 +6573,57 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 40,
+        "year": 2026,
+        "gw": 41,
         "result": "W",
-        "venue": null,
-        "goals": 0,
+        "venue": "Brixton",
+        "goals": 2,
         "assists": 0,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 3,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -5924,6 +6639,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 49,
         "result": "W",
@@ -5932,19 +6658,351 @@
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
+      }
+    ]
+  },
+  {
+    "name": "Dan",
+    "appearances": 28,
+    "goals": 35,
+    "assists": 25,
+    "clean_sheets": 5,
+    "captaincies": 6,
+    "wins": 12,
+    "draws": 2,
+    "losses": 14,
+    "games": [
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 5,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 5,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 6,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 10,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 11,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 15,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 17,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 20,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 21,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 22,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 23,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 23,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 26,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 27,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 40,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 41,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 42,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 43,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
       }
     ]
   },
   {
     "name": "Bill",
-    "appearances": 52,
-    "goals": 27,
-    "assists": 56,
+    "appearances": 58,
+    "goals": 33,
+    "assists": 58,
     "clean_sheets": 4,
-    "captaincies": 5,
-    "wins": 30,
-    "draws": 7,
-    "losses": 15,
+    "captaincies": 6,
+    "wins": 32,
+    "draws": 8,
+    "losses": 18,
     "games": [
       {
         "source": "effra",
@@ -5959,23 +7017,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 2,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 5,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 2,
         "result": "L",
         "venue": "Mile End",
         "goals": 1,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 2,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 5,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -6047,22 +7105,22 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2026,
         "gw": 9,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
+        "result": "D",
+        "venue": "Brixton",
+        "goals": 2,
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2024,
         "gw": 9,
-        "result": "D",
-        "venue": "Brixton",
-        "goals": 2,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
@@ -6102,17 +7160,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 13,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 13,
         "result": "W",
@@ -6120,6 +7167,17 @@
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 13,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -6146,23 +7204,23 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 16,
-        "result": "W",
-        "venue": "Stockwell",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 16,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 16,
+        "result": "W",
+        "venue": "Stockwell",
+        "goals": 1,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -6344,17 +7402,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 32,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 32,
         "result": "W",
@@ -6363,6 +7410,17 @@
         "assists": 0,
         "clean_sheets": 1,
         "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 32,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
       },
       {
         "source": "effra",
@@ -6388,17 +7446,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 35,
         "result": "L",
@@ -6410,12 +7457,12 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 37,
-        "result": "W",
-        "venue": null,
+        "year": 2026,
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
         "goals": 0,
-        "assists": 2,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -6427,6 +7474,17 @@
         "venue": "Brixton",
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 37,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -6465,11 +7523,44 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 44,
         "result": "W",
         "venue": null,
         "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
@@ -6509,6 +7600,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 47,
         "result": "W",
@@ -6517,281 +7619,26 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
-      }
-    ]
-  },
-  {
-    "name": "Dan",
-    "appearances": 24,
-    "goals": 26,
-    "assists": 22,
-    "clean_sheets": 4,
-    "captaincies": 5,
-    "wins": 10,
-    "draws": 2,
-    "losses": 12,
-    "games": [
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 1,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 5,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
       },
       {
         "source": "effra",
         "year": 2026,
-        "gw": 2,
+        "gw": 49,
         "result": "L",
-        "venue": "Mile End",
+        "venue": "Brixton",
         "goals": 1,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 5,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 6,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 1,
         "is_captain": false
       },
       {
         "source": "effra",
         "year": 2026,
-        "gw": 10,
+        "gw": 50,
         "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 11,
-        "result": "W",
-        "venue": "Mile End",
+        "venue": "MILE END",
         "goals": 3,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 13,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 2,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 15,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 17,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
         "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 18,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 20,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 21,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 22,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 23,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 23,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 26,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 27,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 29,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 36,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 39,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 40,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 41,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 42,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 43,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       }
@@ -6799,15 +7646,26 @@
   },
   {
     "name": "Dave",
-    "appearances": 56,
-    "goals": 19,
-    "assists": 55,
-    "clean_sheets": 10,
-    "captaincies": 5,
-    "wins": 29,
-    "draws": 5,
-    "losses": 22,
+    "appearances": 64,
+    "goals": 22,
+    "assists": 59,
+    "clean_sheets": 12,
+    "captaincies": 8,
+    "wins": 32,
+    "draws": 6,
+    "losses": 26,
     "games": [
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
       {
         "source": "effra",
         "year": 2024,
@@ -6822,12 +7680,12 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 1,
+        "gw": 2,
         "result": "W",
         "venue": "Mile End",
         "goals": 1,
-        "assists": 2,
-        "clean_sheets": 0,
+        "assists": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -6839,17 +7697,6 @@
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 2,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -6964,23 +7811,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 10,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 10,
         "result": "L",
         "venue": "Mile End",
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 10,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7085,17 +7932,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 18,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 18,
         "result": "D",
@@ -7103,6 +7939,17 @@
         "goals": 0,
         "assists": 6,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 18,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -7129,23 +7976,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 20,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 20,
         "result": "W",
         "venue": "Mile End",
         "goals": 1,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 20,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7206,23 +8053,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 25,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 25,
         "result": "D",
         "venue": "Stockwell",
         "goals": 2,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 25,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7239,17 +8086,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 27,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 27,
         "result": "L",
@@ -7261,12 +8097,12 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 28,
-        "result": "W",
+        "year": 2025,
+        "gw": 27,
+        "result": "L",
         "venue": null,
         "goals": 0,
-        "assists": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7289,6 +8125,17 @@
         "venue": null,
         "goals": 0,
         "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 28,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7382,17 +8229,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 38,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 38,
         "result": "W",
@@ -7400,6 +8236,17 @@
         "goals": 0,
         "assists": 0,
         "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 38,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -7415,6 +8262,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
         "year": 2025,
         "gw": 41,
         "result": "W",
@@ -7423,19 +8281,96 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
       }
     ]
   },
   {
     "name": "Harry",
-    "appearances": 56,
-    "goals": 16,
-    "assists": 67,
-    "clean_sheets": 7,
-    "captaincies": 4,
-    "wins": 29,
-    "draws": 5,
-    "losses": 22,
+    "appearances": 65,
+    "goals": 18,
+    "assists": 71,
+    "clean_sheets": 10,
+    "captaincies": 5,
+    "wins": 34,
+    "draws": 6,
+    "losses": 25,
     "games": [
       {
         "source": "effra",
@@ -7494,17 +8429,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 8,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 8,
         "result": "W",
@@ -7522,6 +8446,17 @@
         "venue": "Mile End",
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 8,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7604,6 +8539,17 @@
       },
       {
         "source": "effra",
+        "year": 2025,
+        "gw": 13,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 13,
         "result": "L",
@@ -7615,12 +8561,12 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 13,
+        "year": 2026,
+        "gw": 14,
         "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
+        "venue": "Brixton",
+        "goals": 2,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7638,12 +8584,12 @@
       {
         "source": "effra",
         "year": 2026,
-        "gw": 14,
+        "gw": 15,
         "result": "W",
-        "venue": "Brixton",
-        "goals": 2,
+        "venue": "Mile End",
+        "goals": 1,
         "assists": 2,
-        "clean_sheets": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -7655,17 +8601,6 @@
         "goals": 0,
         "assists": 3,
         "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 15,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 2,
-        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -7758,23 +8693,23 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 25,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 25,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 25,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7813,23 +8748,23 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 28,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 28,
         "result": "L",
         "venue": null,
         "goals": 0,
         "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 28,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7879,17 +8814,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 36,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 36,
         "result": "W",
@@ -7897,6 +8821,17 @@
         "goals": 0,
         "assists": 1,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 36,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -7912,17 +8847,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 38,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 38,
         "result": "L",
@@ -7930,6 +8854,17 @@
         "goals": 1,
         "assists": 0,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 38,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -7956,6 +8891,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 40,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 40,
         "result": "W",
@@ -7967,12 +8913,12 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 40,
-        "result": "W",
-        "venue": null,
+        "year": 2026,
+        "gw": 41,
+        "result": "L",
+        "venue": "Brixton",
         "goals": 0,
-        "assists": 3,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -7985,6 +8931,28 @@
         "goals": 0,
         "assists": 2,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -8006,6 +8974,28 @@
         "venue": null,
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -8033,12 +9023,45 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 47,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -8052,25 +9075,36 @@
         "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
       }
     ]
   },
   {
     "name": "Gman",
-    "appearances": 64,
-    "goals": 10,
-    "assists": 35,
-    "clean_sheets": 6,
-    "captaincies": 4,
-    "wins": 29,
-    "draws": 7,
-    "losses": 28,
+    "appearances": 70,
+    "goals": 16,
+    "assists": 39,
+    "clean_sheets": 9,
+    "captaincies": 6,
+    "wins": 33,
+    "draws": 8,
+    "losses": 29,
     "games": [
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2025,
         "gw": 1,
-        "result": "L",
+        "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 0,
@@ -8079,9 +9113,9 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2024,
         "gw": 1,
-        "result": "W",
+        "result": "L",
         "venue": null,
         "goals": 0,
         "assists": 0,
@@ -8156,10 +9190,10 @@
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2025,
         "gw": 7,
         "result": "L",
-        "venue": "Stockwell",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -8167,10 +9201,10 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 7,
         "result": "L",
-        "venue": null,
+        "venue": "Stockwell",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -8211,17 +9245,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 11,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2025,
         "gw": 11,
         "result": "W",
@@ -8229,6 +9252,17 @@
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 11,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 0,
+        "clean_sheets": 1,
         "is_captain": false
       },
       {
@@ -8321,6 +9355,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 18,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 18,
         "result": "D",
@@ -8344,8 +9389,8 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 18,
-        "result": "L",
+        "gw": 19,
+        "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 0,
@@ -8360,28 +9405,6 @@
         "venue": null,
         "goals": 0,
         "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 19,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 20,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -8405,6 +9428,17 @@
         "goals": 0,
         "assists": 1,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 20,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -8552,10 +9586,10 @@
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2025,
         "gw": 32,
-        "result": "L",
-        "venue": "Mile End",
+        "result": "W",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -8563,10 +9597,10 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2026,
         "gw": 32,
-        "result": "W",
-        "venue": null,
+        "result": "L",
+        "venue": "Mile End",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -8618,7 +9652,7 @@
       },
       {
         "source": "effra",
-        "year": 2025,
+        "year": 2024,
         "gw": 37,
         "result": "W",
         "venue": null,
@@ -8629,7 +9663,7 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2025,
         "gw": 37,
         "result": "W",
         "venue": null,
@@ -8645,6 +9679,17 @@
         "result": "W",
         "venue": "Brixton",
         "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 38,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
@@ -8669,17 +9714,6 @@
         "goals": 0,
         "assists": 1,
         "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 38,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -8717,6 +9751,17 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 42,
         "result": "W",
@@ -8750,6 +9795,28 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 46,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 46,
         "result": "W",
@@ -8761,12 +9828,722 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 49,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "W",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Ram",
+    "appearances": 28,
+    "goals": 12,
+    "assists": 30,
+    "clean_sheets": 3,
+    "captaincies": 3,
+    "wins": 9,
+    "draws": 2,
+    "losses": 17,
+    "games": [
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 1,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 1,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 4,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 2,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 2,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 2,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 3,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 5,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 7,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 9,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 19,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 21,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 23,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 27,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 29,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 31,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 4,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 31,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 32,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 33,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 34,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 35,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 35,
+        "result": "L",
+        "venue": "Stockwell",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 36,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 39,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 3,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 43,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "L",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Luke",
+    "appearances": 23,
+    "goals": 10,
+    "assists": 19,
+    "clean_sheets": 2,
+    "captaincies": 1,
+    "wins": 12,
+    "draws": 2,
+    "losses": 9,
+    "games": [
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 1,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 5,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 6,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 7,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 10,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 14,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 16,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 21,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 22,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 25,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 27,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 31,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 38,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 41,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 42,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 3,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": true
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 44,
+        "result": "D",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 44,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 47,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 48,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      }
+    ]
+  },
+  {
+    "name": "Ewan",
+    "appearances": 7,
+    "goals": 8,
+    "assists": 8,
+    "clean_sheets": 1,
+    "captaincies": 0,
+    "wins": 4,
+    "draws": 0,
+    "losses": 3,
+    "games": [
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 28,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 31,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 39,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 40,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 42,
+        "result": "L",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "W",
+        "venue": "STOCKWELL",
+        "goals": 3,
+        "assists": 2,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 45,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 1,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       }
@@ -8829,6 +10606,17 @@
       },
       {
         "source": "effra",
+        "year": 2024,
+        "gw": 7,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2026,
         "gw": 7,
         "result": "L",
@@ -8840,33 +10628,22 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 7,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 8,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 8,
         "result": "L",
         "venue": "Mile End",
         "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 8,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
@@ -9000,272 +10777,6 @@
         "venue": null,
         "goals": 0,
         "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      }
-    ]
-  },
-  {
-    "name": "Ram",
-    "appearances": 23,
-    "goals": 8,
-    "assists": 24,
-    "clean_sheets": 2,
-    "captaincies": 2,
-    "wins": 8,
-    "draws": 2,
-    "losses": 13,
-    "games": [
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 1,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 1,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 4,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 2,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 2,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 2,
-        "assists": 2,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 3,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 5,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 7,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 9,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 19,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 21,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 23,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 27,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 29,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 31,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 31,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 4,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 32,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 33,
-        "result": "L",
-        "venue": "Brixton",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": true
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 34,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 35,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 35,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 36,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 39,
-        "result": "D",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 43,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       }
@@ -9374,17 +10885,6 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 3,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 3,
         "result": "W",
@@ -9396,12 +10896,12 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 4,
-        "result": "L",
+        "year": 2025,
+        "gw": 3,
+        "result": "W",
         "venue": null,
         "goals": 0,
-        "assists": 5,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -9429,14 +10929,14 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 5,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
+        "year": 2024,
+        "gw": 4,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 5,
         "clean_sheets": 0,
-        "is_captain": true
+        "is_captain": false
       },
       {
         "source": "effra",
@@ -9448,6 +10948,17 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 5,
+        "result": "W",
+        "venue": "Mile End",
+        "goals": 1,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -9605,17 +11116,6 @@
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 27,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 27,
         "result": "L",
@@ -9627,10 +11127,10 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 28,
-        "result": "D",
-        "venue": "Mile End",
+        "year": 2024,
+        "gw": 27,
+        "result": "W",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -9644,6 +11144,17 @@
         "venue": null,
         "goals": 0,
         "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 28,
+        "result": "D",
+        "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -9805,17 +11316,6 @@
     "games": [
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 3,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2026,
         "gw": 3,
         "result": "L",
@@ -9823,6 +11323,17 @@
         "goals": 0,
         "assists": 1,
         "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 3,
+        "result": "W",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -9849,17 +11360,6 @@
       },
       {
         "source": "effra",
-        "year": 2026,
-        "gw": 12,
-        "result": "L",
-        "venue": "Stockwell",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 12,
         "result": "L",
@@ -9871,10 +11371,10 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 17,
-        "result": "D",
-        "venue": null,
+        "year": 2026,
+        "gw": 12,
+        "result": "L",
+        "venue": "Stockwell",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -9886,6 +11386,17 @@
         "gw": 17,
         "result": "W",
         "venue": "Mile End",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 17,
+        "result": "D",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -9971,237 +11482,15 @@
     ]
   },
   {
-    "name": "Luke",
-    "appearances": 19,
-    "goals": 5,
-    "assists": 17,
-    "clean_sheets": 1,
-    "captaincies": 0,
-    "wins": 11,
-    "draws": 1,
-    "losses": 7,
-    "games": [
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 1,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 5,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 6,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 7,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 10,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 14,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 16,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 3,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 21,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 22,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2025,
-        "gw": 25,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 27,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 31,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 1,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 38,
-        "result": "L",
-        "venue": "Mile End",
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2026,
-        "gw": 40,
-        "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 2,
-        "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 41,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 42,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 44,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 47,
-        "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 48,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
-        "is_captain": false
-      }
-    ]
-  },
-  {
     "name": "Nik",
-    "appearances": 21,
+    "appearances": 23,
     "goals": 5,
     "assists": 3,
-    "clean_sheets": 3,
-    "captaincies": 4,
-    "wins": 12,
+    "clean_sheets": 4,
+    "captaincies": 5,
+    "wins": 13,
     "draws": 2,
-    "losses": 7,
+    "losses": 8,
     "games": [
       {
         "source": "effra",
@@ -10388,7 +11677,7 @@
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
-        "is_captain": false
+        "is_captain": true
       },
       {
         "source": "effra",
@@ -10433,15 +11722,37 @@
         "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 49,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 50,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
       }
     ]
   },
   {
-    "name": "Ewan",
+    "name": "Conrad",
     "appearances": 4,
-    "goals": 3,
-    "assists": 5,
-    "clean_sheets": 0,
+    "goals": 4,
+    "assists": 4,
+    "clean_sheets": 2,
     "captaincies": 0,
     "wins": 3,
     "draws": 0,
@@ -10449,46 +11760,46 @@
     "games": [
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 28,
-        "result": "W",
-        "venue": null,
+        "year": 2026,
+        "gw": 37,
+        "result": "L",
+        "venue": "Brixton",
         "goals": 0,
+        "assists": 1,
+        "clean_sheets": 1,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 41,
+        "result": "W",
+        "venue": "Brixton",
+        "goals": 1,
         "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
       {
         "source": "effra",
-        "year": 2024,
-        "gw": 31,
+        "year": 2026,
+        "gw": 43,
         "result": "W",
-        "venue": null,
-        "goals": 0,
-        "assists": 2,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 39,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
+        "venue": "STOCKWELL",
+        "goals": 2,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
       {
         "source": "effra",
         "year": 2026,
-        "gw": 40,
+        "gw": 49,
         "result": "W",
-        "venue": "Mile End",
-        "goals": 3,
-        "assists": 2,
-        "clean_sheets": 0,
+        "venue": "Brixton",
+        "goals": 1,
+        "assists": 1,
+        "clean_sheets": 1,
         "is_captain": false
       }
     ]
@@ -10530,15 +11841,26 @@
   },
   {
     "name": "Ben",
-    "appearances": 15,
+    "appearances": 17,
     "goals": 2,
-    "assists": 14,
+    "assists": 15,
     "clean_sheets": 1,
     "captaincies": 0,
     "wins": 7,
     "draws": 0,
-    "losses": 8,
+    "losses": 10,
     "games": [
+      {
+        "source": "effra",
+        "year": 2024,
+        "gw": 11,
+        "result": "L",
+        "venue": null,
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
       {
         "source": "effra",
         "year": 2026,
@@ -10553,7 +11875,7 @@
       {
         "source": "effra",
         "year": 2024,
-        "gw": 11,
+        "gw": 12,
         "result": "L",
         "venue": null,
         "goals": 0,
@@ -10570,17 +11892,6 @@
         "goals": 1,
         "assists": 1,
         "clean_sheets": 1,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
-        "year": 2024,
-        "gw": 12,
-        "result": "L",
-        "venue": null,
-        "goals": 0,
-        "assists": 0,
-        "clean_sheets": 0,
         "is_captain": false
       },
       {
@@ -10695,12 +12006,34 @@
       },
       {
         "source": "effra",
+        "year": 2026,
+        "gw": 47,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 0,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
         "year": 2024,
         "gw": 47,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 3,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 48,
+        "result": "L",
+        "venue": "MILE END",
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       }
@@ -10774,10 +12107,10 @@
       },
       {
         "source": "effra",
-        "year": 2024,
+        "year": 2026,
         "gw": 33,
         "result": "L",
-        "venue": null,
+        "venue": "Brixton",
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -10785,10 +12118,10 @@
       },
       {
         "source": "effra",
-        "year": 2026,
+        "year": 2024,
         "gw": 33,
         "result": "L",
-        "venue": "Brixton",
+        "venue": null,
         "goals": 0,
         "assists": 0,
         "clean_sheets": 0,
@@ -11035,14 +12368,14 @@
   },
   {
     "name": "Jay",
-    "appearances": 16,
+    "appearances": 17,
     "goals": 0,
     "assists": 25,
     "clean_sheets": 1,
     "captaincies": 0,
     "wins": 5,
     "draws": 1,
-    "losses": 10,
+    "losses": 11,
     "games": [
       {
         "source": "effra",
@@ -11123,23 +12456,23 @@
       },
       {
         "source": "effra",
-        "year": 2025,
-        "gw": 15,
-        "result": "D",
-        "venue": null,
-        "goals": 0,
-        "assists": 1,
-        "clean_sheets": 0,
-        "is_captain": false
-      },
-      {
-        "source": "effra",
         "year": 2024,
         "gw": 15,
         "result": "W",
         "venue": null,
         "goals": 0,
         "assists": 2,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2025,
+        "gw": 15,
+        "result": "D",
+        "venue": null,
+        "goals": 0,
+        "assists": 1,
         "clean_sheets": 0,
         "is_captain": false
       },
@@ -11206,6 +12539,17 @@
         "venue": null,
         "goals": 0,
         "assists": 1,
+        "clean_sheets": 0,
+        "is_captain": false
+      },
+      {
+        "source": "effra",
+        "year": 2026,
+        "gw": 43,
+        "result": "L",
+        "venue": "STOCKWELL",
+        "goals": 0,
+        "assists": 0,
         "clean_sheets": 0,
         "is_captain": false
       },

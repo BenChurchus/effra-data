@@ -35,7 +35,7 @@
     {
       "year": 2026,
       "player": "Nik",
-      "is_captain": false,
+      "is_captain": true,
       "goals": null,
       "assists": null,
       "clean_sheets": null

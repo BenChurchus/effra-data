@@ -2,477 +2,478 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Effra Stats</title>
-<style>
-  :root {
-    color-scheme: light dark;
-    --bg: #fafafa; --fg: #1a1a1a; --muted: #6b6b6b;
-    --card: #ffffff; --border: #e2e2e2; --accent: #1d6f42;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #121212; --fg: #eaeaea; --muted: #9a9a9a; --card: #1c1c1c; --border: #303030; --accent: #4caf7d; }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--bg); color: var(--fg);
-    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  }
-  header { padding: 32px 20px 16px; max-width: 720px; margin: 0 auto; }
-  h1 { margin: 0 0 4px; font-size: 1.6rem; }
-  .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
-  select#year-select,
-  select#player-select,
-  select#gw-select,
-  select#pair-select {
-    width: 100%; padding: 12px 14px; font-size: 1rem;
-    border: 1px solid var(--border); border-radius: 8px;
-    background: var(--card); color: var(--fg);
-    margin-bottom: 8px;
-  }
-  main { max-width: 720px; margin: 0 auto; padding: 0 20px 60px; }
-  .card {
-    margin-top: 16px; padding: 18px 20px;
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  }
-  .name { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
-  .stats { color: var(--muted); font-size: 0.9rem; display: flex; flex-wrap: wrap; gap: 16px; }
-  .stats b { color: var(--fg); }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 16px; }
-  th, td { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--border); }
-  th { color: var(--muted); font-weight: 500; }
-  .result-W { color: var(--accent); font-weight: 600; }
-  .result-L { color: #c0392b; font-weight: 600; }
-  .result-D { color: var(--muted); font-weight: 600; }
-  .empty { color: var(--muted); padding: 20px 0; }
-  [hidden] { display: none !important; }
-  h3 { font-size: 0.95rem; margin: 20px 0 0; }
-  .table-scroll { max-height: 360px; overflow-y: auto; }
-  .table-scroll thead th { position: sticky; top: 0; background: var(--card); }
-  tr.clickable { cursor: pointer; }
-  tr.clickable:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
-  td.num, th.num { text-align: right; }
-  .muted { color: var(--muted); }
-  .scoreline { display: flex; align-items: baseline; gap: 12px; font-size: 1.1rem; margin: 2px 0 6px; }
-  .scoreline b { font-size: 1.5rem; font-variant-numeric: tabular-nums; }
-  .teams { display: flex; gap: 20px; flex-wrap: wrap; }
-  .team { flex: 1; min-width: 220px; }
-  .team-head { display: flex; justify-content: space-between; margin-top: 12px; font-weight: 600; font-size: 0.9rem; }
-  .team table { margin-top: 6px; }
-  .cap { display: inline-block; font-size: 0.7rem; font-weight: 700; line-height: 1; padding: 2px 4px;
-         border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; vertical-align: 1px; }
-  .og { color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Effra Rovers FC · Stats</title>
+<meta name="description" content="Player records, pairings and match results for Effra Rovers FC 5-a-side, 2024 to today.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1a19" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Effra Rovers FC · Stats">
+<meta property="og:description" content="Player records, pairings and match results.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://benchurchus.github.io/effra-data/assets/crest.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<script>/* apply saved theme before first paint (no flash) */
+try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<link rel="stylesheet" href="effra.css">
+<script src="effra.js" defer></script>
+<script src="charts.js" defer></script>
 </head>
 <body>
-<header>
-  <h1>Effra Stats</h1>
-  <div class="sub">Pick a season, then a player or a gameweek.</div>
-  <select id="year-select" aria-label="Select a season">
-    <option value="all">All seasons</option>
-  </select>
-  <div class="sub" style="margin-top:20px;">Pick a player to see their record.</div>
-  <select id="player-select">
-    <option value="">Select a player...</option>
-  </select>
-  <div id="pair-wrap" hidden>
-    <select id="pair-select" aria-label="Pair with another player">
-      <option value="">Pair with...</option>
-    </select>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/icon-192.png" alt="Effra Rovers FC crest" width="48" height="48">
+      <div class="grow">
+        <h1>Effra Rovers FC</h1>
+        <div class="tag">5-a-side stats · since 2023</div>
+      </div>
+      <button type="button" class="theme-toggle" id="theme-toggle"></button>
+    </div>
+    <div class="header-row">
+      <div class="tabs" role="tablist" aria-label="Section">
+        <button type="button" role="tab" id="tab-table" aria-controls="panel-table" aria-selected="false">Leaderboard</button>
+        <button type="button" role="tab" id="tab-players" aria-controls="panel-players" aria-selected="true">Players</button>
+        <button type="button" role="tab" id="tab-matches" aria-controls="panel-matches" aria-selected="false">Matches</button>
+      </div>
+      <div class="seg" id="season-seg" role="group" aria-label="Season"></div>
+    </div>
   </div>
-  <div class="sub" style="margin-top:20px;">Or pick a gameweek to see the match.</div>
-  <select id="gw-select">
-    <option value="">Select a gameweek...</option>
-  </select>
 </header>
-<main>
-  <div id="player-detail"></div>
-  <div id="pair-detail"></div>
-  <div id="gw-detail"></div>
+
+<main id="main" class="wrap">
+  <div id="status" class="empty-state" role="status">Loading stats…</div>
+
+  <section id="panel-table" role="tabpanel" aria-labelledby="tab-table" hidden>
+    <article class="card">
+      <div class="card-head">
+        <h2 id="table-title">Leaderboard</h2>
+        <label class="sub"><input type="checkbox" id="table-qualified" checked> <span id="table-qual-label">Regulars only</span></label>
+      </div>
+      <div class="sub" style="margin-top:4px">Click any column to re-order · tap a player to open their record.</div>
+      <div class="table-wrap" id="leaderboard" style="margin-top:10px"></div>
+    </article>
+  </section>
+
+  <section id="panel-players" role="tabpanel" aria-labelledby="tab-players" hidden>
+    <div class="pickers two">
+      <label class="field">Player
+        <select id="player-select"><option value="">Choose a player…</option></select>
+      </label>
+      <label class="field" id="pair-field" hidden>Pair with
+        <select id="pair-select"><option value="">Compare with another player…</option></select>
+      </label>
+    </div>
+    <div id="player-view"></div>
+  </section>
+
+  <section id="panel-matches" role="tabpanel" aria-labelledby="tab-matches" hidden>
+    <div class="nav-row">
+      <button type="button" class="btn" id="gw-prev" aria-label="Previous match">‹</button>
+      <label class="field">Gameweek
+        <select id="gw-select"><option value="">Choose a gameweek…</option></select>
+      </label>
+      <button type="button" class="btn" id="gw-next" aria-label="Next match">›</button>
+    </div>
+    <div id="match-view"></div>
+  </section>
 </main>
 
+<footer class="site">Effra Rovers FC · data from the weekly scorecards · <span id="data-stamp"></span></footer>
+<noscript><p class="wrap">This page needs JavaScript to load the stats.</p></noscript>
+
 <script>
-let players = [];
-let matches = [];
-let selectedYear = 'all';
+document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+  const E = window.Effra, C = window.EffraCharts, esc = E.escapeHtml, fmt = E.fmt;
+  const $ = (id) => document.getElementById(id);
 
-fetch('players.json').then(r => r.json()).then(data => {
-  players = data;
-  rebuildYearOptions();
-  populatePlayerOptions();
-  updatePlayerDetail();
-});
+  let allMatches = [];
+  const TABS = ['table', 'players', 'matches'];
+  const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', sort: '' };
+  E.mountThemeToggle($('theme-toggle'));
+  const cache = new Map();
 
-fetch('matches.json').then(r => r.json()).then(data => {
-  matches = data;
-  populateGwOptions();
-  updateMatchDetail();
-  // Pairings are derived from match rosters, so refresh once they arrive.
-  populatePairOptions();
-  updatePlayerDetail();
-});
+  // ------------------------------------------------------------ data scope
+  function scope() {
+    if (!cache.has(state.year)) {
+      const matches = E.filterBySeason(allMatches, state.year);
+      const players = E.buildPlayers(matches);
+      const pairs = E.buildPairs(matches);
+      E.addImpact(players, pairs);
+      const t = E.defaultThresholds(matches.length);
+      cache.set(state.year, { matches, players, pairs, t, byName: new Map(players.map(p => [p.name, p])) });
+    }
+    return cache.get(state.year);
+  }
+  const allSeasons = () => state.year === 'all';
+  const seasonText = () => (allSeasons() ? 'All seasons' : `${state.year} season`);
+  const shortGw = (g) => (allSeasons() && g.year ? `’${String(g.year).slice(2)} GW${g.gw}` : `GW${g.gw}`);
 
-function rebuildYearOptions() {
-  const yearSet = new Set();
-  for (const p of players) {
-    for (const g of p.games || []) {
-      if (g.year != null) yearSet.add(String(g.year));
+  // ------------------------------------------------------- URL deep links
+  function readHash() {
+    const h = new URLSearchParams(location.hash.slice(1));
+    state.tab = TABS.includes(h.get('tab')) ? h.get('tab') : 'players';
+    state.year = h.get('y') || state.year;
+    state.player = h.get('p') || '';
+    state.pair = h.get('with') || '';
+    state.gw = h.get('gw') || '';
+  }
+  function writeHash() {
+    const h = new URLSearchParams();
+    h.set('tab', state.tab);
+    h.set('y', state.year);
+    if (state.tab === 'players' && state.player) h.set('p', state.player);
+    if (state.tab === 'players' && state.player && state.pair) h.set('with', state.pair);
+    if (state.tab === 'matches' && state.gw) h.set('gw', state.gw);
+    history.replaceState(null, '', `#${h.toString()}`);
+  }
+
+  // -------------------------------------------------------------- chrome
+  function renderSeasons() {
+    const years = E.seasons(allMatches).map(String);
+    if (state.year !== 'all' && !years.includes(state.year)) state.year = years[years.length - 1] || 'all';
+    $('season-seg').innerHTML = [...years, 'all'].map(y =>
+      `<button type="button" data-year="${y}" aria-pressed="${state.year === y}">${y === 'all' ? 'All' : y}</button>`).join('');
+  }
+  function renderTabs() {
+    for (const t of TABS) {
+      $(`tab-${t}`).setAttribute('aria-selected', String(state.tab === t));
+      $(`panel-${t}`).hidden = state.tab !== t;
     }
   }
-  const yearSelect = document.getElementById('year-select');
-  const years = Array.from(yearSet).sort((a, b) => Number(a) - Number(b));
-  const current = yearSelect.value || 'all';
-  yearSelect.innerHTML = '<option value="all">All seasons</option>' + years.map(y => `<option value="${y}">${y}</option>`).join('');
-  yearSelect.value = years.includes(current) ? current : 'all';
-  selectedYear = yearSelect.value;
-}
 
-function getVisiblePlayers() {
-  if (selectedYear === 'all') return players;
-  return players.filter(p => (p.games || []).some(g => String(g.year) === selectedYear));
-}
-
-function getVisibleMatches() {
-  if (selectedYear === 'all') return matches;
-  return matches.filter(m => String(m.year) === selectedYear);
-}
-
-function populatePlayerOptions() {
-  const select = document.getElementById('player-select');
-  const previous = select.value;
-  const visible = getVisiblePlayers().slice().sort((a, b) => a.name.localeCompare(b.name));
-  select.innerHTML = '<option value="">Select a player...</option>' + visible.map(p => `<option value="${escapeHtmlAttribute(p.name)}">${escapeHtml(p.name)}</option>`).join('');
-  select.value = visible.some(p => p.name === previous) ? previous : '';
-}
-
-// GW numbers restart each season, so a match is identified by year + GW.
-function matchKey(m) {
-  return `${m.year ?? ''}-${m.gw}`;
-}
-
-function populateGwOptions() {
-  const select = document.getElementById('gw-select');
-  const previous = select.value;
-  const showYear = selectedYear === 'all';
-  const visible = getVisibleMatches().slice()
-    .sort((a, b) => (Number(a.year) || 0) - (Number(b.year) || 0) || a.gw - b.gw);
-  select.innerHTML = '<option value="">Select a gameweek...</option>' + visible.map(m =>
-    `<option value="${matchKey(m)}">${showYear && m.year ? `${m.year} ` : ''}GW${m.gw}</option>`).join('');
-  select.value = visible.some(m => matchKey(m) === previous) ? previous : '';
-}
-
-document.getElementById('year-select').addEventListener('change', (e) => {
-  selectedYear = e.target.value;
-  populatePlayerOptions();
-  populateGwOptions();
-  populatePairOptions();
-  updatePlayerDetail();
-  updateMatchDetail();
-});
-
-document.getElementById('player-select').addEventListener('change', () => {
-  populatePairOptions();
-  updatePlayerDetail();
-});
-
-document.getElementById('pair-select').addEventListener('change', () => {
-  updatePairDetail();
-});
-
-// Clicking a row in the pairings table selects that player in "Pair with".
-document.getElementById('player-detail').addEventListener('click', (e) => {
-  const row = e.target.closest('tr[data-pair]');
-  if (!row) return;
-  const pairSelect = document.getElementById('pair-select');
-  pairSelect.value = row.dataset.pair;
-  updatePairDetail();
-  document.getElementById('pair-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-// ---- Pairings: derived from match rosters, respecting the season filter ----
-
-const NON_PLAYERS = new Set(['og', 'own goal']);
-
-function rosterNames(list) {
-  return (list || []).map(p => p.player).filter(n => n && !NON_PLAYERS.has(n.trim().toLowerCase()));
-}
-
-function sideOf(m, name) {
-  if (rosterNames(m.team1_players).includes(name)) return 1;
-  if (rosterNames(m.team2_players).includes(name)) return 2;
-  return 0;
-}
-
-function resultFor(m, side) {
-  return side === 1 ? m.team1_result : m.team2_result;
-}
-
-function emptyRecord() {
-  return { n: 0, W: 0, D: 0, L: 0 };
-}
-
-function addResult(rec, result) {
-  rec.n += 1;
-  if (result === 'W' || result === 'D' || result === 'L') rec[result] += 1;
-}
-
-function winPct(rec) {
-  return rec.n ? Math.round((rec.W / rec.n) * 100) : null;
-}
-
-function fmtPct(rec) {
-  const pct = winPct(rec);
-  return pct == null ? '-' : `${pct}%`;
-}
-
-function fmtWDL(rec) {
-  return `${rec.W}-${rec.D}-${rec.L}`;
-}
-
-// For one player: per other-player record with them (same side) and against
-// them (opposite side), both from the selected player's perspective.
-function computePairings(name) {
-  const byName = new Map();
-  const get = (other) => {
-    if (!byName.has(other)) byName.set(other, { name: other, with: emptyRecord(), vs: emptyRecord() });
-    return byName.get(other);
-  };
-  for (const m of getVisibleMatches()) {
-    const side = sideOf(m, name);
-    if (!side) continue;
-    const result = resultFor(m, side);
-    const mine = rosterNames(side === 1 ? m.team1_players : m.team2_players);
-    const theirs = rosterNames(side === 1 ? m.team2_players : m.team1_players);
-    for (const other of mine) if (other !== name) addResult(get(other).with, result);
-    for (const other of theirs) addResult(get(other).vs, result);
+  // ------------------------------------------------------------- players
+  function renderPlayerPickers() {
+    const s = scope();
+    const names = s.players.map(p => p.name);
+    if (state.player && !names.includes(state.player)) { state.player = ''; state.pair = ''; }
+    $('player-select').innerHTML = '<option value="">Choose a player…</option>' +
+      names.map(n => `<option value="${esc(n)}" ${n === state.player ? 'selected' : ''}>${esc(n)}</option>`).join('');
+    // "Pair with" only exists once an individual is up
+    $('pair-field').hidden = !state.player;
+    if (!state.player) { state.pair = ''; return; }
+    const others = E.pairingsFor(s.pairs, state.player).map(p => p.other).sort((a, b) => a.localeCompare(b));
+    if (state.pair && !others.includes(state.pair)) state.pair = '';
+    $('pair-select').innerHTML = `<option value="">Compare ${esc(state.player)} with…</option>` +
+      others.map(n => `<option value="${esc(n)}" ${n === state.pair ? 'selected' : ''}>${esc(n)}</option>`).join('');
   }
-  return Array.from(byName.values());
-}
 
-function populatePairOptions() {
-  const wrap = document.getElementById('pair-wrap');
-  const select = document.getElementById('pair-select');
-  const player = document.getElementById('player-select').value;
-  const previous = select.value;
-  if (!player) {
-    wrap.hidden = true;
-    select.innerHTML = '<option value="">Pair with...</option>';
-    updatePairDetail();
-    return;
+  const kpi = (label, value, meta = '', tone = '') =>
+    `<div class="kpi ${tone}"><div class="label">${label}</div><div class="value">${value}</div>${meta ? `<div class="meta">${meta}</div>` : ''}</div>`;
+  // tone for a rate: green above 55%, red below 45%, neutral blue between
+  const toneFor = (v) => (v == null ? '' : v >= 0.55 ? 'good' : v < 0.45 ? 'bad' : '');
+
+  // ----------------------------------------------------------- leaderboard
+  function renderLeaderboard() {
+    const s = scope();
+    const qOnly = $('table-qualified').checked;
+    $('table-title').textContent = `Leaderboard · ${seasonText()}`;
+    $('table-qual-label').textContent = `Regulars only (${s.t.minApps}+ apps)`;
+    const rows = s.players.filter(p => !qOnly || p.apps >= s.t.minApps);
+    E.sortableTable($('leaderboard'), [
+      { key: 'name', label: 'Player', sticky: true, value: p => p.name, html: p => `<b>${esc(p.name)}</b>` },
+      { key: 'apps', label: 'Apps', num: true, value: p => p.apps },
+      { key: 'rec', label: 'Record', value: p => p.rec.W - p.rec.L, html: p => fmt.wdlHtml(p.rec) },
+      { key: 'win', label: 'Win %', num: true, value: p => p.winPct, html: p => fmt.meterHtml(p.winPct) },
+      { key: 'g', label: 'Goals', num: true, value: p => p.goals },
+      { key: 'gpg', label: 'G/gm', num: true, value: p => p.gpg, html: p => fmt.pg(p.gpg) },
+      { key: 'a', label: 'Assists', num: true, value: p => p.assists },
+      { key: 'apg', label: 'A/gm', num: true, value: p => p.apg, html: p => fmt.pg(p.apg) },
+      { key: 'cs', label: 'CS', num: true, title: 'Clean sheets', value: p => p.cs },
+      { key: 'cap', label: 'Capt win %', num: true, value: p => p.capWinPct, html: p => (p.cap.n ? `${fmt.pct(p.capWinPct)} <span class="muted">(${p.cap.n})</span>` : '–') },
+      { key: 'impact', label: 'Impact', num: true, title: 'Win % minus team-mates’ win % without them', value: p => p.impact,
+        html: p => (p.impact == null ? '–' : `<span class="${p.impact >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`) },
+      { key: 'form', label: 'Form', value: p => p.games.slice(-5).filter(g => g.result === 'W').length, html: p => formStrip(p.games, 5) },
+    ], rows, { sortKey: 'win', rowAttrs: p => `class="clickable" data-player="${esc(p.name)}" tabindex="0"` });
   }
-  const others = computePairings(player).map(p => p.name).sort((a, b) => a.localeCompare(b));
-  select.innerHTML = `<option value="">Pair ${escapeHtml(player)} with...</option>` +
-    others.map(n => `<option value="${escapeHtmlAttribute(n)}">${escapeHtml(n)}</option>`).join('');
-  select.value = others.includes(previous) ? previous : '';
-  wrap.hidden = false;
-  updatePairDetail();
-}
+  const resChip = (r) => `<span class="res ${r || 'none'}" aria-label="${({ W: 'Win', D: 'Draw', L: 'Loss' })[r] || 'No result'}">${r || '–'}</span>`;
+  const formStrip = (games, n = 6) => `<span class="form">${games.slice(-n).map(g => resChip(g.result)).join('')}</span>`;
 
-function updatePairDetail() {
-  const player = document.getElementById('player-select').value;
-  const other = document.getElementById('pair-select').value;
-  document.getElementById('pair-detail').innerHTML = player && other ? renderPair(player, other) : '';
-}
+  // Radar axes: percentile against the qualified squad in scope
+  const AXES = [
+    { key: 'gpg', label: 'Goals/gm', show: v => `${fmt.pg(v)} goals/game` },
+    { key: 'apg', label: 'Assists/gm', show: v => `${fmt.pg(v)} assists/game` },
+    { key: 'cspg', label: 'Clean sh./gm', show: v => `${fmt.pg(v)} clean sheets/game` },
+    { key: 'winPct', label: 'Win %', show: v => `${fmt.pct(v)} win rate` },
+    { key: 'impact', label: 'Win impact', show: v => `${fmt.signedPct(v)} vs team-mates` },
+  ];
+  function percentile(pool, key, v) {
+    if (v == null) return null;
+    const vals = pool.map(p => p[key]).filter(x => x != null);
+    if (!vals.length) return null;
+    const below = vals.filter(x => x < v - 1e-12).length, same = vals.filter(x => Math.abs(x - v) <= 1e-12).length;
+    return (below + 0.5 * same) / vals.length;
+  }
+  const ordinal = (n) => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
 
-function seasonLabel() {
-  return selectedYear === 'all' ? 'all seasons' : `season ${selectedYear}`;
-}
+  function renderPlayer() {
+    const view = $('player-view');
+    const s = scope();
+    const p = s.byName.get(state.player);
+    if (!p) {
+      view.innerHTML = `<div class="card empty-state"><img src="assets/crest-grey.png" alt="">Choose a player to see their record, pairings and form.</div>`;
+      return;
+    }
+    const other = state.pair ? s.byName.get(state.pair) : null;
+    const pool = s.players.filter(x => x.apps >= s.t.minApps);
+    const poolUsed = pool.length >= 3 ? pool : s.players;
+    const st = p.streaks;
 
-function gwLabel(item) {
-  return `${selectedYear === 'all' && item.year ? `${item.year} ` : ''}GW${item.gw}`;
-}
+    view.innerHTML = `
+      <article class="card" aria-labelledby="pname">
+        <div class="card-head">
+          <h2 id="pname">${esc(p.name)}</h2>
+          <span class="sub">${seasonText()} · last ${Math.min(6, p.games.length)} ${formStrip(p.games)}</span>
+        </div>
+        <div class="kpis six">
+          ${kpi('Appearances', p.apps, fmt.wdlHtml(p.rec))}
+          ${kpi('Win rate', fmt.pct(p.winPct), `impact <span class="${(p.impact ?? 0) >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`, toneFor(p.winPct))}
+          ${kpi('Goals', p.goals, `${fmt.pg(p.gpg)} per game`, 'gold')}
+          ${kpi('Assists', p.assists, `${fmt.pg(p.apg)} per game`)}
+          ${kpi('Clean sheets', p.cs, `${fmt.pg(p.cspg)} per game`)}
+          ${kpi('Captain', p.cap.n ? fmt.pct(p.capWinPct) : '–', p.cap.n ? `${p.cap.n} caps · ${fmt.wdlHtml(p.cap)}` : 'never captained', p.cap.n ? toneFor(p.capWinPct) : '')}
+        </div>
+        <div class="chips">
+          <span>Longest win streak <b>${st.win.length}</b></span>
+          <span>Unbeaten run <b>${st.unbeaten.length}</b></span>
+          <span>Scoring streak <b>${st.scoring.length}</b></span>
+          <span>Losing streak <b>${st.loss.length}</b></span>
+          ${st.current ? `<span>Current <b>${st.current.length}${st.current.result}</b></span>` : ''}
+        </div>
 
-function byYearThenGw(a, b) {
-  return (Number(a.year) || 0) - (Number(b.year) || 0) || a.gw - b.gw;
-}
+        <div class="charts">
+          <div class="chart" id="radar-wrap">
+            <h3>Profile vs ${other ? esc(other.name) : 'squad'}</h3>
+            ${C.legend([{ name: p.name, color: 'var(--series-1)' }, { name: other ? other.name : 'Squad median', color: 'var(--series-ref)' }])}
+            <div id="radar"></div>
+            <details class="table-view"><summary>Show as table</summary><div class="table-wrap" id="radar-table"></div></details>
+            <div class="sub" style="font-size:0.75rem">Percentile among players with ${s.t.minApps}+ apps (${seasonText().toLowerCase()}).</div>
+          </div>
+          <div class="chart" id="line-wrap">
+            <h3>Goals &amp; assists, cumulative</h3>
+            ${C.legend([{ name: 'Goals', color: 'var(--series-1)' }, { name: 'Assists', color: 'var(--series-2)' }])}
+            <div id="line"></div>
+            <div class="sub" style="font-size:0.75rem">Hover, tap or use ← → for each game. Full list in Games below.</div>
+          </div>
+        </div>
 
-function renderPairingsTable(name) {
-  const rows = computePairings(name)
-    .sort((a, b) => (b.with.n + b.vs.n) - (a.with.n + a.vs.n) || a.name.localeCompare(b.name));
-  if (!rows.length) return '';
-  return `
-    <h3>Pairings</h3>
-    <div class="sub" style="margin:4px 0 0;">${escapeHtml(name)}'s record with and against each player. Tap a row to pair up.</div>
-    <div class="table-scroll">
-      <table>
-        <thead><tr>
-          <th>Player</th>
-          <th class="num">With</th><th class="num">W-D-L</th><th class="num">Win%</th>
-          <th class="num">Vs</th><th class="num">W-D-L</th><th class="num">Win%</th>
-        </tr></thead>
-        <tbody>${rows.map(r => `
-          <tr class="clickable" data-pair="${escapeHtmlAttribute(r.name)}">
-            <td>${escapeHtml(r.name)}</td>
-            <td class="num">${r.with.n}</td><td class="num">${fmtWDL(r.with)}</td><td class="num">${fmtPct(r.with)}</td>
-            <td class="num">${r.vs.n}</td><td class="num">${fmtWDL(r.vs)}</td><td class="num">${fmtPct(r.vs)}</td>
-          </tr>`).join('')}</tbody>
-      </table>
-    </div>
-  `;
-}
+        <div id="pair-card"></div>
 
-function renderPair(a, b) {
-  const together = emptyRecord();
-  const against = emptyRecord();
-  let goalsTogether = 0;
-  const shared = [];
-  for (const m of getVisibleMatches()) {
-    const sa = sideOf(m, a);
-    const sb = sideOf(m, b);
-    if (!sa || !sb) continue;
-    const result = resultFor(m, sa);
-    if (sa === sb) {
-      addResult(together, result);
-      const list = sa === 1 ? m.team1_players : m.team2_players;
-      goalsTogether += list.filter(p => p.player === a || p.player === b)
-        .reduce((sum, p) => sum + (p.goals || 0), 0);
+        <h3>Pairings <span class="sub">· with and against everyone · tap a row to compare</span></h3>
+        <div class="table-wrap tall" id="pairings"></div>
+
+        <h3>Games</h3>
+        <div class="table-wrap tall" id="games"></div>
+      </article>`;
+
+    // radar
+    const pv = AXES.map(a => percentile(poolUsed, a.key, p[a.key]));
+    const series = [
+      other
+        ? { name: other.name, color: 'var(--series-ref)', values: AXES.map(a => percentile(poolUsed, a.key, other[a.key])),
+            display: AXES.map(a => `${a.show(other[a.key])} (${ordinal(Math.round(100 * (percentile(poolUsed, a.key, other[a.key]) ?? 0)))} pct)`), fillOpacity: 0.06 }
+        : { name: 'Squad median', color: 'var(--series-ref)', values: AXES.map(() => 0.5), display: AXES.map(() => '50th percentile'), fillOpacity: 0.04 },
+      { name: p.name, color: 'var(--series-1)', values: pv,
+        display: AXES.map((a, i) => `${a.show(p[a.key])} (${pv[i] == null ? '–' : ordinal(Math.round(pv[i] * 100))} pct)`) },
+    ];
+    C.radarChart($('radar'), { axes: AXES, series, title: `${p.name} percentile profile` });
+    $('radar-table').innerHTML = `<table class="data"><thead><tr><th>Metric</th><th class="num">${esc(p.name)}</th><th class="num">Pct</th>${other ? `<th class="num">${esc(other.name)}</th><th class="num">Pct</th>` : ''}</tr></thead><tbody>${
+      AXES.map((a, i) => `<tr><td>${a.label}</td><td class="num">${esc(a.show(p[a.key]).split(' ')[0])}</td><td class="num">${pv[i] == null ? '–' : Math.round(pv[i] * 100)}</td>${
+        other ? `<td class="num">${esc(a.show(other[a.key]).split(' ')[0])}</td><td class="num">${Math.round(100 * (percentile(poolUsed, a.key, other[a.key]) ?? 0))}</td>` : ''}</tr>`).join('')}</tbody></table>`;
+
+    // line
+    let g = 0, a = 0;
+    const cum = p.games.map(x => ({ g: (g += x.goals), a: (a += x.assists), x }));
+    C.lineChart($('line'), {
+      title: `${p.name} cumulative goals and assists`,
+      points: p.games.map(x => ({ label: shortGw(x) })),
+      series: [
+        { name: 'Goals', color: 'var(--series-1)', values: cum.map(c => c.g) },
+        { name: 'Assists', color: 'var(--series-2)', values: cum.map(c => c.a) },
+      ],
+      tooltipHtml: (i) => {
+        const c = cum[i];
+        return `<b>${esc(E.gwLabel(c.x))}</b> · ${({ W: 'Won', D: 'Drew', L: 'Lost' })[c.x.result] || 'No result'} ${c.x.teamGoals ?? ''}–${c.x.oppGoals ?? ''}<br>
+          This game: ${c.x.goals}G ${c.x.assists}A<br>Running: <b>${c.g}</b> goals, <b>${c.a}</b> assists`;
+      },
+    });
+
+    // pairings (sortable, per-game)
+    const prs = E.pairingsFor(s.pairs, p.name);
+    E.sortableTable($('pairings'), [
+      { key: 'other', label: 'Player', value: r => r.other, html: r => esc(r.other) },
+      { key: 'with', label: 'With', num: true, title: 'Games on the same team', value: r => r.with.n },
+      { key: 'wwdl', label: 'Record', value: r => r.with.W - r.with.L, html: r => r.with.n ? fmt.wdlHtml(r.with) : '–' },
+      { key: 'wpct', label: 'Win %', num: true, value: r => r.withPct, html: r => fmt.meterHtml(r.withPct) },
+      { key: 'gpg', label: 'Goals/gm', num: true, title: 'Goals between you per game together', value: r => r.withGpg, html: r => r.with.n ? fmt.pg(r.withGpg) : '–' },
+      { key: 'vs', label: 'Against', num: true, title: 'Games on opposite teams', value: r => r.vs.n },
+      { key: 'vwdl', label: 'Record', value: r => r.vs.W - r.vs.L, html: r => r.vs.n ? fmt.wdlHtml(r.vs) : '–' },
+      { key: 'vpct', label: 'Win %', num: true, value: r => r.vsPct, html: r => fmt.meterHtml(r.vsPct) },
+    ], prs, { sortKey: 'with', rowAttrs: r => `class="clickable" data-pair="${esc(r.other)}" tabindex="0"` });
+
+    // games
+    E.sortableTable($('games'), [
+      { key: 'when', label: 'Game', value: r => (Number(r.year) || 0) * 1000 + r.gw, html: r => esc(E.gwLabel(r, allSeasons())) },
+      { key: 'res', label: 'Result', value: r => ({ W: 2, D: 1, L: 0 })[r.result] ?? -1, html: r => `${resChip(r.result)} <span class="muted">${r.teamGoals ?? ''}–${r.oppGoals ?? ''}</span>` },
+      { key: 'g', label: 'G', num: true, value: r => r.goals, html: r => r.goals || '·' },
+      { key: 'a', label: 'A', num: true, value: r => r.assists, html: r => r.assists || '·' },
+      { key: 'cs', label: 'CS', num: true, value: r => r.cs, html: r => r.cs || '·' },
+      { key: 'c', label: 'Capt', value: r => (r.captain ? 1 : 0), html: r => (r.captain ? '<span class="cap" title="Captain">C</span>' : '') },
+      { key: 'v', label: 'Venue', value: r => r.venue || '', html: r => esc(r.venue || '') },
+    ], p.games, { sortKey: 'when' });
+
+    renderPairCard(p, other, prs);
+  }
+
+  function renderPairCard(p, other, prs) {
+    const box = $('pair-card');
+    if (!other) { box.innerHTML = ''; return; }
+    const r = prs.find(x => x.other === other.name);
+    if (!r) { box.innerHTML = ''; return; }
+    const sig = r.vs.W + r.vs.L >= 3
+      ? (r.vsP < 0.05 ? `significant (p = ${fmt.p(r.vsP)})` : `could be chance (p = ${fmt.p(r.vsP)})`)
+      : 'too few games to judge';
+    box.innerHTML = `
+      <h3>${esc(p.name)} &amp; ${esc(other.name)}</h3>
+      <div class="kpis">
+        ${kpi('Together', `${r.with.n} <span class="muted" style="font-size:0.9rem;font-weight:500">games</span>`, r.with.n ? fmt.wdlHtml(r.with) : 'never teamed up')}
+        ${kpi('Win rate together', fmt.pct(r.withPct), r.with.n ? `${r.withGoals} goals between them · ${fmt.pg(r.withGpg)}/game` : '', toneFor(r.withPct))}
+        ${kpi(`${esc(p.name)} vs ${esc(other.name)}`, r.vs.n ? fmt.pct(r.vsPct) : '–', r.vs.n ? `${fmt.wdlHtml(r.vs)} in ${r.vs.n} · ${sig}` : 'never opposed', toneFor(r.vsPct))}
+      </div>
+      <details class="table-view" style="margin-top:10px"><summary>Shared games (${r.games.length})</summary>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Game</th><th>Side</th><th>${esc(p.name)}</th><th>Venue</th></tr></thead><tbody>${
+          r.games.map(g => `<tr><td>${esc(E.gwLabel(g, allSeasons()))}</td><td>${g.together ? 'Together' : 'Against'}</td><td>${resChip(g.result)}</td><td>${esc(g.venue || '')}</td></tr>`).join('')
+        }</tbody></table></div></details>`;
+  }
+
+  // ------------------------------------------------------------- matches
+  function visibleMatches() {
+    return scope().matches.slice().sort(E.byChrono);
+  }
+  function renderMatchPicker() {
+    const list = visibleMatches();
+    if (state.gw && !list.some(m => E.matchKey(m) === state.gw)) state.gw = '';
+    if (!state.gw && list.length) state.gw = E.matchKey(list[list.length - 1]); // default: latest
+    const opt = (m) => `<option value="${E.matchKey(m)}" ${E.matchKey(m) === state.gw ? 'selected' : ''}>GW${m.gw}${m.venue ? ` · ${esc(m.venue)}` : ''}</option>`;
+    if (allSeasons()) {
+      const years = E.seasons(list);
+      $('gw-select').innerHTML = years.map(y => `<optgroup label="${y}">${list.filter(m => m.year === y).map(opt).join('')}</optgroup>`).join('');
     } else {
-      addResult(against, result);
+      $('gw-select').innerHTML = list.map(opt).join('');
     }
-    shared.push({ year: m.year, gw: m.gw, same: sa === sb, result, venue: m.venue });
+    const i = list.findIndex(m => E.matchKey(m) === state.gw);
+    $('gw-prev').disabled = i <= 0;
+    $('gw-next').disabled = i < 0 || i >= list.length - 1;
   }
-  const rows = shared.sort(byYearThenGw).map(g => `
-    <tr>
-      <td>${gwLabel(g)}</td>
-      <td>${g.same ? 'Together' : 'Against'}</td>
-      <td class="result-${g.result || ''}">${g.result || '-'}</td>
-      <td>${escapeHtml(g.venue || '')}</td>
-    </tr>`).join('');
-  return `
-    <div class="card">
-      <div class="name">${escapeHtml(a)} &amp; ${escapeHtml(b)} <span style="color: var(--muted); font-size: 0.8rem; font-weight: 400;">(${seasonLabel()})</span></div>
-      <div class="stats">
-        <span>Together: <b>${together.n}</b> games, W <b>${together.W}</b> D <b>${together.D}</b> L <b>${together.L}</b>, <b>${fmtPct(together)}</b> win rate, <b>${goalsTogether}</b> goals between them</span>
-      </div>
-      <div class="stats" style="margin-top:8px;">
-        <span>Against: <b>${against.n}</b> games, ${escapeHtml(a)} W <b>${against.W}</b> D <b>${against.D}</b> L <b>${against.L}</b> (<b>${fmtPct(against)}</b>)</span>
-      </div>
-      ${shared.length ? `
-      <table>
-        <thead><tr><th>GW</th><th>Side</th><th>${escapeHtml(a)}</th><th>Venue</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>` : '<div class="empty">No shared games this season.</div>'}
-    </div>
-  `;
-}
 
-document.getElementById('gw-select').addEventListener('change', () => {
-  updateMatchDetail();
-});
+  function renderMatch() {
+    const view = $('match-view');
+    const m = visibleMatches().find(x => E.matchKey(x) === state.gw);
+    if (!m) { view.innerHTML = `<div class="card empty-state"><img src="assets/crest-grey.png" alt="">No matches in this season yet.</div>`; return; }
+    const cell = (v) => (v ? v : '<span class="muted">·</span>');
+    const team = (side) => {
+      const list = E.roster(m, side);
+      const og = E.ownGoals(m, side);
+      const result = E.sideResult(m, side);
+      return `<div>
+        <div class="team-head"><span>Team ${side}</span><span class="r-${result || ''}">${({ W: 'Won', D: 'Drew', L: 'Lost' })[result] || ''}</span></div>
+        <div class="table-wrap"><table class="data"><thead><tr><th>Player</th><th class="num">G</th><th class="num">A</th><th class="num">CS</th></tr></thead><tbody>${
+          list.map(p => `<tr class="clickable" data-player="${esc(p.player)}" tabindex="0"><td>${esc(p.player)}${p.is_captain ? '<span class="cap" title="Captain">C</span>' : ''}</td><td class="num">${cell(p.goals)}</td><td class="num">${cell(p.assists)}</td><td class="num">${cell(p.clean_sheets)}</td></tr>`).join('')
+        }</tbody></table></div>
+        ${og ? `<div class="og">+ ${og} own goal${og === 1 ? '' : 's'}</div>` : ''}
+      </div>`;
+    };
+    view.innerHTML = `
+      <article class="card">
+        <div class="card-head"><h2>${m.year ? `${m.year} ` : ''}GW${m.gw}</h2><span class="sub">${esc(m.venue || 'Venue not recorded')}</span></div>
+        <div class="scoreline" aria-label="Team 1 ${m.team1_goals ?? '–'}, Team 2 ${m.team2_goals ?? '–'}">
+          <span class="team-name r-${m.team1_result || ''}">Team 1</span>
+          <span class="score">${m.team1_goals ?? '–'}–${m.team2_goals ?? '–'}</span>
+          <span class="team-name r-${m.team2_result || ''}">Team 2</span>
+        </div>
+        <div class="teams">${team(1)}${team(2)}</div>
+        <div class="sub" style="margin-top:10px">Tap a player to open their record.</div>
+      </article>`;
+  }
 
-function updatePlayerDetail() {
-  const select = document.getElementById('player-select');
-  const p = players.find(p => p.name === select.value);
-  document.getElementById('player-detail').innerHTML = p ? renderCard(p) : '';
-}
+  // -------------------------------------------------------------- render
+  function render() {
+    renderSeasons();
+    renderTabs();
+    if (state.tab === 'players') { renderPlayerPickers(); renderPlayer(); }
+    else if (state.tab === 'table') renderLeaderboard();
+    else { renderMatchPicker(); renderMatch(); }
+    writeHash();
+  }
 
-function updateMatchDetail() {
-  const select = document.getElementById('gw-select');
-  const m = getVisibleMatches().find(m => matchKey(m) === select.value);
-  document.getElementById('gw-detail').innerHTML = m ? renderMatch(m) : '';
-}
-
-function renderMatch(m) {
-  const isOG = (p) => NON_PLAYERS.has(String(p.player || '').trim().toLowerCase());
-  const cell = (v) => v ? v : '<span class="muted">&middot;</span>';
-  const team = (label, result, list) => {
-    const players = (list || []).filter(p => !isOG(p));
-    const ownGoals = (list || []).filter(isOG).reduce((sum, p) => sum + (p.goals || 0), 0);
-    return `
-      <div class="team">
-        <div class="team-head"><span>${label}</span><span class="result-${result || ''}">${result ? ({ W: 'Won', D: 'Drew', L: 'Lost' }[result] || result) : ''}</span></div>
-        <table>
-          <thead><tr><th>Player</th><th class="num">G</th><th class="num">A</th><th class="num">CS</th></tr></thead>
-          <tbody>${players.map(p => `
-            <tr>
-              <td>${escapeHtml(p.player)}${p.is_captain ? ' <span class="cap" title="Captain">C</span>' : ''}</td>
-              <td class="num">${cell(p.goals)}</td>
-              <td class="num">${cell(p.assists)}</td>
-              <td class="num">${cell(p.clean_sheets)}</td>
-            </tr>
-          `).join('')}</tbody>
-        </table>
-        ${ownGoals ? `<div class="og">+ ${ownGoals} own goal${ownGoals === 1 ? '' : 's'}</div>` : ''}
-      </div>
-    `;
+  // -------------------------------------------------------------- events
+  $('season-seg').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-year]');
+    if (!b) return;
+    state.year = b.dataset.year;
+    render();
+  });
+  for (const t of TABS) {
+    $(`tab-${t}`).addEventListener('click', () => { state.tab = t; render(); });
+  }
+  $('tab-players').parentElement.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const i = TABS.indexOf(state.tab) + (e.key === 'ArrowRight' ? 1 : -1);
+    state.tab = TABS[(i + TABS.length) % TABS.length];
+    render();
+    $(`tab-${state.tab}`).focus();
+  });
+  $('table-qualified').addEventListener('change', renderLeaderboard);
+  $('player-select').addEventListener('change', (e) => { state.player = e.target.value; state.pair = ''; render(); });
+  $('pair-select').addEventListener('change', (e) => { state.pair = e.target.value; render(); });
+  $('gw-select').addEventListener('change', (e) => { state.gw = e.target.value; render(); });
+  const step = (d) => {
+    const list = visibleMatches();
+    const i = list.findIndex(m => E.matchKey(m) === state.gw);
+    const next = list[i + d];
+    if (next) { state.gw = E.matchKey(next); render(); }
   };
-  return `
-    <div class="card">
-      <div class="name">${m.year ? `${m.year} ` : ''}GW${m.gw}${m.venue ? ` &middot; ${escapeHtml(m.venue)}` : ''}</div>
-      <div class="scoreline">
-        <span class="result-${m.team1_result || ''}">Team 1</span>
-        <b>${m.team1_goals ?? '-'} &ndash; ${m.team2_goals ?? '-'}</b>
-        <span class="result-${m.team2_result || ''}">Team 2</span>
-      </div>
-      <div class="teams">
-        ${team('Team 1', m.team1_result, m.team1_players)}
-        ${team('Team 2', m.team2_result, m.team2_players)}
-      </div>
-    </div>
-  `;
-}
+  $('gw-prev').addEventListener('click', () => step(-1));
+  $('gw-next').addEventListener('click', () => step(1));
 
-function renderCard(p) {
-  const games = selectedYear === 'all' ? (p.games || []) : (p.games || []).filter(g => String(g.year) === selectedYear);
-  const appearances = games.length || 0;
-  const goals = games.reduce((sum, g) => sum + (g.goals || 0), 0);
-  const assists = games.reduce((sum, g) => sum + (g.assists || 0), 0);
-  const cleanSheets = games.reduce((sum, g) => sum + (g.clean_sheets || 0), 0);
-  const wins = games.filter(g => g.result === 'W').length;
-  const draws = games.filter(g => g.result === 'D').length;
-  const losses = games.filter(g => g.result === 'L').length;
-  const gpg = appearances ? (goals / appearances).toFixed(2) : '0.00';
-  const winRate = appearances ? Math.round((wins / appearances) * 100) : 0;
-  const captained = emptyRecord();
-  for (const g of games) if (g.is_captain) addResult(captained, g.result);
-  const rows = games.slice().sort(byYearThenGw).map(g => `
-    <tr>
-      <td>${gwLabel(g)}</td>
-      <td class="result-${g.result || ''}">${g.result || '-'}</td>
-      <td>${g.goals ?? '-'}</td>
-      <td>${g.assists ?? '-'}</td>
-      <td>${g.clean_sheets ?? '-'}</td>
-      <td>${g.is_captain ? 'C' : ''}</td>
-      <td>${escapeHtml(g.venue || '')}</td>
-    </tr>
-  `).join('');
-  return `
-    <div class="card">
-      <div class="name">${escapeHtml(p.name)} <span style="color: var(--muted); font-size: 0.8rem; font-weight: 400;">(${seasonLabel()})</span></div>
-      <div class="stats">
-        <span><b>${appearances}</b> apps</span>
-        <span><b>${goals}</b> goals</span>
-        <span><b>${assists}</b> assists</span>
-        <span><b>${gpg}</b> goals/game</span>
-        <span><b>${winRate}%</b> win rate</span>
-        <span>W <b>${wins}</b> D <b>${draws}</b> L <b>${losses}</b></span>
-        <span><b>${cleanSheets}</b> clean sheets</span>
-      </div>
-      <div class="stats" style="margin-top:8px;">
-        <span><b>${captained.n}</b> captaincies</span>
-        ${captained.n ? `
-        <span>as captain W <b>${captained.W}</b> D <b>${captained.D}</b> L <b>${captained.L}</b></span>
-        <span><b>${fmtPct(captained)}</b> captaincy win rate</span>` : ''}
-      </div>
-      ${renderPairingsTable(p.name)}
-      <h3>Games</h3>
-      <table>
-        <thead><tr><th>GW</th><th>Res</th><th>G</th><th>A</th><th>CS</th><th>C</th><th>Venue</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-  `;
-}
+  function activateRow(e) {
+    const pairRow = e.target.closest('tr[data-pair]');
+    if (pairRow) {
+      state.pair = pairRow.dataset.pair;
+      render();
+      $('pair-card').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+      return true;
+    }
+    const playerRow = e.target.closest('tr[data-player]');
+    if (playerRow) {
+      state.tab = 'players'; state.player = playerRow.dataset.player; state.pair = '';
+      render(); window.scrollTo(0, 0);
+      return true;
+    }
+    return false;
+  }
+  document.addEventListener('click', (e) => { if (!e.target.closest('th')) activateRow(e); });
+  document.addEventListener('keydown', (e) => { if ((e.key === 'Enter' || e.key === ' ') && activateRow(e)) e.preventDefault(); });
+  window.addEventListener('hashchange', () => { readHash(); render(); });
 
-function escapeHtml(value) {
-  if (value == null) return '';
-  const text = String(value);
-  return text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-}
-
-function escapeHtmlAttribute(value) {
-  return escapeHtml(value);
-}
+  // ---------------------------------------------------------------- load
+  readHash();
+  fetch('matches.json', { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      allMatches = data;
+      if (!location.hash) state.year = String(E.seasons(allMatches).slice(-1)[0] ?? 'all'); // default: current season
+      const latest = allMatches.slice().sort(E.byChrono).slice(-1)[0];
+      if (latest) $('data-stamp').textContent = `latest: ${E.gwLabel(latest)}`;
+      $('status').hidden = true;
+      render();
+    })
+    .catch(() => { $('status').textContent = 'Couldn’t load the stats. Try refreshing.'; });
+});
 </script>
 </body>
 </html>

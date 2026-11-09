@@ -89,3 +89,14 @@ def test_no_player_listed_twice_in_a_match():
         if repeated and (m.get("year"), m["gw"], tuple(repeated)) not in KNOWN_DUPLICATES:
             dupes.append((m.get("year"), m["gw"], repeated))
     assert not dupes, f"players listed twice in one match: {dupes}"
+
+
+def test_venues_are_normalized():
+    from ingest import normalize_venue
+    assert normalize_venue("MILE END") == "Mile End"
+    assert normalize_venue(" stockwell ") == "Stockwell"
+    assert normalize_venue("VENUE") is None
+    assert normalize_venue("") is None
+    venues = {m["venue"] for m in load("matches.json") if m["venue"]}
+    assert venues == {v.title() for v in venues}, venues
+    assert "Venue" not in venues

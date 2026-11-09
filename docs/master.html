@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Unlisted page: not linked from the site and asks search engines to skip it.
+     It is NOT private: anyone with the URL (or the public repo) can open it. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Effra Master Sheet</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<script>try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
+<link rel="stylesheet" href="effra.css">
+<script src="effra.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap wide">
+    <div class="brand">
+      <img src="assets/icon-192.png" alt="Effra Rovers FC crest" width="48" height="48">
+      <div class="grow">
+        <h1>Master sheet</h1>
+        <div class="tag">Every calculation behind the stats and awards · unlisted</div>
+      </div>
+      <button type="button" class="theme-toggle" id="theme-toggle"></button>
+    </div>
+    <div class="header-row">
+      <div class="seg" id="season-seg" role="group" aria-label="Season"></div>
+      <div class="controls">
+        <label class="field">Min apps<input type="number" id="t-minApps" min="1" step="1"></label>
+        <label class="field">Min captaincies<input type="number" id="t-minCaps" min="1" step="1"></label>
+        <label class="field">Min games as pair<input type="number" id="t-minPairGames" min="1" step="1"></label>
+        <label class="field">Min games opposed<input type="number" id="t-minVsGames" min="1" step="1"></label>
+        <button type="button" class="btn" id="reset">Reset thresholds</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap wide">
+  <div id="status" class="empty-state" role="status">Loading…</div>
+
+  <section aria-labelledby="h-awards">
+    <div class="section-head">
+      <h2 id="h-awards">Awards</h2>
+      <span class="sub muted" id="awards-sub"></span>
+    </div>
+    <div class="awards" id="awards"></div>
+  </section>
+
+  <section aria-labelledby="h-players">
+    <div class="section-head">
+      <h2 id="h-players">Players</h2>
+      <div class="controls">
+        <label class="field grow">Filter<input type="search" id="player-filter" placeholder="Name…"></label>
+        <label class="field" style="width:auto;flex-direction:row"><span><input type="checkbox" id="only-qualified"> qualified only</span></label>
+        <button type="button" class="btn" id="csv-players">Download CSV</button>
+      </div>
+    </div>
+    <div class="card" style="padding:8px 8px 4px">
+      <div class="table-wrap" id="players-table" style="max-height:70vh"></div>
+      <div class="sub" style="padding:6px">Greyed rows are below the min-apps threshold (shown, but not eligible for player awards). Click any header to sort.</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-pairs">
+    <div class="section-head">
+      <h2 id="h-pairs">Pairs</h2>
+      <div class="controls">
+        <label class="field grow">Filter<input type="search" id="pair-filter" placeholder="Name…"></label>
+        <button type="button" class="btn" id="csv-pairs">Download CSV</button>
+      </div>
+    </div>
+    <div class="card" style="padding:8px 8px 4px">
+      <div class="table-wrap" id="pairs-table" style="max-height:70vh"></div>
+      <div class="sub" style="padding:6px">“A W” / “B W” are wins when on opposite teams. p = exact two-sided binomial test on decided head-to-heads (draws excluded); below 0.05 is unlikely to be luck.</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <div class="section-head"><h2 id="h-method">Method</h2></div>
+    <div class="card sub" style="font-size:0.85rem;line-height:1.6">
+      <ul style="margin:0;padding-left:18px">
+        <li>Per-game stats = total ÷ appearances. Win rates = wins ÷ (W + D + L).</li>
+        <li>Streaks run over each player's own appearances in order; missed weeks don't break a streak, a draw breaks win/loss streaks.</li>
+        <li>Win impact = player's win % minus the win % their team-mates have <em>without</em> them, weighted by games shared.</li>
+        <li>G+A is only awarded if its winner is different from both the Golden Boot and Assist King winners.</li>
+        <li>Ties are shared. Default thresholds scale with the season: min apps = 20% of matches, pair/opposition = 10% (minimum 3).</li>
+        <li>Own goals are credited to no one.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer class="site" id="stamp"></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+  const E = window.Effra, esc = E.escapeHtml, fmt = E.fmt;
+  const $ = (id) => document.getElementById(id);
+  const KEYS = ['minApps', 'minCaps', 'minPairGames', 'minVsGames'];
+  let all = [];
+  const state = { year: 'all', t: {} };
+  E.mountThemeToggle($('theme-toggle'));
+
+  const params = new URLSearchParams(location.hash.slice(1));
+
+  function render() {
+    const years = E.seasons(all).map(String);
+    $('season-seg').innerHTML = [...years, 'all'].map(y =>
+      `<button type="button" data-year="${y}" aria-pressed="${state.year === y}">${y === 'all' ? 'All' : y}</button>`).join('');
+    const matches = E.filterBySeason(all, state.year);
+    const defaults = E.defaultThresholds(matches.length);
+    const t = { ...defaults, ...state.t };
+    for (const k of KEYS) { $(`t-${k}`).value = t[k]; $(`t-${k}`).placeholder = defaults[k]; }
+    const res = E.computeAwards(matches, t);
+    $('awards-sub').textContent = `${state.year === 'all' ? 'All seasons' : state.year} · ${matches.length} matches · ${res.players.length} players`;
+    renderAwards(res);
+    renderPlayers(res);
+    renderPairs(res);
+    const h = new URLSearchParams({ y: state.year });
+    for (const k of KEYS) if (state.t[k] != null) h.set(k, state.t[k]);
+    history.replaceState(null, '', `#${h}`);
+  }
+
+  function renderAwards({ awards }) {
+    $('awards').innerHTML = awards.map(a => `
+      <article class="award ${a.notAwarded ? 'na' : ''}">
+        <div class="a-name"><span>${esc(a.name)}</span>${a.subjective ? '<span class="badge">Suggestion</span>' : ''}</div>
+        <div class="a-expl">${esc(a.explanation)}</div>
+        <div class="a-winner">${a.winners.length ? a.winners.map(esc).join(', ') : '<span class="muted">No eligible players</span>'}</div>
+        <div class="a-value">${esc(a.value)}</div>
+        ${a.detail ? `<div class="a-detail">${esc(a.detail)}</div>` : ''}
+        ${a.note ? `<div class="a-note">${esc(a.note)}</div>` : ''}
+        ${a.runnersUp.length > 1 ? `<details><summary>Top ${a.runnersUp.length}</summary><ol>${a.runnersUp.map(r => `<li>${esc(r.label)} <span class="muted">${esc(r.value)}</span></li>`).join('')}</ol></details>` : ''}
+        <div class="a-rule">${esc(a.rule)}</div>
+      </article>`).join('');
+  }
+
+  let playerCols, playerRows, pairCols, pairRows;
+
+  function renderPlayers({ players, pairs, thresholds: t }) {
+    const best = new Map(), worst = new Map(), rival = new Map();
+    for (const p of players) {
+      const mine = E.pairingsFor(pairs, p.name);
+      const together = mine.filter(r => E.decided(r.with) >= t.minPairGames);
+      const sorted = together.slice().sort((a, b) => b.withPct - a.withPct || b.with.n - a.with.n);
+      if (sorted.length) { best.set(p.name, sorted[0]); worst.set(p.name, sorted[sorted.length - 1]); }
+      const opp = mine.filter(r => r.vs.W + r.vs.L >= t.minVsGames && r.vs.L > r.vs.W).sort((a, b) => a.vsP - b.vsP);
+      if (opp.length) rival.set(p.name, opp[0]);
+    }
+    const q = (p) => p.apps >= t.minApps;
+    const pct = (v) => (v == null ? null : Math.round(v * 1000) / 10);
+    playerCols = [
+      { key: 'name', label: 'Player', sticky: true, value: p => p.name, html: p => `${esc(p.name)}${q(p) ? '' : ' <span class="muted">*</span>'}` },
+      { key: 'apps', label: 'Apps', num: true, value: p => p.apps },
+      { key: 'W', label: 'W', num: true, value: p => p.rec.W },
+      { key: 'D', label: 'D', num: true, value: p => p.rec.D },
+      { key: 'L', label: 'L', num: true, value: p => p.rec.L },
+      { key: 'win', label: 'Win %', num: true, value: p => p.winPct, html: p => fmt.meterHtml(p.winPct), csv: p => pct(p.winPct) },
+      { key: 'g', label: 'G', num: true, value: p => p.goals },
+      { key: 'gpg', label: 'G/gm', num: true, value: p => p.gpg, html: p => fmt.pg(p.gpg), csv: p => p.gpg.toFixed(3) },
+      { key: 'a', label: 'A', num: true, value: p => p.assists },
+      { key: 'apg', label: 'A/gm', num: true, value: p => p.apg, html: p => fmt.pg(p.apg), csv: p => p.apg.toFixed(3) },
+      { key: 'ga', label: 'G+A', num: true, value: p => p.ga },
+      { key: 'gapg', label: 'G+A/gm', num: true, value: p => p.gapg, html: p => fmt.pg(p.gapg), csv: p => p.gapg.toFixed(3) },
+      { key: 'cs', label: 'CS', num: true, value: p => p.cs },
+      { key: 'cspg', label: 'CS/gm', num: true, value: p => p.cspg, html: p => fmt.pg(p.cspg), csv: p => p.cspg.toFixed(3) },
+      { key: 'caps', label: 'Caps', num: true, value: p => p.cap.n },
+      { key: 'capwdl', label: 'Capt record', value: p => p.cap.W - p.cap.L, html: p => (p.cap.n ? fmt.wdlHtml(p.cap) : '–'), csv: p => fmt.wdl(p.cap) },
+      { key: 'capwin', label: 'Capt win %', num: true, value: p => p.capWinPct, html: p => fmt.pct(p.capWinPct), csv: p => pct(p.capWinPct) },
+      { key: 'sw', label: 'Win streak', num: true, title: 'Longest run of wins', value: p => p.streaks.win.length },
+      { key: 'su', label: 'Unbeaten', num: true, title: 'Longest run without a loss', value: p => p.streaks.unbeaten.length },
+      { key: 'ss', label: 'Scoring streak', num: true, value: p => p.streaks.scoring.length },
+      { key: 'sl', label: 'Loss streak', num: true, value: p => p.streaks.loss.length },
+      { key: 'cur', label: 'Current', value: p => (p.streaks.current ? `${p.streaks.current.length}${p.streaks.current.result}` : ''), html: p => (p.streaks.current ? `${p.streaks.current.length}<span class="r-${p.streaks.current.result}">${p.streaks.current.result}</span>` : '–') },
+      { key: 'exp', label: 'Team-mates w/o', num: true, title: "Team-mates' win % in games without this player", value: p => p.expectedWinPct, html: p => fmt.pct(p.expectedWinPct), csv: p => pct(p.expectedWinPct) },
+      { key: 'impact', label: 'Impact', num: true, title: 'Win % minus team-mates-without', value: p => p.impact, html: p => (p.impact == null ? '–' : `<span class="${p.impact >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`), csv: p => pct(p.impact) },
+      { key: 'best', label: 'Best partner', value: p => best.get(p.name)?.other || '', html: p => { const r = best.get(p.name); return r ? `${esc(r.other)} <span class="muted">${fmt.pct(r.withPct)} (${r.with.n})</span>` : '–'; }, csv: p => { const r = best.get(p.name); return r ? `${r.other} ${pct(r.withPct)}% (${r.with.n})` : ''; } },
+      { key: 'worst', label: 'Worst partner', value: p => worst.get(p.name)?.other || '', html: p => { const r = worst.get(p.name); return r ? `${esc(r.other)} <span class="muted">${fmt.pct(r.withPct)} (${r.with.n})</span>` : '–'; }, csv: p => { const r = worst.get(p.name); return r ? `${r.other} ${pct(r.withPct)}% (${r.with.n})` : ''; } },
+      { key: 'rival', label: 'Bogey opponent', title: 'Opponent they lose to most significantly', value: p => rival.get(p.name)?.other || '', html: p => { const r = rival.get(p.name); return r ? `${esc(r.other)} <span class="muted">${fmt.wdl(r.vs)}, p=${fmt.p(r.vsP)}</span>` : '–'; }, csv: p => { const r = rival.get(p.name); return r ? `${r.other} ${fmt.wdl(r.vs)} p=${fmt.p(r.vsP)}` : ''; } },
+    ];
+    const filter = $('player-filter').value.trim().toLowerCase();
+    playerRows = players.filter(p => (!filter || p.name.toLowerCase().includes(filter)) && (!$('only-qualified').checked || q(p)));
+    E.sortableTable($('players-table'), playerCols, playerRows, { sortKey: 'apps', rowAttrs: p => (q(p) ? '' : 'class="dim"') });
+  }
+
+  function renderPairs({ pairs }) {
+    pairCols = [
+      { key: 'a', label: 'Player A', sticky: true, value: r => r.a, html: r => esc(r.a) },
+      { key: 'b', label: 'Player B', value: r => r.b, html: r => esc(r.b) },
+      { key: 'wn', label: 'Together', num: true, value: r => r.with.n },
+      { key: 'ww', label: 'W', num: true, value: r => r.with.W },
+      { key: 'wd', label: 'D', num: true, value: r => r.with.D },
+      { key: 'wl', label: 'L', num: true, value: r => r.with.L },
+      { key: 'wp', label: 'Win %', num: true, value: r => r.withPct, html: r => fmt.meterHtml(r.withPct), csv: r => (r.withPct == null ? '' : Math.round(r.withPct * 1000) / 10) },
+      { key: 'wg', label: 'Goals', num: true, title: 'Goals between them when together', value: r => r.withGoals },
+      { key: 'wgpg', label: 'Goals/gm', num: true, value: r => r.withGpg, html: r => (r.with.n ? fmt.pg(r.withGpg) : '–'), csv: r => (r.withGpg == null ? '' : r.withGpg.toFixed(3)) },
+      { key: 'vn', label: 'Opposed', num: true, value: r => r.vs.n },
+      { key: 'vaw', label: 'A W', num: true, value: r => r.vs.aW },
+      { key: 'vd', label: 'D', num: true, value: r => r.vs.D },
+      { key: 'vbw', label: 'B W', num: true, value: r => r.vs.bW },
+      { key: 'vp', label: 'p', num: true, title: 'Two-sided binomial p-value (lower = more lopsided)', value: r => (r.vs.aW + r.vs.bW ? r.vsP : null), html: r => (r.vs.aW + r.vs.bW ? fmt.p(r.vsP) : '–'), csv: r => (r.vs.aW + r.vs.bW ? r.vsP.toFixed(4) : '') },
+    ];
+    const f = $('pair-filter').value.trim().toLowerCase();
+    pairRows = pairs.filter(r => !f || r.a.toLowerCase().includes(f) || r.b.toLowerCase().includes(f));
+    E.sortableTable($('pairs-table'), pairCols, pairRows, { sortKey: 'wn' });
+  }
+
+  // events
+  $('season-seg').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-year]');
+    if (!b) return;
+    state.year = b.dataset.year; state.t = {}; render();
+  });
+  for (const k of KEYS) {
+    $(`t-${k}`).addEventListener('change', (e) => {
+      const v = parseInt(e.target.value, 10);
+      if (Number.isFinite(v) && v > 0) state.t[k] = v; else delete state.t[k];
+      render();
+    });
+  }
+  $('reset').addEventListener('click', () => { state.t = {}; render(); });
+  $('player-filter').addEventListener('input', render);
+  $('only-qualified').addEventListener('change', render);
+  $('pair-filter').addEventListener('input', render);
+  const tag = () => (state.year === 'all' ? 'all-seasons' : state.year);
+  $('csv-players').addEventListener('click', () => E.downloadText(`effra-players-${tag()}.csv`, E.toCsv(playerCols, playerRows)));
+  $('csv-pairs').addEventListener('click', () => E.downloadText(`effra-pairs-${tag()}.csv`, E.toCsv(pairCols, pairRows)));
+
+  fetch('matches.json', { cache: 'no-cache' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      all = data;
+      const years = E.seasons(all).map(String);
+      state.year = params.get('y') && (params.get('y') === 'all' || years.includes(params.get('y'))) ? params.get('y') : (years.slice(-1)[0] || 'all');
+      for (const k of KEYS) { const v = parseInt(params.get(k), 10); if (v > 0) state.t[k] = v; }
+      const latest = all.slice().sort(E.byChrono).slice(-1)[0];
+      $('stamp').textContent = latest ? `Data to ${E.gwLabel(latest)}` : '';
+      $('status').hidden = true;
+      render();
+    })
+    .catch(() => { $('status').textContent = 'Couldn’t load matches.json.'; });
+});
+</script>
+</body>
+</html>

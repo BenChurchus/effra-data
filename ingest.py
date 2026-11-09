@@ -79,6 +79,19 @@ def clean_text(value):
     return value.strip() if isinstance(value, str) else value
 
 
+def normalize_venue(value):
+    # Venues are typed by hand: "MILE END" vs "Mile End", and the template's
+    # "VENUE" placeholder sometimes survives on a played match. Title-case
+    # (collapsing internal spaces) and treat the placeholder as unknown.
+    venue = clean_text(value)
+    if not isinstance(venue, str) or not venue:
+        return None
+    venue = " ".join(venue.split())
+    if venue.lower() == "venue":
+        return None
+    return venue.title()
+
+
 # Only alias names confirmed to be the same person. NB "Davis" is NOT Joe --
 # they're two different players (confirmed Nov 2026; both play in the same
 # 2026 matches), so don't alias them.
@@ -132,7 +145,7 @@ def parse_gw_tab(gw_number: int, rows: list[list], source: str) -> tuple[dict, l
         "team1_goals": get(score_row, 3),
         "team2_result": clean_text(get(score_row, 6)),
         "team2_goals": get(score_row, 8),
-        "venue": clean_text(get(score_row, 11)),
+        "venue": normalize_venue(get(score_row, 11)),
     }
 
     appearances = []

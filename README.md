@@ -44,8 +44,18 @@ python build_site.py   # regenerate docs/players.json + docs/matches.json
   turned out to be a great fit here: single file, no server, reads/queries
   the data instantly, and doubles as a portable artifact in the repo.
 - **gold** (`data/gold/<year>/<source>/GW<N>.json`) — one clean record per gameweek
-- **site** (`docs/`) — static player/gameweek lookup, hosted via GitHub Pages
-  from `main` / `/docs`
+- **site** (`docs/`) — static site, hosted via GitHub Pages from `main` / `/docs`:
+  - `index.html` — Leaderboard / Players / Matches tabs, season filter, radar +
+    cumulative charts, pairings, "pair with" head-to-head, theme toggle,
+    shareable deep links (`#tab=players&y=2026&p=Jez&with=Ram`)
+  - `master.html` — **unlisted** master sheet: all 16 awards (with runners-up and
+    adjustable thresholds), a wide per-player sheet and a per-pair sheet, CSV
+    export. `noindex` and not linked anywhere, but *not private* — anyone with
+    the URL or access to this public repo can open it.
+  - `effra.js` — the one stats engine both pages use (all awards/streaks/pairs
+    are computed in the browser from `matches.json`); `charts.js` — SVG charts;
+    `effra.css` — crest-blue/pint-gold theme with a navy dark mode
+  - `assets/` — crest PNGs and icons generated from `branding/` originals
 
 Each source file is expected to have tabs `GW1`...`GWN` (match scorecards) plus
 a `Template` tab and derived summary tabs (`Analysis Tab`, `Captaincy`, `Apps`,
@@ -96,8 +106,10 @@ python -m venv .venv
   the raw export (`#NAME?` errors) and the user is handing over the "heavy
   lifting" formula logic separately to reimplement properly in DuckDB
   instead of trusting the sheet's own calculations.
-- **Microsite polish.** Currently a static page with player and gameweek
-  selectors. When the dataset grows, a season/source filter and better cross-
-  linking between players and matches will be the next improvements.
+- **Awards definitions to confirm.** Thresholds (min apps = 20% of matches,
+  pairs/opposition = 10%, captaincy = 3) and the literal G+A rule ("not
+  awarded" when it duplicates Golden Boot/Assist King) are defaults — tweak
+  live on `master.html`, then bake agreed values into `defaultThresholds` in
+  `docs/effra.js`. Data Darling is a suggestion only (win-rate impact).
 - **Verification loop.** Project checks remain simple and reliable: run
   `python build_site.py` and `pytest tests/` after any source or parser change.

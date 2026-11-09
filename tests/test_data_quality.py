@@ -19,8 +19,8 @@ def load(name):
 
 def test_player_aliases_are_canonicalized():
     assert canonicalize_player_name("Joe") == "Joe"
-    assert canonicalize_player_name("Davis") == "Joe"
-    assert canonicalize_player_name("  davis ") == "Joe"
+    # Davis and Joe are two different players -- must not be merged.
+    assert canonicalize_player_name("  Davis ") == "Davis"
     assert canonicalize_player_name("George") == "Gman"
     assert canonicalize_player_name("G Man") == "Gman"
     assert canonicalize_player_name("Will Maidment") == "Bill"
@@ -73,15 +73,8 @@ def test_match_goals_sum_matches_scoreline():
     assert not mismatches, f"per-player goals don't sum to scoreline: {mismatches}"
 
 
-# Matches where the source sheet lists both "Joe" and "Davis" (same person),
-# so Joe appears twice after aliasing. Left as recorded pending a fix upstream.
-KNOWN_DUPLICATES = {
-    (2026, 20, ("Joe",)),
-    (2026, 29, ("Joe",)),
-    (2026, 30, ("Joe",)),
-    (2026, 35, ("Joe",)),
-    (2026, 37, ("Joe",)),
-}
+# (year, gw, (names...)) for accepted duplicates; empty means none allowed.
+KNOWN_DUPLICATES: set[tuple] = set()
 
 
 def test_no_player_listed_twice_in_a_match():

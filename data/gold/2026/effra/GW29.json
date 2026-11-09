@@ -10,7 +10,7 @@
   "team1_players": [
     {
       "year": 2026,
-      "player": "Joe",
+      "player": "Davis",
       "is_captain": true,
       "goals": 1.0,
       "assists": null,

@@ -79,11 +79,10 @@ def clean_text(value):
     return value.strip() if isinstance(value, str) else value
 
 
-# "Davis" is Joe (confirmed by the league organiser, Nov 2026). Note the 2026
-# sheet lists both names in the same match a few times, so after merging Joe
-# appears twice there -- see KNOWN_DUPLICATES in tests/test_data_quality.py.
+# Only alias names confirmed to be the same person. NB "Davis" is NOT Joe --
+# they're two different players (confirmed Nov 2026; both play in the same
+# 2026 matches), so don't alias them.
 PLAYER_ALIASES = {
-    "davis": "Joe",
     "joe": "Joe",
     "george": "Gman",
     "g man": "Gman",

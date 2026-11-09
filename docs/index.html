@@ -17,7 +17,7 @@
 <script>/* apply saved theme before first paint (no flash) */
 try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
-<link rel="stylesheet" href="effra.css?v=f2cde03fba">
+<link rel="stylesheet" href="effra.css?v=9fc883e3f0">
 <script src="effra.js?v=4c9c6f57a7" defer></script>
 <script src="charts.js?v=ea5153b785" defer></script>
 </head>
@@ -26,11 +26,13 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
 <header class="site-header">
   <div class="wrap">
     <div class="brand">
-      <img src="assets/icon-192.png" alt="Effra Rovers FC crest" width="48" height="48">
-      <div class="grow">
+      <a class="brand-link" href="./" aria-label="Effra Rovers FC home">
+        <img src="assets/icon-192.png" alt="" width="48" height="48">
+        <div class="grow">
         <h1>Effra Rovers FC</h1>
         <div class="tag">5-a-side stats · since 2023</div>
       </div>
+      </a>
       <button type="button" class="theme-toggle" id="theme-toggle"></button>
     </div>
     <div class="header-row">

@@ -3,7 +3,9 @@ Builds docs/players.json from the DuckDB base for the static player-stats site.
 
 Usage: python build_site.py
 """
+import hashlib
 import json
+import re
 from pathlib import Path
 
 import duckdb
@@ -86,6 +88,32 @@ def build_matches(con) -> list[dict]:
     return sorted(matches.values(), key=lambda m: (m["source"], m["year"] or 0, m["gw"]))
 
 
+# Pages and the files they load. GitHub Pages lets browsers cache everything
+# for 10 minutes, so after a deploy a new page could run against an old cached
+# script and break. Each reference gets ?v=<content hash>, which changes
+# whenever the file does, so browsers always fetch the matching version.
+PAGES = ("index.html", "master.html")
+ASSETS = ("effra.css", "effra.js", "charts.js")
+ASSET_REF_RE = re.compile(r'(?P<attr>href|src)="(?P<name>' + "|".join(re.escape(a) for a in ASSETS) + r')(?:\?v=[0-9a-f]+)?"')
+
+
+def asset_version(name: str) -> str:
+    return hashlib.sha256((DOCS / name).read_bytes()).hexdigest()[:10]
+
+
+def stamp_asset_versions() -> None:
+    versions = {a: asset_version(a) for a in ASSETS if (DOCS / a).exists()}
+    for page in PAGES:
+        path = DOCS / page
+        if not path.exists():
+            continue
+        html = path.read_text(encoding="utf-8")
+        stamped = ASSET_REF_RE.sub(lambda m: f'{m["attr"]}="{m["name"]}?v={versions[m["name"]]}"', html)
+        if stamped != html:
+            path.write_text(stamped, encoding="utf-8")
+    print(f"Stamped asset versions: {versions}")
+
+
 def main():
     con = duckdb.connect(str(DB_PATH))
     rows = con.execute(QUERY).fetchall()
@@ -151,6 +179,7 @@ def main():
 
     print(f"Wrote {len(out)} players to {DOCS / 'players.json'}")
     print(f"Wrote {len(matches)} matches to {DOCS / 'matches.json'}")
+    stamp_asset_versions()
 
 
 if __name__ == "__main__":

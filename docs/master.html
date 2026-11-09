@@ -9,8 +9,8 @@
 <title>Effra Master Sheet</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <script>try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
-<link rel="stylesheet" href="effra.css">
-<script src="effra.js" defer></script>
+<link rel="stylesheet" href="effra.css?v=f2cde03fba">
+<script src="effra.js?v=4c9c6f57a7" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -19,7 +19,7 @@
       <img src="assets/icon-192.png" alt="Effra Rovers FC crest" width="48" height="48">
       <div class="grow">
         <h1>Master sheet</h1>
-        <div class="tag">Gaffer’s room · every calculation behind the stats and awards · <a href="./" style="color:#fff">back to site</a></div>
+        <div class="tag">Gaffer’s room · every calculation behind the stats and awards · <a href="./" style="color:#fff">back to the site</a></div>
       </div>
       <button type="button" class="theme-toggle" id="theme-toggle"></button>
     </div>
@@ -94,8 +94,18 @@
 <footer class="site" id="stamp"></footer>
 
 <script>
+function effraLoadFailed() {
+  const s = document.getElementById('status');
+  if (!s) return;
+  s.hidden = false;
+  s.innerHTML = 'Something didn’t load properly. <button type="button" class="btn" onclick="location.reload()">Refresh</button>';
+}
+window.addEventListener('error', (e) => { if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) effraLoadFailed(); }, true);
+
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
+  const NEEDS = ['mountThemeToggle', 'dataNotes', 'computeAwards', 'sortableTable', 'pairingsFor', 'toCsv'];
+  if (!window.Effra || NEEDS.some(k => typeof window.Effra[k] !== 'function')) { effraLoadFailed(); return; }
   const E = window.Effra, esc = E.escapeHtml, fmt = E.fmt;
   const $ = (id) => document.getElementById(id);
   const KEYS = ['minApps', 'minCaps', 'minPairGames', 'minVsGames'];

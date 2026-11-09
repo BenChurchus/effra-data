@@ -125,3 +125,16 @@ def test_goals_only_layout_parses_both_teams():
 def test_every_match_has_a_result():
     missing = [(m["year"], m["gw"]) for m in load("matches.json") if not m["team1_result"] or not m["team2_result"]]
     assert not missing, missing
+
+
+def test_pages_load_versioned_assets():
+    # Pages must reference ?v=<content hash> for every shared asset, matching
+    # the file on disk, or a cached old script can break a new page.
+    import re
+    from build_site import ASSETS, DOCS, asset_version
+    for page in ("index.html", "master.html"):
+        html = (DOCS / page).read_text(encoding="utf-8")
+        for name in ASSETS:
+            refs = re.findall(rf'"{re.escape(name)}(\?v=[0-9a-f]+)?"', html)
+            for ref in refs:
+                assert ref == f"?v={asset_version(name)}", f"{page} loads stale/unversioned {name}{ref}"

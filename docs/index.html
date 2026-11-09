@@ -17,9 +17,9 @@
 <script>/* apply saved theme before first paint (no flash) */
 try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
-<link rel="stylesheet" href="effra.css">
-<script src="effra.js" defer></script>
-<script src="charts.js" defer></script>
+<link rel="stylesheet" href="effra.css?v=f2cde03fba">
+<script src="effra.js?v=4c9c6f57a7" defer></script>
+<script src="charts.js?v=ea5153b785" defer></script>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -94,8 +94,20 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
 <noscript><p class="wrap">This page needs JavaScript to load the stats.</p></noscript>
 
 <script>
+// Safety net: if a script failed to load or a stale cached copy is missing
+// something this page needs, say so instead of leaving dead buttons.
+function effraLoadFailed() {
+  const s = document.getElementById('status');
+  if (!s) return;
+  s.hidden = false;
+  s.innerHTML = 'Something didn’t load properly. <button type="button" class="btn" onclick="location.reload()">Refresh</button>';
+}
+window.addEventListener('error', (e) => { if (e.target && (e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK')) effraLoadFailed(); }, true);
+
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
+  const NEEDS = ['mountThemeToggle', 'dataNotes', 'tracks', 'computeAwards', 'sortableTable', 'pairingsFor'];
+  if (!window.Effra || !window.EffraCharts || NEEDS.some(k => typeof window.Effra[k] !== 'function')) { effraLoadFailed(); return; }
   const E = window.Effra, C = window.EffraCharts, esc = E.escapeHtml, fmt = E.fmt;
   const $ = (id) => document.getElementById(id);
 

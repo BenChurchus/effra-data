@@ -19,8 +19,8 @@ def load(name):
 
 def test_player_aliases_are_canonicalized():
     assert canonicalize_player_name("Joe") == "Joe"
-    assert canonicalize_player_name("Davis") == "Joe"
-    assert canonicalize_player_name("  davis ") == "Joe"
+    # Davis is a separate player (plays alongside Joe in 2026), not an alias.
+    assert canonicalize_player_name("  Davis ") == "Davis"
     assert canonicalize_player_name("Will Maidment") == "Bill"
     assert canonicalize_player_name("  will maidment  ") == "Bill"
     assert canonicalize_player_name("OG") == "OG"
@@ -69,3 +69,16 @@ def test_match_goals_sum_matches_scoreline():
         if t1 != m["team1_goals"] or t2 != m["team2_goals"]:
             mismatches.append((m["source"], m["gw"], t1, m["team1_goals"], t2, m["team2_goals"]))
     assert not mismatches, f"per-player goals don't sum to scoreline: {mismatches}"
+
+
+def test_no_player_listed_twice_in_a_match():
+    # Catches over-eager aliasing (two real people merged into one name) and
+    # copy-paste duplicates. "OG" (own goal) rows are allowed on both sides.
+    dupes = []
+    for m in load("matches.json"):
+        names = [p["player"] for side in ("team1_players", "team2_players")
+                 for p in m[side] if p["player"].strip().lower() not in {"og", "own goal"}]
+        repeated = sorted({n for n in names if names.count(n) > 1})
+        if repeated:
+            dupes.append((m.get("year"), m["gw"], repeated))
+    assert not dupes, f"players listed twice in one match: {dupes}"

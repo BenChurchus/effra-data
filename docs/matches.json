@@ -3679,7 +3679,7 @@
         "clean_sheets": 1
       },
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": false,
         "goals": null,
         "assists": null,
@@ -4060,7 +4060,7 @@
     ],
     "team2_players": [
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": false,
         "goals": 2,
         "assists": 2,
@@ -4474,7 +4474,7 @@
         "clean_sheets": null
       },
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": false,
         "goals": 1,
         "assists": 1,
@@ -5867,7 +5867,7 @@
     "team2_goals": 10,
     "team1_players": [
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": true,
         "goals": 1,
         "assists": null,
@@ -6096,7 +6096,7 @@
         "clean_sheets": 1
       },
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": false,
         "goals": 1,
         "assists": 2,
@@ -7152,7 +7152,7 @@
         "clean_sheets": null
       },
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": false,
         "goals": null,
         "assists": null,
@@ -7482,7 +7482,7 @@
         "clean_sheets": null
       },
       {
-        "player": "Joe",
+        "player": "Davis",
         "is_captain": false,
         "goals": 1,
         "assists": null,

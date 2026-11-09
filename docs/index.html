@@ -23,7 +23,8 @@
   .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 12px; }
   select#year-select,
   select#player-select,
-  select#gw-select {
+  select#gw-select,
+  select#pair-select {
     width: 100%; padding: 12px 14px; font-size: 1rem;
     border: 1px solid var(--border); border-radius: 8px;
     background: var(--card); color: var(--fg);
@@ -44,6 +45,23 @@
   .result-L { color: #c0392b; font-weight: 600; }
   .result-D { color: var(--muted); font-weight: 600; }
   .empty { color: var(--muted); padding: 20px 0; }
+  [hidden] { display: none !important; }
+  h3 { font-size: 0.95rem; margin: 20px 0 0; }
+  .table-scroll { max-height: 360px; overflow-y: auto; }
+  .table-scroll thead th { position: sticky; top: 0; background: var(--card); }
+  tr.clickable { cursor: pointer; }
+  tr.clickable:hover td { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  td.num, th.num { text-align: right; }
+  .muted { color: var(--muted); }
+  .scoreline { display: flex; align-items: baseline; gap: 12px; font-size: 1.1rem; margin: 2px 0 6px; }
+  .scoreline b { font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+  .teams { display: flex; gap: 20px; flex-wrap: wrap; }
+  .team { flex: 1; min-width: 220px; }
+  .team-head { display: flex; justify-content: space-between; margin-top: 12px; font-weight: 600; font-size: 0.9rem; }
+  .team table { margin-top: 6px; }
+  .cap { display: inline-block; font-size: 0.7rem; font-weight: 700; line-height: 1; padding: 2px 4px;
+         border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; vertical-align: 1px; }
+  .og { color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
 </style>
 </head>
 <body>
@@ -57,6 +75,11 @@
   <select id="player-select">
     <option value="">Select a player...</option>
   </select>
+  <div id="pair-wrap" hidden>
+    <select id="pair-select" aria-label="Pair with another player">
+      <option value="">Pair with...</option>
+    </select>
+  </div>
   <div class="sub" style="margin-top:20px;">Or pick a gameweek to see the match.</div>
   <select id="gw-select">
     <option value="">Select a gameweek...</option>
@@ -64,6 +87,7 @@
 </header>
 <main>
   <div id="player-detail"></div>
+  <div id="pair-detail"></div>
   <div id="gw-detail"></div>
 </main>
 
@@ -83,6 +107,9 @@ fetch('matches.json').then(r => r.json()).then(data => {
   matches = data;
   populateGwOptions();
   updateMatchDetail();
+  // Pairings are derived from match rosters, so refresh once they arrive.
+  populatePairOptions();
+  updatePlayerDetail();
 });
 
 function rebuildYearOptions() {
@@ -138,13 +165,196 @@ document.getElementById('year-select').addEventListener('change', (e) => {
   selectedYear = e.target.value;
   populatePlayerOptions();
   populateGwOptions();
+  populatePairOptions();
   updatePlayerDetail();
   updateMatchDetail();
 });
 
 document.getElementById('player-select').addEventListener('change', () => {
+  populatePairOptions();
   updatePlayerDetail();
 });
+
+document.getElementById('pair-select').addEventListener('change', () => {
+  updatePairDetail();
+});
+
+// Clicking a row in the pairings table selects that player in "Pair with".
+document.getElementById('player-detail').addEventListener('click', (e) => {
+  const row = e.target.closest('tr[data-pair]');
+  if (!row) return;
+  const pairSelect = document.getElementById('pair-select');
+  pairSelect.value = row.dataset.pair;
+  updatePairDetail();
+  document.getElementById('pair-detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+// ---- Pairings: derived from match rosters, respecting the season filter ----
+
+const NON_PLAYERS = new Set(['og', 'own goal']);
+
+function rosterNames(list) {
+  return (list || []).map(p => p.player).filter(n => n && !NON_PLAYERS.has(n.trim().toLowerCase()));
+}
+
+function sideOf(m, name) {
+  if (rosterNames(m.team1_players).includes(name)) return 1;
+  if (rosterNames(m.team2_players).includes(name)) return 2;
+  return 0;
+}
+
+function resultFor(m, side) {
+  return side === 1 ? m.team1_result : m.team2_result;
+}
+
+function emptyRecord() {
+  return { n: 0, W: 0, D: 0, L: 0 };
+}
+
+function addResult(rec, result) {
+  rec.n += 1;
+  if (result === 'W' || result === 'D' || result === 'L') rec[result] += 1;
+}
+
+function winPct(rec) {
+  return rec.n ? Math.round((rec.W / rec.n) * 100) : null;
+}
+
+function fmtPct(rec) {
+  const pct = winPct(rec);
+  return pct == null ? '-' : `${pct}%`;
+}
+
+function fmtWDL(rec) {
+  return `${rec.W}-${rec.D}-${rec.L}`;
+}
+
+// For one player: per other-player record with them (same side) and against
+// them (opposite side), both from the selected player's perspective.
+function computePairings(name) {
+  const byName = new Map();
+  const get = (other) => {
+    if (!byName.has(other)) byName.set(other, { name: other, with: emptyRecord(), vs: emptyRecord() });
+    return byName.get(other);
+  };
+  for (const m of getVisibleMatches()) {
+    const side = sideOf(m, name);
+    if (!side) continue;
+    const result = resultFor(m, side);
+    const mine = rosterNames(side === 1 ? m.team1_players : m.team2_players);
+    const theirs = rosterNames(side === 1 ? m.team2_players : m.team1_players);
+    for (const other of mine) if (other !== name) addResult(get(other).with, result);
+    for (const other of theirs) addResult(get(other).vs, result);
+  }
+  return Array.from(byName.values());
+}
+
+function populatePairOptions() {
+  const wrap = document.getElementById('pair-wrap');
+  const select = document.getElementById('pair-select');
+  const player = document.getElementById('player-select').value;
+  const previous = select.value;
+  if (!player) {
+    wrap.hidden = true;
+    select.innerHTML = '<option value="">Pair with...</option>';
+    updatePairDetail();
+    return;
+  }
+  const others = computePairings(player).map(p => p.name).sort((a, b) => a.localeCompare(b));
+  select.innerHTML = `<option value="">Pair ${escapeHtml(player)} with...</option>` +
+    others.map(n => `<option value="${escapeHtmlAttribute(n)}">${escapeHtml(n)}</option>`).join('');
+  select.value = others.includes(previous) ? previous : '';
+  wrap.hidden = false;
+  updatePairDetail();
+}
+
+function updatePairDetail() {
+  const player = document.getElementById('player-select').value;
+  const other = document.getElementById('pair-select').value;
+  document.getElementById('pair-detail').innerHTML = player && other ? renderPair(player, other) : '';
+}
+
+function seasonLabel() {
+  return selectedYear === 'all' ? 'all seasons' : `season ${selectedYear}`;
+}
+
+function gwLabel(item) {
+  return `${selectedYear === 'all' && item.year ? `${item.year} ` : ''}GW${item.gw}`;
+}
+
+function byYearThenGw(a, b) {
+  return (Number(a.year) || 0) - (Number(b.year) || 0) || a.gw - b.gw;
+}
+
+function renderPairingsTable(name) {
+  const rows = computePairings(name)
+    .sort((a, b) => (b.with.n + b.vs.n) - (a.with.n + a.vs.n) || a.name.localeCompare(b.name));
+  if (!rows.length) return '';
+  return `
+    <h3>Pairings</h3>
+    <div class="sub" style="margin:4px 0 0;">${escapeHtml(name)}'s record with and against each player. Tap a row to pair up.</div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr>
+          <th>Player</th>
+          <th class="num">With</th><th class="num">W-D-L</th><th class="num">Win%</th>
+          <th class="num">Vs</th><th class="num">W-D-L</th><th class="num">Win%</th>
+        </tr></thead>
+        <tbody>${rows.map(r => `
+          <tr class="clickable" data-pair="${escapeHtmlAttribute(r.name)}">
+            <td>${escapeHtml(r.name)}</td>
+            <td class="num">${r.with.n}</td><td class="num">${fmtWDL(r.with)}</td><td class="num">${fmtPct(r.with)}</td>
+            <td class="num">${r.vs.n}</td><td class="num">${fmtWDL(r.vs)}</td><td class="num">${fmtPct(r.vs)}</td>
+          </tr>`).join('')}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderPair(a, b) {
+  const together = emptyRecord();
+  const against = emptyRecord();
+  let goalsTogether = 0;
+  const shared = [];
+  for (const m of getVisibleMatches()) {
+    const sa = sideOf(m, a);
+    const sb = sideOf(m, b);
+    if (!sa || !sb) continue;
+    const result = resultFor(m, sa);
+    if (sa === sb) {
+      addResult(together, result);
+      const list = sa === 1 ? m.team1_players : m.team2_players;
+      goalsTogether += list.filter(p => p.player === a || p.player === b)
+        .reduce((sum, p) => sum + (p.goals || 0), 0);
+    } else {
+      addResult(against, result);
+    }
+    shared.push({ year: m.year, gw: m.gw, same: sa === sb, result, venue: m.venue });
+  }
+  const rows = shared.sort(byYearThenGw).map(g => `
+    <tr>
+      <td>${gwLabel(g)}</td>
+      <td>${g.same ? 'Together' : 'Against'}</td>
+      <td class="result-${g.result || ''}">${g.result || '-'}</td>
+      <td>${escapeHtml(g.venue || '')}</td>
+    </tr>`).join('');
+  return `
+    <div class="card">
+      <div class="name">${escapeHtml(a)} &amp; ${escapeHtml(b)} <span style="color: var(--muted); font-size: 0.8rem; font-weight: 400;">(${seasonLabel()})</span></div>
+      <div class="stats">
+        <span>Together: <b>${together.n}</b> games, W <b>${together.W}</b> D <b>${together.D}</b> L <b>${together.L}</b>, <b>${fmtPct(together)}</b> win rate, <b>${goalsTogether}</b> goals between them</span>
+      </div>
+      <div class="stats" style="margin-top:8px;">
+        <span>Against: <b>${against.n}</b> games, ${escapeHtml(a)} W <b>${against.W}</b> D <b>${against.D}</b> L <b>${against.L}</b> (<b>${fmtPct(against)}</b>)</span>
+      </div>
+      ${shared.length ? `
+      <table>
+        <thead><tr><th>GW</th><th>Side</th><th>${escapeHtml(a)}</th><th>Venue</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>` : '<div class="empty">No shared games this season.</div>'}
+    </div>
+  `;
+}
 
 document.getElementById('gw-select').addEventListener('change', () => {
   updateMatchDetail();
@@ -163,30 +373,40 @@ function updateMatchDetail() {
 }
 
 function renderMatch(m) {
-  const teamTable = (list) => `
-    <table>
-      <thead><tr><th>Player</th><th>G</th><th>A</th><th>CS</th><th></th></tr></thead>
-      <tbody>${list.map(p => `
-        <tr>
-          <td>${escapeHtml(p.player)}</td>
-          <td>${p.goals ?? '-'}</td>
-          <td>${p.assists ?? '-'}</td>
-          <td>${p.clean_sheets ?? '-'}</td>
-          <td>${p.is_captain ? 'C' : ''}</td>
-        </tr>
-      `).join('')}</tbody>
-    </table>
-  `;
+  const isOG = (p) => NON_PLAYERS.has(String(p.player || '').trim().toLowerCase());
+  const cell = (v) => v ? v : '<span class="muted">&middot;</span>';
+  const team = (label, result, list) => {
+    const players = (list || []).filter(p => !isOG(p));
+    const ownGoals = (list || []).filter(isOG).reduce((sum, p) => sum + (p.goals || 0), 0);
+    return `
+      <div class="team">
+        <div class="team-head"><span>${label}</span><span class="result-${result || ''}">${result ? ({ W: 'Won', D: 'Drew', L: 'Lost' }[result] || result) : ''}</span></div>
+        <table>
+          <thead><tr><th>Player</th><th class="num">G</th><th class="num">A</th><th class="num">CS</th></tr></thead>
+          <tbody>${players.map(p => `
+            <tr>
+              <td>${escapeHtml(p.player)}${p.is_captain ? ' <span class="cap" title="Captain">C</span>' : ''}</td>
+              <td class="num">${cell(p.goals)}</td>
+              <td class="num">${cell(p.assists)}</td>
+              <td class="num">${cell(p.clean_sheets)}</td>
+            </tr>
+          `).join('')}</tbody>
+        </table>
+        ${ownGoals ? `<div class="og">+ ${ownGoals} own goal${ownGoals === 1 ? '' : 's'}</div>` : ''}
+      </div>
+    `;
+  };
   return `
     <div class="card">
-      <div class="name">${m.year ? `${m.year} ` : ''}GW${m.gw} &mdash; ${escapeHtml(m.venue || '')}</div>
-      <div class="stats">
-        <span class="result-${m.team1_result || ''}">Team 1: ${m.team1_result || '-'} (${m.team1_goals ?? '-'})</span>
-        <span class="result-${m.team2_result || ''}">Team 2: ${m.team2_result || '-'} (${m.team2_goals ?? '-'})</span>
+      <div class="name">${m.year ? `${m.year} ` : ''}GW${m.gw}${m.venue ? ` &middot; ${escapeHtml(m.venue)}` : ''}</div>
+      <div class="scoreline">
+        <span class="result-${m.team1_result || ''}">Team 1</span>
+        <b>${m.team1_goals ?? '-'} &ndash; ${m.team2_goals ?? '-'}</b>
+        <span class="result-${m.team2_result || ''}">Team 2</span>
       </div>
-      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:10px;">
-        <div style="flex:1; min-width:220px;">${teamTable(m.team1_players)}</div>
-        <div style="flex:1; min-width:220px;">${teamTable(m.team2_players)}</div>
+      <div class="teams">
+        ${team('Team 1', m.team1_result, m.team1_players)}
+        ${team('Team 2', m.team2_result, m.team2_players)}
       </div>
     </div>
   `;
@@ -202,11 +422,12 @@ function renderCard(p) {
   const draws = games.filter(g => g.result === 'D').length;
   const losses = games.filter(g => g.result === 'L').length;
   const gpg = appearances ? (goals / appearances).toFixed(2) : '0.00';
-  const winPct = appearances ? Math.round((wins / appearances) * 100) : 0;
-  const captaincies = games.filter(g => g.is_captain).length;
-  const rows = games.slice().sort((a, b) => a.gw - b.gw).map(g => `
+  const winRate = appearances ? Math.round((wins / appearances) * 100) : 0;
+  const captained = emptyRecord();
+  for (const g of games) if (g.is_captain) addResult(captained, g.result);
+  const rows = games.slice().sort(byYearThenGw).map(g => `
     <tr>
-      <td>GW${g.gw}</td>
+      <td>${gwLabel(g)}</td>
       <td class="result-${g.result || ''}">${g.result || '-'}</td>
       <td>${g.goals ?? '-'}</td>
       <td>${g.assists ?? '-'}</td>
@@ -215,22 +436,28 @@ function renderCard(p) {
       <td>${escapeHtml(g.venue || '')}</td>
     </tr>
   `).join('');
-  const seasonLabel = selectedYear === 'all' ? 'all seasons' : `season ${selectedYear}`;
   return `
     <div class="card">
-      <div class="name">${escapeHtml(p.name)} <span style="color: var(--muted); font-size: 0.8rem; font-weight: 400;">(${seasonLabel})</span></div>
+      <div class="name">${escapeHtml(p.name)} <span style="color: var(--muted); font-size: 0.8rem; font-weight: 400;">(${seasonLabel()})</span></div>
       <div class="stats">
         <span><b>${appearances}</b> apps</span>
         <span><b>${goals}</b> goals</span>
         <span><b>${assists}</b> assists</span>
         <span><b>${gpg}</b> goals/game</span>
-        <span><b>${winPct}%</b> win rate</span>
+        <span><b>${winRate}%</b> win rate</span>
         <span>W <b>${wins}</b> D <b>${draws}</b> L <b>${losses}</b></span>
         <span><b>${cleanSheets}</b> clean sheets</span>
-        <span><b>${captaincies}</b> captaincies</span>
       </div>
+      <div class="stats" style="margin-top:8px;">
+        <span><b>${captained.n}</b> captaincies</span>
+        ${captained.n ? `
+        <span>as captain W <b>${captained.W}</b> D <b>${captained.D}</b> L <b>${captained.L}</b></span>
+        <span><b>${fmtPct(captained)}</b> captaincy win rate</span>` : ''}
+      </div>
+      ${renderPairingsTable(p.name)}
+      <h3>Games</h3>
       <table>
-        <thead><tr><th>GW</th><th>Res</th><th>G</th><th>A</th><th>CS</th><th></th><th>Venue</th></tr></thead>
+        <thead><tr><th>GW</th><th>Res</th><th>G</th><th>A</th><th>CS</th><th>C</th><th>Venue</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>

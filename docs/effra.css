@@ -419,3 +419,39 @@ footer.site { color: var(--muted); font-size: 0.78rem; text-align: center; paddi
 @media (prefers-reduced-motion: reduce) {
   .w-slide { transition: none; transform: none; }
 }
+
+/* wrapped: club splash intro */
+.w-splash {
+  background: radial-gradient(90% 60% at 50% 35%, #2c64a8 0%, #163a6b 55%, #081627 100%);
+  align-items: center; text-align: center; overflow: hidden;
+}
+.w-splash .w-big { font-size: clamp(2.4rem, 12vw, 3.6rem); }
+.w-splash .w-kicker { color: #e0b93a; }
+.w-splash-crest { position: relative; width: 168px; height: 168px; margin-bottom: 8px; }
+.w-splash-crest img {
+  position: relative; z-index: 1; width: 100%; height: 100%; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 4px #fff, 0 0 40px rgba(224, 185, 58, 0.55);
+}
+.w-ring { position: absolute; inset: -6px; border-radius: 50%; border: 3px solid #e0b93a; opacity: 0; }
+.w-confetti i {
+  position: absolute; top: -12px; left: calc(var(--k) * 5.6% + 2%); width: 8px; height: 14px; border-radius: 2px;
+  background: var(--c, #e0b93a); opacity: 0;
+}
+.w-confetti i:nth-child(3n) { --c: #ffffff; }
+.w-confetti i:nth-child(3n+1) { --c: #7fb0ea; }
+.w-splash.active .w-splash-crest img { animation: crest-drop 0.9s cubic-bezier(.2, 1.4, .4, 1) both; }
+.w-splash.active .w-ring { animation: ring-pulse 1.6s ease-out 0.6s 2; }
+.w-splash.active .w-ring.r2 { animation-delay: 1s; }
+.w-splash.active .w-kicker { animation: rise 0.5s ease-out 0.7s both; }
+.w-splash.active .w-big { animation: rise 0.6s ease-out 1s both; }
+.w-splash.active .w-confetti i { animation: confetti 2.2s ease-in calc(0.5s + var(--k) * 0.06s) both; }
+@keyframes crest-drop { from { transform: translateY(-140%) rotate(-200deg) scale(0.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes ring-pulse { from { transform: scale(1); opacity: 0.9; } to { transform: scale(1.6); opacity: 0; } }
+@keyframes rise { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes confetti { 0% { opacity: 1; transform: translateY(0) rotate(0); } 100% { opacity: 0; transform: translateY(820px) rotate(540deg); } }
+.w-btn.insta { background: linear-gradient(90deg, #f58529, #dd2a7b 50%, #8134af); color: #fff; }
+.w-actions { flex-wrap: wrap; }
+@media (prefers-reduced-motion: reduce) {
+  .w-splash.active .w-splash-crest img, .w-splash.active .w-ring, .w-splash.active .w-kicker,
+  .w-splash.active .w-big, .w-splash.active .w-confetti i { animation: none; }
+}

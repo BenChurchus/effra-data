@@ -19,7 +19,7 @@
       <img src="assets/icon-192.png" alt="Effra Rovers FC crest" width="48" height="48">
       <div class="grow">
         <h1>Master sheet</h1>
-        <div class="tag">Every calculation behind the stats and awards · unlisted</div>
+        <div class="tag">Gaffer’s room · every calculation behind the stats and awards · <a href="./" style="color:#fff">back to site</a></div>
       </div>
       <button type="button" class="theme-toggle" id="theme-toggle"></button>
     </div>
@@ -84,7 +84,7 @@
         <li>Streaks run over each player's own appearances in order; missed weeks don't break a streak, a draw breaks win/loss streaks.</li>
         <li>Win impact = player's win % minus the win % their team-mates have <em>without</em> them, weighted by games shared.</li>
         <li>G+A is only awarded if its winner is different from both the Golden Boot and Assist King winners.</li>
-        <li>Ties are shared. Default thresholds scale with the season: min apps = 20% of matches, pair/opposition = 10% (minimum 3).</li>
+        <li>Ties are shared. Default thresholds: 12+ apps for individual awards (11 doesn’t qualify), 8+ games for pairings (together, or decided games against each other for Nemesis), 3+ captaincies for the captain awards. Adjust them above to explore; Reset returns to these.</li>
         <li>Own goals are credited to no one.</li>
       </ul>
     </div>
@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'gapg', label: 'G+A/gm', num: true, value: p => p.gapg, html: p => fmt.pg(p.gapg), csv: p => p.gapg.toFixed(3) },
       { key: 'cs', label: 'CS', num: true, value: p => p.cs },
       { key: 'cspg', label: 'CS/gm', num: true, value: p => p.cspg, html: p => fmt.pg(p.cspg), csv: p => p.cspg.toFixed(3) },
+      { key: 'csp', label: 'CS %', num: true, title: 'Share of games with a clean sheet', value: p => p.csPct, html: p => fmt.pct(p.csPct), csv: p => pct(p.csPct) },
       { key: 'caps', label: 'Caps', num: true, value: p => p.cap.n },
       { key: 'capwdl', label: 'Capt record', value: p => p.cap.W - p.cap.L, html: p => (p.cap.n ? fmt.wdlHtml(p.cap) : '–'), csv: p => fmt.wdl(p.cap) },
       { key: 'capwin', label: 'Capt win %', num: true, value: p => p.capWinPct, html: p => fmt.pct(p.capWinPct), csv: p => pct(p.capWinPct) },

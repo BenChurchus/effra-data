@@ -106,10 +106,10 @@ python -m venv .venv
   the raw export (`#NAME?` errors) and the user is handing over the "heavy
   lifting" formula logic separately to reimplement properly in DuckDB
   instead of trusting the sheet's own calculations.
-- **Awards definitions to confirm.** Thresholds (min apps = 20% of matches,
-  pairs/opposition = 10%, captaincy = 3) and the literal G+A rule ("not
-  awarded" when it duplicates Golden Boot/Assist King) are defaults — tweak
-  live on `master.html`, then bake agreed values into `defaultThresholds` in
-  `docs/effra.js`. Data Darling is a suggestion only (win-rate impact).
+- **Award thresholds (agreed Nov 2026):** 12+ apps for individual awards,
+  8+ games for pairings and Nemesis, 3+ captaincies — fixed in
+  `defaultThresholds` in `docs/effra.js`. Still open: the literal G+A rule
+  ("not awarded" when it duplicates Golden Boot/Assist King) and a tiebreaker
+  for tied awards. Data Darling is a suggestion only (win-rate impact).
 - **Verification loop.** Project checks remain simple and reliable: run
   `python build_site.py` and `pytest tests/` after any source or parser change.

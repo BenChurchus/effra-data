@@ -51,9 +51,14 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
     <article class="card">
       <div class="card-head">
         <h2 id="table-title">Leaderboard</h2>
-        <label class="sub"><input type="checkbox" id="table-qualified" checked> <span id="table-qual-label">Regulars only</span></label>
+        <div class="seg in-card" id="board-seg" role="group" aria-label="Leaderboard view">
+          <button type="button" data-board="players">Players</button>
+          <button type="button" data-board="pairs">Pairings</button>
+          <button type="button" data-board="rivals">Nemesis</button>
+        </div>
       </div>
-      <div class="sub" style="margin-top:4px">Click any column to re-order · tap a player to open their record.</div>
+      <label class="sub" style="display:block;margin-top:8px"><input type="checkbox" id="table-qualified" checked> <span id="table-qual-label">Regulars only</span></label>
+      <div class="sub" id="board-help" style="margin-top:4px">Click any column to re-order · tap a row to open it.</div>
       <div class="table-wrap" id="leaderboard" style="margin-top:10px"></div>
     </article>
   </section>
@@ -82,7 +87,9 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
   </section>
 </main>
 
-<footer class="site">Effra Rovers FC · data from the weekly scorecards · <span id="data-stamp"></span></footer>
+<footer class="site">Effra Rovers FC · data from the weekly scorecards · <span id="data-stamp"></span>
+  <br><a class="gaffer" href="master.html" rel="nofollow" title="Gaffer’s room: awards and master sheet">🏆 <span>Gaffer</span></a>
+</footer>
 <noscript><p class="wrap">This page needs JavaScript to load the stats.</p></noscript>
 
 <script>
@@ -93,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let allMatches = [];
   const TABS = ['table', 'players', 'matches'];
-  const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', sort: '' };
+  const BOARDS = ['players', 'pairs', 'rivals'];
+  const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', board: 'players' };
   E.mountThemeToggle($('theme-toggle'));
   const cache = new Map();
 
@@ -121,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     state.player = h.get('p') || '';
     state.pair = h.get('with') || '';
     state.gw = h.get('gw') || '';
+    state.board = BOARDS.includes(h.get('b')) ? h.get('b') : 'players';
   }
   function writeHash() {
     const h = new URLSearchParams();
@@ -129,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.tab === 'players' && state.player) h.set('p', state.player);
     if (state.tab === 'players' && state.player && state.pair) h.set('with', state.pair);
     if (state.tab === 'matches' && state.gw) h.set('gw', state.gw);
+    if (state.tab === 'table' && state.board !== 'players') h.set('b', state.board);
     history.replaceState(null, '', `#${h.toString()}`);
   }
 
@@ -169,10 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ----------------------------------------------------------- leaderboard
   function renderLeaderboard() {
+    for (const b of $('board-seg').querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.board === state.board));
+    $('table-title').textContent = `${({ players: 'Leaderboard', pairs: 'Pairings', rivals: 'Nemesis' })[state.board]} · ${seasonText()}`;
+    if (state.board === 'pairs') return renderPairBoard();
+    if (state.board === 'rivals') return renderRivalBoard();
     const s = scope();
     const qOnly = $('table-qualified').checked;
-    $('table-title').textContent = `Leaderboard · ${seasonText()}`;
     $('table-qual-label').textContent = `Regulars only (${s.t.minApps}+ apps)`;
+    $('board-help').textContent = 'Click any column to re-order · tap a player to open their record.';
     const rows = s.players.filter(p => !qOnly || p.apps >= s.t.minApps);
     E.sortableTable($('leaderboard'), [
       { key: 'name', label: 'Player', sticky: true, value: p => p.name, html: p => `<b>${esc(p.name)}</b>` },
@@ -184,11 +198,62 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'a', label: 'Assists', num: true, value: p => p.assists },
       { key: 'apg', label: 'A/gm', num: true, value: p => p.apg, html: p => fmt.pg(p.apg) },
       { key: 'cs', label: 'CS', num: true, title: 'Clean sheets', value: p => p.cs },
+      { key: 'csp', label: 'CS %', num: true, title: 'Share of games with a clean sheet', value: p => p.csPct, html: p => fmt.pct(p.csPct) },
       { key: 'cap', label: 'Capt win %', num: true, value: p => p.capWinPct, html: p => (p.cap.n ? `${fmt.pct(p.capWinPct)} <span class="muted">(${p.cap.n})</span>` : '–') },
       { key: 'impact', label: 'Impact', num: true, title: 'Win % minus team-mates’ win % without them', value: p => p.impact,
         html: p => (p.impact == null ? '–' : `<span class="${p.impact >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`) },
       { key: 'form', label: 'Form', value: p => p.games.slice(-5).filter(g => g.result === 'W').length, html: p => formStrip(p.games, 5) },
     ], rows, { sortKey: 'win', rowAttrs: p => `class="clickable" data-player="${esc(p.name)}" tabindex="0"` });
+  }
+
+  const pairLabel = (a, b) => `<b>${esc(a)}</b><span class="vs-word">&amp;</span><b>${esc(b)}</b>`;
+
+  function renderPairBoard() {
+    const s = scope();
+    const qOnly = $('table-qualified').checked;
+    const min = qOnly ? s.t.minPairGames : 1;
+    $('table-qual-label').textContent = `Established pairs only (${s.t.minPairGames}+ games together)`;
+    $('board-help').textContent = 'Best partnerships first; flip Win % for the worst · tap a pair to compare them.';
+    const rows = s.pairs.filter(p => E.decided(p.with) >= min);
+    E.sortableTable($('leaderboard'), [
+      { key: 'pair', label: 'Pair', sticky: true, value: p => `${p.a} ${p.b}`, html: p => pairLabel(p.a, p.b) },
+      { key: 'win', label: 'Win %', num: true, value: p => p.withPct, html: p => fmt.meterHtml(p.withPct) },
+      { key: 'n', label: 'Games', num: true, value: p => p.with.n },
+      { key: 'rec', label: 'Record', value: p => p.with.W - p.with.L, html: p => fmt.wdlHtml(p.with) },
+      { key: 'goals', label: 'Goals', num: true, title: 'Goals between them when together', value: p => p.withGoals },
+      { key: 'gpg', label: 'Goals/gm', num: true, value: p => p.withGpg, html: p => fmt.pg(p.withGpg) },
+    ], rows, { sortKey: 'win', rowAttrs: p => `class="clickable" data-player="${esc(p.a)}" data-with="${esc(p.b)}" tabindex="0"` });
+  }
+
+  // How unlikely is a head-to-head record to be luck (two-sided binomial p)?
+  const verdict = (p, n) => (n < 3 ? '<span class="verdict luck">Too early</span>'
+    : p < 0.05 ? '<span class="verdict sig">Nemesis</span>'
+    : p < 0.2 ? '<span class="verdict lean">Has the edge</span>'
+    : '<span class="verdict luck">Could be luck</span>');
+
+  function renderRivalBoard() {
+    const s = scope();
+    const qOnly = $('table-qualified').checked;
+    const min = qOnly ? s.t.minVsGames : 1;
+    $('table-qual-label').textContent = `Proper rivalries only (${s.t.minVsGames}+ decided games against each other)`;
+    $('board-help').textContent = 'Ranked by how unlikely the record is to be luck (exact binomial test, draws excluded) · tap to compare.';
+    const rows = s.pairs
+      .filter(p => p.vs.aW + p.vs.bW >= min)
+      .map(p => {
+        const aLeads = p.vs.aW >= p.vs.bW;
+        const top = aLeads ? p.a : p.b, under = aLeads ? p.b : p.a;
+        const rec = { n: p.vs.n, W: aLeads ? p.vs.aW : p.vs.bW, D: p.vs.D, L: aLeads ? p.vs.bW : p.vs.aW };
+        return { top, under, rec, pct: E.winRate(rec), p: p.vsP, decided: p.vs.aW + p.vs.bW, strength: -Math.log10(Math.max(p.vsP, 1e-12)) };
+      });
+    E.sortableTable($('leaderboard'), [
+      { key: 'who', label: 'Rivalry', sticky: true, value: r => `${r.top} ${r.under}`, html: r => `<b>${esc(r.top)}</b><span class="vs-word">over</span>${esc(r.under)}` },
+      { key: 'strength', label: 'Luck?', title: 'p-value: chance of a record this lopsided if they were evenly matched', value: r => r.strength,
+        html: r => `${verdict(r.p, r.decided)} <span class="muted">p ${fmt.p(r.p)}</span>` },
+      { key: 'n', label: 'Games', num: true, value: r => r.rec.n },
+      { key: 'rec', label: `Record`, title: 'From the leader’s side', value: r => r.rec.W - r.rec.L, html: r => fmt.wdlHtml(r.rec) },
+      { key: 'win', label: 'Win %', num: true, value: r => r.pct, html: r => fmt.meterHtml(r.pct) },
+      { key: 'margin', label: 'Margin', num: true, title: 'Wins minus losses', value: r => r.rec.W - r.rec.L, html: r => `+${r.rec.W - r.rec.L}` },
+    ], rows, { sortKey: 'strength', rowAttrs: r => `class="clickable" data-player="${esc(r.top)}" data-with="${esc(r.under)}" tabindex="0"` });
   }
   const resChip = (r) => `<span class="res ${r || 'none'}" aria-label="${({ W: 'Win', D: 'Draw', L: 'Loss' })[r] || 'No result'}">${r || '–'}</span>`;
   const formStrip = (games, n = 6) => `<span class="form">${games.slice(-n).map(g => resChip(g.result)).join('')}</span>`;
@@ -208,6 +273,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const below = vals.filter(x => x < v - 1e-12).length, same = vals.filter(x => Math.abs(x - v) <= 1e-12).length;
     return (below + 0.5 * same) / vals.length;
   }
+  const median = (vals) => {
+    const v = vals.filter(x => x != null).sort((a, b) => a - b);
+    if (!v.length) return null;
+    const m = Math.floor(v.length / 2);
+    return v.length % 2 ? v[m] : (v[m - 1] + v[m]) / 2;
+  };
   const ordinal = (n) => { const s = ['th', 'st', 'nd', 'rd'], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
 
   function renderPlayer() {
@@ -234,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
           ${kpi('Win rate', fmt.pct(p.winPct), `impact <span class="${(p.impact ?? 0) >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`, toneFor(p.winPct))}
           ${kpi('Goals', p.goals, `${fmt.pg(p.gpg)} per game`, 'gold')}
           ${kpi('Assists', p.assists, `${fmt.pg(p.apg)} per game`)}
-          ${kpi('Clean sheets', p.cs, `${fmt.pg(p.cspg)} per game`)}
+          ${kpi('Clean sheets', p.cs, `${fmt.pct(p.csPct)} of games · ${fmt.pg(p.cspg)}/game`)}
           ${kpi('Captain', p.cap.n ? fmt.pct(p.capWinPct) : '–', p.cap.n ? `${p.cap.n} caps · ${fmt.wdlHtml(p.cap)}` : 'never captained', p.cap.n ? toneFor(p.capWinPct) : '')}
         </div>
         <div class="chips">
@@ -250,8 +321,23 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3>Profile vs ${other ? esc(other.name) : 'squad'}</h3>
             ${C.legend([{ name: p.name, color: 'var(--series-1)' }, { name: other ? other.name : 'Squad median', color: 'var(--series-ref)' }])}
             <div id="radar"></div>
-            <details class="table-view"><summary>Show as table</summary><div class="table-wrap" id="radar-table"></div></details>
-            <div class="sub" style="font-size:0.75rem">Percentile among players with ${s.t.minApps}+ apps (${seasonText().toLowerCase()}).</div>
+            <details class="table-view" open><summary>Show as table</summary><div class="table-wrap" id="radar-table"></div></details>
+            <details class="explainer">
+              <summary>How to read this</summary>
+              <p>Each spoke is one stat, ranked against every regular this ${allSeasons() ? 'period' : 'season'}
+                 (${poolUsed.length} players with ${s.t.minApps}+ apps). <b>Centre = bottom of the squad, edge = top,</b>
+                 and the middle ring is the 50th percentile, an average regular. A bigger, rounder shape means
+                 good at everything; a spiky shape means a specialist.</p>
+              <p>The <span class="key" style="--k:var(--series-1)">blue shape</span> is ${esc(p.name)}.
+                 The <span class="key" style="--k:var(--series-ref)">grey shape</span> is ${other ? esc(other.name) : 'the squad median, a perfectly average regular'}.
+                 ${other ? '' : 'Pick someone in “Pair with” to compare against them instead.'}</p>
+              <dl>
+                <dt>Goals/gm, Assists/gm, Clean sh./gm</dt><dd>Totals divided by appearances, so part-timers aren’t punished.</dd>
+                <dt>Win %</dt><dd>Wins ÷ games with a result.</dd>
+                <dt>Win impact</dt><dd>Their win % minus the win % their team-mates manage <em>without</em> them. Positive means teams win more with them in.</dd>
+              </dl>
+              <p class="muted">Percentiles show rank, not size. Being 90th on goals means more goals per game than 90% of regulars; the table gives the actual numbers.</p>
+            </details>
           </div>
           <div class="chart" id="line-wrap">
             <h3>Goals &amp; assists, cumulative</h3>
@@ -281,9 +367,13 @@ document.addEventListener('DOMContentLoaded', () => {
         display: AXES.map((a, i) => `${a.show(p[a.key])} (${pv[i] == null ? '–' : ordinal(Math.round(pv[i] * 100))} pct)`) },
     ];
     C.radarChart($('radar'), { axes: AXES, series, title: `${p.name} percentile profile` });
-    $('radar-table').innerHTML = `<table class="data"><thead><tr><th>Metric</th><th class="num">${esc(p.name)}</th><th class="num">Pct</th>${other ? `<th class="num">${esc(other.name)}</th><th class="num">Pct</th>` : ''}</tr></thead><tbody>${
-      AXES.map((a, i) => `<tr><td>${a.label}</td><td class="num">${esc(a.show(p[a.key]).split(' ')[0])}</td><td class="num">${pv[i] == null ? '–' : Math.round(pv[i] * 100)}</td>${
-        other ? `<td class="num">${esc(a.show(other[a.key]).split(' ')[0])}</td><td class="num">${Math.round(100 * (percentile(poolUsed, a.key, other[a.key]) ?? 0))}</td>` : ''}</tr>`).join('')}</tbody></table>`;
+    const pctCell = (v) => (v == null ? '–' : `<span class="${v >= 0.67 ? 'r-W' : v < 0.33 ? 'r-L' : ''}">${ordinal(Math.round(v * 100))}</span>`);
+    const ov = other ? AXES.map(a => percentile(poolUsed, a.key, other[a.key])) : [];
+    $('radar-table').innerHTML = `<table class="data"><thead><tr><th>Stat</th><th class="num">${esc(p.name)}</th><th class="num">Rank</th>${other ? `<th class="num">${esc(other.name)}</th><th class="num">Rank</th>` : '<th class="num">Squad median</th>'}</tr></thead><tbody>${
+      AXES.map((a, i) => `<tr><td>${a.label}</td><td class="num">${esc(a.show(p[a.key]).split(' ')[0])}</td><td class="num">${pctCell(pv[i])}</td>${
+        other ? `<td class="num">${esc(a.show(other[a.key]).split(' ')[0])}</td><td class="num">${pctCell(ov[i])}</td>`
+              : `<td class="num">${esc(a.show(median(poolUsed.map(x => x[a.key]))).split(' ')[0])}</td>`}</tr>`).join('')}</tbody></table>
+      <div class="sub" style="font-size:0.72rem;margin-top:4px">Rank = percentile among regulars: <span class="r-W">top third</span>, middle, <span class="r-L">bottom third</span>.</div>`;
 
     // line
     let g = 0, a = 0;
@@ -428,6 +518,12 @@ document.addEventListener('DOMContentLoaded', () => {
     $(`tab-${state.tab}`).focus();
   });
   $('table-qualified').addEventListener('change', renderLeaderboard);
+  $('board-seg').addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-board]');
+    if (!b) return;
+    state.board = b.dataset.board;
+    render();
+  });
   $('player-select').addEventListener('change', (e) => { state.player = e.target.value; state.pair = ''; render(); });
   $('pair-select').addEventListener('change', (e) => { state.pair = e.target.value; render(); });
   $('gw-select').addEventListener('change', (e) => { state.gw = e.target.value; render(); });
@@ -450,8 +546,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const playerRow = e.target.closest('tr[data-player]');
     if (playerRow) {
-      state.tab = 'players'; state.player = playerRow.dataset.player; state.pair = '';
-      render(); window.scrollTo(0, 0);
+      state.tab = 'players'; state.player = playerRow.dataset.player; state.pair = playerRow.dataset.with || '';
+      render();
+      if (state.pair) $('pair-card').scrollIntoView({ block: 'start' }); else window.scrollTo(0, 0);
       return true;
     }
     return false;

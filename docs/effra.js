@@ -110,6 +110,9 @@
         name: p.name, games: p.games, apps, rec, cap,
         goals, assists, cs, ga: goals + assists,
         gpg: goals / apps, apg: assists / apps, gapg: (goals + assists) / apps, cspg: cs / apps,
+        // share of appearances with a clean sheet credited (a game counts once)
+        csGames: p.games.filter(g => g.cs > 0).length,
+        csPct: p.games.filter(g => g.cs > 0).length / apps,
         winPct: winRate(rec), capWinPct: winRate(cap),
         streaks: {
           win: longestStreak(p.games, g => g.result === 'W'),
@@ -237,13 +240,13 @@
 
   // ----------------------------------------------------------------- awards
 
+  // Agreed with the gaffer (Nov 2026): fixed cut-offs, not scaled by season.
+  // 12+ apps to qualify for individual awards (11 doesn't count); 8+ games
+  // for any pairing (together for Better Together / Gruesome Twosome,
+  // decided games against each other for Nemesis); 3+ captaincies.
+  // eslint-disable-next-line no-unused-vars
   function defaultThresholds(matchCount) {
-    return {
-      minApps: Math.max(3, Math.round(matchCount * 0.2)),
-      minCaps: 3,
-      minPairGames: Math.max(3, Math.round(matchCount * 0.1)),
-      minVsGames: Math.max(3, Math.round(matchCount * 0.1)),
-    };
+    return { minApps: 12, minCaps: 3, minPairGames: 8, minVsGames: 8 };
   }
 
   const fmt = {
@@ -313,9 +316,9 @@
 
     awards.push(
       playerAward('cleanest-sheets', 'Cleanest Sheets', 'Most clean sheets per game', p => p.cspg,
-        (p, v) => `${fmt.pg(v)} CS/game`, { detail: p => `${p.cs} clean sheets in ${p.apps} apps` }),
+        (p, v) => `${fmt.pg(v)} CS/game · ${fmt.pct(p.csPct)} of games`, { detail: p => `${p.cs} clean sheets in ${p.apps} apps` }),
       playerAward('soiled-sheets', 'Soiled Sheets', 'Fewest clean sheets per game', p => p.cspg,
-        (p, v) => `${fmt.pg(v)} CS/game`, { asc: true, detail: p => `${p.cs} clean sheets in ${p.apps} apps` }),
+        (p, v) => `${fmt.pg(v)} CS/game · ${fmt.pct(p.csPct)} of games`, { asc: true, detail: p => `${p.cs} clean sheets in ${p.apps} apps` }),
       playerAward('armband-anchor', 'Armband Anchor', 'Highest win rate as captain', p => p.capWinPct,
         (p, v) => `${fmt.pct(v)} as captain`, { pool: qCap, rule: `min ${t.minCaps} captaincies`, detail: p => `${fmt.wdl(p.cap)} (W-D-L)` }),
       playerAward('asleep-at-the-wheel', 'Asleep at the Wheel', 'Lowest win rate as captain', p => p.capWinPct,

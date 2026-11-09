@@ -45,7 +45,7 @@ jobs:
         run: python refresh.py
 
       - name: Run tests (blocks the deploy on failure)
-        run: pytest tests/ -q
+        run: python -m pytest tests/ -q
 
       - name: Commit refreshed data
         if: github.event_name != 'push'

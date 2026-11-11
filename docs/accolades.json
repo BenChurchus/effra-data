@@ -1,0 +1,610 @@
+[
+  {
+    "season": 2025,
+    "award": "Better Together",
+    "category": "Stats",
+    "explanation": "Highest win% as a pair",
+    "prize": "2x Medal",
+    "kind": "medal",
+    "winners": [
+      "Bill",
+      "Kempy"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Flat Track Bully",
+    "category": "Stats",
+    "explanation": "Scores lots in wins compared to losses",
+    "prize": "",
+    "kind": "medal",
+    "winners": [
+      "Leo"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Golden Boot",
+    "category": "Stats",
+    "explanation": "Most goals per game",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Nairn"
+    ],
+    "detail": "3.15"
+  },
+  {
+    "season": 2025,
+    "award": "Got that Dawg in him",
+    "category": "Stats",
+    "explanation": "Scores lots in losses compared to wins",
+    "prize": "",
+    "kind": "medal",
+    "winners": [
+      "Char"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Gruesome Twosome",
+    "category": "Stats",
+    "explanation": "Lowest win% as a pair",
+    "prize": "2x wooden spoon",
+    "kind": "booby",
+    "winners": [
+      "Nairn",
+      "Kempy"
+    ],
+    "detail": "28%"
+  },
+  {
+    "season": 2025,
+    "award": "Nemesis",
+    "category": "Stats",
+    "explanation": "2 Players with the most statistically significant win/loss rate when in opposition",
+    "prize": "Medal, spoon",
+    "kind": "medal",
+    "winners": [
+      "Bill"
+    ],
+    "detail": "vs Harry"
+  },
+  {
+    "season": 2025,
+    "award": "Nemesis (spoon)",
+    "category": "Stats",
+    "explanation": "On the wrong end of Bill's nemesis record",
+    "prize": "Spoon",
+    "kind": "booby",
+    "winners": [
+      "Harry"
+    ],
+    "detail": "vs Bill"
+  },
+  {
+    "season": 2025,
+    "award": "Rainbow Road",
+    "category": "Stats",
+    "explanation": "Longest Win Streak",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Joe",
+      "Crell",
+      "Gman",
+      "Char",
+      "Bill"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Skid Mark",
+    "category": "Stats",
+    "explanation": "Longest Losing Streak",
+    "prize": "Wooden spoon",
+    "kind": "booby",
+    "winners": [
+      "Char"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Winners always Win",
+    "category": "Stats",
+    "explanation": "Highest win%",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Joe"
+    ],
+    "detail": "58.87"
+  },
+  {
+    "season": 2025,
+    "award": "Wooden Boot",
+    "category": "Stats",
+    "explanation": "Least goals per game",
+    "prize": "Wood chip/donkey",
+    "kind": "booby",
+    "winners": [
+      "Gman"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Ankle Breaker (tough tackler)",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Dave"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Baller (Creative Spark)",
+    "category": "Vote",
+    "explanation": "Makes things happen ✨️",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Kempy"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Best dressed",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Char"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Brick Wall",
+    "category": "Vote",
+    "explanation": "Best defender",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Harry"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Fastest Pint (live)",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Joel"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Golden Glove",
+    "category": "Vote",
+    "explanation": "Top Keeper",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Joe"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Jekyll and Hyde",
+    "category": "Vote",
+    "explanation": "Most inconsistent player",
+    "prize": "Silver Spoon",
+    "kind": "booby",
+    "winners": [
+      "Crell"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Joe Davies Award",
+    "category": "Vote",
+    "explanation": "Non-Joe player of the year",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Bill"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Most improved",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Leo"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Player of the year",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Joe"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Player's Player",
+    "category": "Vote",
+    "explanation": "Should lean towards teamwork",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Will Mac"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Post-game MVP",
+    "category": "Vote",
+    "explanation": "Good vibes etc.",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Harry"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Wooden Glove",
+    "category": "Vote",
+    "explanation": "Worst Keeper",
+    "prize": "Rubber Gloves",
+    "kind": "booby",
+    "winners": [
+      "Nairn"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Better Together",
+    "category": "Stats",
+    "explanation": "Highest win% as a pair",
+    "prize": "2x Medal",
+    "kind": "medal",
+    "winners": [
+      "Jez",
+      "Harry"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Data Darling",
+    "category": "Stats",
+    "explanation": "Subjective but someone who stands out as an overperformer in the data",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Bill"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Golden Boot",
+    "category": "Stats",
+    "explanation": "Most goals per game",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Nairn"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Gruesome Twosome",
+    "category": "Stats",
+    "explanation": "Lowest win% as a pair",
+    "prize": "2x wooden spoon",
+    "kind": "booby",
+    "winners": [
+      "Dave",
+      "Char"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Nemesis",
+    "category": "Stats",
+    "explanation": "2 Players with the most statistically significant win/loss rate when in opposition",
+    "prize": "Medal, spoon",
+    "kind": "medal",
+    "winners": [
+      "Kempy"
+    ],
+    "detail": "vs Dave"
+  },
+  {
+    "season": 2024,
+    "award": "Nemesis (spoon)",
+    "category": "Stats",
+    "explanation": "On the wrong end of Kempy's nemesis record",
+    "prize": "Spoon",
+    "kind": "booby",
+    "winners": [
+      "Dave"
+    ],
+    "detail": "vs Kempy"
+  },
+  {
+    "season": 2024,
+    "award": "Rainbow Road",
+    "category": "Stats",
+    "explanation": "Longest Win Streak",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Harry"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Skid Mark",
+    "category": "Stats",
+    "explanation": "Longest Losing Streak",
+    "prize": "Wooden spoon",
+    "kind": "booby",
+    "winners": [
+      "Char"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Top Scorer",
+    "category": "Stats",
+    "explanation": "Most overall goals",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Jez"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Winners always Win",
+    "category": "Stats",
+    "explanation": "Highest win%",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Jan"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Wooden Boot",
+    "category": "Stats",
+    "explanation": "Least goals per game",
+    "prize": "Wood chip/donkey",
+    "kind": "booby",
+    "winners": [
+      "Gman"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Ankle Breaker (tough tackler)",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Jez"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Assist King",
+    "category": "Vote",
+    "explanation": "",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Will Mac"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Baller (Creative Spark)",
+    "category": "Vote",
+    "explanation": "Makes things happen ✨️",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Kempy"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Best dressed",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "LG"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Biggest Diva",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Crell"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Brick Wall",
+    "category": "Vote",
+    "explanation": "Best defender",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Harry"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Fastest Pint (live)",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Joel"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Golden Glove",
+    "category": "Vote",
+    "explanation": "Top Keeper",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "LG"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Jekyll and Hyde",
+    "category": "Vote",
+    "explanation": "Most inconsistent player",
+    "prize": "Silver Spoon",
+    "kind": "booby",
+    "winners": [
+      "Char"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Joe Davies Award",
+    "category": "Vote",
+    "explanation": "Non-Joe player of the year",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Nairn"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Most improved",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Gman"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Player of the year",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Joe"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Player's Player",
+    "category": "Vote",
+    "explanation": "Should lean towards teamwork",
+    "prize": "Trophy",
+    "kind": "trophy",
+    "winners": [
+      "Will Mac"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Unsung Hero",
+    "category": "Vote",
+    "explanation": "Self-explanatory",
+    "prize": "Medal",
+    "kind": "medal",
+    "winners": [
+      "Ben"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Wooden Glove",
+    "category": "Vote",
+    "explanation": "Worst Keeper",
+    "prize": "Rubber Gloves",
+    "kind": "booby",
+    "winners": [
+      "Nairn"
+    ],
+    "detail": ""
+  }
+]

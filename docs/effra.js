@@ -38,6 +38,8 @@
   }
   const decided = (rec) => rec.W + rec.D + rec.L;
   const winRate = (rec) => (decided(rec) ? rec.W / decided(rec) : null);
+  /** Win calc: draws count as half a win, (W + ½D) ÷ (W + D + L). Neutralises draws. */
+  const winCalc = (rec) => (decided(rec) ? (rec.W + 0.5 * rec.D) / decided(rec) : null);
   const minus = (a, b) => ({ n: a.n - b.n, W: a.W - b.W, D: a.D - b.D, L: a.L - b.L });
 
   // Which per-player stats a match's scorecard recorded. Older data without
@@ -124,7 +126,7 @@
         gpg: goals / apps, apg: per(assists, appsA), gapg: per(goalsInATracked + assists, appsA), cspg: per(cs, appsCS),
         // share of tracked appearances with a clean sheet credited (a game counts once)
         csGames, csPct: per(csGames, appsCS),
-        winPct: winRate(rec), capWinPct: winRate(cap),
+        winPct: winRate(rec), capWinPct: winRate(cap), winCalc: winCalc(rec), capWinCalc: winCalc(cap),
         streaks: {
           win: longestStreak(p.games, g => g.result === 'W'),
           loss: longestStreak(p.games, g => g.result === 'L'),
@@ -197,6 +199,7 @@
     }
     for (const pr of map.values()) {
       pr.withPct = winRate(pr.with);
+      pr.withCalc = winCalc(pr.with);
       pr.withGpg = pr.with.n ? pr.withGoals / pr.with.n : null;
       pr.vsP = binomialP(pr.vs.aW, pr.vs.aW + pr.vs.bW);
       pr.games.sort(byChrono);
@@ -209,10 +212,11 @@
     const flip = pr.a !== me;
     return {
       me, other: flip ? pr.a : pr.b,
-      with: pr.with, withPct: pr.withPct, withGoals: pr.withGoals, withGpg: pr.withGpg,
+      with: pr.with, withPct: pr.withPct, withCalc: pr.withCalc, withGoals: pr.withGoals, withGpg: pr.withGpg,
       vs: { n: pr.vs.n, W: flip ? pr.vs.bW : pr.vs.aW, D: pr.vs.D, L: flip ? pr.vs.aW : pr.vs.bW },
       vsPct: (() => { const d = pr.vs.aW + pr.vs.bW + pr.vs.D; return d ? (flip ? pr.vs.bW : pr.vs.aW) / d : null; })(),
       vsP: pr.vsP,
+      vsCalc: (() => { const d = pr.vs.aW + pr.vs.bW + pr.vs.D; return d ? ((flip ? pr.vs.bW : pr.vs.aW) + 0.5 * pr.vs.D) / d : null; })(),
       games: pr.games.map(g => g.together ? g : { ...g, result: flip ? ({ W: 'L', L: 'W' }[g.aResult] || g.aResult) : g.aResult }),
     };
   }
@@ -457,7 +461,7 @@
       addResult(v.rec, g.result);
       v.goals += g.goals;
     }
-    const rows = Array.from(map.values()).map(v => ({ ...v, winPct: winRate(v.rec), gpg: v.goals / v.rec.n }));
+    const rows = Array.from(map.values()).map(v => ({ ...v, winPct: winRate(v.rec), winCalc: winCalc(v.rec), gpg: v.goals / v.rec.n }));
     return { rows: rows.sort((a, b) => b.rec.n - a.rec.n), unknown };
   }
 
@@ -559,7 +563,7 @@
 
   root.Effra = {
     isPlayerName, byChrono, matchKey, gwLabel, seasons, filterBySeason, tracks, dataNotes, venueSplit, venueTable,
-    record, addResult, decided, winRate, sideResult, roster, ownGoals,
+    record, addResult, decided, winRate, winCalc, sideResult, roster, ownGoals,
     buildPlayers, buildPairs, orientPair, pairingsFor, binomialP, addImpact,
     defaultThresholds, computeAwards, fmt,
     escapeHtml, sortableTable, toCsv, downloadText, mountThemeToggle, applyTheme, getTheme,

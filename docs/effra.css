@@ -455,3 +455,25 @@ footer.site { color: var(--muted); font-size: 0.78rem; text-align: center; paddi
   .w-splash.active .w-splash-crest img, .w-splash.active .w-ring, .w-splash.active .w-kicker,
   .w-splash.active .w-big, .w-splash.active .w-confetti i { animation: none; }
 }
+
+/* accolades */
+.honours-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.honour {
+  display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; font-size: 0.8rem; font-weight: 600;
+  padding: 3px 9px; border-radius: 999px; background: var(--brand-wash); color: var(--ink);
+}
+.honour.trophy { background: var(--gold-wash); }
+.honour.booby { background: var(--draw-wash); }
+#honours-board td:last-child { white-space: normal; min-width: 280px; }
+#honours-board td:last-child .honour { margin: 2px 2px 2px 0; }
+.honours-cat { margin: 14px 0 6px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.honours-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
+.honour-card {
+  border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; background: var(--surface-2);
+  border-left: 4px solid var(--brand-crest); min-width: 0;
+}
+.honour-card.trophy { border-left-color: var(--gold-bright); }
+.honour-card.booby { border-left-color: var(--draw); }
+.hc-award { font-size: 0.78rem; font-weight: 700; color: var(--ink-2); }
+.hc-winner { font-size: 1.1rem; font-weight: 750; margin-top: 2px; overflow-wrap: anywhere; }
+.hc-meta { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }

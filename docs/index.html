@@ -17,10 +17,10 @@
 <script>/* apply saved theme before first paint (no flash) */
 try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
-<link rel="stylesheet" href="effra.css?v=a086403082">
-<script src="effra.js?v=c9c53ca850" defer></script>
+<link rel="stylesheet" href="effra.css?v=f719c68912">
+<script src="effra.js?v=1b254f3e18" defer></script>
 <script src="charts.js?v=ea5153b785" defer></script>
-<script src="wrapped.js?v=d73f3bb978" defer></script>
+<script src="wrapped.js?v=1ef8d31719" defer></script>
 </head>
 <body>
 <a class="sr-only" href="#main">Skip to content</a>
@@ -41,6 +41,7 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
         <button type="button" role="tab" id="tab-table" aria-controls="panel-table" aria-selected="false">Leaderboard</button>
         <button type="button" role="tab" id="tab-players" aria-controls="panel-players" aria-selected="true">Players</button>
         <button type="button" role="tab" id="tab-matches" aria-controls="panel-matches" aria-selected="false">Matches</button>
+        <button type="button" role="tab" id="tab-honours" aria-controls="panel-honours" aria-selected="false">Accolades</button>
       </div>
       <div class="seg" id="season-seg" role="group" aria-label="Season"></div>
     </div>
@@ -80,6 +81,18 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
     <div id="player-view"></div>
   </section>
 
+  <section id="panel-honours" role="tabpanel" aria-labelledby="tab-honours" hidden>
+    <article class="card">
+      <div class="card-head">
+        <h2>Accolades</h2>
+        <span class="sub">Every award handed out on awards night, from the gaffer’s honours list</span>
+      </div>
+      <h3>Honours board <span class="sub">· 🏆 trophies · 🏅 medals · 🥄 booby prizes</span></h3>
+      <div class="table-wrap" id="honours-board"></div>
+      <div id="honours-seasons"></div>
+    </article>
+  </section>
+
   <section id="panel-matches" role="tabpanel" aria-labelledby="tab-matches" hidden>
     <div class="nav-row">
       <button type="button" class="btn" id="gw-prev" aria-label="Previous match">‹</button>
@@ -116,7 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = (id) => document.getElementById(id);
 
   let allMatches = [];
-  const TABS = ['table', 'players', 'matches'];
+  let accolades = [];
+  const TABS = ['table', 'players', 'matches', 'honours'];
   const BOARDS = ['players', 'pairs', 'rivals', 'venues'];
   const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', board: 'players', wrapped: false };
   E.mountThemeToggle($('theme-toggle'));
@@ -213,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'apps', label: 'Apps', num: true, value: p => p.apps },
       { key: 'rec', label: 'Record', value: p => p.rec.W - p.rec.L, html: p => fmt.wdlHtml(p.rec) },
       { key: 'win', label: 'Win %', num: true, value: p => p.winPct, html: p => fmt.meterHtml(p.winPct) },
+      { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.winCalc, html: p => fmt.pct(p.winCalc) },
       { key: 'g', label: 'Goals', num: true, value: p => p.goals },
       { key: 'gpg', label: 'G/gm', num: true, value: p => p.gpg, html: p => fmt.pg(p.gpg) },
       { key: 'a', label: 'Assists', num: true, value: p => p.assists },
@@ -238,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
     E.sortableTable($('leaderboard'), [
       { key: 'pair', label: 'Pair', sticky: true, value: p => `${p.a} ${p.b}`, html: p => pairLabel(p.a, p.b) },
       { key: 'win', label: 'Win %', num: true, value: p => p.withPct, html: p => fmt.meterHtml(p.withPct) },
+      { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.withCalc, html: p => fmt.pct(p.withCalc) },
       { key: 'n', label: 'Games', num: true, value: p => p.with.n },
       { key: 'rec', label: 'Record', value: p => p.with.W - p.with.L, html: p => fmt.wdlHtml(p.with) },
       { key: 'goals', label: 'Goals', num: true, title: 'Goals between them when together', value: p => p.withGoals },
@@ -280,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const aLeads = p.vs.aW >= p.vs.bW;
         const top = aLeads ? p.a : p.b, under = aLeads ? p.b : p.a;
         const rec = { n: p.vs.n, W: aLeads ? p.vs.aW : p.vs.bW, D: p.vs.D, L: aLeads ? p.vs.bW : p.vs.aW };
-        return { top, under, rec, pct: E.winRate(rec), p: p.vsP, decided: p.vs.aW + p.vs.bW, strength: -Math.log10(Math.max(p.vsP, 1e-12)) };
+        return { top, under, rec, pct: E.winRate(rec), calc: E.winCalc(rec), p: p.vsP, decided: p.vs.aW + p.vs.bW, strength: -Math.log10(Math.max(p.vsP, 1e-12)) };
       });
     E.sortableTable($('leaderboard'), [
       { key: 'who', label: 'Rivalry', sticky: true, value: r => `${r.top} ${r.under}`, html: r => `<b>${esc(r.top)}</b><span class="vs-word">over</span>${esc(r.under)}` },
@@ -289,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'n', label: 'Games', num: true, value: r => r.rec.n },
       { key: 'rec', label: `Record`, title: 'From the leader’s side', value: r => r.rec.W - r.rec.L, html: r => fmt.wdlHtml(r.rec) },
       { key: 'win', label: 'Win %', num: true, value: r => r.pct, html: r => fmt.meterHtml(r.pct) },
+      { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: r => r.calc, html: r => fmt.pct(r.calc) },
       { key: 'margin', label: 'Margin', num: true, title: 'Wins minus losses', value: r => r.rec.W - r.rec.L, html: r => `+${r.rec.W - r.rec.L}` },
     ], rows, { sortKey: 'strength', rowAttrs: r => `class="clickable" data-player="${esc(r.top)}" data-with="${esc(r.under)}" tabindex="0"` });
   }
@@ -339,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="kpis six">
           ${kpi('Appearances', p.apps, fmt.wdlHtml(p.rec))}
-          ${kpi('Win rate', fmt.pct(p.winPct), `impact <span class="${(p.impact ?? 0) >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`, toneFor(p.winPct))}
+          ${kpi('Win rate', fmt.pct(p.winPct), `<span title="Win calc: draws count as half a win, (W + ½D) ÷ games">win calc <b>${fmt.pct(p.winCalc)}</b></span> · impact <span class="${(p.impact ?? 0) >= 0 ? 'r-W' : 'r-L'}">${fmt.signedPct(p.impact)}</span>`, toneFor(p.winPct))}
           ${kpi('Goals', p.goals, `${fmt.pg(p.gpg)} per game`, 'gold')}
           ${kpi('Assists', p.appsA ? p.assists : '–', p.appsA ? `${fmt.pg(p.apg)} per game${p.appsA < p.apps ? ` <span class="muted">(${p.appsA} tracked)</span>` : ''}` : 'not recorded this season')}
           ${kpi('Clean sheets', p.appsCS ? p.cs : '–', p.appsCS ? `${fmt.pct(p.csPct)} of games · ${fmt.pg(p.cspg)}/game` : 'not recorded this season')}
@@ -389,6 +406,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <h3>Pairings <span class="sub">· with and against everyone · tap a row to compare</span></h3>
         <div class="table-wrap tall" id="pairings"></div>
 
+        ${playerHonoursHtml(p.name)}
+
         <h3>By venue <span class="sub">· where ${esc(p.name)} plays best</span></h3>
         <div class="table-wrap" id="venues"></div>
 
@@ -409,11 +428,19 @@ document.addEventListener('DOMContentLoaded', () => {
     C.radarChart($('radar'), { axes: AXES, series, title: `${p.name} percentile profile` });
     const pctCell = (v) => (v == null ? '–' : `<span class="${v >= 0.67 ? 'r-W' : v < 0.33 ? 'r-L' : ''}">${ordinal(Math.round(v * 100))}</span>`);
     const ov = other ? AXES.map(a => percentile(poolUsed, a.key, other[a.key])) : [];
-    $('radar-table').innerHTML = `<table class="data"><thead><tr><th>Stat</th><th class="num">${esc(p.name)}</th><th class="num">Rank</th>${other ? `<th class="num">${esc(other.name)}</th><th class="num">Rank</th>` : '<th class="num">Squad median</th>'}</tr></thead><tbody>${
-      AXES.map((a, i) => `<tr><td>${a.label}</td><td class="num">${esc(a.show(p[a.key]).split(' ')[0])}</td><td class="num">${pctCell(pv[i])}</td>${
-        other ? `<td class="num">${esc(a.show(other[a.key]).split(' ')[0])}</td><td class="num">${pctCell(ov[i])}</td>`
+    // actual position (1st, 2nd...) among regulars, plus the player if they're not one
+    const rankCell = (who, key) => {
+      const field = Array.from(new Set([...poolUsed, who])).filter(x => x[key] != null);
+      const me = who[key];
+      if (me == null) return '–';
+      const pos = field.filter(x => x[key] > me + 1e-12).length + 1;
+      return `<b>${ordinal(pos)}</b><span class="muted"> / ${field.length}</span>`;
+    };
+    $('radar-table').innerHTML = `<table class="data"><thead><tr><th>Stat</th><th class="num">${esc(p.name)}</th><th class="num" title="Position among regulars, 1st = best">Rank</th><th class="num" title="Share of regulars they beat">Percentile</th>${other ? `<th class="num">${esc(other.name)}</th><th class="num">Rank</th><th class="num">Percentile</th>` : '<th class="num">Squad median</th>'}</tr></thead><tbody>${
+      AXES.map((a, i) => `<tr><td>${a.label}</td><td class="num">${esc(a.show(p[a.key]).split(' ')[0])}</td><td class="num">${rankCell(p, a.key)}</td><td class="num">${pctCell(pv[i])}</td>${
+        other ? `<td class="num">${esc(a.show(other[a.key]).split(' ')[0])}</td><td class="num">${rankCell(other, a.key)}</td><td class="num">${pctCell(ov[i])}</td>`
               : `<td class="num">${esc(a.show(median(poolUsed.map(x => x[a.key]))).split(' ')[0])}</td>`}</tr>`).join('')}</tbody></table>
-      <div class="sub" style="font-size:0.72rem;margin-top:4px">Rank = percentile among regulars: <span class="r-W">top third</span>, middle, <span class="r-L">bottom third</span>.</div>`;
+      <div class="sub" style="font-size:0.72rem;margin-top:4px"><b>Rank</b> = position among regulars (1st is best). <b>Percentile</b> = share of regulars they beat: <span class="r-W">top third</span>, middle, <span class="r-L">bottom third</span>.</div>`;
 
     // line
     let g = 0, a = 0;
@@ -439,10 +466,12 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'with', label: 'With', num: true, title: 'Games on the same team', value: r => r.with.n },
       { key: 'wwdl', label: 'Record', value: r => r.with.W - r.with.L, html: r => r.with.n ? fmt.wdlHtml(r.with) : '–' },
       { key: 'wpct', label: 'Win %', num: true, value: r => r.withPct, html: r => fmt.meterHtml(r.withPct) },
+      { key: 'wcalc', label: 'Calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: r => r.withCalc, html: r => fmt.pct(r.withCalc) },
       { key: 'gpg', label: 'Goals/gm', num: true, title: 'Goals between you per game together', value: r => r.withGpg, html: r => r.with.n ? fmt.pg(r.withGpg) : '–' },
       { key: 'vs', label: 'Against', num: true, title: 'Games on opposite teams', value: r => r.vs.n },
       { key: 'vwdl', label: 'Record', value: r => r.vs.W - r.vs.L, html: r => r.vs.n ? fmt.wdlHtml(r.vs) : '–' },
       { key: 'vpct', label: 'Win %', num: true, value: r => r.vsPct, html: r => fmt.meterHtml(r.vsPct) },
+      { key: 'vcalc', label: 'Calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: r => r.vsCalc, html: r => fmt.pct(r.vsCalc) },
     ], prs, { sortKey: 'with', rowAttrs: r => `class="clickable" data-pair="${esc(r.other)}" tabindex="0"` });
 
     // games
@@ -463,6 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { key: 'n', label: 'Games', num: true, value: r => r.rec.n },
         { key: 'rec', label: 'Record', value: r => r.rec.W - r.rec.L, html: r => fmt.wdlHtml(r.rec) },
         { key: 'win', label: 'Win %', num: true, value: r => r.winPct, html: r => fmt.meterHtml(r.winPct) },
+        { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: r => r.winCalc, html: r => fmt.pct(r.winCalc) },
         { key: 'gpg', label: 'Goals/gm', num: true, value: r => r.gpg, html: r => fmt.pg(r.gpg) },
       ], vs.rows, { sortKey: 'n' });
       if (vs.unknown) $('venues').insertAdjacentHTML('beforeend', `<div class="sub" style="font-size:0.75rem;margin-top:4px">${vs.unknown} game${vs.unknown === 1 ? '' : 's'} with no venue recorded aren’t included.</div>`);
@@ -476,13 +506,64 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPairCard(p, other, prs);
   }
 
+  // ------------------------------------------------------------- accolades
+  const KIND_ICON = { trophy: '🏆', medal: '🏅', booby: '🥄' };
+  const awardsFor = (name) => accolades.filter(a => a.winners.includes(name));
+
+  function playerHonoursHtml(name) {
+    const mine = awardsFor(name);
+    if (!mine.length) return '';
+    return `<h3>Accolades <span class="sub">· from awards night</span></h3>
+      <div class="honours-chips">${mine.map(a => `<span class="honour ${a.kind}" title="${esc(a.explanation)}">${KIND_ICON[a.kind]} ${esc(a.award)} <span class="muted">${a.season}</span></span>`).join('')}</div>`;
+  }
+
+  function renderHonours() {
+    if (!accolades.length) {
+      $('honours-board').innerHTML = '<div class="sub">No awards recorded yet.</div>';
+      $('honours-seasons').innerHTML = '';
+      return;
+    }
+    const people = new Map();
+    for (const a of accolades) {
+      for (const w of a.winners) {
+        if (!people.has(w)) people.set(w, { name: w, trophy: 0, medal: 0, booby: 0, list: [] });
+        const r = people.get(w);
+        r[a.kind] += 1;
+        r.list.push(a);
+      }
+    }
+    const rows = Array.from(people.values());
+    E.sortableTable($('honours-board'), [
+      { key: 'name', label: 'Player', sticky: true, value: r => r.name, html: r => `<b>${esc(r.name)}</b>` },
+      { key: 'trophy', label: '🏆 Trophies', num: true, value: r => r.trophy * 1000 + r.medal, html: r => r.trophy },
+      { key: 'medal', label: '🏅 Medals', num: true, value: r => r.medal },
+      { key: 'booby', label: '🥄 Booby', num: true, title: 'Wooden spoons, wood chips, rubber gloves…', value: r => r.booby },
+      { key: 'list', label: 'Awards', value: r => r.list.length, html: r => r.list.slice().sort((x, y) => y.season - x.season)
+          .map(a => `<span class="honour ${a.kind}" title="${esc(a.explanation)}">${KIND_ICON[a.kind]} ${esc(a.award)} <span class="muted">’${String(a.season).slice(2)}</span></span>`).join(' ') },
+    ], rows, { sortKey: 'trophy', rowAttrs: r => `class="clickable" data-player="${esc(r.name)}" tabindex="0"` });
+
+    const seasons = Array.from(new Set(accolades.map(a => a.season))).sort((a, b) => b - a);
+    $('honours-seasons').innerHTML = seasons.map(y => {
+      const list = accolades.filter(a => a.season === y && !/\(spoon\)$/.test(a.award));
+      const group = (cat) => list.filter(a => (a.category || '').toLowerCase() === cat);
+      const block = (title, items) => items.length ? `<h4 class="honours-cat">${title}</h4>
+        <div class="honours-grid">${items.map(a => `
+          <div class="honour-card ${a.kind}">
+            <div class="hc-award">${KIND_ICON[a.kind]} ${esc(a.award)}</div>
+            <div class="hc-winner">${a.winners.map(esc).join(a.winners.length === 2 ? ' &amp; ' : ', ')}</div>
+            <div class="hc-meta">${esc(a.explanation || '')}${a.detail ? ` · ${esc(a.detail)}` : ''}</div>
+          </div>`).join('')}</div>` : '';
+      return `<h3>${y} awards</h3>${block('Stats awards', group('stats'))}${block('Voted by the squad', group('vote'))}${block('Other', list.filter(a => !['stats', 'vote'].includes((a.category || '').toLowerCase())))}`;
+    }).join('');
+  }
+
   function openWrapped(name, opener) {
     const s = scope();
     if (!window.EffraWrapped) return;
     state.wrapped = true; writeHash();
     window.EffraWrapped.open(name, {
       matches: s.matches, players: s.players, pairs: s.pairs, t: s.t,
-      year: state.year, latestYear: String(E.seasons(allMatches).slice(-1)[0] ?? ''),
+      year: state.year, latestYear: String(E.seasons(allMatches).slice(-1)[0] ?? ''), accolades,
     }, { opener, onClose: () => { state.wrapped = false; writeHash(); } });
   }
 
@@ -498,8 +579,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <h3>${esc(p.name)} &amp; ${esc(other.name)}</h3>
       <div class="kpis">
         ${kpi('Together', `${r.with.n} <span class="muted" style="font-size:0.9rem;font-weight:500">games</span>`, r.with.n ? fmt.wdlHtml(r.with) : 'never teamed up')}
-        ${kpi('Win rate together', fmt.pct(r.withPct), r.with.n ? `${r.withGoals} goals between them · ${fmt.pg(r.withGpg)}/game` : '', toneFor(r.withPct))}
-        ${kpi(`${esc(p.name)} vs ${esc(other.name)}`, r.vs.n ? fmt.pct(r.vsPct) : '–', r.vs.n ? `${fmt.wdlHtml(r.vs)} in ${r.vs.n} · ${sig}` : 'never opposed', toneFor(r.vsPct))}
+        ${kpi('Win rate together', fmt.pct(r.withPct), r.with.n ? `win calc <b>${fmt.pct(r.withCalc)}</b> · ${r.withGoals} goals between them` : '', toneFor(r.withPct))}
+        ${kpi(`${esc(p.name)} vs ${esc(other.name)}`, r.vs.n ? fmt.pct(r.vsPct) : '–', r.vs.n ? `${fmt.wdlHtml(r.vs)} · win calc <b>${fmt.pct(r.vsCalc)}</b> · ${sig}` : 'never opposed', toneFor(r.vsPct))}
       </div>
       <details class="table-view" style="margin-top:10px"><summary>Shared games (${r.games.length})</summary>
         <div class="table-wrap"><table class="data"><thead><tr><th>Game</th><th>Side</th><th>${esc(p.name)}</th><th>Venue</th></tr></thead><tbody>${
@@ -576,6 +657,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderNotice();
     if (state.tab === 'players') { renderPlayerPickers(); renderPlayer(); }
     else if (state.tab === 'table') renderLeaderboard();
+    else if (state.tab === 'honours') renderHonours();
     else { renderMatchPicker(); renderMatch(); }
     writeHash();
   }
@@ -639,10 +721,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---------------------------------------------------------------- load
   readHash();
+  // accolades are optional: the site works without them
+  const accoladesLoaded = fetch('accolades.json', { cache: 'no-cache' }).then(r => (r.ok ? r.json() : [])).catch(() => []);
   fetch('matches.json', { cache: 'no-cache' })
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(data => {
+    .then(async data => {
       allMatches = data;
+      accolades = await accoladesLoaded;
       if (!location.hash) state.year = String(E.seasons(allMatches).slice(-1)[0] ?? 'all'); // default: current season
       const latest = allMatches.slice().sort(E.byChrono).slice(-1)[0];
       if (latest) $('data-stamp').textContent = `latest: ${E.gwLabel(latest)}`;

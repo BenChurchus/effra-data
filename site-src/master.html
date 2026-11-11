@@ -9,8 +9,8 @@
 <title>Effra Master Sheet</title>
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <script>try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
-<link rel="stylesheet" href="effra.css?v=a086403082">
-<script src="effra.js?v=c9c53ca850" defer></script>
+<link rel="stylesheet" href="effra.css?v=f719c68912">
+<script src="effra.js?v=1b254f3e18" defer></script>
 </head>
 <body>
 <header class="site-header">
@@ -83,7 +83,7 @@
     <div class="section-head"><h2 id="h-method">Method</h2></div>
     <div class="card sub" style="font-size:0.85rem;line-height:1.6">
       <ul style="margin:0;padding-left:18px">
-        <li>Per-game stats = total ÷ appearances. Win rates = wins ÷ (W + D + L).</li>
+        <li>Per-game stats = total ÷ appearances. Win rates = wins ÷ (W + D + L). <b>Win calc</b> = (W + ½D) ÷ (W + D + L): draws count as half a win.</li>
         <li>Streaks run over each player's own appearances in order; missed weeks don't break a streak, a draw breaks win/loss streaks.</li>
         <li>Win impact = player's win % minus the win % their team-mates have <em>without</em> them, weighted by games shared.</li>
         <li>G+A is only awarded if its winner is different from both the Golden Boot and Assist King winners.</li>
@@ -172,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'D', label: 'D', num: true, value: p => p.rec.D },
       { key: 'L', label: 'L', num: true, value: p => p.rec.L },
       { key: 'win', label: 'Win %', num: true, value: p => p.winPct, html: p => fmt.meterHtml(p.winPct), csv: p => pct(p.winPct) },
+      { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.winCalc, html: p => fmt.pct(p.winCalc), csv: p => pct(p.winCalc) },
       { key: 'g', label: 'G', num: true, value: p => p.goals },
       { key: 'gpg', label: 'G/gm', num: true, value: p => p.gpg, html: p => fmt.pg(p.gpg), csv: p => p.gpg.toFixed(3) },
       { key: 'a', label: 'A', num: true, value: p => p.assists },
@@ -184,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'caps', label: 'Caps', num: true, value: p => p.cap.n },
       { key: 'capwdl', label: 'Capt record', value: p => p.cap.W - p.cap.L, html: p => (p.cap.n ? fmt.wdlHtml(p.cap) : '–'), csv: p => fmt.wdl(p.cap) },
       { key: 'capwin', label: 'Capt win %', num: true, value: p => p.capWinPct, html: p => fmt.pct(p.capWinPct), csv: p => pct(p.capWinPct) },
+      { key: 'capcalc', label: 'Capt win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.capWinCalc, html: p => fmt.pct(p.capWinCalc), csv: p => pct(p.capWinCalc) },
       { key: 'sw', label: 'Win streak', num: true, title: 'Longest run of wins', value: p => p.streaks.win.length },
       { key: 'su', label: 'Unbeaten', num: true, title: 'Longest run without a loss', value: p => p.streaks.unbeaten.length },
       { key: 'ss', label: 'Scoring streak', num: true, value: p => p.streaks.scoring.length },
@@ -209,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { key: 'wd', label: 'D', num: true, value: r => r.with.D },
       { key: 'wl', label: 'L', num: true, value: r => r.with.L },
       { key: 'wp', label: 'Win %', num: true, value: r => r.withPct, html: r => fmt.meterHtml(r.withPct), csv: r => (r.withPct == null ? '' : Math.round(r.withPct * 1000) / 10) },
+      { key: 'wc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: r => r.withCalc, html: r => fmt.pct(r.withCalc), csv: r => (r.withCalc == null ? '' : Math.round(r.withCalc * 1000) / 10) },
       { key: 'wg', label: 'Goals', num: true, title: 'Goals between them when together', value: r => r.withGoals },
       { key: 'wgpg', label: 'Goals/gm', num: true, value: r => r.withGpg, html: r => (r.with.n ? fmt.pg(r.withGpg) : '–'), csv: r => (r.withGpg == null ? '' : r.withGpg.toFixed(3)) },
       { key: 'vn', label: 'Opposed', num: true, value: r => r.vs.n },

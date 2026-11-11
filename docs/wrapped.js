@@ -293,14 +293,24 @@
       });
     }
 
-    // 10. awards (finished seasons only)
+    // 10. awards: the real ones from awards night (accolades.json) for
+    // finished seasons or all-time; never the live season, so no spoilers.
     const finished = ctx.year !== 'all' && Number(ctx.year) < Number(ctx.latestYear);
-    if (finished) {
-      const won = E.computeAwards(ctx.matches).awards.filter(a => !a.notAwarded && a.winners.some(x => x === name || x.split(' & ').includes(name)));
+    const real = Array.isArray(ctx.accolades) && ctx.accolades.length
+      ? ctx.accolades.filter(a => a.winners.includes(name) && (ctx.year === 'all' || a.season === Number(ctx.year)))
+      : null;
+    if (finished || (ctx.year === 'all' && real && real.length)) {
+      const ICON = { trophy: '🏆', medal: '🏅', booby: '🥄' };
+      const won = real ?? E.computeAwards(ctx.matches).awards
+        .filter(a => !a.notAwarded && a.winners.some(x => x === name || x.split(' & ').includes(name)))
+        .map(a => ({ award: a.name, kind: 'trophy' }));
+      const shown = won.slice(0, 7);
+      const boobies = won.filter(a => a.kind === 'booby').length;
       slides.push({
-        theme: 'gold', kicker: say('h-awards', HEADS.awards), big: won.length ? `${won.length}` : '0', unit: won.length === 1 ? 'award' : 'awards',
-        sub: won.length ? won.map(a => `🏆 <b>${esc(a.name)}</b>`).join('<br>') : '',
-        extra: say('awards', LINES[won.length ? 'awardsSome' : 'awardsNone']),
+        theme: 'gold', kicker: say('h-awards', HEADS.awards), big: `${won.length}`, unit: won.length === 1 ? 'award' : 'awards',
+        sub: shown.map(a => `${ICON[a.kind] || '🏆'} <b>${esc(a.award)}</b>${ctx.year === 'all' && a.season ? ` <span class="w-note">’${String(a.season).slice(2)}</span>` : ''}`).join('<br>')
+          + (won.length > shown.length ? `<br><span class="w-note">…and ${won.length - shown.length} more</span>` : ''),
+        extra: boobies && boobies === won.length ? 'All wooden spoons. Still counts. Sort of.' : say('awards', LINES[won.length ? 'awardsSome' : 'awardsNone']),
       });
     }
 

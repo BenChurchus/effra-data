@@ -172,3 +172,26 @@ def test_gaffer_room_encryption_is_current():
     published = re.search(gaffer_gate.ASSET_META_RE, gaffer_gate.OUTPUT.read_text(encoding="utf-8")).group(1)
     expected = gaffer_gate.asset_refs(gaffer_gate.SOURCE.read_text(encoding="utf-8"))
     assert published == expected, "docs/master.html is encrypted from an older master sheet: run build_site.py with the gaffer password"
+
+
+def test_accolades_parse_hand_typed_winners():
+    from accolades import parse_winners, prize_kind
+    assert parse_winners("Nairn (3.15) ") == (["Nairn"], "3.15")
+    assert parse_winners("Bill + Kempy") == (["Bill", "Kempy"], "")
+    assert parse_winners("Harry/Jez (80.77%)") == (["Harry", "Jez"], "80.77%")
+    assert parse_winners("Joe, Crell, Gman, Char, Bill")[0] == ["Joe", "Crell", "Gman", "Char", "Bill"]
+    assert parse_winners("George")[0] == ["Gman"]                     # alias applies
+    assert parse_winners("Kempy (Medal) / Dave (Spoon)") == (["Kempy"], "vs Dave")
+    assert parse_winners("N/A") == ([], "")
+    assert prize_kind("Wooden spoon") == "booby" and prize_kind("Trophy") == "trophy" and prize_kind("Medal") == "medal"
+
+
+def test_accolades_published():
+    acc = load("accolades.json")
+    assert acc, "no accolades published"
+    seasons = {a["season"] for a in acc}
+    assert {2024, 2025} <= seasons
+    pairs = [a for a in acc if a["award"] == "Better Together" and a["season"] == 2025]
+    assert pairs and pairs[0]["winners"] == ["Bill", "Kempy"]
+    spoons = [a for a in acc if a["award"] == "Nemesis (spoon)"]
+    assert {(a["season"], a["winners"][0]) for a in spoons} >= {(2025, "Harry"), (2024, "Dave")}

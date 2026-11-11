@@ -10,6 +10,7 @@ from pathlib import Path
 
 import duckdb
 
+import accolades
 import gaffer_gate
 
 ROOT = Path(__file__).parent
@@ -187,6 +188,7 @@ def main():
 
     print(f"Wrote {len(out)} players to {DOCS / 'players.json'}")
     print(f"Wrote {len(matches)} matches to {DOCS / 'matches.json'}")
+    accolades.main()
     stamp_asset_versions()
 
 

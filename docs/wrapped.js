@@ -27,6 +27,8 @@
     return h >>> 0;
   }
   /** Stable pick per player/season/slot, so lines differ between players but not between replays. */
+  // Jez runs the club: bookings, polls, reserves, the debtsheet.
+  const GAFFER = 'Jez';
   const picker = (seed) => (slot, lines) => lines[hash(`${seed}|${slot}`) % lines.length];
 
   const LINES = {
@@ -226,7 +228,13 @@
   function build(name, ctx) {
     const p = ctx.players.find(x => x.name === name);
     if (!p) return null;
-    const say = picker(`${name}|${ctx.year}`);
+    const isGaffer = name === GAFFER;
+    const pick = picker(`${name}|${ctx.year}`);
+    // the gaffer doesn't get lines about the gaffer (or himself)
+    const say = (slot, lines) => {
+      const usable = isGaffer ? lines.filter(l => !/gaffer|godking|\bjez\b/i.test(l)) : lines;
+      return pick(slot, usable.length ? usable : lines);
+    };
     const seasonName = ctx.year === 'all' ? 'All-time' : ctx.year;
     const all = ctx.players;
     const regulars = all.filter(x => x.apps >= ctx.t.minApps);
@@ -244,6 +252,20 @@
       sub: ctx.year === 'all' ? 'Every game you’ve played for Effra Rovers.' : `Your ${ctx.year} season at Effra Rovers.`,
       extra: say('intro', LINES.intro),
     });
+
+    // 1b. the gaffer's own slide: he runs the whole operation
+    if (isGaffer) {
+      const run = ctx.matches.length;
+      slides.push({
+        theme: 'gold', kicker: 'The gaffer', big: `${run}`, unit: run === 1 ? 'match organised' : 'matches organised',
+        sub: 'Pitches booked, polls posted, reserves juggled, bibs washed, debts chased.',
+        extra: pick('gaffer', [
+          'Godking of Effra. Accept no imitations.',
+          'Every “can I be first sub?” went through you. Saint.',
+          'Unpaid, unthanked, occasionally accused of corruption. Respect.',
+        ]),
+      });
+    }
 
     // 2. appearances
     const rApps = rankOf(all, name, x => x.apps);

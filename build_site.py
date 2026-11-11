@@ -100,7 +100,12 @@ ASSET_REF_RE = re.compile(r'(?P<attr>href|src)="(?P<name>' + "|".join(re.escape(
 
 
 def asset_version(name: str) -> str:
-    return hashlib.sha256((DOCS / name).read_bytes()).hexdigest()[:10]
+    # Normalise line endings first: git stores LF, but a Windows checkout can
+    # have CRLF, and the stamp must be identical on every machine (and in CI).
+    data = (DOCS / name).read_bytes().replace(b"
+", b"
+")
+    return hashlib.sha256(data).hexdigest()[:10]
 
 
 def stamp(html: str, versions: dict) -> str:

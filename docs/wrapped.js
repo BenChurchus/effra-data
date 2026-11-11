@@ -35,28 +35,39 @@
       'The numbers don’t lie. Unlike you in the group chat.',
       'Grab a pint. Some of this is going to sting.',
       'You asked for this. Well, someone did.',
+      'Brought to you by the Effra Debtsheet. Settle up.',
+      'Officially sanctioned by the Godking of Effra.',
+      'Christmas jumper optional. Bib mandatory.',
     ],
     appsHigh: [
       'Do you even have a job?',
       'Your other half must love Tuesdays and Thursdays.',
       'Never misses. Turning up, that is.',
       'More reliable than the actual pitch booking.',
+      'Top of the poll every single week.',
+      'Never once claimed first sub. Allegedly.',
     ],
     appsMid: [
       'Turns up when it suits. Fair enough.',
       'Reliable. Like a Southern Rail timetable.',
       'Present enough to have an opinion on the teams.',
+      'Five mins late, first sub please. Classic.',
+      'Your poll replies have been noted by the gaffer.',
     ],
     appsLow: [
       'Part-time hero. Heavy emphasis on part-time.',
       'Seen less often than a ref at 5-a-side.',
       'Treats the WhatsApp poll as a suggestion.',
       'Squad rotation, he calls it.',
+      'Permanent first-reserve energy.',
+      'Paid your fiver, didn’t play. First pay, first play, mate.',
     ],
     goalsTop: [
       'Never passed when shooting was an option. Correctly, it turns out.',
       'Ball hog? He prefers “clinical”.',
       'The goal frame has a restraining order out.',
+      'Somebody said you’d never win the Golden Boot again. Somebody was wrong.',
+      'Haaland-Bot-3000 has nothing on you.',
     ],
     goalsGood: [
       'Respectable. Not that you’ll shut up about it.',
@@ -68,6 +79,8 @@
       'Heard you’re “more of a creative player”.',
       'Goals are overrated anyway. Right?',
       'Hit the target more often in the pub quiz.',
+      'Haaland-Bot-3000 you are not.',
+      'Fewer goals than Cape Verde, a country of about half a million.',
     ],
     goalsNone: [
       'Not one. The strikers’ union has been notified.',
@@ -89,7 +102,9 @@
       'Treats the ball like it owes him money.',
       'Assists? Never heard of her.',
     ],
-    winGlory: ['Glory hunter.', 'Whatever team you’re on, it wins. Suspicious.', 'Born winner. Insufferable with it.'],
+    winGlory: ['Glory hunter.', 'Whatever team you’re on, it wins. Suspicious.', 'Born winner. Insufferable with it.',
+      'Pure Pop Brixton energy: loud, sweaty, winning.',
+    ],
     winGood: ['Comfortably above average. Comfortably.', 'More Ws than Ls. Frame it.', 'Solid. Not spectacular. Very Championship.'],
     winCoin: ['Coin-flip merchant.', 'Perfectly average. Like a Wetherspoons breakfast.', 'You win some, you lose some. Mostly some.'],
     winBad: [
@@ -97,20 +112,67 @@
       'Bad luck? Sure. Every week? Hmm.',
       'The kiss of death in a bib.',
       'Teams pick you to make it fair. On the other lot.',
+      'Even Cape Verde had a better tournament.',
+      'Bib him.',
     ],
-    lossRun: ['Even Spurs fans winced.', 'A proper slump. Character building, apparently.', 'Did you check the boots were on the right feet?'],
-    winRun: ['Unstoppable. Briefly.', 'Prime Ronaldo energy. For about a fortnight.', 'Couldn’t lose if you tried. And you didn’t try.'],
-    partner: ['Get a room.', 'Bromance of the season.', 'Should be playing in matching boots.', 'Telepathic. Or just both very good. Unclear.'],
+    lossRun: ['Even Spurs fans winced.', 'A proper slump. Character building, apparently.', 'Did you check the boots were on the right feet?',
+      'Longer run of misery than an England penalty shoot-out.',
+      'VAR’s fault, obviously.',
+    ],
+    winRun: ['Unstoppable. Briefly.', 'Prime Ronaldo energy. For about a fortnight.', 'Couldn’t lose if you tried. And you didn’t try.',
+      'Further than England got. Just about.',
+    ],
+    partner: ['Get a room.', 'Bromance of the season.', 'Should be playing in matching boots.', 'Telepathic. Or just both very good. Unclear.',
+      'Book them a table at the Leyton Star.',
+      'Matching bibs. Matching smiles.',
+    ],
     avoid: ['Keep these two apart. For everyone’s sake.', 'Chemistry of a wet weekend in Rhyl.', 'Never again.'],
-    nemesis: ['Lives in your head rent-free.', 'You’d swap teams to avoid him. Admit it.', 'Pure kryptonite.', 'Your Prime Minister. He owns you.'],
+    nemesis: ['Lives in your head rent-free.', 'You’d swap teams to avoid him. Admit it.', 'Pure kryptonite.', 'Your Prime Minister. He owns you.',
+      'Reported to Infantino. Nothing will be done.',
+    ],
     victim: ['Your personal punchbag.', 'Feels bad for him. Not that bad.', 'Free three points.'],
-    capGood: ['Born leader. Unbearable about it, presumably.', 'Armband suits you. Annoyingly.', 'Gaffer material. Don’t let it go to your head.'],
+    capGood: ['Born leader. Unbearable about it, presumably.', 'Armband suits you. Annoyingly.', 'Gaffer material. Don’t let it go to your head.',
+      'Godking-of-Effra levels of leadership.',
+    ],
     capMid: ['Wore it. That’s about all.', 'Captain by name.'],
-    capBad: ['Picking teams isn’t your calling. Neither is leading them.', 'Captain? More like passenger.', 'Hand it back.'],
-    awardsNone: ['No silverware. Not even a participation medal.', 'Trophy cabinet: still flat-packed.', 'The awards committee had other ideas.'],
+    capBad: ['Picking teams isn’t your calling. Neither is leading them.', 'Captain? More like passenger.', 'Hand it back.',
+      'Picked teams like a corrupt FIFA official.',
+    ],
+    awardsNone: ['No silverware. Not even a participation medal.', 'Trophy cabinet: still flat-packed.', 'The awards committee had other ideas.',
+      'Not even Fastest Pint. Come on.',
+    ],
     awardsSome: ['Cabinet’s filling up.', 'Make room on the mantelpiece.', 'Insufferable at the awards night. Guaranteed.'],
-    outro: ['Same again next season? Lower the bar, maybe.', 'Screenshot this. Lord it over the chat.', 'Nobody asked. Share it anyway.'],
+    outro: ['Same again next season? Lower the bar, maybe.', 'Screenshot this. Lord it over the chat.', 'Nobody asked. Share it anyway.',
+      'See you at the Leyton Star.',
+      'Bank details in the group. You know the drill.',
+      'Bibs sponsored by Enron. Season sponsored by you.',
+    ],
   };
+
+  // World Cup 2026 sweepstake draw (from Crell's daily previews in the group).
+  const SWEEP = {
+    Ben: ['Switzerland', 'Jordan', 'Bosnia'], Bill: ['Sweden', 'Germany'], Char: ['Netherlands', 'Turkey'],
+    Crell: ['Portugal', 'South Korea', 'DR Congo'], Dan: ['Argentina', 'Czechia'], Dave: ['Iraq', 'USA'],
+    Davis: ['France', 'Curacao'], Gman: ['Morocco', 'Uzbekistan'], JPH: ['Croatia', 'Austria'],
+    Jay: ['Australia', 'Belgium', 'Ecuador'], Jez: ['Ivory Coast', 'Japan', 'Paraguay'],
+    Joe: ['Senegal', 'Saudi Arabia', 'New Zealand'], Joel: ['Brazil', 'Tunisia'],
+    Kempy: ['England', 'Norway', 'Panama'], LG: ['Egypt', 'Mexico'], Leo: ['Colombia', 'Haiti'],
+    Luke: ['Cape Verde', 'Ghana'], Nairn: ['Scotland'], Thorny: ['Uruguay', 'Canada', 'Algeria'],
+    'Will Mac': ['South Africa', 'Iran'],
+  };
+  const SWEEP_LINES = {
+    England: 'England <i>and</i> Norway. Haaland-Bot-3000 on your side and still no £75.',
+    Iraq: 'Drew the worst team in the tournament, got your fiver back. Technically a win.',
+    'Cape Verde': 'Cape Verde. Turned the whole group into Cape Verde fans. You’re welcome.',
+    Scotland: 'Scotland. Five quid on hope. Classic.',
+    Spain: 'Spain. Took the lot.',
+  };
+  const SWEEP_GENERIC = [
+    'Didn’t win the £75. Didn’t win much else either.',
+    'Five quid well spent. Probably.',
+    'Carried through the group stage by Crell’s match previews.',
+    'Blame the draw. Jez definitely didn’t fix it.',
+  ];
 
   // Headlines are the hype; the sarcasm lives in the lines underneath.
   const HEADS = {
@@ -311,6 +373,17 @@
         sub: shown.map(a => `${ICON[a.kind] || '🏆'} <b>${esc(a.award)}</b>${ctx.year === 'all' && a.season ? ` <span class="w-note">’${String(a.season).slice(2)}</span>` : ''}`).join('<br>')
           + (won.length > shown.length ? `<br><span class="w-note">…and ${won.length - shown.length} more</span>` : ''),
         extra: boobies && boobies === won.length ? 'All wooden spoons. Still counts. Sort of.' : say('awards', LINES[won.length ? 'awardsSome' : 'awardsNone']),
+      });
+    }
+
+    // 10b. World Cup 2026 sweepstake (2026 and all-time Wrapped only)
+    const drew = SWEEP[name];
+    if (drew && (ctx.year === 'all' || ctx.year === '2026')) {
+      const special = drew.map(t => SWEEP_LINES[t]).find(Boolean);
+      slides.push({
+        theme: 'navy', kicker: 'World Cup 2026 sweepstake', big: esc(drew[0]), unit: '',
+        sub: drew.length > 1 ? `Also drew: ${drew.slice(1).map(esc).join(' &amp; ')}.` : 'One team. All eggs, one basket.',
+        extra: special || say('sweep', SWEEP_GENERIC),
       });
     }
 

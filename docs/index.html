@@ -17,7 +17,7 @@
 <script>/* apply saved theme before first paint (no flash) */
 try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
-<link rel="stylesheet" href="effra.css?v=f719c68912">
+<link rel="stylesheet" href="effra.css?v=5829cb0163">
 <script src="effra.js?v=e12f152583" defer></script>
 <script src="charts.js?v=ea5153b785" defer></script>
 <script src="wrapped.js?v=d4bcb3a5eb" defer></script>
@@ -93,6 +93,30 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
     </article>
   </section>
 
+  <section id="panel-credits" role="tabpanel" aria-label="Credits" hidden>
+    <article class="card credits">
+      <div class="card-head"><h2>Credits</h2><span class="sub">The people behind Effra Rovers FC Stats</span></div>
+      <div class="credit-list">
+        <div class="credit"><div class="credit-name">Jeremy Bijl</div><div class="credit-role">The Gaffer</div></div>
+        <div class="credit"><div class="credit-name">Alex Kempy</div><div class="credit-role">Designer of the Effra Rovers crest</div></div>
+        <div class="credit"><div class="credit-name">Benedict Churchus</div><div class="credit-role">Data Monkey · Web Lackey · Tech Drone</div></div>
+      </div>
+
+      <h3>Club colours <span class="sub">· taken from the crest · tap a swatch to copy its hex</span></h3>
+      <div class="palette" id="palette">
+        <button type="button" class="swatch" data-hex="#3C76C0"><span class="chip" style="background:#3C76C0"></span><b>River Blue</b><code>#3C76C0</code><span class="use">The crest</span></button>
+        <button type="button" class="swatch" data-hex="#2C64A8"><span class="chip" style="background:#2C64A8"></span><b>Effra Blue</b><code>#2C64A8</code><span class="use">Text and links</span></button>
+        <button type="button" class="swatch" data-hex="#1F4F8C"><span class="chip" style="background:#1F4F8C"></span><b>Deep Blue</b><code>#1F4F8C</code><span class="use">Header</span></button>
+        <button type="button" class="swatch" data-hex="#0F2747"><span class="chip" style="background:#0F2747"></span><b>Club Navy</b><code>#0F2747</code><span class="use">Dark mode</span></button>
+        <button type="button" class="swatch" data-hex="#E0B93A"><span class="chip" style="background:#E0B93A"></span><b>Pint Gold</b><code>#E0B93A</code><span class="use">The pint · accents</span></button>
+        <button type="button" class="swatch" data-hex="#FFFFFF"><span class="chip" style="background:#FFFFFF"></span><b>Crest White</b><code>#FFFFFF</code><span class="use">Crest ring</span></button>
+        <button type="button" class="swatch" data-hex="#11823B"><span class="chip" style="background:#11823B"></span><b>Win Green</b><code>#11823B</code><span class="use">Wins</span></button>
+        <button type="button" class="swatch" data-hex="#C8372D"><span class="chip" style="background:#C8372D"></span><b>Loss Red</b><code>#C8372D</code><span class="use">Losses</span></button>
+      </div>
+      <p class="sub" style="margin-top:14px">Built from the weekly scorecards. Stats refresh automatically the morning after each game.</p>
+    </article>
+  </section>
+
   <section id="panel-matches" role="tabpanel" aria-labelledby="tab-matches" hidden>
     <div class="nav-row">
       <button type="button" class="btn" id="gw-prev" aria-label="Previous match">‹</button>
@@ -105,7 +129,7 @@ try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'd
   </section>
 </main>
 
-<footer class="site">Effra Rovers FC · data from the weekly scorecards · <span id="data-stamp"></span>
+<footer class="site">Effra Rovers FC · data from the weekly scorecards · <span id="data-stamp"></span> · <a href="#tab=credits" id="credits-link">Credits</a>
   <br><a class="gaffer" href="master.html" rel="nofollow" title="Gaffer’s room: awards and master sheet">🏆 <span>Gaffer</span></a>
 </footer>
 <noscript><p class="wrap">This page needs JavaScript to load the stats.</p></noscript>
@@ -130,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let allMatches = [];
   let accolades = [];
-  const TABS = ['table', 'players', 'matches', 'honours'];
+  const TABS = ['table', 'players', 'matches', 'honours', 'credits'];
+  const MAIN_TABS = TABS.filter(t => t !== 'credits'); // credits is reached from the footer
   const BOARDS = ['players', 'pairs', 'rivals', 'venues'];
   const state = { tab: 'players', year: 'all', player: '', pair: '', gw: '', board: 'players', wrapped: false };
   E.mountThemeToggle($('theme-toggle'));
@@ -184,7 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function renderTabs() {
     for (const t of TABS) {
-      $(`tab-${t}`).setAttribute('aria-selected', String(state.tab === t));
+      const tab = $(`tab-${t}`); // credits has no tab button (footer link)
+      if (tab) tab.setAttribute('aria-selected', String(state.tab === t));
       $(`panel-${t}`).hidden = state.tab !== t;
     }
   }
@@ -224,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rows = s.players.filter(p => !qOnly || p.apps >= s.t.minApps);
     E.sortableTable($('leaderboard'), [
       { key: 'name', label: 'Player', sticky: true, value: p => p.name, html: p => `<b>${esc(p.name)}</b>` },
-      { key: 'apps', label: 'Apps', num: true, value: p => p.apps },
+      { key: 'apps', label: 'Appearances', num: true, value: p => p.apps },
       { key: 'rec', label: 'Record', value: p => p.rec.W - p.rec.L, html: p => fmt.wdlHtml(p.rec) },
       { key: 'win', label: 'Win %', num: true, value: p => p.winPct, html: p => fmt.meterHtml(p.winPct) },
       { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.winCalc, html: p => fmt.pct(p.winCalc) },
@@ -533,8 +559,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
     const rows = Array.from(people.values());
+    const careerApps = new Map(E.buildPlayers(allMatches).map(x => [x.name, x.apps]));
     E.sortableTable($('honours-board'), [
       { key: 'name', label: 'Player', sticky: true, value: r => r.name, html: r => `<b>${esc(r.name)}</b>` },
+      { key: 'apps', label: 'Appearances', num: true, title: 'Career appearances, all seasons', value: r => careerApps.get(r.name) ?? 0 },
       { key: 'trophy', label: '🏆 Trophies', num: true, value: r => r.trophy * 1000 + r.medal, html: r => r.trophy },
       { key: 'medal', label: '🏅 Medals', num: true, value: r => r.medal },
       { key: 'booby', label: '🥄 Booby', num: true, title: 'Wooden spoons, wood chips, rubber gloves…', value: r => r.booby },
@@ -669,17 +697,26 @@ document.addEventListener('DOMContentLoaded', () => {
     state.year = b.dataset.year;
     render();
   });
-  for (const t of TABS) {
+  for (const t of MAIN_TABS) {
     $(`tab-${t}`).addEventListener('click', () => { state.tab = t; render(); });
   }
   $('tab-players').parentElement.addEventListener('keydown', (e) => {
     if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-    const i = TABS.indexOf(state.tab) + (e.key === 'ArrowRight' ? 1 : -1);
-    state.tab = TABS[(i + TABS.length) % TABS.length];
+    const i = MAIN_TABS.indexOf(state.tab) + (e.key === 'ArrowRight' ? 1 : -1);
+    state.tab = MAIN_TABS[(i + MAIN_TABS.length) % MAIN_TABS.length];
     render();
     $(`tab-${state.tab}`).focus();
   });
   $('table-qualified').addEventListener('change', renderLeaderboard);
+  $('palette').addEventListener('click', async (e) => {
+    const sw = e.target.closest('.swatch');
+    if (!sw) return;
+    const code = sw.querySelector('code');
+    try { await navigator.clipboard.writeText(sw.dataset.hex); code.textContent = 'Copied ✓'; }
+    catch { code.textContent = sw.dataset.hex; }
+    setTimeout(() => { code.textContent = sw.dataset.hex; }, 1400);
+  });
+  $('credits-link').addEventListener('click', (e) => { e.preventDefault(); state.tab = 'credits'; render(); window.scrollTo(0, 0); });
   $('board-seg').addEventListener('click', (e) => {
     const b = e.target.closest('button[data-board]');
     if (!b) return;

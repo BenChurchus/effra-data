@@ -477,3 +477,24 @@ footer.site { color: var(--muted); font-size: 0.78rem; text-align: center; paddi
 .hc-award { font-size: 0.78rem; font-weight: 700; color: var(--ink-2); }
 .hc-winner { font-size: 1.1rem; font-weight: 750; margin-top: 2px; overflow-wrap: anywhere; }
 .hc-meta { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+
+/* credits + palette */
+.credit-list { display: grid; gap: 10px; margin-top: 14px; }
+.credit {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px;
+  padding: 12px 14px; border-radius: 12px; background: var(--surface-2); border-left: 4px solid var(--gold-bright);
+}
+.credit-name { font-weight: 750; font-size: 1.05rem; }
+.credit-role { color: var(--brand); font-weight: 600; }
+.palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.swatch {
+  all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 1fr; gap: 2px;
+  padding: 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+}
+.swatch:hover { border-color: var(--brand-crest); }
+.swatch:focus-visible { outline: 2px solid var(--series-1); outline-offset: 2px; }
+.swatch .chip { height: 54px; border-radius: 8px; margin-bottom: 6px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12); }
+.swatch b { font-size: 0.88rem; }
+.swatch code { font-size: 0.8rem; color: var(--ink-2); }
+.swatch .use { font-size: 0.72rem; color: var(--muted); }
+footer.site a { color: var(--brand); font-weight: 600; }

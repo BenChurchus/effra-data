@@ -258,8 +258,14 @@ def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearan
             gw_tabs.append((int(m.group(1)), tab_name))
     gw_tabs.sort()
 
+    skipped = []
     for gw_number, tab_name in gw_tabs:
         match, appearances = parse_gw_tab(gw_number, tabs[tab_name], source)
+        # The sheet keeps upcoming gameweeks as blank templates (no players,
+        # a default 0-0 "D", placeholder venue). They aren't games yet.
+        if not any(a["player"] for a in appearances):
+            skipped.append(gw_number)
+            continue
         match["year"] = year
         for appearance in appearances:
             appearance["year"] = year
@@ -284,7 +290,9 @@ def process_source(source: str, xlsx_path: Path, all_matches: list, all_appearan
     source_appearances = sum(1 for a in all_appearances
                              if a["source"] == source and a["year"] == year)
     label = f"{year} {source}" if year is not None else source
-    print(f"{label}: parsed {len(gw_tabs)} gameweeks, {source_appearances} appearances")
+    played = len(gw_tabs) - len(skipped)
+    note = f" (skipped blank template GW{', GW'.join(map(str, skipped))})" if skipped else ""
+    print(f"{label}: parsed {played} gameweeks, {source_appearances} appearances{note}")
 
 
 def build_duckdb(all_matches: list[dict], all_appearances: list[dict]) -> None:

@@ -198,3 +198,10 @@ def test_accolades_published():
     assert pairs and pairs[0]["winners"] == ["Bill", "Kempy"]
     spoons = [a for a in acc if a["award"] == "Nemesis (spoon)"]
     assert {(a["season"], a["winners"][0]) for a in spoons} >= {(2025, "Harry"), (2024, "Dave")}
+
+
+def test_no_blank_template_matches():
+    # Upcoming gameweeks exist in the sheet as empty templates (0-0 'D');
+    # they must not be published as real draws.
+    empty = [(m["year"], m["gw"]) for m in load("matches.json") if not m["team1_players"] and not m["team2_players"]]
+    assert not empty, f"blank template gameweeks published as matches: {empty}"

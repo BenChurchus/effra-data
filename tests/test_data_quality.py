@@ -83,9 +83,6 @@ KNOWN_DUPLICATES: set[tuple] = {
     (2025, 5, ("LG",)),
     (2025, 24, ("Dave", "Gman")),
     (2025, 32, ("Bill",)),
-    # 2026 GW51: Team 2 lists Char twice (2nd row has only a clean sheet). Ask Jez who
-    # that row should be; remove this entry once the sheet is corrected.
-    (2026, 51, ("Char",)),
 }
 
 

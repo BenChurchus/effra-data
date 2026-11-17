@@ -1,0 +1,13 @@
+{
+  "source": "effra",
+  "year": 2026,
+  "gw": 54,
+  "team1_result": "D",
+  "team1_goals": 0,
+  "team2_result": "D",
+  "team2_goals": 0,
+  "venue": "Stockwell",
+  "tracked": "goals,assists,clean_sheets,captain",
+  "team1_players": [],
+  "team2_players": []
+}

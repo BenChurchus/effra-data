@@ -498,7 +498,7 @@
    */
   const KNOWN_SLIPS = [
     [2024, 7, 'Jan'], [2024, 9, 'Jay'], [2024, 40, 'Joe'],
-    [2025, 5, 'LG'], [2025, 24, 'Dave & Gman'], [2025, 32, 'Bill'],
+    [2025, 5, 'LG'], [2025, 24, 'Dave & Gman'], [2025, 32, 'Bill'], [2026, 51, 'Char'],
   ];
   function dataNotes(matches) {
     const notes = [];

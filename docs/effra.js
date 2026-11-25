@@ -259,9 +259,11 @@
   // 12+ apps to qualify for individual awards (11 doesn't count); 8+ games
   // for any pairing (together for Better Together / Gruesome Twosome,
   // decided games against each other for Nemesis); 3+ captaincies.
+  // showApps / showPairGames are looser display filters for the leaderboards
+  // (gaffer's request, Nov 2026); they never change who qualifies for awards.
   // eslint-disable-next-line no-unused-vars
   function defaultThresholds(matchCount) {
-    return { minApps: 12, minCaps: 3, minPairGames: 8, minVsGames: 8 };
+    return { minApps: 12, minCaps: 3, minPairGames: 8, minVsGames: 8, showApps: 7, showPairGames: 5 };
   }
 
   const fmt = {

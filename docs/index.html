@@ -18,7 +18,7 @@
 try { var t = localStorage.getItem('effra-theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
 </script>
 <link rel="stylesheet" href="effra.css?v=5829cb0163">
-<script src="effra.js?v=99bf87dd14" defer></script>
+<script src="effra.js?v=e51be6ffd6" defer></script>
 <script src="charts.js?v=ea5153b785" defer></script>
 <script src="wrapped.js?v=d4bcb3a5eb" defer></script>
 </head>
@@ -245,14 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.board === 'venues') return renderVenueBoard();
     const s = scope();
     const qOnly = $('table-qualified').checked;
-    $('table-qual-label').textContent = `Regulars only (${s.t.minApps}+ apps)`;
+    $('table-qual-label').textContent = `Regulars only (${s.t.showApps}+ apps)`;
     $('board-help').textContent = 'Click any column to re-order · tap a player to open their record.';
-    const rows = s.players.filter(p => !qOnly || p.apps >= s.t.minApps);
+    const rows = s.players.filter(p => !qOnly || p.apps >= s.t.showApps);
     E.sortableTable($('leaderboard'), [
       { key: 'name', label: 'Player', sticky: true, value: p => p.name, html: p => `<b>${esc(p.name)}</b>` },
       { key: 'apps', label: 'Appearances', num: true, value: p => p.apps },
       { key: 'rec', label: 'Record', value: p => p.rec.W - p.rec.L, html: p => fmt.wdlHtml(p.rec) },
       { key: 'win', label: 'Win %', num: true, value: p => p.winPct, html: p => fmt.meterHtml(p.winPct) },
+      { key: 'draw', label: 'Draw %', num: true, title: 'Share of games drawn', value: p => drawPct(p.rec), html: p => fmt.pct(drawPct(p.rec)) },
       { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.winCalc, html: p => fmt.pct(p.winCalc) },
       { key: 'g', label: 'Goals', num: true, value: p => p.goals },
       { key: 'gpg', label: 'G/gm', num: true, value: p => p.gpg, html: p => fmt.pg(p.gpg) },
@@ -267,18 +268,20 @@ document.addEventListener('DOMContentLoaded', () => {
     ], rows, { sortKey: 'win', rowAttrs: p => `class="clickable" data-player="${esc(p.name)}" tabindex="0"` });
   }
 
+  const drawPct = (r) => { const n = r.W + r.D + r.L; return n ? r.D / n : null; };
   const pairLabel = (a, b) => `<b>${esc(a)}</b><span class="vs-word">&amp;</span><b>${esc(b)}</b>`;
 
   function renderPairBoard() {
     const s = scope();
     const qOnly = $('table-qualified').checked;
-    const min = qOnly ? s.t.minPairGames : 1;
-    $('table-qual-label').textContent = `Established pairs only (${s.t.minPairGames}+ games together)`;
+    const min = qOnly ? s.t.showPairGames : 1;
+    $('table-qual-label').textContent = `Established pairs only (${s.t.showPairGames}+ games together)`;
     $('board-help').textContent = 'Best partnerships first; flip Win % for the worst · tap a pair to compare them.';
     const rows = s.pairs.filter(p => E.decided(p.with) >= min);
     E.sortableTable($('leaderboard'), [
       { key: 'pair', label: 'Pair', sticky: true, value: p => `${p.a} ${p.b}`, html: p => pairLabel(p.a, p.b) },
       { key: 'win', label: 'Win %', num: true, value: p => p.withPct, html: p => fmt.meterHtml(p.withPct) },
+      { key: 'draw', label: 'Draw %', num: true, title: 'Share of games together drawn', value: p => drawPct(p.with), html: p => fmt.pct(drawPct(p.with)) },
       { key: 'calc', label: 'Win calc', num: true, title: 'Win calc: draws count as half a win, (W + ½D) ÷ games', value: p => p.withCalc, html: p => fmt.pct(p.withCalc) },
       { key: 'n', label: 'Games', num: true, value: p => p.with.n },
       { key: 'rec', label: 'Record', value: p => p.with.W - p.with.L, html: p => fmt.wdlHtml(p.with) },
@@ -768,6 +771,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!location.hash) state.year = String(E.seasons(allMatches).slice(-1)[0] ?? 'all'); // default: current season
       const latest = allMatches.slice().sort(E.byChrono).slice(-1)[0];
       if (latest) $('data-stamp').textContent = `latest: ${E.gwLabel(latest)}`;
+      fetch('meta.json', { cache: 'no-cache' }).then(r => (r.ok ? r.json() : null)).then(meta => {
+        const t = meta && meta.data_updated ? new Date(meta.data_updated) : null;
+        if (!t || isNaN(t) || !latest) return;
+        const when = t.toLocaleString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+        $('data-stamp').textContent = `latest: ${E.gwLabel(latest)} · updated ${when}`;
+        $('data-stamp').title = `Stats last changed ${t.toLocaleString('en-GB')}`;
+      }).catch(() => {});
       $('status').hidden = true;
       render();
     })

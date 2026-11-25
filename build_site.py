@@ -3,6 +3,7 @@ Builds docs/players.json from the DuckDB base for the static player-stats site.
 
 Usage: python build_site.py
 """
+import datetime
 import hashlib
 import json
 import re
@@ -126,6 +127,28 @@ def stamp_asset_versions() -> None:
         gaffer_gate.build(gaffer_gate.SOURCE.read_text(encoding="utf-8"), f"effra.css?v={versions['effra.css']}")
 
 
+def write_meta(matches) -> None:
+    """docs/meta.json: when the published match data last changed.
+
+    The timestamp only moves when matches.json's content changes, so a
+    refresh that finds nothing new doesn't create a commit.
+    """
+    digest = hashlib.sha256(json.dumps(matches, sort_keys=True).encode()).hexdigest()
+    path = DOCS / "meta.json"
+    try:
+        old = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        old = {}
+    if old.get("matches_sha256") == digest and old.get("data_updated"):
+        return
+    meta = {
+        "data_updated": datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat(),
+        "matches_sha256": digest,
+    }
+    path.write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
+    print(f"Data changed: stamped {meta['data_updated']}")
+
+
 def main():
     con = duckdb.connect(str(DB_PATH))
     rows = con.execute(QUERY).fetchall()
@@ -188,6 +211,7 @@ def main():
         json.dump(out, f, indent=2)
     with open(DOCS / "matches.json", "w", encoding="utf-8") as f:
         json.dump(matches, f, indent=2)
+    write_meta(matches)
 
     print(f"Wrote {len(out)} players to {DOCS / 'players.json'}")
     print(f"Wrote {len(matches)} matches to {DOCS / 'matches.json'}")

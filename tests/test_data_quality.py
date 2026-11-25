@@ -202,3 +202,15 @@ def test_no_blank_template_matches():
     # they must not be published as real draws.
     empty = [(m["year"], m["gw"]) for m in load("matches.json") if not m["team1_players"] and not m["team2_players"]]
     assert not empty, f"blank template gameweeks published as matches: {empty}"
+
+
+def test_meta_stamp_matches_published_data():
+    """docs/meta.json's 'updated' stamp must describe the matches.json being published."""
+    import hashlib
+    import json
+    docs = Path(__file__).resolve().parents[1] / "docs"
+    meta = json.loads((docs / "meta.json").read_text(encoding="utf-8"))
+    matches = json.loads((docs / "matches.json").read_text(encoding="utf-8"))
+    digest = hashlib.sha256(json.dumps(matches, sort_keys=True).encode()).hexdigest()
+    assert meta["matches_sha256"] == digest, "meta.json is stale: run build_site.py"
+    assert meta["data_updated"]

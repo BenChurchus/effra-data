@@ -69,6 +69,14 @@
     },
     {
       "year": 2026,
+      "player": "Joseph",
+      "is_captain": false,
+      "goals": null,
+      "assists": 2.0,
+      "clean_sheets": null
+    },
+    {
+      "year": 2026,
       "player": "Harry",
       "is_captain": false,
       "goals": 1.0,

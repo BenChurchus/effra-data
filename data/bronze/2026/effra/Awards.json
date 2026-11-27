@@ -201,7 +201,7 @@
     "Got that Dawg in him",
     "Stats",
     "Scores lots in losses compared to wins",
-    null,
+    "Medal",
     null,
     "Char",
     "N/A"
@@ -211,7 +211,7 @@
     "Flat Track Bully",
     "Stats",
     "Scores lots in wins compared to losses",
-    null,
+    "Medal",
     null,
     "Leo",
     "N/A"
@@ -283,7 +283,7 @@
     null,
     "Player's Player",
     "Vote",
-    "Should lean towards teamwork",
+    "Excludes Joe Davies contenders. Teamwork/on-pitch vibes/underrated/\"your guy\"",
     "Trophy",
     null,
     "Will Mac",
@@ -311,7 +311,10 @@
     "Jekyll and Hyde",
     "Vote",
     "Most inconsistent player",
-    "Silver Spoon"
+    "Silver Spoon",
+    null,
+    "Crell",
+    "Char"
   ],
   [
     null,
@@ -320,28 +323,17 @@
     "Self-explanatory (one the day)",
     "Medal",
     null,
-    "Crell",
-    "Char"
+    "Char",
+    "Kempy"
   ],
   [
     null,
     "Post-game MVP",
     "Vote",
-    "Good vibes etc.",
+    "Pub GOAT",
     "Medal",
     null,
-    "Char",
-    "LG"
-  ],
-  [
-    null,
-    "Fastest Pint (live)",
-    "Vote",
-    "Self-explanatory",
-    "Medal",
-    null,
-    "Joel",
-    "Joel"
+    "Harry"
   ],
   [
     null,
@@ -349,6 +341,16 @@
     "Vote",
     "Leaves it all on the pitch ",
     "Medal"
+  ],
+  [
+    null,
+    "Fastest Pint (live)",
+    "Vote",
+    "Self-explanatory. Poll for entrants ",
+    "Medal",
+    null,
+    "Joel",
+    "Joel"
   ],
   [
     null,
@@ -402,7 +404,7 @@
     null,
     null,
     null,
-    5
+    6
   ],
   [],
   [],

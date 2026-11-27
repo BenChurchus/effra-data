@@ -17,7 +17,7 @@
     "award": "Flat Track Bully",
     "category": "Stats",
     "explanation": "Scores lots in wins compared to losses",
-    "prize": "",
+    "prize": "Medal",
     "kind": "medal",
     "winners": [
       "Leo"
@@ -41,7 +41,7 @@
     "award": "Got that Dawg in him",
     "category": "Stats",
     "explanation": "Scores lots in losses compared to wins",
-    "prize": "",
+    "prize": "Medal",
     "kind": "medal",
     "winners": [
       "Char"
@@ -169,7 +169,7 @@
     "prize": "Medal",
     "kind": "medal",
     "winners": [
-      "Crell"
+      "Char"
     ],
     "detail": ""
   },
@@ -189,7 +189,7 @@
     "season": 2025,
     "award": "Fastest Pint (live)",
     "category": "Vote",
-    "explanation": "Self-explanatory",
+    "explanation": "Self-explanatory. Poll for entrants",
     "prize": "Medal",
     "kind": "medal",
     "winners": [
@@ -206,6 +206,18 @@
     "kind": "trophy",
     "winners": [
       "Joe"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2025,
+    "award": "Jekyll and Hyde",
+    "category": "Vote",
+    "explanation": "Most inconsistent player",
+    "prize": "Silver Spoon",
+    "kind": "booby",
+    "winners": [
+      "Crell"
     ],
     "detail": ""
   },
@@ -249,7 +261,7 @@
     "season": 2025,
     "award": "Player's Player",
     "category": "Vote",
-    "explanation": "Should lean towards teamwork",
+    "explanation": "Excludes Joe Davies contenders. Teamwork/on-pitch vibes/underrated/\"your guy\"",
     "prize": "Trophy",
     "kind": "trophy",
     "winners": [
@@ -261,11 +273,11 @@
     "season": 2025,
     "award": "Post-game MVP",
     "category": "Vote",
-    "explanation": "Good vibes etc.",
+    "explanation": "Pub GOAT",
     "prize": "Medal",
     "kind": "medal",
     "winners": [
-      "Char"
+      "Harry"
     ],
     "detail": ""
   },
@@ -459,7 +471,7 @@
     "prize": "Medal",
     "kind": "medal",
     "winners": [
-      "Char"
+      "Kempy"
     ],
     "detail": ""
   },
@@ -491,7 +503,7 @@
     "season": 2024,
     "award": "Fastest Pint (live)",
     "category": "Vote",
-    "explanation": "Self-explanatory",
+    "explanation": "Self-explanatory. Poll for entrants",
     "prize": "Medal",
     "kind": "medal",
     "winners": [
@@ -508,6 +520,18 @@
     "kind": "trophy",
     "winners": [
       "LG"
+    ],
+    "detail": ""
+  },
+  {
+    "season": 2024,
+    "award": "Jekyll and Hyde",
+    "category": "Vote",
+    "explanation": "Most inconsistent player",
+    "prize": "Silver Spoon",
+    "kind": "booby",
+    "winners": [
+      "Char"
     ],
     "detail": ""
   },
@@ -551,23 +575,11 @@
     "season": 2024,
     "award": "Player's Player",
     "category": "Vote",
-    "explanation": "Should lean towards teamwork",
+    "explanation": "Excludes Joe Davies contenders. Teamwork/on-pitch vibes/underrated/\"your guy\"",
     "prize": "Trophy",
     "kind": "trophy",
     "winners": [
       "Will Mac"
-    ],
-    "detail": ""
-  },
-  {
-    "season": 2024,
-    "award": "Post-game MVP",
-    "category": "Vote",
-    "explanation": "Good vibes etc.",
-    "prize": "Medal",
-    "kind": "medal",
-    "winners": [
-      "LG"
     ],
     "detail": ""
   },
